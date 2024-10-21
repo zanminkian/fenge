@@ -28,7 +28,7 @@ const invalid = [
   "Map",
   "Error",
   "Promise",
-  // "Proxy", // Proxy does not exist in the default globals definition
+  "Proxy",
   "RegExp",
   "Set",
   "SharedArrayBuffer",

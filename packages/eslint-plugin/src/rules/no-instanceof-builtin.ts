@@ -16,9 +16,13 @@ const rule: Rule.RuleModule = {
     let builtins: Set<string> | undefined = undefined;
     return {
       Program: (node) => {
-        builtins = new Set(
-          context.sourceCode.getScope(node).variables.map((v) => v.name),
-        );
+        const scope = context.sourceCode.getScope(node);
+        builtins = new Set([
+          // Variables declared in `globals`
+          ...scope.variables.map((v) => v.name),
+          // Variables not declared at all
+          ...scope.through.map((ref) => ref.identifier.name),
+        ]);
       },
       BinaryExpression: (node) => {
         if (
