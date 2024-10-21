@@ -1,5 +1,12 @@
 # @git-validator/eslint-plugin
 
+## 0.12.1
+
+### Patch Changes
+
+- Updated dependencies [e3bed52]
+  - @fenge/eslint-plugin@0.1.1
+
 ## 0.12.0
 
 ### Minor Changes

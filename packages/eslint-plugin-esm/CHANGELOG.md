@@ -1,5 +1,11 @@
 # eslint-plugin-esm
 
+## 0.2.1
+
+### Patch Changes
+
+- 2b04bbd: fix(eslint-plugin-esm): allow module existing in peerDependencies for `no-phantom-dep-imports` rule
+
 ## 0.2.0
 
 ### Minor Changes
