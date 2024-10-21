@@ -1,6 +1,6 @@
 {
   "name": "@git-validator/eslint-plugin",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "Zanminkian's eslint plugins.",
   "keywords": [
     "opinionated",

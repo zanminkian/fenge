@@ -1,6 +1,6 @@
 {
   "name": "@git-validator/eslint-config",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "A super strict eslint config for linting js/ts/package.json.",
   "keywords": [
     "opinionated",
