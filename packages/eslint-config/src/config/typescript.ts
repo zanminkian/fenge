@@ -1,7 +1,7 @@
 import process from "node:process";
 import * as fengeTsPlugin from "@fenge/eslint-plugin-ts";
 import tsParser from "@typescript-eslint/parser";
-import deprecationPlugin from "eslint-plugin-deprecation";
+import deprecationPlugin from "eslint-plugin-deprecation"; // TODO: Remove this plugin and use `@typescript-eslint/no-deprecated` when eslint upgraded to 9.
 import { javascript } from "./javascript.js";
 
 export function typescript(project?: string) {
