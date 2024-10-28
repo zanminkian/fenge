@@ -138,7 +138,7 @@ Other File (eg: `src/other-file.ts`)
 
 <!-- prettier-ignore-start -->
 ```ts
-console.log(JSON.parse('{"foo":"foo"}').bar);
+console.log(JSON.parse('{"foo":"foo"}').bar.length);
          // ^^^^^^^^^^^^^^^^^^^^^^^^^^^ ❌ Object is of type 'unknown'.
 ```
 <!-- prettier-ignore-end -->
