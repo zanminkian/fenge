@@ -27,9 +27,7 @@ pnpm add -D prettier @fenge/prettier-config
 Config `prettier.config.js`
 
 ```js
-import config from "@fenge/prettier-config";
-
-export default config;
+export { default } from "@fenge/prettier-config";
 ```
 
 Customize

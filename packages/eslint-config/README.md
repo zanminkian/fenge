@@ -35,9 +35,7 @@ npm install -D eslint @fenge/eslint-config
 Config `eslint.config.js` (for ESM).
 
 ```js
-import config from "@fenge/eslint-config";
-
-export default config;
+export { default } from "@fenge/eslint-config";
 ```
 
 If you are in CommonJS, config `eslint.config.js` bellow:
