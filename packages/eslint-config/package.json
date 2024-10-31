@@ -24,7 +24,7 @@
   "exports": "./dist/eslint.config.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "test": "globstar -- node --test --import @swc-node/register/esm-register src/**/*.spec.ts test/**/*.spec.ts"
+    "test": "node --test --import @swc-node/register/esm-register src/**/*.spec.ts test/**/*.spec.ts"
   },
   "dependencies": {
     "@fenge/eslint-plugin": "workspace:*",

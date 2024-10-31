@@ -22,7 +22,7 @@
   "exports": "./dist/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "test": "globstar -- node --test --import @swc-node/register/esm-register src/**/*.spec.ts"
+    "test": "node --test --import @swc-node/register/esm-register src/**/*.spec.ts"
   },
   "devDependencies": {
     "@swc-node/register": "1.10.0",
