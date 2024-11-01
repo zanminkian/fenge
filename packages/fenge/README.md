@@ -23,17 +23,13 @@
 <details>
 <summary>简体中文</summary>
 
+### 核心：`类型安全`、`Formatting` 和 `Linting`
+
 经过多年实践，我们发现，最影响现代 JavaScript 工程的代码质量和开发体验的主要有 3 个方面：
 
 - **类型安全**：用于提前发现类型、拼写错误，例如对象方法是否正确调用、函数参数传递的类型是否符合函数体的期望等。
 - **Formatting**：用于统一格式，提升代码可读性，减少代码冲突。主要关注例如缩进、换行、单/双引号、带/不带分号等问题。
 - **Linting**：用于提前发现逻辑漏洞和糟粕用法，减少 Bug，降低维护成本。其关注点可以是除了 `Formatting` 之外的任何地方，例如重复定义变量、switch 不带 break、圈复杂度等。
-
-> Note: `类型安全` 和 `Linting` 的关注点可能存在一定的交集，例如：“函数入参数量对不上”，既可能被类型安全的工具（如 TypeScript）检测到，也可能被 Linter（如 ESLint）检测出来。
-
-> Note：`Formatting` 和 `Linting` 的关注点，原则上不存在交集。早期 ESLint 也被用于格式化，但是近年来，`Linter` 和 `Formatter` 分开已经被社区越来越广泛采纳，例如[ESLint 废弃 Formatting Rules](https://eslint.org/blog/2023/10/deprecating-formatting-rules)、Deno 和 Biome 均把 `Linter` 和 `Formatter` 分开。
->
-> 有些人会将后两者 `Formatting` 和 `Linting` 合并起来一并处理，例如 [@antfu/eslint-config](https://github.com/antfu/eslint-config)。我们强烈**不建议**这样做。首先是因为它们目的不一样，专业的事情应该交给专业的工具。其次是它们的造成心智负担不同，Review 代码时，我们往往不需要关注 Formatting 的改动，但是我们必须要仔细检查确认 Linting 的改动，因为 Formatting 的改动一般是安全的，但是 Linting 的改动可存在错误的修复。
 
 这 3 个方面也是更先进的运行时 [Deno](https://deno.com) 所内置的功能，[Node](https://nodejs.org) 并没有内置支持，取而代之的是社区里百花齐放的工具：TypeScript、Flow、Biome、ESLint、oxc-lint、Prettier、dprint。这些工具用在 Node 项目中存在 3 个非常影响**开发体验**的问题：
 
@@ -42,6 +38,36 @@
 - **工具们的复杂配置问题**：每个工具都有很复杂难懂的配置，在项目根目录（或 `package.json` 里）到处拉屎。一来不美观简洁，二来增加理解成本。每个 Node 项目可能工具统一但配置不统一，进一步导致开发体验不一致。
 
 为了解决上述问题，现在有非常多教程文章讲解 TypeScript + Prettier + ESLint 的配置和实践，这些文章教程能缓解一部分问题，但仍然将<u>杂乱的工具链和繁琐的配置暴露给用户</u>。这不是我们的目标，我们的目标是**提供一个统一的工具屏蔽这些复杂的实践细节，给用户带来简单一致、开箱即用的良好开发体验**。
+
+### `类型安全`、`Formatting` 和 `Linting` 的关系
+
+为了阐述三者之间的关系，这里以三者最具代表性的解决方案 `TypeScript`、`Prettier` 和 `ESLint` 作为例子。
+
+| -           | 类型安全   | Formatting | Linting |
+| ----------- | ---------- | ---------- | ------- |
+| 代表        | TypeScript | Prettier   | ESLint  |
+| 关注逻辑    | ✅         | ❌         | ✅      |
+| Auto Fixing | ❌         | ✅         | ✅      |
+
+经过多年演进，三者关注点存在一定的交集：
+
+1. `类型安全`和 `Linting` 关注点的交集：例如，“函数入参数量对不上”，既可能被 TypeScript 检测到，也可能被 ESLint检测出来。
+2. `Formatting` 和 `Linting` 关注点的交集：例如，“是否使用分号结尾”、“使用单引号还是双引号”等，既可以被 Prettier 检测出来并执行格式化，也可以被 ESLint 检测出来并执行修复。
+
+虽然当下情况是三者存在一定的交集，但这不是最理想的情况，最理想的情况是：**类型安全、Formatting 和 Linting 关注不同的领域，不存在交集**。
+
+### 为什么把 Formatting 和 Linting 分开
+
+虽然类型安全也可能和 Linting 的关注点重合，但是社区主流做法也不会将 TypeScript 和 ESLint 混为一谈，所以这里不过多赘述。然而，社区内不少人将 `Formatting` 和 `Linting` 合并起来一并处理，例如 [@antfu/eslint-config](https://github.com/antfu/eslint-config)。我们强烈**不建议**这样做，主要有以下原因：
+
+1. 首先是因为它们目的不一样，专业的事情应该交给专业的工具。
+2. Formatting 和 Linting 它们造成的心智负担不同，Review 代码时，我们往往不需要关注 Formatting 的改动，但是我们必须要仔细检查确认 Linting 的改动，因为 Formatting 的改动一般是安全的，但是 Linting 的改动可能存在错误的修复。
+3. 因为 Linting 的改动可能存在错误的修复，配合 Git Hooks 时，如果 Linting 的修复和 Formatting 的修复混合在一起，代码提交时容易让错误的修复直接进入 Git Commit，导致 bug 更难被发现。
+4. 社区主流趋势是将 Formatter 和 Linter 分开。例如：早期 ESLint 也被用于格式化，但是从 v8.53.0 开始， [ESLint 废弃 Formatting Rules](https://eslint.org/blog/2023/10/deprecating-formatting-rules)。Deno 和 Biome 也均把 `Linter` 和 `Formatter` 分开。
+
+### 小结
+
+总而言之，类型安全、Formatting 和 Linting 是未来 JavaScript 和 TypeScript 代码生态绕不过去的三个方面。这三板斧在 Node 官方提供解决方案之前，都是割裂、难用、影响代码质量的方面。我们等不急 Node 官方提供相关方案，所以创建了 `Fenge`，尽可能屏蔽复杂，暴露简单，让开发者专注于业务代码。
 
 </details>
 
