@@ -2,7 +2,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
-import { dir, exists, getBinPath } from "../utils.js";
+import { dir, exists, getBinPath, importJson } from "../utils.js";
 
 /**
  * @param {string} file
@@ -20,6 +20,16 @@ async function writeGitHook(file, content) {
   await fs.mkdir(hooksPath, { recursive: true });
 
   const hookFilePath = path.resolve(hooksPath, file);
+  if (await exists(hookFilePath)) {
+    const pkgJsonName = (
+      await importJson(import.meta.url, "../../package.json")
+    ).name; // fenge
+    if (!(await fs.readFile(hookFilePath, "utf8")).includes(pkgJsonName)) {
+      throw new Error(
+        `Cannot install git hook file since ${hookFilePath} is already existing. Please remove it first.`,
+      );
+    }
+  }
   await fs.writeFile(hookFilePath, content);
   await fs.chmod(hookFilePath, "777");
 }
