@@ -23,7 +23,7 @@
     "build": "tsc -p tsconfig.build.json"
   },
   "dependencies": {
-    "publint": "0.2.11"
+    "publint": "0.2.12"
   },
   "devDependencies": {
     "@swc-node/register": "1.10.0",
