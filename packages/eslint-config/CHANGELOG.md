@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.1.2
+
+### Patch Changes
+
+- e7376a3: feat(eslint-config): add rule `unicorn/prefer-export-from`
+- c8cf96d: chore: upgrade deps
+- 84e0219: refactor(eslint-config): remove deprecated rules
+- Updated dependencies [c8cf96d]
+  - eslint-plugin-publint@0.0.4
+
 ## 0.1.1
 
 ### Patch Changes

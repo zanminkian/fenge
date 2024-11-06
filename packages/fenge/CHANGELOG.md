@@ -1,5 +1,17 @@
 # fenge
 
+## 0.1.2
+
+### Patch Changes
+
+- 21a6435: fix(fenge): throw error when installing git hook files if it is already existing
+- c8cf96d: chore: upgrade deps
+- ee3b1e3: feat(fenge): add uninstall command
+- Updated dependencies [e7376a3]
+- Updated dependencies [c8cf96d]
+- Updated dependencies [84e0219]
+  - @fenge/eslint-config@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
