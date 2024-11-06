@@ -1,5 +1,12 @@
 # git-validator
 
+## 0.23.2
+
+### Patch Changes
+
+- c8cf96d: chore: upgrade deps
+  - @git-validator/eslint-config@0.10.2
+
 ## 0.23.1
 
 ### Patch Changes
