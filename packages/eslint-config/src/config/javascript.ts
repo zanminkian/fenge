@@ -90,7 +90,7 @@ export function javascript() {
     // }],
     // 'key-spacing': ['error', { beforeColon: false, afterColon: true }],
     // 'keyword-spacing': ['error', { before: true, after: true }],
-    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+    // 'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     // 'multiline-ternary': ['error', 'always-multiline'],
     'new-cap': ['error', { newIsCap: true, capIsNew: false, properties: true }],
     // 'new-parens': 'error',
@@ -218,10 +218,10 @@ export function javascript() {
     // 'space-in-parens': ['error', 'never'],
     // 'space-infix-ops': 'error',
     // 'space-unary-ops': ['error', { words: true, nonwords: false }],
-    'spaced-comment': ['error', 'always', {
-      line: { markers: ['*package', '!', '/', ',', '='] },
-      block: { balanced: true, markers: ['*package', '!', ',', ':', '::', 'flow-include'], exceptions: ['*'] }
-    }],
+    // 'spaced-comment': ['error', 'always', {
+    //   line: { markers: ['*package', '!', '/', ',', '='] },
+    //   block: { balanced: true, markers: ['*package', '!', ',', ':', '::', 'flow-include'], exceptions: ['*'] }
+    // }],
     'symbol-description': 'error',
     // 'template-curly-spacing': ['error', 'never'],
     // 'template-tag-spacing': ['error', 'never'],
