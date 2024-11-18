@@ -31,11 +31,13 @@ export function dir(importMetaUrl) {
 
 /**
  * @param {string} module
+ * @param {string} [loadPath]
  */
-export async function resolveConfig(module) {
-  return await lilconfig(module, { stopDir: process.cwd() }).search(
-    process.cwd(),
-  );
+export async function resolveConfig(module, loadPath) {
+  const searcher = lilconfig(module, { stopDir: process.cwd() });
+  return loadPath
+    ? await searcher.load(loadPath)
+    : await searcher.search(process.cwd());
 }
 
 /**

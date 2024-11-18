@@ -26,6 +26,7 @@ program
     "automatically format code only, will not fix linting problems",
   )
   .option("-u, --update", "automatically format code and fix linting problems")
+  .option("-c, --config <path>", "path to configuration file")
   .option(
     "-d, --dry-run",
     "print what command will be executed under the hood instead of executing",

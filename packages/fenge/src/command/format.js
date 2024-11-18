@@ -6,12 +6,14 @@ import { dir, execAsync, getBinPath } from "../utils.js";
 
 /**
  * @param {Array<string>} paths
- * @param {{update?: boolean, write?: boolean, dryRun?: boolean}} options
+ * @param {{update?: boolean, write?: boolean, dryRun?: boolean, config?: string}} options
  */
 export async function format(paths = [], options = {}) {
-  const { update = false, write = false, dryRun = false } = options;
+  const { update = false, write = false, dryRun = false, config } = options;
 
-  const cwd = process.cwd();
+  if (config) {
+    process.env["FENGE_CONFIG"] = config;
+  }
   const ignores = [".gitignore", ".prettierignore", prettierignore]
     .map((p) => path.resolve(p))
     .flatMap((p) => ["--ignore-path", p]);
@@ -27,7 +29,9 @@ export async function format(paths = [], options = {}) {
       "--ignore-unknown",
       "--no-error-on-unmatched-pattern", // Not a good option name. It's for skipping formatting symlinks. https://github.com/prettier/prettier/pull/15533
       ...(update || write ? ["--write"] : ["--check"]),
-      ...(paths.length <= 0 ? ["."] : paths).map((p) => path.resolve(cwd, p)),
+      ...(paths.length <= 0 ? ["."] : paths).map((p) =>
+        path.resolve(process.cwd(), p),
+      ),
     ],
     { topic: "💃 Checking formatting", dryRun },
   );
