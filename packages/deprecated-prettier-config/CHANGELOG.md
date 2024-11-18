@@ -1,5 +1,12 @@
 # @git-validator/prettier-config
 
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies [9e94865]
+  - @fenge/prettier-config@0.1.1
+
 ## 0.7.0
 
 ### Minor Changes
