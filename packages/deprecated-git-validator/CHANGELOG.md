@@ -1,5 +1,12 @@
 # git-validator
 
+## 0.23.3
+
+### Patch Changes
+
+- @git-validator/prettier-config@0.7.1
+- @git-validator/eslint-config@0.10.3
+
 ## 0.23.2
 
 ### Patch Changes

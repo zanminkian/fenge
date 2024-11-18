@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.1.3
+
+### Patch Changes
+
+- 9e94865: chore: upgrade deps
+
 ## 0.1.2
 
 ### Patch Changes

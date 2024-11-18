@@ -1,5 +1,14 @@
 # fenge
 
+## 0.1.3
+
+### Patch Changes
+
+- a9afc71: feat(fenge): support `--config` option
+- Updated dependencies [9e94865]
+  - @fenge/prettier-config@0.1.1
+  - @fenge/eslint-config@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes
