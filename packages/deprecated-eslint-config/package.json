@@ -25,5 +25,8 @@
   },
   "dependencies": {
     "@fenge/eslint-config": "workspace:*"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.57.1"
   }
 }

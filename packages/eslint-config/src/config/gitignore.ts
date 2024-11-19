@@ -16,8 +16,7 @@ export function gitignore() {
   // https://eslint.org/docs/latest/use/configure/configuration-files#specifying-files-and-ignores
   return [
     {
-      // TODO waiting for eslint 9
-      // name: 'fenge/ignore',
+      name: "fenge/gitignore",
       ignores: stdout.split("\n").filter(Boolean),
     },
   ] as const;
