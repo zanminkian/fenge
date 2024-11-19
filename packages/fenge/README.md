@@ -195,16 +195,18 @@ $ fenge -u
 
 This tool does not require a configuration file. However, you can add a `fenge.config.js` file to customize formatting and linting rules. This file should export an object with two properties:
 
-- `format`: Accept a [Prettier Config](https://prettier.io/docs/en/configuration.html).
-- `lint`: Accept a [ESLint Flat Config](https://eslint.org/docs/latest/use/configure/configuration-files).
+- `format`: Accept a function that returns a [Prettier Config](https://prettier.io/docs/en/configuration.html).
+- `lint`: Accept a function that returns an [ESLint Flat Config](https://eslint.org/docs/latest/use/configure/configuration-files).
+
+> Tips: These two functions can be async or sync. So you can add `async` or not in font of the function.
 
 ```js
 export default {
-  format: {
+  format: async () => ({
     semi: false,
     singleQuote: true,
-  },
-  lint: [
+  }),
+  lint: async () => [
     {
       files: ["**/*.{js,cjs,mjs,jsx}", "**/*.{ts,cts,mts,tsx}"],
       rules: {
@@ -219,37 +221,40 @@ Usually, we recommend reusing the built-in configurations rather than writing th
 
 ```js
 // @ts-check
-// See https://www.npmjs.com/package/@fenge/eslint-config for eslint-config detail usage
-import { Builder } from "fenge/eslint-config";
-// See https://www.npmjs.com/package/@fenge/prettier-config for prettier-config detail usage
-import prettierConfig from "fenge/prettier-config";
-
 export default {
-  format: {
-    ...prettierConfig,
-    // add config below to override the default behavior
-    semi: false,
+  format: async () => {
+    // See https://www.npmjs.com/package/@fenge/prettier-config for prettier-config detail usage
+    const prettierConfig = (await import("fenge/prettier-config")).default;
+    return {
+      ...prettierConfig,
+      // add config below to override the default behavior
+      semi: false,
+    };
   },
-  lint: new Builder()
-    .enablePackagejson({
-      pick: ["packagejson/top-types"], // only these rules will work for package.json files
-    })
-    .enableJavascript({
-      omit: ["no-var"], // these rules will not work for js files
-    })
-    .enableTypescript({
-      project: "tsconfig.json", // tsconfig.json path
-      extend: {
-        // apply additional rules for ts files
-        "@typescript-eslint/no-explicit-any": "error",
-        "@typescript-eslint/consistent-type-assertions": [
-          "error",
-          { assertionStyle: "never" },
-        ],
-        "@typescript-eslint/no-non-null-assertion": "error",
-      },
-    })
-    .toConfig(),
+  lint: async () => {
+    // See https://www.npmjs.com/package/@fenge/eslint-config for eslint-config detail usage
+    const Builder = (await import("fenge/eslint-config")).Builder;
+    return new Builder()
+      .enablePackagejson({
+        pick: ["packagejson/top-types"], // only these rules will work for package.json files
+      })
+      .enableJavascript({
+        omit: ["no-var"], // these rules will not work for js files
+      })
+      .enableTypescript({
+        project: "tsconfig.json", // tsconfig.json path
+        extend: {
+          // apply additional rules for ts files
+          "@typescript-eslint/no-explicit-any": "error",
+          "@typescript-eslint/consistent-type-assertions": [
+            "error",
+            { assertionStyle: "never" },
+          ],
+          "@typescript-eslint/no-non-null-assertion": "error",
+        },
+      })
+      .toConfig();
+  },
 };
 ```
 
