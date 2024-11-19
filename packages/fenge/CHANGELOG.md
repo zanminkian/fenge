@@ -1,5 +1,14 @@
 # fenge
 
+## 0.1.5
+
+### Patch Changes
+
+- 1c3fa77: chore: update deps
+- Updated dependencies [1c3fa77]
+- Updated dependencies [a2d5f7c]
+  - @fenge/eslint-config@0.2.0
+
 ## 0.1.4
 
 ### Patch Changes

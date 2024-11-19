@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- a2d5f7c: chore: require eslint >= 8.57.1
+
+### Patch Changes
+
+- 1c3fa77: chore: update deps
+
 ## 0.1.3
 
 ### Patch Changes

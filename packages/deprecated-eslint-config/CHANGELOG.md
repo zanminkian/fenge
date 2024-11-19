@@ -1,5 +1,17 @@
 # @git-validator/eslint-config
 
+## 0.11.0
+
+### Minor Changes
+
+- a2d5f7c: chore: require eslint >= 8.57.1
+
+### Patch Changes
+
+- Updated dependencies [1c3fa77]
+- Updated dependencies [a2d5f7c]
+  - @fenge/eslint-config@0.2.0
+
 ## 0.10.3
 
 ### Patch Changes
