@@ -1,5 +1,11 @@
 # fenge
 
+## 0.1.4
+
+### Patch Changes
+
+- 3783bd5: feat(fenge): `format` and `lint` properties in `fenge.config.js` are additionally accepting a function now
+
 ## 0.1.3
 
 ### Patch Changes
