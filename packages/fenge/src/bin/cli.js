@@ -45,6 +45,7 @@ program
   .description("lint code")
   .option("-f, --fix", "automatically fix linting problems")
   .option("-u, --update", "alias for '--fix' option")
+  .option("-c, --config <path>", "path to configuration file")
   .option(
     "-d, --dry-run",
     "print what command will be executed under the hood instead of executing",
@@ -57,6 +58,7 @@ program
   .description("format code")
   .option("-w, --write", "automatically format code")
   .option("-u, --update", "alias for '--write' option")
+  .option("-c, --config <path>", "path to configuration file")
   .option(
     "-d, --dry-run",
     "print what command will be executed under the hood instead of executing",
