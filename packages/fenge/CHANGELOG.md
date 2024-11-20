@@ -1,5 +1,12 @@
 # fenge
 
+## 0.1.7
+
+### Patch Changes
+
+- d58f9dd: feat(fenge): add `--config` option to sub-command `lint` and `format`
+- 3fd7084: feat(fenge): support `--default` option to forcibly use built-in default config
+
 ## 0.1.6
 
 ### Patch Changes
