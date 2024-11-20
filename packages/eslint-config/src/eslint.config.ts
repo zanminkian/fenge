@@ -4,19 +4,30 @@ import { javascript } from "./config/javascript.js";
 import { packagejson } from "./config/packagejson.js";
 import { typescript } from "./config/typescript.js";
 
+type NoDuplicate<A extends unknown[]> = {
+  [I in keyof A]: true extends {
+    [J in keyof A]: J extends I ? false : A[J] extends A[I] ? true : false;
+  }[number]
+    ? never
+    : A[I];
+};
+
 type JsRuleKey = keyof ReturnType<typeof javascript>[0]["rules"];
 type TsRuleKey = keyof ReturnType<typeof typescript>[0]["rules"];
 type PkgRuleKey = keyof ReturnType<typeof packagejson>[0]["rules"];
 
-interface Options<T extends string> {
-  pick?: T[];
-  omit?: T[];
+interface Options<T extends string[]> {
+  pick?: NoDuplicate<T>;
+  omit?: NoDuplicate<T>;
   extend?: Record<
     string,
     "error" | "warn" | "off" | ["error" | "warn", ...unknown[]]
   >;
   override?: Partial<
-    Record<T, "error" | "warn" | "off" | ["error" | "warn", ...unknown[]]>
+    Record<
+      T[number],
+      "error" | "warn" | "off" | ["error" | "warn", ...unknown[]]
+    >
   >;
 }
 
@@ -32,7 +43,7 @@ export class Builder {
       { plugins: object; rules: object },
       ...object[],
     ],
-    { pick, omit, extend = {}, override = {} }: Options<string>,
+    { pick, omit, extend = {}, override = {} }: Options<string[]>,
   ) {
     const select = (ruleKey: string) => {
       if (!pick && !omit) {
@@ -80,15 +91,17 @@ export class Builder {
     return this;
   }
 
-  enableTypescript(options: Options<TsRuleKey> & { project?: string } = {}) {
+  enableTypescript<T extends TsRuleKey[]>(
+    options: Options<T> & { project?: string } = {},
+  ) {
     return this.setup(typescript(options.project), options);
   }
 
-  enableJavascript(options: Options<JsRuleKey> = {}) {
+  enableJavascript<T extends JsRuleKey[]>(options: Options<T> = {}) {
     return this.setup(javascript(), options);
   }
 
-  enablePackagejson(options: Options<PkgRuleKey> = {}) {
+  enablePackagejson<T extends PkgRuleKey[]>(options: Options<T> = {}) {
     return this.setup(packagejson(), options);
   }
 }
