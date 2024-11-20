@@ -1,5 +1,12 @@
 # fenge
 
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies [974ac53]
+  - @fenge/eslint-config@0.2.1
+
 ## 0.1.5
 
 ### Patch Changes

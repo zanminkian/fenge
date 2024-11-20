@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.2.1
+
+### Patch Changes
+
+- 974ac53: feat(eslint-config): update function type signature. `pick` and `omit` properties disallow duplicated rule names
+
 ## 0.2.0
 
 ### Minor Changes
