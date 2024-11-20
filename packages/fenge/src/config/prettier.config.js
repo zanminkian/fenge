@@ -5,7 +5,6 @@ import { resolveConfig } from "../utils.js";
 async function getFormatConfig() {
   const format = (await resolveConfig("fenge", process.env["FENGE_CONFIG"]))
     ?.config?.format;
-  if (!format) return undefined;
   return typeof format === "function" ? await format() : format;
 }
 

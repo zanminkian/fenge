@@ -5,7 +5,6 @@ import { resolveConfig } from "../utils.js";
 async function getLintConfig() {
   const lint = (await resolveConfig("fenge", process.env["FENGE_CONFIG"]))
     ?.config?.lint;
-  if (!lint) return undefined;
   return typeof lint === "function" ? await lint() : lint;
 }
 
