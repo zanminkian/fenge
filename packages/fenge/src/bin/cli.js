@@ -28,6 +28,10 @@ program
   .option("-u, --update", "automatically format code and fix linting problems")
   .option("-c, --config <path>", "path to configuration file")
   .option(
+    "--default",
+    "force to use built-in default config, ignore specified config and local config",
+  )
+  .option(
     "-d, --dry-run",
     "print what command will be executed under the hood instead of executing",
   )
@@ -47,6 +51,10 @@ program
   .option("-u, --update", "alias for '--fix' option")
   .option("-c, --config <path>", "path to configuration file")
   .option(
+    "--default",
+    "force to use built-in default config, ignore specified config and local config",
+  )
+  .option(
     "-d, --dry-run",
     "print what command will be executed under the hood instead of executing",
   )
@@ -59,6 +67,10 @@ program
   .option("-w, --write", "automatically format code")
   .option("-u, --update", "alias for '--write' option")
   .option("-c, --config <path>", "path to configuration file")
+  .option(
+    "--default",
+    "force to use built-in default config, ignore specified config and local config",
+  )
   .option(
     "-d, --dry-run",
     "print what command will be executed under the hood instead of executing",

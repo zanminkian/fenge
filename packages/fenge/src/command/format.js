@@ -6,13 +6,17 @@ import { dir, execAsync, getBinPath } from "../utils.js";
 
 /**
  * @param {Array<string>} paths
- * @param {{update?: boolean, write?: boolean, dryRun?: boolean, config?: string}} options
+ * @param {{update?: boolean, write?: boolean, dryRun?: boolean, config?: string, default?: boolean}} options
  */
 export async function format(paths = [], options = {}) {
   const { update = false, write = false, dryRun = false, config } = options;
+  const useDefaultConfig = options["default"] ?? false;
 
   if (config) {
     process.env["FENGE_CONFIG"] = config;
+  }
+  if (useDefaultConfig) {
+    process.env["FENGE_USE_DEFAULT_CONFIG"] = "true";
   }
   const ignores = [".gitignore", ".prettierignore", prettierignore]
     .map((p) => path.resolve(p))
