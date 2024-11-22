@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/method-signature-style */
+/* eslint-disable @typescript-eslint/no-duplicate-type-constituents */
 /**
  * Represents the completion of an asynchronous operation
  */

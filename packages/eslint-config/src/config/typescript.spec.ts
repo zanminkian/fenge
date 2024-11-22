@@ -5,56 +5,38 @@ import { typescript } from "./typescript.js";
 await describe("ts config", async () => {
   await it("ts main config rules values should be error", () => {
     Object.entries(typescript()[0].rules).forEach(([key, value]) => {
+      // Key is js rule, value is ts rule
       // https://typescript-eslint.io/rules/?=extension
-      const extensionRuleKeys = [
-        "block-spacing",
-        "brace-style",
-        "class-methods-use-this",
-        "comma-dangle",
-        "comma-spacing",
-        "consistent-return",
-        "default-param-last",
-        "dot-notation",
-        "func-call-spacing",
-        "indent",
-        "init-declarations",
-        "key-spacing",
-        "keyword-spacing",
-        "lines-around-comment",
-        "lines-between-class-members",
-        "max-params",
-        "no-array-constructor",
-        "no-dupe-class-members",
-        "no-empty-function",
-        "no-extra-parens",
-        "no-extra-semi",
-        "no-implied-eval",
-        "no-invalid-this",
-        "no-loop-func",
-        // "no-loss-of-precision",
-        "no-magic-numbers",
-        "no-redeclare",
-        "no-restricted-imports",
-        "no-shadow",
-        "no-throw-literal",
-        "no-unused-expressions",
-        "no-unused-vars",
-        "no-use-before-define",
-        "no-useless-constructor",
-        "object-curly-spacing",
-        "only-throw-error", // this rule based on 'eslint/no-throw-literal'
-        "padding-line-between-statements",
-        "prefer-destructuring",
-        "prefer-promise-reject-errors",
-        "quotes",
-        "require-await",
-        "return-await", // this rule based on 'eslint/no-return-await' instead of 'eslint/return-await'
-        "semi",
-        "space-before-blocks",
-        "space-before-function-paren",
-        "space-infix-ops",
-      ];
-      if (extensionRuleKeys.includes(key)) {
+      const extensionRuleMap = {
+        "class-methods-use-this": "@typescript-eslint/class-methods-use-this",
+        "consistent-return": "@typescript-eslint/consistent-return",
+        "default-param-last": "@typescript-eslint/default-param-last",
+        "dot-notation": "@typescript-eslint/dot-notation",
+        "init-declarations": "@typescript-eslint/init-declarations",
+        "max-params": "@typescript-eslint/max-params",
+        "no-array-constructor": "@typescript-eslint/no-array-constructor",
+        "no-dupe-class-members": "@typescript-eslint/no-dupe-class-members",
+        "no-empty-function": "@typescript-eslint/no-empty-function",
+        "no-implied-eval": "@typescript-eslint/no-implied-eval",
+        "no-invalid-this": "@typescript-eslint/no-invalid-this",
+        "no-loop-func": "@typescript-eslint/no-loop-func",
+        // "no-loss-of-precision": "@typescript-eslint/no-loss-of-precision", // This rule has been deprecated
+        "no-magic-numbers": "@typescript-eslint/no-magic-numbers",
+        "no-redeclare": "@typescript-eslint/no-redeclare",
+        "no-restricted-imports": "@typescript-eslint/no-restricted-imports",
+        "no-shadow": "@typescript-eslint/no-shadow",
+        "no-unused-expressions": "@typescript-eslint/no-unused-expressions",
+        "no-unused-vars": "@typescript-eslint/no-unused-vars",
+        "no-use-before-define": "@typescript-eslint/no-use-before-define",
+        "no-useless-constructor": "@typescript-eslint/no-useless-constructor",
+        "no-throw-literal": "@typescript-eslint/only-throw-error",
+        "prefer-destructuring": "@typescript-eslint/prefer-destructuring",
+        "prefer-promise-reject-errors":
+          "@typescript-eslint/prefer-promise-reject-errors",
+        "require-await": "@typescript-eslint/require-await",
+        "no-return-await": "@typescript-eslint/return-await", // no-return-await has been deprecated
+      } as const;
+      if (key in extensionRuleMap) {
         assert.strictEqual(getValueString(value), "off");
       } else {
         assert.strictEqual(getValueString(value), "error");

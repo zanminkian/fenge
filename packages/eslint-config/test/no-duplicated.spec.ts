@@ -45,16 +45,25 @@ await describe("no duplicated", async () => {
       .forEach((rule) => {
         if (
           [
-            // "@typescript-eslint/consistent-type-assertions",
             "@typescript-eslint/no-floating-promises",
-            // "@typescript-eslint/no-non-null-assertion",
             "@typescript-eslint/unbound-method",
             "import/no-default-export",
+            // extension rule
+            "@typescript-eslint/dot-notation",
+            "@typescript-eslint/return-await",
           ].includes(rule)
         ) {
-          assert.strictEqual(count(configContent, rule), 2);
+          assert.strictEqual(
+            count(configContent, rule),
+            2,
+            `The rule name is ${rule}`,
+          );
         } else {
-          assert.strictEqual(count(configContent, rule) <= 1, true);
+          assert.strictEqual(
+            count(configContent, rule) <= 1,
+            true,
+            `Duplicated rule name is ${rule}`,
+          );
         }
       });
   });

@@ -4,9 +4,9 @@ import { noDeclaresInTsFile } from "./no-declares-in-ts-file.js";
 const codes = [
   "declare class A {}",
 
-  "declare var A: number = 123",
-  "declare let A: number = 123",
-  "declare const A: number = 123",
+  "declare var A: number",
+  "declare let A: number",
+  "declare const A: number",
   "declare function A(a: string): number",
   "declare enum A{A1,A2}",
   "declare namespace A{}",

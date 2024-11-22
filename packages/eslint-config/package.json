@@ -29,8 +29,8 @@
   "dependencies": {
     "@fenge/eslint-plugin": "workspace:*",
     "@fenge/eslint-plugin-ts": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "7.16.1",
-    "@typescript-eslint/parser": "7.16.1",
+    "@typescript-eslint/eslint-plugin": "8.15.0",
+    "@typescript-eslint/parser": "8.15.0",
     "confusing-browser-globals": "1.0.11",
     "eslint-plugin-deprecation": "3.0.0",
     "eslint-plugin-es-x": "8.4.1",

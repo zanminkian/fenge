@@ -28,7 +28,7 @@
     "build": "tsc -p tsconfig.build.json"
   },
   "dependencies": {
-    "@typescript-eslint/typescript-estree": "7.16.1",
+    "@typescript-eslint/typescript-estree": "8.15.0",
     "commander": "12.1.0",
     "globby": "14.0.2"
   },
