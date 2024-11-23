@@ -1,5 +1,16 @@
 # @fenge/eslint-config
 
+## 0.3.0
+
+### Minor Changes
+
+- 55cf874: chore: upgrade typescript-eslint to v8
+
+### Patch Changes
+
+- 1848169: chore: upgrade deps
+- 9f04b44: refactor(eslint-config): replace `eslint-plugin-deprecation` with `@typescript-eslint/no-deprecated`
+
 ## 0.2.1
 
 ### Patch Changes
