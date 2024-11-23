@@ -30,14 +30,14 @@ const rule: Rule.RuleModule = {
         expectedLength &&
         "min" in expectedLength
       ) {
-        result.push(`>= ${expectedLength.min}`);
+        result.push(`>= ${String(expectedLength.min)}`);
       }
       if (
         typeof expectedLength === "object" &&
         expectedLength &&
         "max" in expectedLength
       ) {
-        result.push(`<= ${expectedLength.max}`);
+        result.push(`<= ${String(expectedLength.max)}`);
       }
       return result.join(" and ");
     };

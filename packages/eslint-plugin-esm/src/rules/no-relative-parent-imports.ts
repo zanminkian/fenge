@@ -9,5 +9,5 @@ export const noRelativeParentImports = createRule({
 });
 
 function checkDepth(_filename: string, source: string) {
-  return new RegExp(`^(\\.\\./){${depth},}`).test(source);
+  return new RegExp(`^(\\.\\./){${depth.toString()},}`).test(source);
 }

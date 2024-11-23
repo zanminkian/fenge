@@ -188,13 +188,12 @@ export function typescript(project?: string) {
         "@typescript-eslint/no-unnecessary-type-assertion": "error",
         "@typescript-eslint/no-unnecessary-type-constraint": "error",
         "@typescript-eslint/no-unsafe-declaration-merging": "error",
-        // '@typescript-eslint/no-unsafe-function-type': "error",
-        // "@typescript-eslint/no-wrapper-object-types": "error",
+        "@typescript-eslint/no-unsafe-function-type": "error",
+        "@typescript-eslint/no-wrapper-object-types": "error",
         "@typescript-eslint/prefer-as-const": "error",
         "@typescript-eslint/prefer-function-type": "error",
         "@typescript-eslint/prefer-optional-chain": "error",
         "@typescript-eslint/prefer-readonly": "error",
-        "@typescript-eslint/prefer-ts-expect-error": "error",
         "@typescript-eslint/restrict-plus-operands": [
           "error",
           {
@@ -203,9 +202,21 @@ export function typescript(project?: string) {
             allowNullish: false,
             allowNumberAndString: false,
             allowRegExp: false,
+            skipCompoundAssignments: false,
           },
         ],
-        // "@typescript-eslint/restrict-template-expressions": "error",
+        "@typescript-eslint/restrict-template-expressions": [
+          "error",
+          {
+            allow: [],
+            // allowAny: false,
+            allowBoolean: false,
+            allowNever: false,
+            allowNullish: false,
+            allowNumber: false,
+            allowRegExp: false,
+          },
+        ],
         "@typescript-eslint/return-await": ["error", "always"],
         "@typescript-eslint/switch-exhaustiveness-check": [
           "error",

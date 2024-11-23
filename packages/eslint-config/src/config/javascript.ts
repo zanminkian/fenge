@@ -149,7 +149,7 @@ export function javascript() {
     // 'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
     'no-new': 'error',
     'no-new-func': 'error',
-    'no-new-object': 'error',
+    // 'no-new-object': 'error',
     'no-new-symbol': 'error',
     'no-new-wrappers': 'error',
     'no-obj-calls': 'error',
@@ -328,6 +328,7 @@ export function javascript() {
         ], // forbid code like `const num = +str`;
         "no-invalid-this": "error",
         "no-multi-assign": "error",
+        "no-object-constructor": "error",
         "no-param-reassign": "error",
         "no-plusplus": "error",
         "no-setter-return": "error",
