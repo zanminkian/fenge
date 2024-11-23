@@ -1,5 +1,11 @@
 # smells
 
+## 0.0.4
+
+### Patch Changes
+
+- 55cf874: chore: upgrade typescript-eslint to v8
+
 ## 0.0.3
 
 ### Patch Changes
