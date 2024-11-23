@@ -83,6 +83,9 @@ export function typescript(project?: string) {
         parserOptions: {
           ...jsConfig.languageOptions.parserOptions,
           tsconfigRootDir: process.cwd(),
+          // Setting `projectService: true` or `project: true` is pretty slow when lint a monorepo with many tsconfig.json files in each sub-app.
+          // For a better performance, we are recommended using one tsconfig.json file in a project.
+          // Waiting for typescript-eslint to officially provide a better way to use `projectService`.
           project: project ?? "tsconfig.json",
         },
       },

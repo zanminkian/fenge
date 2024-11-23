@@ -36,7 +36,7 @@
     "eslint-plugin-esm": "workspace:*",
     "eslint-plugin-fp": "2.3.0",
     "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-n": "17.13.2",
+    "eslint-plugin-n": "17.14.0",
     "eslint-plugin-pkg-json": "workspace:*",
     "eslint-plugin-promise": "7.1.0",
     "eslint-plugin-publint": "workspace:*",
