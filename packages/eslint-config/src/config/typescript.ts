@@ -1,7 +1,6 @@
 import process from "node:process";
 import * as fengeTsPlugin from "@fenge/eslint-plugin-ts";
 import tsParser from "@typescript-eslint/parser";
-import deprecationPlugin from "eslint-plugin-deprecation"; // TODO: Remove this plugin and use `@typescript-eslint/no-deprecated` when eslint upgraded to 9.
 import { javascript } from "./javascript.js";
 
 export function typescript(project?: string) {
@@ -89,15 +88,12 @@ export function typescript(project?: string) {
       },
       plugins: {
         ...jsConfig.plugins,
-        deprecation: deprecationPlugin,
         "@fenge-ts": fengeTsPlugin,
       },
       rules: {
         ...jsConfig.rules,
         ...getTsExtensionRules(),
 
-        // deprecation
-        "deprecation/deprecation": "error",
         // fenge
         "@fenge-ts/exact-map-set-type": "error",
         "@fenge-ts/no-const-enum": "error",
@@ -160,6 +156,7 @@ export function typescript(project?: string) {
           { ignoredTypeNames: [] },
         ],
         "@typescript-eslint/no-confusing-non-null-assertion": "error",
+        "@typescript-eslint/no-deprecated": "error",
         "@typescript-eslint/no-duplicate-enum-values": "error",
         "@typescript-eslint/no-duplicate-type-constituents": "error",
         "@typescript-eslint/no-empty-object-type": "error",
