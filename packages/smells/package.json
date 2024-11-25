@@ -25,7 +25,7 @@
   },
   "bin": "./dist/bin.js",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json"
+    "build": "tsc"
   },
   "dependencies": {
     "@typescript-eslint/typescript-estree": "8.15.0",

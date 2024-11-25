@@ -20,7 +20,7 @@
   "type": "module",
   "exports": "./dist/index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json"
+    "build": "tsc"
   },
   "dependencies": {
     "publint": "0.2.12"

@@ -21,7 +21,7 @@
   "type": "module",
   "exports": "./dist/index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json"
+    "build": "tsc"
   },
   "dependencies": {
     "@fenge/eslint-plugin-ts": "workspace:*"

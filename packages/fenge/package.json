@@ -41,7 +41,7 @@
   },
   "bin": "./src/bin/cli.js",
   "scripts": {
-    "build": "tsc --noEmit -p tsconfig.build.json"
+    "build": "tsc --noEmit"
   },
   "dependencies": {
     "@fenge/eslint-config": "workspace:*",

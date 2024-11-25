@@ -23,7 +23,7 @@
   "type": "module",
   "exports": "./dist/eslint.config.js",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsc",
     "test": "node --test --import @swc-node/register/esm-register \"**/*.spec.ts\""
   },
   "dependencies": {
