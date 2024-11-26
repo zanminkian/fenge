@@ -98,7 +98,7 @@ export const noPhantomDepImports = createRule({
           ? !(
               isInDep ||
               isInDev ||
-              `@types/${moduleName.slice(1).replace("/", "_")}` in devDep
+              `@types/${moduleName.slice(1).replace("/", "__")}` in devDep
             )
           : !(isInDep || isInDev || `@types/${moduleName}` in devDep);
       } else {
