@@ -1,1 +1,0 @@
-import "@git-validator/types";
