@@ -57,5 +57,10 @@
   },
   "peerDependencies": {
     "eslint": ">=8.57.1"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    }
   }
 }
