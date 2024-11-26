@@ -25,14 +25,14 @@
   "exports": "./dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "node --test --import @swc-node/register/esm-register \"**/*.spec.ts\""
+    "test": "node --test --import tsx/esm \"**/*.spec.ts\""
   },
   "devDependencies": {
-    "@swc-node/register": "1.10.0",
     "@types/eslint": "8.56.11",
     "@types/estree": "1.0.6",
     "@types/node": "22.9.1",
     "eslint": "8.57.1",
-    "outdent": "0.8.0"
+    "outdent": "0.8.0",
+    "tsx": "4.19.2"
   }
 }

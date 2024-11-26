@@ -36,10 +36,10 @@
     }
   },
   "scripts": {
-    "test": "node --test --import @swc-node/register/esm-register \"**/*.spec.ts\""
+    "test": "node --test --import tsx/esm \"**/*.spec.ts\""
   },
   "devDependencies": {
-    "@swc-node/register": "1.10.0",
-    "@total-typescript/ts-reset": "0.6.1"
+    "@total-typescript/ts-reset": "0.6.1",
+    "tsx": "4.19.2"
   }
 }

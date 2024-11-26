@@ -26,10 +26,10 @@
     "publint": "0.2.12"
   },
   "devDependencies": {
-    "@swc-node/register": "1.10.0",
     "@types/eslint": "8.56.11",
     "@types/estree": "1.0.6",
     "@types/node": "22.9.1",
-    "eslint": "8.57.1"
+    "eslint": "8.57.1",
+    "tsx": "4.19.2"
   }
 }

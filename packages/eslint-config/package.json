@@ -24,7 +24,7 @@
   "exports": "./dist/eslint.config.js",
   "scripts": {
     "build": "tsc",
-    "test": "node --test --import @swc-node/register/esm-register \"**/*.spec.ts\""
+    "test": "node --test --import tsx/esm \"**/*.spec.ts\""
   },
   "dependencies": {
     "@fenge/eslint-plugin": "workspace:*",
@@ -48,12 +48,12 @@
     "globals": "15.12.0"
   },
   "devDependencies": {
-    "@swc-node/register": "1.10.0",
     "@types/eslint-config-prettier": "6.11.3",
     "@types/node": "22.9.1",
     "eslint": "8.57.1",
     "eslint-config-prettier": "9.1.0",
-    "prettier": "3.4.1"
+    "prettier": "3.4.1",
+    "tsx": "4.19.2"
   },
   "peerDependencies": {
     "eslint": ">=8.57.1"
