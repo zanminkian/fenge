@@ -9,15 +9,14 @@ import { dir, execAsync, getBinPath } from "../utils.js";
  * @param {{update?: boolean, write?: boolean, dryRun?: boolean, config?: string, default?: boolean}} options
  */
 export async function format(paths = [], options = {}) {
-  const { update = false, write = false, dryRun = false, config } = options;
-  const useDefaultConfig = options["default"] ?? false;
+  const {
+    update = false,
+    write = false,
+    dryRun = false,
+    config,
+    default: useDefaultConfig,
+  } = options;
 
-  if (config) {
-    process.env["FENGE_CONFIG"] = config;
-  }
-  if (useDefaultConfig) {
-    process.env["FENGE_USE_DEFAULT_CONFIG"] = "true";
-  }
   const ignores = [".gitignore", ".prettierignore", prettierignore]
     .map((p) => path.resolve(p))
     .flatMap((p) => ["--ignore-path", p]);
@@ -37,6 +36,13 @@ export async function format(paths = [], options = {}) {
         path.resolve(process.cwd(), p),
       ),
     ],
-    { topic: "💃 Checking formatting", dryRun },
+    {
+      topic: "💃 Checking formatting",
+      dryRun,
+      env: {
+        ...(config && { FENGE_CONFIG: config }),
+        ...(useDefaultConfig && { FENGE_USE_DEFAULT_CONFIG: "true" }),
+      },
+    },
   );
 }

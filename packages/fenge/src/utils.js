@@ -69,10 +69,10 @@ function getSpentTime(startTime) {
 
 /**
  * @param {string[]} command
- * @param {{topic: string, dryRun: boolean}} options
+ * @param {{topic: string, dryRun: boolean, env: Record<string, string>}} options
  * @returns {Promise<number>}
  */
-export async function execAsync(command, { topic, dryRun }) {
+export async function execAsync(command, { topic, dryRun, env }) {
   const [cmd, ...args] = command;
   if (!cmd) {
     throw new Error("cmd not found");
@@ -85,7 +85,7 @@ export async function execAsync(command, { topic, dryRun }) {
   return new Promise((resolve) => {
     const spinner = ora(`${topic}...`).start();
     const cp = childProcess.spawn(cmd, args, {
-      env: { FORCE_COLOR: "true", ...process.env },
+      env: { FORCE_COLOR: "true", ...process.env, ...env },
     });
     let stdout = Buffer.from([]);
     let stderr = Buffer.from([]);

@@ -8,16 +8,14 @@ import { dir, execAsync, getBinPath } from "../utils.js";
  * @param {{update?: boolean, fix?: boolean, dryRun?: boolean, config?: string, default?: boolean}} options
  */
 export async function lint(paths = [], options = {}) {
-  const { update = false, fix = false, dryRun = false, config } = options;
-  const useDefaultConfig = options["default"] ?? false;
+  const {
+    update = false,
+    fix = false,
+    dryRun = false,
+    config,
+    default: useDefaultConfig,
+  } = options;
 
-  if (config) {
-    process.env["FENGE_CONFIG"] = config;
-  }
-  if (useDefaultConfig) {
-    process.env["FENGE_USE_DEFAULT_CONFIG"] = "true";
-  }
-  process.env["ESLINT_USE_FLAT_CONFIG"] = "true"; // TODO remove it once upgrade to eslint 9
   return execAsync(
     [
       // "node",
@@ -29,6 +27,14 @@ export async function lint(paths = [], options = {}) {
         path.resolve(process.cwd(), p),
       ),
     ],
-    { topic: "📏 Checking linting", dryRun },
+    {
+      topic: "📏 Checking linting",
+      dryRun,
+      env: {
+        ESLINT_USE_FLAT_CONFIG: "true", // TODO remove it once upgrade to eslint 9
+        ...(config && { FENGE_CONFIG: config }),
+        ...(useDefaultConfig && { FENGE_USE_DEFAULT_CONFIG: "true" }),
+      },
+    },
   );
 }
