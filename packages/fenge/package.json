@@ -35,9 +35,12 @@
     "./types": {
       "types": "./types/index.d.ts"
     },
-    "./tsconfig": "./tsconfig/tsconfig.json",
-    "./tsconfig/*": "./tsconfig/*.json",
-    "./tsconfig/*.json": "./tsconfig/*.json"
+    "./tsconfig": "./tsconfig/index.json",
+    "./tsconfig.json": "./tsconfig/index.json",
+    "./tsconfig/esm": "./tsconfig/esm.json",
+    "./tsconfig/esm.json": "./tsconfig/esm.json",
+    "./tsconfig/cjs": "./tsconfig/cjs.json",
+    "./tsconfig/cjs.json": "./tsconfig/cjs.json"
   },
   "bin": "./src/bin/cli.js",
   "scripts": {
