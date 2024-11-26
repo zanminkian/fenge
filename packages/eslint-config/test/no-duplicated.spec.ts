@@ -47,6 +47,7 @@ await describe("no duplicated", async () => {
           [
             "@typescript-eslint/no-floating-promises",
             "@typescript-eslint/unbound-method",
+            "esm/no-phantom-dep-imports",
             "import/no-default-export",
             // extension rule
             "@typescript-eslint/dot-notation",

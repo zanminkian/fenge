@@ -230,6 +230,7 @@ export function typescript(project?: string) {
       name: "fenge/typescript/config",
       files: ["**/*.config.{ts,cts,mts,tsx}"],
       rules: {
+        "esm/no-phantom-dep-imports": ["error", { allowDevDependencies: true }],
         "import/no-default-export": "off",
       },
     },
