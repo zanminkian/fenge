@@ -12,7 +12,7 @@ function count(content: string, substring: string) {
 await describe("no duplicated", async () => {
   await it("no duplicated js rules is defined", async () => {
     const configContent = await prettier.format(
-      (await fs.readFile("./src/config/javascript.ts", "utf-8")).replace(
+      (await fs.readFile("./src/config/javascript.ts", "utf8")).replace(
         "// prettier-ignore",
         "",
       ),
@@ -33,7 +33,7 @@ await describe("no duplicated", async () => {
 
   await it("no duplicated ts rules is defined", async () => {
     const configContent = await prettier.format(
-      (await fs.readFile("./src/config/typescript.ts", "utf-8")).replace(
+      (await fs.readFile("./src/config/typescript.ts", "utf8")).replace(
         "// prettier-ignore",
         "",
       ),

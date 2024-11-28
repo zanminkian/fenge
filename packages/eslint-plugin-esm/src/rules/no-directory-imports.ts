@@ -28,7 +28,7 @@ function check(filename: string, source: string) {
 const isDir = memoize((filePath: string) => {
   try {
     return fs.statSync(filePath).isDirectory();
-  } catch (e) {
+  } catch {
     return false;
   }
 });

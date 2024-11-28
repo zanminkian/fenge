@@ -20,7 +20,7 @@ function isJs(file) {
  * @param {string} filepath ts or js file absolute path
  */
 async function getAnalysis(filepath) {
-  const code = await fs.readFile(filepath, "utf-8");
+  const code = await fs.readFile(filepath, "utf8");
   const result = {
     /** @type {{start:{line:number,column:number}}[]} */
     anyTypes: [],

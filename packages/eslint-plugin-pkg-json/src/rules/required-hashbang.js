@@ -56,7 +56,7 @@ function isValidBinPath(filename, binPath) {
   const filePath = path.resolve(path.dirname(filename), binPath);
   try {
     return fs.readFileSync(filePath, "utf8").trimStart().startsWith("#!");
-  } catch (e) {
+  } catch {
     return false;
   }
 }

@@ -48,7 +48,7 @@ export async function resolveConfig(module, loadPath) {
  */
 export async function importJson(importMetaUrl, jsonPath) {
   return JSON.parse(
-    await fs.readFile(path.resolve(dir(importMetaUrl), jsonPath), "utf-8"),
+    await fs.readFile(path.resolve(dir(importMetaUrl), jsonPath), "utf8"),
   );
 }
 

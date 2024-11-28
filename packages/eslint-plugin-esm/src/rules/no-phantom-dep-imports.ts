@@ -10,7 +10,7 @@ function isObject(value: unknown) {
 function isFile(filePath: string) {
   try {
     return fs.statSync(filePath).isFile();
-  } catch (e) {
+  } catch {
     return false;
   }
 }
