@@ -20,7 +20,7 @@ await describe("eslint.config", async () => {
     });
   });
 
-  await it("should not contain deprecated rules", async () => {
+  await it("should not contain deprecated rules", () => {
     // https://eslint.org/blog/2023/10/deprecating-formatting-rules/#the-deprecated-rules
     const deprecatedRules = [
       "array-bracket-newline",

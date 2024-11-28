@@ -108,6 +108,7 @@ export function typescript(project?: string) {
         "@typescript-eslint/adjacent-overload-signatures": "error",
         // "@typescript-eslint/array-type": ["error", 'array-simple'], // The default option is 'array'. Not very sure if we need to change the option. So disabled it.
         "@typescript-eslint/await-thenable": "error",
+        "@typescript-eslint/class-literal-property-style": "error",
         "@typescript-eslint/consistent-generic-constructors": "error",
         "@typescript-eslint/consistent-indexed-object-style": "error",
         "@typescript-eslint/consistent-type-assertions": [
@@ -164,6 +165,7 @@ export function typescript(project?: string) {
         "@typescript-eslint/no-duplicate-type-constituents": "error",
         "@typescript-eslint/no-empty-object-type": "error",
         "@typescript-eslint/no-extra-non-null-assertion": "error",
+        "@typescript-eslint/no-extraneous-class": "error",
         "@typescript-eslint/no-floating-promises": [
           "error",
           {
@@ -173,27 +175,39 @@ export function typescript(project?: string) {
         "@typescript-eslint/no-for-in-array": "error",
         "@typescript-eslint/no-import-type-side-effects": "error",
         "@typescript-eslint/no-inferrable-types": "error",
+        "@typescript-eslint/no-invalid-void-type": "error",
         "@typescript-eslint/no-misused-new": "error",
         "@typescript-eslint/no-misused-promises": "error",
         "@typescript-eslint/no-mixed-enums": "error",
         "@typescript-eslint/no-namespace": "error",
+        "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
         "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
         "@typescript-eslint/no-non-null-assertion": "error",
+        "@typescript-eslint/no-redundant-type-constituents": "error",
         "@typescript-eslint/no-require-imports": "error",
         "@typescript-eslint/no-this-alias": "error",
+        // "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error", // unsafe when `strictNullChecks` in tsconfig.json is disabled
         "@typescript-eslint/no-unnecessary-condition": "error",
         "@typescript-eslint/no-unnecessary-parameter-property-assignment":
           "error",
         "@typescript-eslint/no-unnecessary-template-expression": "error", // js also need this rule
+        "@typescript-eslint/no-unnecessary-type-arguments": "error",
         "@typescript-eslint/no-unnecessary-type-assertion": "error",
         "@typescript-eslint/no-unnecessary-type-constraint": "error",
         "@typescript-eslint/no-unsafe-declaration-merging": "error",
+        "@typescript-eslint/no-unsafe-enum-comparison": "error",
         "@typescript-eslint/no-unsafe-function-type": "error",
+        "@typescript-eslint/no-unsafe-return": "error",
+        "@typescript-eslint/no-unsafe-unary-minus": "error",
         "@typescript-eslint/no-wrapper-object-types": "error",
+        "@typescript-eslint/non-nullable-type-assertion-style": "error",
         "@typescript-eslint/prefer-as-const": "error",
+        "@typescript-eslint/prefer-for-of": "error",
         "@typescript-eslint/prefer-function-type": "error",
+        "@typescript-eslint/prefer-literal-enum-member": "error",
         "@typescript-eslint/prefer-optional-chain": "error",
         "@typescript-eslint/prefer-readonly": "error",
+        "@typescript-eslint/prefer-return-this-type": "error",
         "@typescript-eslint/restrict-plus-operands": [
           "error",
           {
@@ -217,6 +231,7 @@ export function typescript(project?: string) {
             allowRegExp: false,
           },
         ],
+        "@typescript-eslint/related-getter-setter-pairs": "error",
         "@typescript-eslint/return-await": ["error", "always"],
         "@typescript-eslint/switch-exhaustiveness-check": [
           "error",
