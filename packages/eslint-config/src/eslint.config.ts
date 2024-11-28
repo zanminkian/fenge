@@ -1,5 +1,4 @@
-import { gitignore } from "./config/gitignore.js";
-import { ignore } from "./config/ignore.js";
+import { base } from "./config/base.js";
 import { javascript } from "./config/javascript.js";
 import { packagejson } from "./config/packagejson.js";
 import { typescript } from "./config/typescript.js";
@@ -32,7 +31,7 @@ interface Options<T extends string[]> {
 }
 
 export class Builder {
-  private readonly configs: object[] = [...gitignore(), ...ignore()];
+  private readonly configs: object[] = [...base()];
 
   toConfig() {
     return this.configs;

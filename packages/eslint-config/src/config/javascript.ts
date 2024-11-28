@@ -277,10 +277,6 @@ export function javascript() {
           ),
         },
       },
-      linterOptions: {
-        // noInlineConfig: true, // too strict
-        reportUnusedDisableDirectives: true,
-      },
       plugins: {
         fp: fpPlugin,
         n: nPlugin,
