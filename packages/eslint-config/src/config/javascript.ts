@@ -479,6 +479,7 @@ export function javascript() {
 
         "@fenge/call-arguments-length": "error",
         "@fenge/no-instanceof-builtin": "error",
+        "@fenge/no-jsx-in-non-jsx-file": "error",
         "@fenge/no-restricted-loops": "error",
         "@fenge/no-unnecessary-template-string": "error",
 
