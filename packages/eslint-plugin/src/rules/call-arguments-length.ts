@@ -90,48 +90,72 @@ const rule: Rule.RuleModule = {
 
     const options = Object.entries(
       context.options[0] ?? {
+        // 1
         "*.reduce": 2,
         "*.reduceRight": 2,
         "*.push": { min: 1 },
+        "Math.max": { min: 2 },
+        "Math.min": { min: 2 },
+        // 2
         "new Set": { max: 1 },
         "new Map": { max: 1 },
       },
-    );
+    ).map(([pattern, expectedLength]) => ({
+      regex: new RegExp(
+        `^${pattern.replaceAll(".", "\\.").replaceAll("*", ".*")}$`,
+      ),
+      pattern,
+      expectedLength,
+    }));
+
+    const handle = (node: CallExpression | NewExpression) => {
+      const prefix = node.type === "NewExpression" ? "new " : "";
+
+      const { callee } = node;
+      // function call
+      if (callee.type === "Identifier") {
+        // code like `foo()` or `new Foo()`
+        options
+          .filter((option) => option.regex.test(`${prefix}${callee.name}`))
+          .forEach(({ pattern, expectedLength }) => {
+            report(node, pattern, expectedLength);
+          });
+      }
+      // method call
+      else if (
+        callee.type === "MemberExpression" &&
+        callee.property.type === "Identifier"
+      ) {
+        const { object: calleeObject, property: calleeProperty } = callee;
+        options
+          .filter((option) => {
+            // code like `Math.max()` or `new Foo.Bar()`, the calleeObject is `Math` or `Foo`
+            if (
+              "name" in calleeObject &&
+              option.regex.test(
+                `${prefix}${calleeObject.name}.${calleeProperty.name}`,
+              )
+            ) {
+              return true;
+            }
+            // code like `[].reduce()` or `new ({Foo: class{}}).Foo()`, the calleeObject is `[]` or `{Foo: class{}}`
+            if (
+              !("name" in calleeObject) &&
+              option.regex.test(`${prefix}.${calleeProperty.name}`)
+            ) {
+              return true;
+            }
+            return false;
+          })
+          .forEach(({ pattern, expectedLength }) => {
+            report(node, pattern, expectedLength);
+          });
+      }
+    };
+
     return {
-      CallExpression: (node) => {
-        // function call
-        if (node.callee.type === "Identifier") {
-          for (const [pattern, expectedLength] of options.filter(
-            ([pattern]) =>
-              !pattern.startsWith("*.") && !pattern.startsWith("new "),
-          )) {
-            if (node.callee.name !== pattern) continue;
-            report(node, pattern, expectedLength);
-          }
-        }
-        // method call
-        else if (
-          node.callee.type === "MemberExpression" &&
-          node.callee.property.type === "Identifier"
-        ) {
-          for (const [pattern, expectedLength] of options.filter(([pattern]) =>
-            pattern.startsWith("*."),
-          )) {
-            if (node.callee.property.name !== pattern.split(".")[1]) continue;
-            report(node, pattern, expectedLength);
-          }
-        }
-      },
-      // new call
-      NewExpression: (node) => {
-        if (node.callee.type !== "Identifier") return;
-        for (const [pattern, expectedLength] of options.filter(([pattern]) =>
-          pattern.startsWith("new "),
-        )) {
-          if (node.callee.name !== pattern.split(" ")[1]) continue;
-          report(node, pattern, expectedLength);
-        }
-      },
+      CallExpression: handle,
+      NewExpression: handle,
     };
   },
 };

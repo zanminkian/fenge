@@ -18,6 +18,7 @@ const valid = [
   "foo.reduceRight(bar, baz)",
   "reduce(()=>123)",
   "foo.reduceLeft(()=>123)",
+  "Math.max(...foo)",
 
   "new foo.Set(...bar)",
   "new Set(bar)",
@@ -36,6 +37,9 @@ const invalid = [
   "foo.reduceRight(bar)",
   "[].reduce(...foo)",
   "[].reduce(...foo, ...bar)",
+  "Math.max()",
+  "Math.max(1)",
+  "Math.min(foo)",
 
   "new Set(...foo)",
   "new Set(foo,bar)",
