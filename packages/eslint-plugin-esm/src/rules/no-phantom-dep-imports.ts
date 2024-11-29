@@ -94,13 +94,15 @@ export const noPhantomDepImports = createRule({
       const isInDep = moduleName in dep || moduleName in peerDep;
       const isInDev = moduleName in devDep;
       if ("importKind" in node && node.importKind === "type") {
-        return moduleName.startsWith("@") && moduleName.includes("/")
-          ? !(
-              isInDep ||
-              isInDev ||
-              `@types/${moduleName.slice(1).replace("/", "__")}` in devDep
-            )
-          : !(isInDep || isInDev || `@types/${moduleName}` in devDep);
+        const typeDepName = moduleName.startsWith("@")
+          ? `@types/${moduleName.slice(1).replace("/", "__")}`
+          : `@types/${moduleName}`;
+        return !(
+          isInDep ||
+          isInDev ||
+          typeDepName in dep ||
+          typeDepName in devDep
+        );
       } else {
         return allowDevDependencies ? !(isInDep || isInDev) : !isInDep;
       }
