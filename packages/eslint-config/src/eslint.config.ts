@@ -90,10 +90,8 @@ export class Builder {
     return this;
   }
 
-  enableTypescript<T extends TsRuleKey[]>(
-    options: Options<T> & { project?: string } = {},
-  ) {
-    return this.setup(typescript(options.project), options);
+  enableTypescript<T extends TsRuleKey[]>(options: Options<T> = {}) {
+    return this.setup(typescript(), options);
   }
 
   enableJavascript<T extends JsRuleKey[]>(options: Options<T> = {}) {

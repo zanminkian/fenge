@@ -6,6 +6,7 @@ await describe("eslint.config", async () => {
   await it("length of default export should be 11", () => {
     assert.strictEqual(config.length, 11);
   });
+
   await it("no warns", () => {
     config.forEach((configItem) => {
       if (

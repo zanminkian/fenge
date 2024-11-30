@@ -242,7 +242,6 @@ export default {
         omit: ["no-var"], // these rules will not work for js files
       })
       .enableTypescript({
-        project: "tsconfig.json", // tsconfig.json path
         extend: {
           // apply additional rules for ts files
           "@typescript-eslint/no-explicit-any": "error",
