@@ -125,7 +125,7 @@ Config `tsconfig.json` file in your project root.
 }
 ```
 
-Config `tsconfig.build.json` file in sub-package or project root.
+Config `tsconfig.build.json` file in your project root.
 
 ```json
 {
