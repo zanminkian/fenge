@@ -1,5 +1,12 @@
 # @fenge/eslint-plugin
 
+## 0.1.2-beta.0
+
+### Patch Changes
+
+- 51502cc: feat: add rule `@fenge/no-jsx-in-non-jsx-file`
+- 713d9a2: feat(eslint-plugin): support glob for `call-arguments-length` option
+
 ## 0.1.1
 
 ### Patch Changes

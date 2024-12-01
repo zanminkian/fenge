@@ -1,5 +1,26 @@
 # @fenge/eslint-config
 
+## 0.4.0-beta.0
+
+### Minor Changes
+
+- 1f5fce3: refactor(eslint-config): optimize config structure
+- 2f12ec2: refactor(eslint-config): optimize config structure and remove `project` param for ts config
+
+### Patch Changes
+
+- 5adeeed: fix: add missing peerDependencies and peerDependenciesMeta
+- 36d1fb0: chore: upgrade deps
+- 0d71378: fix(eslint-config): allow import module from devDependencies for config files
+- 41c783a: feat(eslint-config): add many built-in and @typescript-eslint recommended rules
+- 3f4e737: feat(eslint-config): add many rules of `eslint-plugin-unicorn`
+- 51502cc: feat: add rule `@fenge/no-jsx-in-non-jsx-file`
+- Updated dependencies [51502cc]
+- Updated dependencies [0c4462d]
+- Updated dependencies [713d9a2]
+  - @fenge/eslint-plugin@0.1.2-beta.0
+  - eslint-plugin-esm@0.2.2-beta.0
+
 ## 0.3.0
 
 ### Minor Changes
