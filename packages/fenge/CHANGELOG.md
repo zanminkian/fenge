@@ -1,5 +1,30 @@
 # fenge
 
+## 0.2.0-beta.0
+
+### Minor Changes
+
+- be7e3d5: chore(fenge): upgrade `prettier` to 3.4.1
+- 4c6fa59: refactor(fenge): optimize tsconfig exports and rename tsconfig.json to index.json
+
+### Patch Changes
+
+- Updated dependencies [5adeeed]
+- Updated dependencies [36d1fb0]
+- Updated dependencies [3605e14]
+- Updated dependencies [0d71378]
+- Updated dependencies [a5fb6f8]
+- Updated dependencies [41c783a]
+- Updated dependencies [b1fc095]
+- Updated dependencies [3f4e737]
+- Updated dependencies [1f5fce3]
+- Updated dependencies [51502cc]
+- Updated dependencies [2f12ec2]
+  - @fenge/prettier-config@0.1.3-beta.0
+  - @fenge/eslint-config@0.4.0-beta.0
+  - @fenge/types@0.2.0-beta.0
+  - @fenge/tsconfig@0.1.1-beta.0
+
 ## 0.1.8
 
 ### Patch Changes

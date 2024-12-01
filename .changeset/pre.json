@@ -15,5 +15,21 @@
     "@fenge/tsconfig": "0.1.0",
     "@fenge/types": "0.1.0"
   },
-  "changesets": []
+  "changesets": [
+    "chatty-trees-build",
+    "cyan-apples-lick",
+    "dry-moose-obey",
+    "loud-poets-retire",
+    "nasty-candles-exist",
+    "rude-shrimps-arrive",
+    "selfish-bananas-tell",
+    "silent-radios-serve",
+    "sixty-mails-reply",
+    "stale-students-relate",
+    "tidy-pandas-cover",
+    "unlucky-impalas-approve",
+    "wet-singers-end",
+    "wild-monkeys-boil",
+    "witty-hotels-exercise"
+  ]
 }
