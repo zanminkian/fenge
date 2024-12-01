@@ -22,17 +22,8 @@
     ".": {
       "types": "./src/index.d.ts"
     },
-    "./array-is-array": {
-      "types": "./src/array-is-array.d.ts"
-    },
-    "./json-parse": {
-      "types": "./src/json-parse.d.ts"
-    },
-    "./map-constructor": {
-      "types": "./src/map-constructor.d.ts"
-    },
-    "./promise-catch": {
-      "types": "./src/promise-catch.d.ts"
+    "./*": {
+      "types": "./src/*.d.ts"
     }
   },
   "scripts": {

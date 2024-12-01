@@ -15,6 +15,7 @@ A type patch for TypeScript, enhancing type-safe for built-in JavaScript apis.
 - 🚨 `Array.isArray` returns `any[]`.
 - 🚨 `JSON.parse` returns `any`.
 - 🚨 `new Map()` generates `Map<any, any>`.
+- 🚨 `new Promise()` can reject a non `Error` variable.
 - 🚨 `<promise object>.catch` accepts `(reason: any) => void | PromiseLike<void>`
 
 **With this library:**
@@ -22,6 +23,7 @@ A type patch for TypeScript, enhancing type-safe for built-in JavaScript apis.
 - 👍 `Array.isArray` returns `unknown[]`.
 - 👍 `JSON.parse` returns `unknown`.
 - 👍 `new Map()` generates `Map<unknown, unknown>`.
+- 👍 `new Promise()` must reject an `Error` variable.
 - 👍 `<promise object>.catch` accepts `(reason: unknown) => void | PromiseLike<void>`
 
 ## Usage
