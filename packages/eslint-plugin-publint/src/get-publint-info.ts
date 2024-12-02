@@ -9,17 +9,18 @@ import type { Pkg } from "publint/utils";
  * Sync function of `(await import('publint')).publint()`.
  * If publint provides sync function, this function should be deleted.
  */
-function publint(pkgDir: string): Result {
+function publint(pkgDir: string) {
   // publint doesn't provide sync function
   const publintPath = path.join(
     path.dirname(fileURLToPath(import.meta.url)),
     "publint.cli.js",
   );
-  return JSON.parse(
+  const result: Result = JSON.parse(
     childProcess.execSync(`node ${publintPath} ${pkgDir}`, {
       encoding: "utf8",
     }),
   );
+  return result;
 }
 
 export interface PublintInfo {

@@ -181,7 +181,7 @@ export const tsBase = {
     "@typescript-eslint/no-unsafe-declaration-merging": "error",
     "@typescript-eslint/no-unsafe-enum-comparison": "error",
     "@typescript-eslint/no-unsafe-function-type": "error",
-    "@typescript-eslint/no-unsafe-return": "error", // TODO: Follow up this issue: https://github.com/typescript-eslint/typescript-eslint/issues/10439
+    "@typescript-eslint/no-unsafe-return": "error", // This rule is not very perfect. See https://github.com/typescript-eslint/typescript-eslint/issues/10439
     "@typescript-eslint/no-unsafe-unary-minus": "error",
     "@typescript-eslint/no-wrapper-object-types": "error",
     "@typescript-eslint/non-nullable-type-assertion-style": "error",
