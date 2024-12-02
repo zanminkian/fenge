@@ -1,4 +1,4 @@
-import { base } from "./config/base.js";
+import { base, type LinterOptions } from "./config/base.js";
 import { javascript } from "./config/javascript.js";
 import { packagejson } from "./config/packagejson.js";
 import { typescript } from "./config/typescript.js";
@@ -31,8 +31,13 @@ interface Options<T extends string[]> {
       >;
 }
 
+export type BuilderOptions = LinterOptions;
 export class Builder {
-  private readonly configs: object[] = [...base()];
+  private readonly configs: object[] = [];
+
+  constructor(options: BuilderOptions = {}) {
+    this.configs.push(...base(options));
+  }
 
   toConfig() {
     return this.configs;

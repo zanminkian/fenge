@@ -1,5 +1,10 @@
 import childProcess from "node:child_process";
 
+export interface LinterOptions {
+  reportUnusedDisableDirectives?: "error" | "warn" | "off";
+  noInlineConfig?: boolean;
+}
+
 function gitignore() {
   let stdout = "";
   try {
@@ -22,7 +27,10 @@ function gitignore() {
   ] as const;
 }
 
-export function base() {
+export function base({
+  reportUnusedDisableDirectives = "off",
+  noInlineConfig = false,
+}: LinterOptions = {}) {
   return [
     ...gitignore(), // global ignore
     {
@@ -33,8 +41,8 @@ export function base() {
         "**/package.json",
       ],
       linterOptions: {
-        // noInlineConfig: true, // too strict
-        reportUnusedDisableDirectives: true,
+        reportUnusedDisableDirectives,
+        noInlineConfig,
       },
     },
     // Ignore unsupported files.
