@@ -493,6 +493,9 @@ export const jsBase = {
         "ts-nocheck": true,
       },
     ],
+    "@typescript-eslint/class-literal-property-style": "error",
+    "@typescript-eslint/no-this-alias": "error",
     "@typescript-eslint/no-useless-empty-export": "error",
+    "@typescript-eslint/prefer-for-of": "error",
   },
 } as const;

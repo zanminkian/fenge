@@ -101,7 +101,6 @@ export const tsBase = {
     "@typescript-eslint/adjacent-overload-signatures": "error",
     // "@typescript-eslint/array-type": ["error", 'array-simple'], // The default option is 'array'. Not very sure if we need to change the option. So disabled it.
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/class-literal-property-style": "error",
     "@typescript-eslint/consistent-generic-constructors": "error",
     "@typescript-eslint/consistent-indexed-object-style": "error",
     "@typescript-eslint/consistent-type-assertions": [
@@ -172,7 +171,6 @@ export const tsBase = {
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-redundant-type-constituents": "error",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-this-alias": "error",
     // "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error", // unsafe when `strictNullChecks` in tsconfig.json is disabled
     "@typescript-eslint/no-unnecessary-condition": "error",
     "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
@@ -183,12 +181,11 @@ export const tsBase = {
     "@typescript-eslint/no-unsafe-declaration-merging": "error",
     "@typescript-eslint/no-unsafe-enum-comparison": "error",
     "@typescript-eslint/no-unsafe-function-type": "error",
-    "@typescript-eslint/no-unsafe-return": "error",
+    "@typescript-eslint/no-unsafe-return": "error", // TODO: Follow up this issue: https://github.com/typescript-eslint/typescript-eslint/issues/10439
     "@typescript-eslint/no-unsafe-unary-minus": "error",
     "@typescript-eslint/no-wrapper-object-types": "error",
     "@typescript-eslint/non-nullable-type-assertion-style": "error",
     "@typescript-eslint/prefer-as-const": "error",
-    "@typescript-eslint/prefer-for-of": "error",
     "@typescript-eslint/prefer-function-type": "error",
     "@typescript-eslint/prefer-literal-enum-member": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
