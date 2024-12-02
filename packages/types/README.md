@@ -16,7 +16,8 @@ A type patch for TypeScript, enhancing type-safe for built-in JavaScript apis.
 - 🚨 `JSON.parse` returns `any`.
 - 🚨 `new Map()` generates `Map<any, any>`.
 - 🚨 `new Promise()` can reject a non `Error` variable.
-- 🚨 `<promise object>.catch` accepts `(reason: any) => void | PromiseLike<void>`
+- 🚨 `<promise object>.catch` accepts `(reason: any) => void | PromiseLike<void>`.
+- 🚨 `<promise object>.then` accepts `(reason: any) => void | PromiseLike<void>` for the second parameter.
 
 **With this library:**
 
@@ -24,7 +25,8 @@ A type patch for TypeScript, enhancing type-safe for built-in JavaScript apis.
 - 👍 `JSON.parse` returns `unknown`.
 - 👍 `new Map()` generates `Map<unknown, unknown>`.
 - 👍 `new Promise()` must reject an `Error` variable.
-- 👍 `<promise object>.catch` accepts `(reason: unknown) => void | PromiseLike<void>`
+- 👍 `<promise object>.catch` accepts `(reason: unknown) => void | PromiseLike<void>`.
+- 👍 `<promise object>.then` accepts `(reason: unknown) => void | PromiseLike<void>` for the second parameter.
 
 ## Usage
 
