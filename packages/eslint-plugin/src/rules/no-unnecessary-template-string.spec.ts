@@ -4,7 +4,7 @@ import { noUnnecessaryTemplateString } from "./no-unnecessary-template-string.js
 const valid = [
   "'abc'",
   '"def"',
-  "`ab${cd}ef`", // eslint-disable-line no-template-curly-in-string
+  "`ab${cd}ef`",
   "`\n`",
   "`abc\n`",
   "`\nabc`",

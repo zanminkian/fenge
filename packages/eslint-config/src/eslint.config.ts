@@ -1,4 +1,4 @@
-import { base } from "./config/base.js";
+import { base, type LinterOptions } from "./config/base.js";
 import { javascript } from "./config/javascript.js";
 import { packagejson } from "./config/packagejson.js";
 import { typescript } from "./config/typescript.js";
@@ -18,20 +18,26 @@ type PkgRuleKey = keyof ReturnType<typeof packagejson>[0]["rules"];
 interface Options<T extends string[]> {
   pick?: NoDuplicate<T>;
   omit?: NoDuplicate<T>;
-  extend?: Record<
-    string,
-    "error" | "warn" | "off" | ["error" | "warn", ...unknown[]]
-  >;
-  override?: Partial<
-    Record<
-      T[number],
-      "error" | "warn" | "off" | ["error" | "warn", ...unknown[]]
-    >
-  >;
+  append?:
+    | Partial<
+        Record<
+          T[number],
+          "error" | "warn" | "off" | ["error" | "warn", ...unknown[]]
+        >
+      >
+    | Record<
+        string,
+        "error" | "warn" | "off" | ["error" | "warn", ...unknown[]]
+      >;
 }
 
+export type BuilderOptions = LinterOptions;
 export class Builder {
-  private readonly configs: object[] = [...base()];
+  private readonly configs: object[] = [];
+
+  constructor(options: BuilderOptions = {}) {
+    this.configs.push(...base(options));
+  }
 
   toConfig() {
     return this.configs;
@@ -42,7 +48,7 @@ export class Builder {
       { plugins: object; rules: object },
       ...object[],
     ],
-    { pick, omit, extend = {}, override = {} }: Options<string[]>,
+    { pick, omit, append = {} }: Options<string[]>,
   ) {
     const select = (ruleKey: string) => {
       if (!pick && !omit) {
@@ -58,33 +64,8 @@ export class Builder {
     const rules = Object.fromEntries(
       Object.entries(mainConfig.rules).filter(([ruleKey]) => select(ruleKey)),
     );
-    // check `override` field
-    Object.keys(override).forEach((key) => {
-      if (!(key in rules)) {
-        throw new Error(`The overriding rule key ${key} is not existing.`);
-      }
-    });
-    // check `extend` field
-    Object.keys(extend).forEach((key) => {
-      if (key in rules) {
-        throw new Error(`The extending rule key ${key} is already existing.`);
-      }
-      if (key.includes("/")) {
-        const pluginName = key.split("/")[0];
-        if (!pluginName)
-          throw new Error(`The extending rule key '${key}' is invalid`);
-        if (!(pluginName in mainConfig.plugins)) {
-          const supportedPlugins = Object.keys(mainConfig.plugins)
-            .map((k) => `'${k}'`)
-            .join(",");
-          throw new Error(
-            `The plugin name '${pluginName}' of extending rule key '${key}' is not supported. Only ${supportedPlugins} plugins are supported.`,
-          );
-        }
-      }
-    });
     this.configs.push(
-      { ...mainConfig, rules: { ...rules, ...override, ...extend } },
+      { ...mainConfig, rules: { ...rules, ...append } },
       ...otherConfigs,
     );
     return this;

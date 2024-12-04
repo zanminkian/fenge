@@ -14,7 +14,7 @@ export async function format(paths = [], options = {}) {
     write = false,
     dryRun = false,
     config,
-    default: useDefaultConfig,
+    default: useDefaultConfig = false,
   } = options;
 
   const ignores = [".gitignore", ".prettierignore", prettierignore]
@@ -23,7 +23,7 @@ export async function format(paths = [], options = {}) {
   return execAsync(
     [
       // "node",
-      await getBinPath("prettier"),
+      await getPrettierPath(useDefaultConfig),
       ...ignores,
       "--log-level",
       "warn",
@@ -44,5 +44,18 @@ export async function format(paths = [], options = {}) {
         ...(useDefaultConfig && { FENGE_USE_DEFAULT_CONFIG: "true" }),
       },
     },
+  );
+}
+
+/**
+ * @param {boolean} useDefaultConfig
+ */
+async function getPrettierPath(useDefaultConfig) {
+  const builtinBinPath = await getBinPath("prettier");
+  if (useDefaultConfig) {
+    return builtinBinPath;
+  }
+  return await getBinPath("prettier", process.cwd()).catch(
+    () => builtinBinPath,
   );
 }

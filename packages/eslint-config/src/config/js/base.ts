@@ -164,7 +164,7 @@ const standardConfigRules = {
   'no-shadow-restricted-names': 'error',
   'no-sparse-arrays': 'error',
   // 'no-tabs': 'error',
-  'no-template-curly-in-string': 'error',
+  // 'no-template-curly-in-string': 'error', // User who using VSCode or WebStorm can easily notice the problem. Enabling this will decrease flexibility.
   'no-this-before-super': 'error',
   'no-throw-literal': 'error',
   // 'no-trailing-spaces': 'error',
@@ -493,6 +493,9 @@ export const jsBase = {
         "ts-nocheck": true,
       },
     ],
+    "@typescript-eslint/class-literal-property-style": "error",
+    "@typescript-eslint/no-this-alias": "error",
     "@typescript-eslint/no-useless-empty-export": "error",
+    "@typescript-eslint/prefer-for-of": "error",
   },
 } as const;

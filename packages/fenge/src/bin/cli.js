@@ -29,7 +29,7 @@ program
   .option("-c, --config <path>", "path to configuration file")
   .option(
     "--default",
-    "force to use built-in default config, ignore specified config and local config",
+    "force to use built-in default config, built-in prettier and built-in eslint. ignore specified config, local config, local prettier and local eslint",
   )
   .option(
     "-d, --dry-run",
