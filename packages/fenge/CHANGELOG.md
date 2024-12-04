@@ -1,5 +1,21 @@
 # fenge
 
+## 0.2.0-beta.1
+
+### Minor Changes
+
+- c7a01e8: refactor(eslint-config): replace `override` and `extend` properties with `append` property for overriding or extending the built-in rules
+- db82f69: feat(fenge): use local ESLint and Prettier first
+
+### Patch Changes
+
+- Updated dependencies [c7a01e8]
+- Updated dependencies [c5a6425]
+- Updated dependencies [d54f6af]
+- Updated dependencies [740fdb7]
+  - @fenge/eslint-config@0.4.0-beta.1
+  - @fenge/types@0.2.0-beta.1
+
 ## 0.2.0-beta.0
 
 ### Minor Changes

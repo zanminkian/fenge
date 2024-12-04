@@ -1,5 +1,16 @@
 # @fenge/eslint-config
 
+## 0.4.0-beta.1
+
+### Minor Changes
+
+- c7a01e8: refactor(eslint-config): replace `override` and `extend` properties with `append` property for overriding or extending the built-in rules
+- c5a6425: feat(eslint-config): allow configuring global linter options, and disable `reportUnusedDisableDirectives` by default
+
+### Patch Changes
+
+- 740fdb7: feat(eslint-config): remove rule `no-template-curly-in-string` for flexibility
+
 ## 0.4.0-beta.0
 
 ### Minor Changes

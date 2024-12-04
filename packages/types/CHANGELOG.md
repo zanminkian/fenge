@@ -1,5 +1,11 @@
 # @fenge/types
 
+## 0.2.0-beta.1
+
+### Minor Changes
+
+- d54f6af: refactor(types): separate `promise-catch.d.ts` into `promise-then.d.ts` and `promise-then.d.ts`
+
 ## 0.2.0-beta.0
 
 ### Minor Changes
