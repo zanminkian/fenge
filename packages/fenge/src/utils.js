@@ -145,10 +145,18 @@ function getExitCode(error) {
 
 /**
  * @param {string} moduleName `eslint` or `prettier` or `@commitlint/cli` or `lint-staged`
- * @param {string} cliName
+ * @param {string} from directory path or file path
  */
-export async function getBinPath(moduleName, cliName = moduleName) {
-  const packageJsonPath = createRequire(import.meta.url).resolve(
+export async function getBinPath(
+  moduleName,
+  from = fileURLToPath(import.meta.url),
+) {
+  const fromPath =
+    !from.endsWith(path.sep) && (await fs.stat(from)).isDirectory()
+      ? from + path.sep
+      : from;
+  const cliName = moduleName;
+  const packageJsonPath = createRequire(fromPath).resolve(
     `${moduleName}/package.json`,
   );
   /** @type {any} */
