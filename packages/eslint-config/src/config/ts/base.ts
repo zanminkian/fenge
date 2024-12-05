@@ -93,7 +93,7 @@ export const tsBase = {
     // fenge
     "@fenge-ts/exact-map-set-type": "error",
     "@fenge-ts/no-const-enum": "error",
-    "@fenge-ts/no-declares-in-ts-file": "error",
+    "@fenge-ts/no-declares": "error",
     "@fenge-ts/no-export-assignment": "error",
     "@fenge-ts/no-property-decorator": "error",
     "@fenge-ts/no-untyped-empty-array": "error",
