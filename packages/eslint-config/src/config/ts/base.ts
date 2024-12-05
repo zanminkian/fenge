@@ -165,7 +165,7 @@ export const tsBase = {
     "@typescript-eslint/no-misused-new": "error",
     "@typescript-eslint/no-misused-promises": "error",
     "@typescript-eslint/no-mixed-enums": "error",
-    "@typescript-eslint/no-namespace": "error",
+    "@typescript-eslint/no-namespace": "error", // consider to add option `{"allowDefinitionFiles": false}` to strictly forbid `namespace` keyword
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
     "@typescript-eslint/no-non-null-assertion": "error",
@@ -188,6 +188,7 @@ export const tsBase = {
     "@typescript-eslint/prefer-as-const": "error",
     "@typescript-eslint/prefer-function-type": "error",
     "@typescript-eslint/prefer-literal-enum-member": "error",
+    "@typescript-eslint/prefer-namespace-keyword": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
     "@typescript-eslint/prefer-readonly": "error",
     "@typescript-eslint/prefer-return-this-type": "error",
