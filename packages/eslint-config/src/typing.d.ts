@@ -1,11 +1,8 @@
-// We have to disabled it. Otherwise formatter will failed due to @ianvs/prettier-plugin-sort-imports bug
-// TODO remove declare keyword if this bug has been solved
-/* eslint-disable @fenge-ts/no-declares */
-declare module "eslint-plugin-*" {
-  const plugin: unknown;
+module "eslint-plugin-*" {
+  const plugin: unknown = {}; // TODO: Add initializer because of this issue https://github.com/IanVS/prettier-plugin-sort-imports/issues/196
   export default plugin;
 }
-declare module "confusing-browser-globals" {
-  const keys: string[];
+module "confusing-browser-globals" {
+  const keys: string[] = [];
   export default keys;
 }
