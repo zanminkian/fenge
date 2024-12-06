@@ -6,23 +6,19 @@ export interface LinterOptions {
 }
 
 function gitignore() {
-  let stdout = "";
-  try {
-    stdout = childProcess.execSync(
-      "git ls-files --others --ignored --exclude-standard --directory",
-      { encoding: "utf8" },
-    );
-  } catch (e) {
-    console.warn(
-      "Warn: Running `git ls-files` fail. We recommend to run `git init` to setup the project first.",
-      e,
-    );
-  }
+  // There are 2 kinds of exception:
+  // 1. Git is not installed. The `stdout` will be null.
+  // 2. The running directory is not initialized by `git init` command. The `stdout` will an empty string.
+  const { stdout } = childProcess.spawnSync(
+    "git",
+    ["ls-files", "--others", "--ignored", "--exclude-standard", "--directory"],
+    { encoding: "utf8" },
+  );
   // https://eslint.org/docs/latest/use/configure/configuration-files#specifying-files-and-ignores
   return [
     {
       name: "fenge/gitignore",
-      ignores: stdout.split("\n").filter(Boolean),
+      ignores: (stdout || "").split("\n").filter(Boolean),
     },
   ] as const;
 }
