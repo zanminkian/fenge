@@ -1,10 +1,13 @@
-import { jsCli } from "../js/cli.js";
+import { getJsCli } from "../js/cli.js";
 
-export const tsCli = {
-  ...jsCli,
-  name: "fenge/typescript/cli",
-  files: ["**/*.cli.{ts,cts,mts,tsx}"],
-  rules: {
-    ...jsCli.rules,
-  },
-} as const;
+export function getTsCli() {
+  const jsCli = getJsCli();
+  return {
+    ...jsCli,
+    name: "fenge/typescript/cli",
+    files: ["**/*.cli.{ts,cts,mts,tsx}"],
+    rules: {
+      ...jsCli.rules,
+    },
+  } as const;
+}
