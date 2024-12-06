@@ -81,7 +81,7 @@ export function execAsync(command, { topic, dryRun, env }) {
       return reject(new Error("cmd not found"));
     }
     if (dryRun) {
-      console.log(`${chalk.green(cmd)} ${args.join(" ")}`);
+      process.stdout.write(`${chalk.green(cmd)} ${args.join(" ")};\n\n`);
       return resolve(0);
     }
 

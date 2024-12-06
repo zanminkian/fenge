@@ -3,8 +3,8 @@ import { describe, it } from "node:test";
 import config from "./eslint.config.js";
 
 await describe("eslint.config", async () => {
-  await it("length of default export should be 11", () => {
-    assert.strictEqual(config.length, 11);
+  await it("length of default export should be 13", () => {
+    assert.strictEqual(config.length, 13);
   });
 
   await it("no warns", () => {

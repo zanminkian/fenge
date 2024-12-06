@@ -27,7 +27,7 @@ await describe("prettier", async () => {
 
     // 2
     assert.strictEqual(typeof typescript()[0], "object");
-    assert.strictEqual(typescript().length, 4);
+    assert.strictEqual(typescript().length, 5);
     const tsForbidRule = typescript()
       .flatMap((config) => Object.keys(config.rules))
       .find((rule) => included(rule));

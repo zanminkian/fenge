@@ -315,6 +315,7 @@ export const jsBase = {
     "max-depth": ["error", { max: 5 }],
     "max-params": ["error", { max: 4 }],
     "no-bitwise": "error",
+    "no-console": "error",
     "no-constant-binary-expression": "error",
     "no-dupe-else-if": "error",
     "no-duplicate-imports": "error",

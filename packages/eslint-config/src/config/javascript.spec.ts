@@ -18,6 +18,38 @@ await describe("js config", async () => {
       });
     });
   });
+
+  await it("properties in js main config should be valid", () => {
+    const jsMainConfig = javascript()[0];
+    assert.deepStrictEqual(Object.keys(jsMainConfig), [
+      "name",
+      "files",
+      "languageOptions",
+      "plugins",
+      "rules",
+    ]);
+    assert.strictEqual(jsMainConfig.name.endsWith("/javascript"), true);
+    assert.strictEqual(
+      jsMainConfig.files.every((file) => file.endsWith(".{js,cjs,mjs,jsx}")),
+      true,
+    );
+  });
+
+  await it("properties in js rest configs should be valid", () => {
+    const [, ...restConfigs] = javascript();
+    for (const restConfig of restConfigs) {
+      assert.deepStrictEqual(Object.keys(restConfig), [
+        "name",
+        "files",
+        "rules",
+      ]);
+      assert.strictEqual(restConfig.name.includes("/javascript/"), true);
+      assert.strictEqual(
+        restConfig.files.every((file) => file.endsWith(".{js,cjs,mjs,jsx}")),
+        true,
+      );
+    }
+  });
 });
 
 function getValueString(value: unknown): string {
