@@ -6,6 +6,7 @@ export const jsTest = {
     "**/*.{test,spec}.{js,cjs,mjs,jsx}",
   ],
   rules: {
+    "es-x/no-top-level-await": "off",
     "esm/no-phantom-dep-imports": ["error", { allowDevDependencies: true }],
   },
 } as const;

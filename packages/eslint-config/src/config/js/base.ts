@@ -352,6 +352,7 @@ export const jsBase = {
     "es-x/no-async-iteration": "error",
     "es-x/no-generators": "error",
     "es-x/no-legacy-object-prototype-accessor-methods": "error",
+    "es-x/no-top-level-await": "error",
     // esm
     "esm/nearest-relative-path": "error",
     "esm/no-directory-imports": "error",
