@@ -1,4 +1,3 @@
-import process from "node:process";
 import * as fengeTsPlugin from "@fenge/eslint-plugin-ts";
 import tsParser from "@typescript-eslint/parser";
 import { jsBase } from "../js/base.js";
@@ -75,7 +74,6 @@ export const tsBase = {
     parser: tsParser, // Unfortunately parser cannot be a string. Eslint should support it. https://eslint.org/docs/latest/use/configure/configuration-files-new#configuring-a-custom-parser-and-its-options
     parserOptions: {
       ...jsBase.languageOptions.parserOptions,
-      tsconfigRootDir: process.cwd(),
       // Setting `projectService: true` or `project: true` is pretty slow when lint a monorepo with many tsconfig.json files in each sub-app.
       // For a better performance, we are recommended using one tsconfig.json file in a project.
       // Waiting for typescript-eslint to officially provide a better way to use `projectService`.
