@@ -11,6 +11,8 @@ const invalidCodes = [
   "declare namespace A{}",
   "declare type A = {}",
   "declare interface A{}",
+  "declare global { var a: string }",
+  "declare module 'moment' { export function foo(): string }",
 ];
 
 const propertyCodes = [

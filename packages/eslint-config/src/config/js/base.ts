@@ -165,7 +165,7 @@ export function getJsBase() {
     'no-shadow-restricted-names': 'error',
     'no-sparse-arrays': 'error',
     // 'no-tabs': 'error',
-    // 'no-template-curly-in-string': 'error', // User who using VSCode or WebStorm can easily notice the problem. Enabling this will decrease flexibility.
+    // 'no-template-curly-in-string': 'error', // VSCode an WebStorm can detect it. Enabling this will decrease flexibility. For example, long content containing ${foo} is reasonable.
     'no-this-before-super': 'error',
     'no-throw-literal': 'error',
     // 'no-trailing-spaces': 'error',

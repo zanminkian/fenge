@@ -158,7 +158,7 @@ export function getTsBase() {
       "@typescript-eslint/no-duplicate-type-constituents": "error",
       "@typescript-eslint/no-empty-object-type": "error",
       "@typescript-eslint/no-extra-non-null-assertion": "error",
-      // "@typescript-eslint/no-extraneous-class": "error", // Classes have only static member is reasonable sometimes.
+      // "@typescript-eslint/no-extraneous-class": "error", // Classes have only static member is reasonable sometimes. Nestjs modules use it a lot.
       "@typescript-eslint/no-floating-promises": [
         "error",
         {
