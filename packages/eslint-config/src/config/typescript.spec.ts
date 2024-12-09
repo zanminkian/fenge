@@ -53,6 +53,38 @@ await describe("ts config", async () => {
       });
     });
   });
+
+  await it("properties in ts main config should be valid", () => {
+    const tsMainConfig = typescript()[0];
+    assert.deepStrictEqual(Object.keys(tsMainConfig), [
+      "name",
+      "files",
+      "languageOptions",
+      "plugins",
+      "rules",
+    ]);
+    assert.strictEqual(tsMainConfig.name.endsWith("/typescript"), true);
+    assert.strictEqual(
+      tsMainConfig.files.every((file) => file.endsWith(".{ts,cts,mts,tsx}")),
+      true,
+    );
+  });
+
+  await it("properties in ts rest configs should be valid", () => {
+    const [, ...restConfigs] = typescript();
+    for (const restConfig of restConfigs) {
+      assert.deepStrictEqual(Object.keys(restConfig), [
+        "name",
+        "files",
+        "rules",
+      ]);
+      assert.strictEqual(restConfig.name.includes("/typescript/"), true);
+      assert.strictEqual(
+        restConfig.files.every((file) => file.endsWith(".{ts,cts,mts,tsx}")),
+        true,
+      );
+    }
+  });
 });
 
 function getValueString(value: unknown): string {

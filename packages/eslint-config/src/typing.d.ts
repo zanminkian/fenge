@@ -1,8 +1,8 @@
-declare module "eslint-plugin-*" {
-  declare const plugin: unknown;
+module "eslint-plugin-*" {
+  const plugin: unknown = {}; // TODO: Add initializer because of this issue https://github.com/IanVS/prettier-plugin-sort-imports/issues/196
   export default plugin;
 }
-declare module "confusing-browser-globals" {
-  declare const keys: string[];
+module "confusing-browser-globals" {
+  const keys: string[] = [];
   export default keys;
 }

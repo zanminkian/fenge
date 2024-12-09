@@ -23,7 +23,7 @@
   "exports": {
     "./package.json": "./package.json"
   },
-  "bin": "./dist/bin.js",
+  "bin": "./dist/smells.cli.js",
   "scripts": {
     "build": "tsc"
   },

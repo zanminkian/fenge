@@ -42,7 +42,7 @@
     "./tsconfig/cjs": "./tsconfig/cjs.json",
     "./tsconfig/cjs.json": "./tsconfig/cjs.json"
   },
-  "bin": "./src/bin/cli.js",
+  "bin": "./src/bin/fenge.cli.js",
   "scripts": {
     "build": "tsc --noEmit"
   },
