@@ -1,5 +1,11 @@
 # smells
 
+## 0.0.5-beta.1
+
+### Patch Changes
+
+- 0d0f18c: chore: refresh pkg, no changes
+
 ## 0.0.5-beta.0
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @fenge/types
 
+## 0.2.0-beta.2
+
+### Patch Changes
+
+- 0d0f18c: chore: refresh pkg, no changes
+
 ## 0.2.0-beta.1
 
 ### Minor Changes
