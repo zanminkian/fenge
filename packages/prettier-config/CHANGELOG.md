@@ -1,5 +1,11 @@
 # @fenge/prettier-config
 
+## 0.1.3-beta.1
+
+### Patch Changes
+
+- 0d0f18c: chore: refresh pkg, no changes
+
 ## 0.1.3-beta.0
 
 ### Patch Changes

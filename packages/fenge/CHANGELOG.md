@@ -1,5 +1,18 @@
 # fenge
 
+## 0.2.0-beta.2
+
+### Patch Changes
+
+- 0d0f18c: chore: refresh pkg, no changes
+- Updated dependencies [0d0f18c]
+- Updated dependencies [84944a3]
+- Updated dependencies [af6e004]
+  - @fenge/prettier-config@0.1.3-beta.1
+  - @fenge/eslint-config@0.4.0-beta.2
+  - @fenge/tsconfig@0.1.1-beta.1
+  - @fenge/types@0.2.0-beta.2
+
 ## 0.2.0-beta.1
 
 ### Minor Changes

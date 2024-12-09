@@ -1,5 +1,11 @@
 # @fenge/eslint-plugin
 
+## 0.1.2-beta.1
+
+### Patch Changes
+
+- 0d0f18c: chore: refresh pkg, no changes
+
 ## 0.1.2-beta.0
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @fenge/eslint-config
 
+## 0.4.0-beta.2
+
+### Patch Changes
+
+- 0d0f18c: chore: refresh pkg, no changes
+- 84944a3: feat(eslint-config): add rule `es-x/no-top-level-await`
+- af6e004: feat(eslint-config): add rule `no-console`
+- Updated dependencies [0d0f18c]
+- Updated dependencies [58c81c0]
+  - eslint-plugin-esm@0.2.2-beta.1
+  - @fenge/eslint-plugin@0.1.2-beta.1
+  - @fenge/eslint-plugin-ts@0.2.0-beta.0
+
 ## 0.4.0-beta.1
 
 ### Minor Changes
