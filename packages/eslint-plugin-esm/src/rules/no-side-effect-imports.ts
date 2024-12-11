@@ -31,8 +31,10 @@ export const noSideEffectImports = createRule({
     return {
       "ImportDeclaration[specifiers.length=0]": (node: ImportDeclaration) => {
         if (
-          ignoreExps.some((exp) =>
-            exp.test(node.source.value?.toString() ?? ""),
+          ignoreExps.some(
+            (exp) =>
+              typeof node.source.value === "string" &&
+              exp.test(node.source.value),
           )
         ) {
           return;

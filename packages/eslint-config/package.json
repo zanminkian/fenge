@@ -29,30 +29,30 @@
   "dependencies": {
     "@fenge/eslint-plugin": "workspace:*",
     "@fenge/eslint-plugin-ts": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "8.16.0",
-    "@typescript-eslint/parser": "8.16.0",
+    "@typescript-eslint/eslint-plugin": "8.18.0",
+    "@typescript-eslint/parser": "8.18.0",
     "confusing-browser-globals": "1.0.11",
     "eslint-plugin-es-x": "8.4.1",
     "eslint-plugin-esm": "workspace:*",
     "eslint-plugin-fp": "2.3.0",
     "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-n": "17.14.0",
+    "eslint-plugin-n": "17.15.0",
     "eslint-plugin-pkg-json": "workspace:*",
     "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-publint": "workspace:*",
     "eslint-plugin-react": "7.37.2",
-    "eslint-plugin-react-hooks": "5.0.0",
+    "eslint-plugin-react-hooks": "5.1.0",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "eslint-plugin-sonarjs": "1.0.4",
     "eslint-plugin-unicorn": "56.0.1",
-    "globals": "15.12.0"
+    "globals": "15.13.0"
   },
   "devDependencies": {
     "@types/eslint-config-prettier": "6.11.3",
     "@types/node": "22.9.1",
     "eslint": "8.57.1",
     "eslint-config-prettier": "9.1.0",
-    "prettier": "3.4.1",
+    "prettier": "3.4.2",
     "tsx": "4.19.2"
   },
   "peerDependencies": {
