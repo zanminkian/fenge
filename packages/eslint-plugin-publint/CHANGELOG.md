@@ -1,5 +1,11 @@
 # eslint-plugin-publint
 
+## 0.0.5
+
+### Patch Changes
+
+- cd5aead: chore: no significant changes
+
 ## 0.0.4
 
 ### Patch Changes

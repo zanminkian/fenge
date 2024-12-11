@@ -1,5 +1,11 @@
 # @fenge/eslint-plugin-ts
 
+## 0.2.0
+
+### Minor Changes
+
+- 58c81c0: feat(eslint-plugin-ts): remove `no-declares-in-ts-file` and create new rule `no-declares`
+
 ## 0.1.0
 
 ### Minor Changes

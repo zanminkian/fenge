@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.1.2
+
+### Patch Changes
+
+- cd5aead: chore: no significant changes
+
 ## 0.1.1
 
 ### Patch Changes
