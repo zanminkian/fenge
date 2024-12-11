@@ -1,5 +1,42 @@
 # fenge
 
+## 0.2.0
+
+### Minor Changes
+
+- c7a01e8: refactor(eslint-config): replace `override` and `extend` properties with `append` property for overriding or extending the built-in rules
+- db82f69: feat(fenge): use local ESLint and Prettier first
+- be7e3d5: chore(fenge): upgrade `prettier` to 3.4.1
+- 4c6fa59: refactor(fenge): optimize tsconfig exports and rename tsconfig.json to index.json
+
+### Patch Changes
+
+- 905e445: chore: update deps
+- Updated dependencies [5adeeed]
+- Updated dependencies [c7a01e8]
+- Updated dependencies [36d1fb0]
+- Updated dependencies [3605e14]
+- Updated dependencies [c5a6425]
+- Updated dependencies [d54f6af]
+- Updated dependencies [84944a3]
+- Updated dependencies [0d71378]
+- Updated dependencies [740fdb7]
+- Updated dependencies [a5fb6f8]
+- Updated dependencies [41c783a]
+- Updated dependencies [b1fc095]
+- Updated dependencies [3f4e737]
+- Updated dependencies [1f5fce3]
+- Updated dependencies [905e445]
+- Updated dependencies [51502cc]
+- Updated dependencies [af6e004]
+- Updated dependencies [2f12ec2]
+- Updated dependencies [cd5aead]
+  - @fenge/prettier-config@0.1.3
+  - @fenge/eslint-config@0.4.0
+  - @fenge/types@0.2.0
+  - @fenge/tsconfig@0.1.1
+  - prettier-ignore@0.1.4
+
 ## 0.1.8
 
 ### Patch Changes

@@ -1,5 +1,38 @@
 # @fenge/eslint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- c7a01e8: refactor(eslint-config): replace `override` and `extend` properties with `append` property for overriding or extending the built-in rules
+- c5a6425: feat(eslint-config): allow configuring global linter options, and disable `reportUnusedDisableDirectives` by default
+- 1f5fce3: refactor(eslint-config): optimize config structure
+- 2f12ec2: refactor(eslint-config): optimize config structure and remove `project` param for ts config
+
+### Patch Changes
+
+- 5adeeed: fix: add missing peerDependencies and peerDependenciesMeta
+- 36d1fb0: chore: upgrade deps
+- 84944a3: feat(eslint-config): add rule `es-x/no-top-level-await`
+- 0d71378: fix(eslint-config): allow import module from devDependencies for config files
+- 740fdb7: feat(eslint-config): remove rule `no-template-curly-in-string` for flexibility
+- 41c783a: feat(eslint-config): add many built-in and @typescript-eslint recommended rules
+- 3f4e737: feat(eslint-config): add many rules of `eslint-plugin-unicorn`
+- 905e445: chore: update deps
+- 51502cc: feat: add rule `@fenge/no-jsx-in-non-jsx-file`
+- af6e004: feat(eslint-config): add rule `no-console`
+- Updated dependencies [58c81c0]
+- Updated dependencies [905e445]
+- Updated dependencies [51502cc]
+- Updated dependencies [cd5aead]
+- Updated dependencies [0c4462d]
+- Updated dependencies [713d9a2]
+  - @fenge/eslint-plugin-ts@0.2.0
+  - eslint-plugin-esm@0.2.2
+  - @fenge/eslint-plugin@0.1.2
+  - eslint-plugin-pkg-json@0.1.2
+  - eslint-plugin-publint@0.0.5
+
 ## 0.3.0
 
 ### Minor Changes

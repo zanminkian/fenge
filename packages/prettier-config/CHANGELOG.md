@@ -1,5 +1,12 @@
 # @fenge/prettier-config
 
+## 0.1.3
+
+### Patch Changes
+
+- 5adeeed: fix: add missing peerDependencies and peerDependenciesMeta
+- 36d1fb0: chore: upgrade deps
+
 ## 0.1.2
 
 ### Patch Changes

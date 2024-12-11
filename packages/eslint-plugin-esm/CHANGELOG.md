@@ -1,5 +1,12 @@
 # eslint-plugin-esm
 
+## 0.2.2
+
+### Patch Changes
+
+- 905e445: chore: update deps
+- 0c4462d: fix(eslint-plugin-esm): fix incorrect report on `import type {} from "@foo/bar"`
+
 ## 0.2.1
 
 ### Patch Changes
