@@ -13,3 +13,5 @@
 Because before TS 5.0, TS always look up the extends by path, while ignoring `exports` field in `package.json`. Refer to [here](https://github.com/microsoft/TypeScript/issues/53314#issuecomment-1474354281). After TS 5.0, TS will consider `exports` field in `package.json`. Refer to [here](https://github.com/microsoft/TypeScript/issues/53314#issuecomment-1480295680). Some third-party libraries still use the old strategy, so we decide to put `esm.json`, `cjs.json` and `tsconfig.json` in the package root for compatibility.
 
 > TODO: When TS reach to 6.0 and still consider `exports` field, move `esm.json`, `cjs.json` and `tsconfig.json` to a folder instead of in package root.
+
+> TODO: Once [this issue](https://github.com/microsoft/TypeScript/issues/60748) has been solved. We can add `"include": ["${configDir}/src"]` and `"exclude": ["**/*.spec.ts", "**/*.test.ts"]` to `cjs.json` and `esm.json`. And then remove the root `tsconfig.json`.
