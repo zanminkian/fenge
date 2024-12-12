@@ -81,9 +81,8 @@ export function getTsBase() {
       parserOptions: {
         ...jsBase.languageOptions.parserOptions,
         // Setting `projectService: true` or `project: true` is pretty slow when lint a monorepo with many tsconfig.json files in each sub-app.
-        // For a better performance, we are recommended using one tsconfig.json file in a project.
-        // Waiting for typescript-eslint to officially provide a better way to use `projectService`.
-        project: "tsconfig.json",
+        // But setting `project: "tsconfig.json"` will cause parser error when the project root tsconfig.json is `{ extends: "fenge/tsconfig" }`
+        projectService: true,
       },
     },
     plugins: {
