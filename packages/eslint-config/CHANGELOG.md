@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.4.1
+
+### Patch Changes
+
+- 1957781: fix(eslint-config): change `project` to `projectService`, close #309
+
 ## 0.4.0
 
 ### Minor Changes
