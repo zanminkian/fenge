@@ -15,20 +15,19 @@ type JsRuleKey = keyof ReturnType<typeof javascript>[0]["rules"];
 type TsRuleKey = keyof ReturnType<typeof typescript>[0]["rules"];
 type PkgRuleKey = keyof ReturnType<typeof packagejson>[0]["rules"];
 
+type RuleValue = "error" | "warn" | "off" | ["error" | "warn", ...unknown[]];
 interface Options<T extends string[]> {
   pick?: NoDuplicate<T>;
   omit?: NoDuplicate<T>;
-  append?:
-    | Partial<
-        Record<
-          T[number],
-          "error" | "warn" | "off" | ["error" | "warn", ...unknown[]]
-        >
-      >
-    | Record<
-        string,
-        "error" | "warn" | "off" | ["error" | "warn", ...unknown[]]
-      >;
+  append?: Partial<Record<T[number], RuleValue>> | Record<string, RuleValue>;
+}
+interface ConfigItem {
+  name: string;
+  files: string[];
+  plugins?: Record<string, object>;
+  rules:
+    | Partial<Record<PkgRuleKey | JsRuleKey | TsRuleKey, RuleValue>>
+    | Record<string, RuleValue>;
 }
 
 export type BuilderOptions = LinterOptions;
@@ -81,6 +80,11 @@ export class Builder {
 
   enablePackagejson<T extends PkgRuleKey[]>(options: Options<T> = {}) {
     return this.setup(packagejson(), options);
+  }
+
+  append(config: ConfigItem) {
+    this.configs.push(config);
+    return this;
   }
 }
 
