@@ -347,6 +347,8 @@ export function getJsBase() {
       "prefer-arrow-callback": "error",
       "prefer-exponentiation-operator": "error",
       "prefer-object-has-own": "error",
+      // "prefer-object-spread": "error",
+      "prefer-spread": "error",
       "prefer-template": "error",
       // es
       "es-x/no-accessor-properties": "error",
