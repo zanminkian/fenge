@@ -61,8 +61,9 @@ export const noPhantomDepImports = createRule({
         allowDevDependencies = false,
       }: { allowDevDependencies: boolean } = context.options[0] ?? {};
 
-      // ignore `import {foo} from './'` and `import {foo} from 'node:foo'`
-      if (getSourceType(source) !== "module") {
+      // ignore `import {foo} from './'`
+      // check `import {foo} from 'node:foo'` and `import {foo} from 'foo'`
+      if (getSourceType(source) === "local") {
         return false;
       }
       const pkgJson = getPkgJson(path.dirname(filename));
@@ -86,6 +87,17 @@ export const noPhantomDepImports = createRule({
           ? pkgJson.content.devDependencies
           : {};
 
+      // TODO: Optimize the error message which is reported on `import foo from 'node:foo'`
+      // 1. check `import foo from 'node:foo'`
+      if (source.startsWith("node:")) {
+        return !(
+          "@types/node" in devDep ||
+          "@types/node" in dep ||
+          "@types/node" in peerDep
+        );
+      }
+
+      // 2. check `import foo from 'foo'`
       const moduleName = source
         .split("/")
         .slice(0, source.startsWith("@") ? 2 : 1)
