@@ -1,3 +1,5 @@
+// As a result, if the bin file have no executable permission, the cli package works well in npm and pnpm.
+// Therefore, checking the bin file starting with hashbang is enough.
 import fs from "node:fs";
 import path from "node:path";
 
