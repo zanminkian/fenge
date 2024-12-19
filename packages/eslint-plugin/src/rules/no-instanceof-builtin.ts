@@ -15,6 +15,9 @@ const rule: Rule.RuleModule = {
   create: (context) => {
     let builtins: Set<string> | undefined = undefined;
     return {
+      // ESLint visit the Node from root to leaf. The Program Node is the root.
+      // Therefore, Program will be called before BinaryExpression.
+      // https://eslint.org/docs/latest/extend/code-path-analysis
       Program: (node) => {
         const scope = context.sourceCode.getScope(node);
         builtins = new Set([

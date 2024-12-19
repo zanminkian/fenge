@@ -14,11 +14,11 @@
     "test": "pnpm -r test && pnpm style"
   },
   "devDependencies": {
-    "@changesets/cli": "2.27.10",
+    "@changesets/cli": "2.27.11",
     "fenge": "workspace:*",
     "typescript": "5.7.2"
   },
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.15.0",
   "engines": {
     "node": ">=22.0.0",
     "pnpm": "^9.0.0"
