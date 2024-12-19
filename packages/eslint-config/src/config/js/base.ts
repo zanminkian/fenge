@@ -370,6 +370,7 @@ export function getJsBase() {
       "esm/no-rename-imports": "error",
       "esm/no-side-effect-imports": "error",
       "esm/no-ts-file-imports": "error",
+      "esm/required-exports": "error",
       // fp
       "fp/no-arguments": "error",
       "fp/no-delete": "error",

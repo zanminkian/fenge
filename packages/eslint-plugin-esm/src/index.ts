@@ -9,6 +9,7 @@ import { noRenameExports } from "./rules/no-rename-exports.js";
 import { noRenameImports } from "./rules/no-rename-imports.js";
 import { noSideEffectImports } from "./rules/no-side-effect-imports.js";
 import { noTsFileImports } from "./rules/no-ts-file-imports.js";
+import { requiredExports } from "./rules/required-exports.js";
 
 export const rules = {
   [nearestRelativePath.name]: nearestRelativePath.rule,
@@ -22,4 +23,5 @@ export const rules = {
   [noRenameImports.name]: noRenameImports.rule,
   [noSideEffectImports.name]: noSideEffectImports.rule,
   [noTsFileImports.name]: noTsFileImports.rule,
+  [requiredExports.name]: requiredExports.rule,
 };

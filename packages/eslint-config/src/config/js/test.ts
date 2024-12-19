@@ -9,6 +9,7 @@ export function getJsTest() {
     rules: {
       "es-x/no-top-level-await": "off",
       "esm/no-phantom-dep-imports": ["error", { allowDevDependencies: true }],
+      "esm/required-exports": "off",
     },
   } as const;
 }

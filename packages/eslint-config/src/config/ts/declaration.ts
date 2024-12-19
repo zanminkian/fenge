@@ -4,6 +4,7 @@ export function getTsDeclaration() {
     files: ["**/*.d.{ts,cts,mts,tsx}"],
     rules: {
       "esm/no-empty-exports": "off",
+      "esm/required-exports": "off",
       "import/no-default-export": "off",
     },
   } as const;
