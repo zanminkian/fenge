@@ -360,6 +360,7 @@ export function getJsBase() {
       "esm/nearest-relative-path": "error",
       "esm/no-directory-imports": "error",
       "esm/no-dynamic-imports": "error",
+      "esm/no-empty-exports": "error",
       "esm/no-git-ignored-imports": "error",
       "esm/no-phantom-dep-imports": "error",
       "esm/no-relative-parent-imports": "error",

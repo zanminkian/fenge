@@ -3,6 +3,7 @@ export function getTsDeclaration() {
     name: "fenge/typescript/declaration",
     files: ["**/*.d.{ts,cts,mts,tsx}"],
     rules: {
+      "esm/no-empty-exports": "off",
       "import/no-default-export": "off",
     },
   } as const;
