@@ -21,7 +21,6 @@
   "author": "hellozmj@qq.com",
   "type": "module",
   "exports": {
-    "./cli": "./dist/tsconfig.cli.js",
     "./setup": "./dist/setup.js",
     "./cjs.json": "./cjs.json",
     "./esm.json": "./esm.json",
