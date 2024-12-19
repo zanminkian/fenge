@@ -387,6 +387,7 @@ export function getJsBase() {
        */
       "import/no-default-export": "error",
       "import/no-dynamic-require": "error",
+      "import/no-empty-named-blocks": "error", // The feature of this rule is already handled by Prettier. But we still put it here.
       "import/no-mutable-exports": "error", // forbid code like `export let count = 3`
       "import/no-relative-packages": "error", // forbid to import module from other monorepo packages by relative paths
       "import/no-self-import": "error",
