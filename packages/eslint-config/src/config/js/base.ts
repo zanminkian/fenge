@@ -392,6 +392,7 @@ export function getJsBase() {
       "import/no-relative-packages": "error", // forbid to import module from other monorepo packages by relative paths
       "import/no-self-import": "error",
       // n
+      "n/no-process-exit": "error",
       "n/prefer-global/buffer": ["error", "never"],
       "n/prefer-global/console": "error",
       "n/prefer-global/process": ["error", "never"],
@@ -454,7 +455,7 @@ export function getJsBase() {
       "unicorn/no-negation-in-equality-check": "error",
       "unicorn/no-new-array": "error",
       "unicorn/no-new-buffer": "error",
-      "unicorn/no-process-exit": "error",
+      "unicorn/no-process-exit": "error", // Prefer `n/no-process-exit`, but at the same time using this rule seems have no problem
       "unicorn/no-single-promise-in-promise-methods": "error",
       "unicorn/no-static-only-class": "error",
       "unicorn/no-thenable": "error",
