@@ -179,6 +179,7 @@ export function getJsBase() {
     'no-unsafe-finally': 'error',
     'no-unsafe-negation': 'error',
     'no-unused-expressions': ['error', {
+      enforceForJSX: true,
       allowShortCircuit: true,
       allowTernary: true,
       allowTaggedTemplates: true
