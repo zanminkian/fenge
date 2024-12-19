@@ -11,11 +11,11 @@ const valid = [
   { code: s({ name: "foo" }), filename: undefined },
   { code: s({ bin: {} }), filename: undefined },
   {
-    code: s({ bin: "./good.js" }),
+    code: s({ bin: "./good.cli.js" }),
     filename: path.join(dir, "../../test/required-hashbang/package.json"),
   },
   {
-    code: s({ bin: { foo: "./good.js", bar: "./good.js" } }),
+    code: s({ bin: { foo: "./good.cli.js", bar: "./good.cli.js" } }),
     filename: path.join(dir, "../../test/required-hashbang/package.json"),
   },
 ];
@@ -29,11 +29,11 @@ const invalid = [
     filename: path.join(dir, "../../test/required-hashbang/package.json"),
   },
   {
-    code: s({ bin: "./bad.js" }),
+    code: s({ bin: "./bad.cli.js" }),
     filename: path.join(dir, "../../test/required-hashbang/package.json"),
   },
   {
-    code: s({ bin: { foo: "./bad.js" } }),
+    code: s({ bin: { foo: "./bad.cli.js" } }),
     filename: path.join(dir, "../../test/required-hashbang/package.json"),
   },
 ];

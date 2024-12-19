@@ -355,6 +355,7 @@ export function getJsBase() {
       "es-x/no-accessor-properties": "error",
       "es-x/no-async-iteration": "error",
       "es-x/no-generators": "error",
+      "es-x/no-hashbang": "error",
       "es-x/no-legacy-object-prototype-accessor-methods": "error",
       "es-x/no-top-level-await": "error",
       // esm

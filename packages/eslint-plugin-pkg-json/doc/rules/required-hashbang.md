@@ -12,8 +12,8 @@ The bin file should starts with a hashbang
 {"bin":[]}
 {"bin":{"foo":true}}
 {"bin":"./no-existing.js"} // filename: /foo/test/required-hashbang/package.json
-{"bin":"./bad.js"} // filename: /foo/test/required-hashbang/package.json
-{"bin":{"foo":"./bad.js"}} // filename: /foo/test/required-hashbang/package.json
+{"bin":"./bad.cli.js"} // filename: /foo/test/required-hashbang/package.json
+{"bin":{"foo":"./bad.cli.js"}} // filename: /foo/test/required-hashbang/package.json
 ```
 
 ### Pass
@@ -22,7 +22,7 @@ The bin file should starts with a hashbang
 {}
 {"name":"foo"}
 {"bin":{}}
-{"bin":"./good.js"} // filename: /foo/test/required-hashbang/package.json
-{"bin":{"foo":"./good.js","bar":"./good.js"}} // filename: /foo/test/required-hashbang/package.json
+{"bin":"./good.cli.js"} // filename: /foo/test/required-hashbang/package.json
+{"bin":{"foo":"./good.cli.js","bar":"./good.cli.js"}} // filename: /foo/test/required-hashbang/package.json
 ```
 <!-- prettier-ignore-end -->
