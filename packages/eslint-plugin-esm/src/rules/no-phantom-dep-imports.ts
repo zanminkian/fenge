@@ -90,11 +90,7 @@ export const noPhantomDepImports = createRule({
       // TODO: Optimize the error message which is reported on `import foo from 'node:foo'`
       // 1. check `import foo from 'node:foo'`
       if (source.startsWith("node:")) {
-        return !(
-          "@types/node" in devDep ||
-          "@types/node" in dep ||
-          "@types/node" in peerDep
-        );
+        return !("@types/node" in devDep || "@types/node" in dep);
       }
 
       // 2. check `import foo from 'foo'`
