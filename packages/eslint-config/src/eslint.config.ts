@@ -43,11 +43,8 @@ export class Builder {
   }
 
   private setup(
-    [mainConfig, ...otherConfigs]: readonly [
-      { plugins: object; rules: object },
-      ...object[],
-    ],
-    { pick, omit, append = {} }: Options<string[]>,
+    configItems: readonly { rules: object }[],
+    { pick, omit }: Options<string[]>,
   ) {
     const select = (ruleKey: string) => {
       if (!pick && !omit) {
@@ -60,13 +57,14 @@ export class Builder {
         throw new Error("You cannot specify both pick and omit");
       }
     };
-    const rules = Object.fromEntries(
-      Object.entries(mainConfig.rules).filter(([ruleKey]) => select(ruleKey)),
-    );
-    this.configs.push(
-      { ...mainConfig, rules: { ...rules, ...append } },
-      ...otherConfigs,
-    );
+    const result = configItems.map((configItem) => ({
+      ...configItem,
+      rules: Object.fromEntries(
+        Object.entries(configItem.rules).filter(([ruleKey]) => select(ruleKey)),
+      ),
+    }));
+    this.configs.push(...result);
+
     return this;
   }
 

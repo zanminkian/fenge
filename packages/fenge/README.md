@@ -233,26 +233,31 @@ export default {
   },
   lint: async () => {
     // See https://www.npmjs.com/package/@fenge/eslint-config for eslint-config detail usage
-    const Builder = (await import("fenge/eslint-config")).Builder;
-    return new Builder()
-      .enablePackagejson({
-        pick: ["packagejson/top-types"], // only these rules will work for package.json files
-      })
-      .enableJavascript({
-        omit: ["no-var"], // these rules will not work for js files
-      })
-      .enableTypescript({
+    const { Builder } = await import("fenge/eslint-config");
+    return (
+      new Builder()
+        .enablePackagejson({
+          pick: ["packagejson/top-types"], // only these rules will work for package.json files
+        })
+        .enableJavascript({
+          omit: ["no-var"], // these rules will not work for js files
+        })
+        .enableTypescript()
         // apply additional rules or override the built-in rules for ts files
-        append: {
-          "@typescript-eslint/no-explicit-any": "error",
-          "@typescript-eslint/consistent-type-assertions": [
-            "error",
-            { assertionStyle: "never" },
-          ],
-          "@typescript-eslint/no-non-null-assertion": "error",
-        },
-      })
-      .toConfig();
+        .append({
+          name: "strictest",
+          files: ["**/*.{ts,cts,mts,tsx}"],
+          rules: {
+            "@typescript-eslint/no-explicit-any": "error",
+            "@typescript-eslint/consistent-type-assertions": [
+              "error",
+              { assertionStyle: "never" },
+            ],
+            "@typescript-eslint/no-non-null-assertion": "error",
+          },
+        })
+        .toConfig()
+    );
   },
 };
 ```

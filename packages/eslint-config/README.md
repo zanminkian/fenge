@@ -73,9 +73,12 @@ export default new Builder()
   .enableJavascript({
     omit: ["no-var"], // these rules will not work for js files
   })
-  .enableTypescript({
-    // apply additional rules or override the built-in rules for ts files
-    append: {
+  .enableTypescript()
+  // apply additional rules or override the built-in rules for ts files
+  .append({
+    name: "strictest",
+    files: ["**/*.{ts,cts,mts,tsx}"],
+    rules: {
       "@typescript-eslint/no-explicit-any": "error",
       "@typescript-eslint/consistent-type-assertions": [
         "error",
