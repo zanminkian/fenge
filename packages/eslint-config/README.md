@@ -67,13 +67,13 @@ You can use `Builder` class to customize for selecting or omitting some rules.
 import { Builder } from "@fenge/eslint-config";
 
 export default new Builder()
-  .enablePackagejson({
+  .enablePackageJson({
     pick: ["packagejson/top-types"], // only these rules will work for package.json files
   })
-  .enableJavascript({
+  .enableJavaScript({
     omit: ["no-var"], // these rules will not work for js files
   })
-  .enableTypescript()
+  .enableTypeScript()
   // apply additional rules or override the built-in rules for ts files
   .append({
     name: "strictest",

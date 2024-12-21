@@ -68,15 +68,15 @@ export class Builder {
     return this;
   }
 
-  enableTypescript<T extends TsRuleKey[]>(options: Options<T> = {}) {
+  enableTypeScript<T extends TsRuleKey[]>(options: Options<T> = {}) {
     return this.setup(typescript(), options);
   }
 
-  enableJavascript<T extends JsRuleKey[]>(options: Options<T> = {}) {
+  enableJavaScript<T extends JsRuleKey[]>(options: Options<T> = {}) {
     return this.setup(javascript(), options);
   }
 
-  enablePackagejson<T extends PkgRuleKey[]>(options: Options<T> = {}) {
+  enablePackageJson<T extends PkgRuleKey[]>(options: Options<T> = {}) {
     return this.setup(packagejson(), options);
   }
 
@@ -87,7 +87,7 @@ export class Builder {
 }
 
 export default new Builder()
-  .enablePackagejson()
-  .enableJavascript()
-  .enableTypescript()
+  .enablePackageJson()
+  .enableJavaScript()
+  .enableTypeScript()
   .toConfig();
