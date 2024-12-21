@@ -5,6 +5,7 @@ export function getTsDeclaration() {
     rules: {
       "esm/no-empty-exports": "off",
       "esm/no-side-effect-imports": "off",
+      "esm/no-ts-file-imports": "off",
       "esm/required-exports": "off",
       "import/no-default-export": "off",
     },

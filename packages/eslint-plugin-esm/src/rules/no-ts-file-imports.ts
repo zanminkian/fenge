@@ -6,15 +6,7 @@ export const noTsFileImports = createRule({
   create: (context) => create(context, check),
 });
 
-function check(filename: string, source: string) {
-  // disabled this rule in declaration files
-  if (
-    [".d.ts", ".d.cts", ".d.mts", ".d.tsx"].some((ext) =>
-      filename.endsWith(ext),
-    )
-  ) {
-    return false;
-  }
+function check(_filename: string, source: string) {
   const file = source.split("/").at(-1);
   if (!file || file.includes(".d.")) {
     return true;

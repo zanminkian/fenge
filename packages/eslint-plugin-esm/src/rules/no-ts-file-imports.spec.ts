@@ -1,7 +1,7 @@
 import { test } from "../test.spec.js";
 import { noTsFileImports } from "./no-ts-file-imports.js";
 
-const codes = [
+const invalid = [
   "import foo from './foo.ts'",
   "import foo from './foo.cts'",
   "import foo from './foo.mts'",
@@ -25,15 +25,6 @@ const codes = [
   "import foo from '/foo.d.js'",
 ];
 
-const invalid = codes.flatMap((code) => [
-  { code, filename: "bar.js" },
-  { code, filename: "bar" },
-  { code, filename: "bar.ts" },
-  { code, filename: "bar.tsx" },
-]);
-const valid = codes.flatMap((code) => [
-  { code, filename: "bar.d.ts" },
-  { code, filename: "bar.d.tsx" },
-]);
+const valid = ["import foo from 'foo'"];
 
 test({ valid, invalid, ...noTsFileImports });
