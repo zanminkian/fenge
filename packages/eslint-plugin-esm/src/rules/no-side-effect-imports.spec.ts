@@ -8,9 +8,7 @@ const valid = [
   "import './foo.css'",
   "import 'module.css'",
   "import {foo} from 'foo'",
-]
-  .map((code) => ({ code, filename: "foo.ts" }))
-  .concat({ code: "import 'foo'", filename: "foo.d.ts" });
+];
 
 const invalid = [
   "import 'foo'",
@@ -20,6 +18,6 @@ const invalid = [
   "import './reflect-metadata'",
   "import './foo.module.css'",
   "import 'foo.module.css'",
-].map((code) => ({ code, filename: "foo.ts" }));
+];
 
 test({ valid, invalid, ...noSideEffectImports });

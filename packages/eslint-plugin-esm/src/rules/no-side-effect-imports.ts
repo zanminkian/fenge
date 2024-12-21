@@ -20,13 +20,6 @@ export const noSideEffectImports = createRule({
   message:
     "Side effect import is often used for polyfills and css. It's unsafe to use it.",
   create: (context) => {
-    if (
-      [".d.ts", ".d.cts", ".d.mts", ".d.tsx"].some((ext) =>
-        context.filename.endsWith(ext),
-      )
-    ) {
-      return {};
-    }
     const ignoreExps = ignores.map((ignore) => new RegExp(ignore));
     return {
       "ImportDeclaration[specifiers.length=0]": (node: ImportDeclaration) => {

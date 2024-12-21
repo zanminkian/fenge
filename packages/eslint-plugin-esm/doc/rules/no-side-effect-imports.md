@@ -8,24 +8,23 @@ Side effect import is often used for polyfills and css. It's unsafe to use it.
 ### Fail
 
 ```ts
-import 'foo' // filename: foo.ts
-import './foo' // filename: foo.ts
-import {} from 'foo' // filename: foo.ts
-import {} from './foo' // filename: foo.ts
-import './reflect-metadata' // filename: foo.ts
-import './foo.module.css' // filename: foo.ts
-import 'foo.module.css' // filename: foo.ts
+import 'foo'
+import './foo'
+import {} from 'foo'
+import {} from './foo'
+import './reflect-metadata'
+import './foo.module.css'
+import 'foo.module.css'
 ```
 
 ### Pass
 
 ```ts
-import 'reflect-metadata' // filename: foo.ts
-import {} from 'reflect-metadata' // filename: foo.ts
-import 'foo.css' // filename: foo.ts
-import './foo.css' // filename: foo.ts
-import 'module.css' // filename: foo.ts
-import {foo} from 'foo' // filename: foo.ts
-import 'foo' // filename: foo.d.ts
+import 'reflect-metadata'
+import {} from 'reflect-metadata'
+import 'foo.css'
+import './foo.css'
+import 'module.css'
+import {foo} from 'foo'
 ```
 <!-- prettier-ignore-end -->
