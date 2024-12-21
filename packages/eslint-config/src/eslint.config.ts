@@ -19,7 +19,6 @@ type RuleValue = "error" | "warn" | "off" | ["error" | "warn", ...unknown[]];
 interface Options<T extends string[]> {
   pick?: NoDuplicate<T>;
   omit?: NoDuplicate<T>;
-  append?: Partial<Record<T[number], RuleValue>> | Record<string, RuleValue>;
 }
 interface ConfigItem {
   name: string;
