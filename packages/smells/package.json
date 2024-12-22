@@ -28,7 +28,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@typescript-eslint/typescript-estree": "8.18.0",
+    "@typescript-eslint/typescript-estree": "8.18.1",
     "commander": "12.1.0",
     "globby": "14.0.2"
   },
