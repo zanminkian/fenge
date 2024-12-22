@@ -6,9 +6,9 @@ import { createRequire } from "node:module";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
-import chalk from "chalk";
 import { lilconfig } from "lilconfig";
 import ora from "ora";
+import colors from "yoctocolors";
 
 /**
  * @param {string} filepath
@@ -81,7 +81,7 @@ export function execAsync(command, { topic, dryRun, env }) {
       return reject(new Error("cmd not found"));
     }
     if (dryRun) {
-      process.stdout.write(`${chalk.green(cmd)} ${args.join(" ")};\n\n`);
+      process.stdout.write(`${colors.green(cmd)} ${args.join(" ")};\n\n`);
       return resolve(0);
     }
 
@@ -104,7 +104,7 @@ export function execAsync(command, { topic, dryRun, env }) {
     });
     cp.on("error", (err) => {
       spinner.fail(
-        `${topic} got error in ${chalk.yellow(getSpentTime(startTime))}`,
+        `${topic} got error in ${colors.yellow(getSpentTime(startTime))}`,
       );
       resolve(getExitCode(err));
     });
@@ -113,11 +113,11 @@ export function execAsync(command, { topic, dryRun, env }) {
       const exitCode = getExitCode({ code, signal });
       if (exitCode === 0) {
         spinner.succeed(
-          `${topic} succeeded in ${chalk.yellow(getSpentTime(startTime))}`,
+          `${topic} succeeded in ${colors.yellow(getSpentTime(startTime))}`,
         );
       } else {
         spinner.fail(
-          `${topic} failed in ${chalk.yellow(getSpentTime(startTime))}`,
+          `${topic} failed in ${colors.yellow(getSpentTime(startTime))}`,
         );
       }
       resolve(exitCode);
