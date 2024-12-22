@@ -1,5 +1,18 @@
 # eslint-plugin-esm
 
+## 0.3.0
+
+### Minor Changes
+
+- 1b7d98c: refactor(eslint-plugin-esm): `no-side-effect-imports` will not ignore declaration files now
+- 2d485c9: refactor(eslint-plugin-esm): `no-ts-file-imports` will not ignore declaration files now
+
+### Patch Changes
+
+- 6c64129: feat: add rule `no-empty-exports`
+- d54423b: fix(eslint-plugin-esm): additionally check for importing node built-in module
+- 778a198: feat: add rule `esm/required-exports`
+
 ## 0.2.2
 
 ### Patch Changes

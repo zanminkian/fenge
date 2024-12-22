@@ -1,5 +1,11 @@
 # prettier-ignore
 
+## 0.2.0
+
+### Minor Changes
+
+- 561ecc5: chore(prettier-ignore): remove `.changeset`
+
 ## 0.1.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # smells
 
+## 0.0.6
+
+### Patch Changes
+
+- d832aad: chore: upgrade deps
+
 ## 0.0.5
 
 ### Patch Changes

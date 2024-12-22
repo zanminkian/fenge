@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.2.0
+
+### Minor Changes
+
+- 16bf9a1: refactor(tsconfig): remove `./cli` entrance in package.json
+
 ## 0.1.1
 
 ### Patch Changes
