@@ -1,5 +1,31 @@
 # fenge
 
+## 0.3.0
+
+### Minor Changes
+
+- a3b985c: refactor: rename `Builder` methods to be camel case
+- 8b468ec: refactor: remove `append` property for Builder. user can use append method
+
+### Patch Changes
+
+- Updated dependencies [d832aad]
+- Updated dependencies [6c64129]
+- Updated dependencies [692d3e8]
+- Updated dependencies [561ecc5]
+- Updated dependencies [9cde584]
+- Updated dependencies [a3b985c]
+- Updated dependencies [b26463e]
+- Updated dependencies [16bf9a1]
+- Updated dependencies [8b468ec]
+- Updated dependencies [778a198]
+- Updated dependencies [9b1f20a]
+- Updated dependencies [4056ab2]
+- Updated dependencies [e36c13c]
+  - @fenge/eslint-config@0.5.0
+  - prettier-ignore@0.2.0
+  - @fenge/tsconfig@0.2.0
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,5 +1,30 @@
 # @fenge/eslint-config
 
+## 0.5.0
+
+### Minor Changes
+
+- a3b985c: refactor: rename `Builder` methods to be camel case
+- 8b468ec: refactor: remove `append` property for Builder. user can use append method
+
+### Patch Changes
+
+- d832aad: chore: upgrade deps
+- 6c64129: feat: add rule `no-empty-exports`
+- 692d3e8: feat(eslint-config): support `append` method
+- 9cde584: feat(eslint-config): add rule `prefer-spread`
+- b26463e: feat(eslint-config): add rule `n/no-process-exit`
+- 778a198: feat: add rule `esm/required-exports`
+- 9b1f20a: feat(eslint-config): add rule `es-x/no-hashbang`
+- 4056ab2: feat(eslint-config): add rule `import/no-empty-named-blocks`
+- e36c13c: feat(eslint-config): enforce checking unused jsx
+- Updated dependencies [6c64129]
+- Updated dependencies [d54423b]
+- Updated dependencies [1b7d98c]
+- Updated dependencies [778a198]
+- Updated dependencies [2d485c9]
+  - eslint-plugin-esm@0.3.0
+
 ## 0.4.1
 
 ### Patch Changes
