@@ -5,7 +5,10 @@
   "keywords": [
     "prettier",
     "config",
-    "standard"
+    "preset",
+    "sort",
+    "import",
+    "tailwind"
   ],
   "homepage": "https://github.com/zanminkian/fenge/tree/main/packages/prettier-config",
   "repository": {

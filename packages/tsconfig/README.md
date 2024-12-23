@@ -132,6 +132,8 @@ Here are the best practices if you are using this package.
 
 ### For monorepo (TS >= 5.7)
 
+You don't need `tsconfig.build.json`.
+
 ```
 ├── apps
 │   ├── app1

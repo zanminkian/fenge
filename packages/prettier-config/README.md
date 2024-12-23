@@ -10,9 +10,9 @@ An elegant prettier shareable config.
 
 ## Features
 
-- Sort ESM import statements.
-- Sort `package.json`.
-- Sort Tailwind CSS classes.
+- Sort ESM import statements (powered by [@ianvs/prettier-plugin-sort-imports](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports)).
+- Sort `package.json` (powered by [prettier-plugin-packagejson](https://www.npmjs.com/package/prettier-plugin-packagejson)).
+- Sort Tailwind CSS classes (powered by [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss)).
 - Elegant. One-line of config.
 - Compatible with default prettier config `{}`. Only introduced some plugins.
 
@@ -21,7 +21,7 @@ An elegant prettier shareable config.
 Install
 
 ```sh
-pnpm add -D prettier @fenge/prettier-config
+npm i -D prettier @fenge/prettier-config
 ```
 
 Config `prettier.config.js`

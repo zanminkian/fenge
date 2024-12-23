@@ -29,7 +29,7 @@ A strict eslint config preset containing a comprehensive set of rules for lintin
 Install it in the root of js / ts project.
 
 ```sh
-npm install -D eslint @fenge/eslint-config
+npm i -D eslint @fenge/eslint-config
 ```
 
 Config `eslint.config.js` (for ESM).
@@ -55,7 +55,7 @@ Config `package.json`
 }
 ```
 
-> Note: TypeScript project is required a `tsconfig.json` file in the root.
+> Note: For TypeScript project, adding a `tsconfig.json` file in the root is recommended.
 
 ## Advanced Usage
 
@@ -64,6 +64,7 @@ Config `package.json`
 You can use `Builder` class to customize for selecting or omitting some rules.
 
 ```ts
+// @ts-check
 import { Builder } from "@fenge/eslint-config";
 
 export default new Builder()
@@ -89,6 +90,8 @@ export default new Builder()
   })
   .toConfig();
 ```
+
+> Tips: By adding a `// @ts-check` at the top of the config file, you will get code hinting in VSCode/WebStorm. It will highly improve your development experience.
 
 ## License
 

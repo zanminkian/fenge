@@ -262,7 +262,7 @@ export default {
 };
 ```
 
-You can even install and use other third-party eslint-config, like [@sxzz/eslint-config](https://www.npmjs.com/package/@sxzz/eslint-config).
+> Tips: You can even install and use other third-party eslint-config, like [@sxzz/eslint-config](https://www.npmjs.com/package/@sxzz/eslint-config).
 
 ### Set up Git hooks
 
