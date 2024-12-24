@@ -312,6 +312,7 @@ export function getJsBase() {
       // 3. ban some syntaxes to reduce mistakes
       "default-param-last": "error",
       "func-name-matching": "error",
+      "func-style": ["error", "declaration", { allowArrowFunctions: true }],
       "getter-return": "error",
       "init-declarations": "error",
       "max-depth": ["error", { max: 5 }],
