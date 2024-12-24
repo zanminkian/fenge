@@ -17,6 +17,7 @@ const invalid = [
   s({ scripts: { preuninstall: "foo" } }),
   s({ scripts: { uninstall: "foo" } }),
   s({ scripts: { postuninstall: "foo" } }),
+  s({ scripts: { prepublish: "foo" } }),
 ];
 
 await test({ name, rule, valid, invalid });

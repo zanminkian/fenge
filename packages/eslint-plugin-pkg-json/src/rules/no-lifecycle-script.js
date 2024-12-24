@@ -1,3 +1,4 @@
+// https://docs.npmjs.com/cli/v11/using-npm/scripts#pre--post-scripts
 const invalid = new Set([
   "preinstall",
   "install",
@@ -5,6 +6,7 @@ const invalid = new Set([
   "preuninstall",
   "uninstall",
   "postuninstall",
+  "prepublish", // this script is deprecated by npm
 ]);
 
 export const name = "no-lifecycle-script";
