@@ -328,6 +328,7 @@ export function getJsBase() {
         "error",
         { disallowTemplateShorthand: true, allow: ["!!"] },
       ], // forbid code like `const num = +str`;
+      "no-inner-declarations": "error", // TODO: change the rule value to `["error","functions",{blockScopedFunctions:"disallow"}]` when eslint is v9
       "no-invalid-this": "error",
       "no-lonely-if": "error",
       "no-multi-assign": "error",
