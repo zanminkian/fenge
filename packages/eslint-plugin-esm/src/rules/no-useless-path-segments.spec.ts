@@ -1,5 +1,5 @@
 import { test } from "../test.spec.js";
-import { nearestRelativePath } from "./nearest-relative-path.js";
+import { noUselessPathSegments } from "./no-useless-path-segments.js";
 
 const valid = [
   'import xxx from "../a"',
@@ -49,4 +49,4 @@ const invalid = [
   "import foo from './..'",
 ].map((code) => ({ code, filename: "/a/b/c/d/e.js" }));
 
-test({ valid, invalid, ...nearestRelativePath });
+test({ valid, invalid, ...noUselessPathSegments });

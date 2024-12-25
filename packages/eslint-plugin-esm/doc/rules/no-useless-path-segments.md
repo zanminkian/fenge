@@ -1,5 +1,5 @@
 <!-- prettier-ignore-start -->
-# nearest-relative-path
+# no-useless-path-segments
 
 The relative source path should be a nearest relative path.
 

@@ -1,4 +1,3 @@
-import { nearestRelativePath } from "./rules/nearest-relative-path.js";
 import { noDirectoryImports } from "./rules/no-directory-imports.js";
 import { noDynamicImports } from "./rules/no-dynamic-imports.js";
 import { noEmptyExports } from "./rules/no-empty-exports.js";
@@ -9,10 +8,10 @@ import { noRenameExports } from "./rules/no-rename-exports.js";
 import { noRenameImports } from "./rules/no-rename-imports.js";
 import { noSideEffectImports } from "./rules/no-side-effect-imports.js";
 import { noTsFileImports } from "./rules/no-ts-file-imports.js";
+import { noUselessPathSegments } from "./rules/no-useless-path-segments.js";
 import { requiredExports } from "./rules/required-exports.js";
 
 export const rules = {
-  [nearestRelativePath.name]: nearestRelativePath.rule,
   [noDirectoryImports.name]: noDirectoryImports.rule,
   [noDynamicImports.name]: noDynamicImports.rule,
   [noEmptyExports.name]: noEmptyExports.rule,
@@ -23,5 +22,6 @@ export const rules = {
   [noRenameImports.name]: noRenameImports.rule,
   [noSideEffectImports.name]: noSideEffectImports.rule,
   [noTsFileImports.name]: noTsFileImports.rule,
+  [noUselessPathSegments.name]: noUselessPathSegments.rule,
   [requiredExports.name]: requiredExports.rule,
 };
