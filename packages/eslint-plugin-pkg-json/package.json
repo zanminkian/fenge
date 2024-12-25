@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-pkg-json",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "ESLint plugin for linting package.json file",
   "keywords": [
     "eslint",

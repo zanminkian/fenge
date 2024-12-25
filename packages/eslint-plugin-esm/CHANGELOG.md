@@ -1,5 +1,15 @@
 # eslint-plugin-esm
 
+## 0.4.0
+
+### Minor Changes
+
+- 85cd2d5: refactor(eslint-plugin-esm): rename rule `nearest-relative-path` to `no-useless-path-segments`
+
+### Patch Changes
+
+- 36c4c6b: fix(eslint-plugin-esm): report on `./..` and `./`
+
 ## 0.3.0
 
 ### Minor Changes

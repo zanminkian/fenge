@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.1.3
+
+### Patch Changes
+
+- a2e9f23: fix(eslint-plugin-pkg-json): disallow `prepublish` script
+
 ## 0.1.2
 
 ### Patch Changes
