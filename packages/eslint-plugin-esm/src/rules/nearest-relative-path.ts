@@ -15,13 +15,16 @@ function check(filename: string, source: string) {
   ) {
     return false;
   }
+  if (source.endsWith("/")) {
+    return true;
+  }
   const currentPath = path.dirname(filename);
   const absoluteSource = path.resolve(currentPath, source);
   // compatible with windows
   let resultPath = path
     .relative(currentPath, absoluteSource)
     .replaceAll("\\", "/");
-  if (!resultPath.startsWith("./") && !resultPath.startsWith("../")) {
+  if (!resultPath.startsWith("./") && !resultPath.startsWith("..")) {
     resultPath = `./${resultPath}`;
   }
   return resultPath !== source;

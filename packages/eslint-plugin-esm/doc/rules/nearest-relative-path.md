@@ -27,6 +27,10 @@ import "./../foo" // filename: /a/b/c/d/e.js
 import("./../foo") // filename: /a/b/c/d/e.js
 export * from "./../foo" // filename: /a/b/c/d/e.js
 export {a} from "./../foo" // filename: /a/b/c/d/e.js
+import foo from "./" // filename: /a/b/c/d/e.js
+import foo from '../' // filename: /a/b/c/d/e.js
+import foo from '../../' // filename: /a/b/c/d/e.js
+import foo from './..' // filename: /a/b/c/d/e.js
 ```
 
 ### Pass
@@ -44,5 +48,7 @@ export * from "./a" // filename: /a/b/c/d/e.js
 export {a} from "a" // filename: /a/b/c/d/e.js
 export {a} from "./a" // filename: /a/b/c/d/e.js
 import foo from "." // filename: /a/b/c/d/e.js
+import foo from '..' // filename: /a/b/c/d/e.js
+import foo from '../..' // filename: /a/b/c/d/e.js
 ```
 <!-- prettier-ignore-end -->

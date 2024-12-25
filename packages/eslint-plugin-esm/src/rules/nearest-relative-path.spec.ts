@@ -13,7 +13,10 @@ const valid = [
   'export * from "./a"',
   'export {a} from "a"',
   'export {a} from "./a"',
+
   'import foo from "."',
+  "import foo from '..'",
+  "import foo from '../..'",
 ].map((code) => ({ code, filename: "/a/b/c/d/e.js" }));
 
 const invalid = [
@@ -39,6 +42,11 @@ const invalid = [
   'import("./../foo")',
   'export * from "./../foo"',
   'export {a} from "./../foo"',
+
+  'import foo from "./"',
+  "import foo from '../'",
+  "import foo from '../../'",
+  "import foo from './..'",
 ].map((code) => ({ code, filename: "/a/b/c/d/e.js" }));
 
 test({ valid, invalid, ...nearestRelativePath });
