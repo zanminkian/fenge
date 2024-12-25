@@ -78,8 +78,7 @@ export async function diffAction(options) {
 
   // correct the recommended tsconfig for a better diff view
   if (projectTsconfig.compilerOptions?.outDir) {
-    recommendedTsconfig.compilerOptions =
-      recommendedTsconfig.compilerOptions ?? {};
+    recommendedTsconfig.compilerOptions ??= {};
     recommendedTsconfig.compilerOptions.outDir =
       projectTsconfig.compilerOptions.outDir;
   }

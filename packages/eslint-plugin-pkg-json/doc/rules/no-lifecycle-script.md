@@ -15,6 +15,7 @@ Using lifecycle script in public npm package is considered a bad practice. You s
 {"scripts":{"preuninstall":"foo"}}
 {"scripts":{"uninstall":"foo"}}
 {"scripts":{"postuninstall":"foo"}}
+{"scripts":{"prepublish":"foo"}}
 ```
 
 ### Pass

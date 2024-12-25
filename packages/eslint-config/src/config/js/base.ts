@@ -316,6 +316,11 @@ export function getJsBase() {
       "func-style": ["error", "declaration", { allowArrowFunctions: true }],
       "getter-return": "error",
       "init-declarations": "error",
+      "logical-assignment-operators": [
+        "error",
+        "always",
+        { enforceForIfStatements: true },
+      ],
       "max-depth": ["error", { max: 5 }],
       "max-params": ["error", { max: 4 }],
       "no-bitwise": "error",
