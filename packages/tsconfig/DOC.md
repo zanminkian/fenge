@@ -14,4 +14,14 @@ Because before TS 5.0, TS always look up the extends by path, while ignoring `ex
 
 > TODO: When TS reach to 6.0 and still consider `exports` field, move `esm.json`, `cjs.json` and `tsconfig.json` to a folder instead of in package root.
 
+## Why we need a `tsconfig.json` in the root of monorepo project?
+
+We can remove the `tsconfig.json` in the root of monorepo project. But when opening a `*.spec.ts` file using VSCode, TypeScript will fall back to use the root `tsconfig.json`. If there is no `tsconfig.json` in the root of monorepo project, opening `*.spec.ts` file using VSCode will shows incorrect errors.
+
 > TODO: Once [this issue](https://github.com/microsoft/TypeScript/issues/60748) has been solved. We can add `"include": ["${configDir}/src"]` and `"exclude": ["**/*.spec.ts", "**/*.test.ts"]` to `cjs.json` and `esm.json`. And then remove the root `tsconfig.json`.
+
+## Why setting `lib` and `target` to `es2022`?
+
+- Node 16 supports es2022
+- Node 18 supports es2022
+- [Node 18 does not support some features of es2023](https://github.com/tsconfig/bases/issues/217)
