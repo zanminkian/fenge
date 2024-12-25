@@ -1,5 +1,20 @@
 # @fenge/eslint-config
 
+## 0.5.1
+
+### Patch Changes
+
+- 57d1dfe: chore: upgrade deps
+- 553928a: feat(eslint-config): add rule `func-style`
+- 8c4b1d4: feat(eslint-config): add rule `no-inner-declarations`
+- 6c0185f: feat(eslint-config): add rule `logical-assignment-operators`
+- 9bb1dd5: feat(eslint-config): add rule `func-names`
+- Updated dependencies [85cd2d5]
+- Updated dependencies [a2e9f23]
+- Updated dependencies [36c4c6b]
+  - eslint-plugin-esm@0.4.0
+  - eslint-plugin-pkg-json@0.1.3
+
 ## 0.5.0
 
 ### Minor Changes
