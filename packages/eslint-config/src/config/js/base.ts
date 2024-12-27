@@ -488,6 +488,7 @@ export function getJsBase() {
       "unicorn/prefer-module": "error",
       "unicorn/prefer-negative-index": "error",
       "unicorn/prefer-number-properties": "error",
+      "unicorn/prefer-object-from-entries": "error",
       "unicorn/prefer-optional-catch-binding": "error",
       "unicorn/prefer-regexp-test": "error",
       "unicorn/prefer-string-replace-all": "error",
