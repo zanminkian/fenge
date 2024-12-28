@@ -1,18 +1,23 @@
+import type { Rule } from "eslint";
 import type { Node } from "estree";
-import { createSimpleRule, getRuleName } from "../utils.js";
+import { getRuleName } from "../utils.js";
 
-export const noDeclares = createSimpleRule({
-  name: getRuleName(import.meta.url),
-  message: "Disallow using `declare` statement.",
-  schema: [
-    {
-      type: "object",
-      properties: {
-        allowClassProperty: { type: "boolean" },
-      },
-      additionalProperties: false,
+const name = getRuleName(import.meta.url);
+const rule: Rule.RuleModule = {
+  meta: {
+    messages: {
+      default: "Disallow using `declare` statement.",
     },
-  ],
+    schema: [
+      {
+        type: "object",
+        properties: {
+          allowClassProperty: { type: "boolean" },
+        },
+        additionalProperties: false,
+      },
+    ],
+  },
   create: (context) => ({
     "[declare=true]": (node: Node & { parent: Node }) => {
       const { allowClassProperty = false } = context.options[0] ?? {};
@@ -23,7 +28,8 @@ export const noDeclares = createSimpleRule({
       ) {
         return;
       }
-      context.reportNode(node);
+      context.report({ node, messageId: "default" });
     },
   }),
-});
+};
+export const noDeclares = { name, rule };

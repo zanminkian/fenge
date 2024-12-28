@@ -1,9 +1,14 @@
+import type { Rule } from "eslint";
 import type { Node } from "estree";
-import { createSimpleRule, getRuleName } from "../utils.js";
+import { getRuleName } from "../utils.js";
 
-export const exactMapSetType = createSimpleRule({
-  name: getRuleName(import.meta.url),
-  message: "Disallow using Map and Set without type arguments.",
+const name = getRuleName(import.meta.url);
+const rule: Rule.RuleModule = {
+  meta: {
+    messages: {
+      default: "Disallow using Map and Set without type arguments.",
+    },
+  },
   create: (context) => {
     const selectors = [
       // new Set();
@@ -13,8 +18,10 @@ export const exactMapSetType = createSimpleRule({
     ];
     return {
       [`:matches(${selectors.join(", ")})`]: (node: Node) => {
-        context.reportNode(node);
+        context.report({ node, messageId: "default" });
       },
     };
   },
-});
+};
+
+export const exactMapSetType = { name, rule };

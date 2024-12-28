@@ -1,12 +1,19 @@
+import type { Rule } from "eslint";
 import type { Node } from "estree";
-import { createSimpleRule, getRuleName } from "../utils.js";
+import { getRuleName } from "../utils.js";
 
-export const noConstEnum = createSimpleRule({
-  name: getRuleName(import.meta.url),
-  message: "Disallow using `const enum` expression.",
+const name = getRuleName(import.meta.url);
+const rule: Rule.RuleModule = {
+  meta: {
+    messages: {
+      default: "Disallow using `const enum` expression.",
+    },
+  },
   create: (context) => ({
     "TSEnumDeclaration[const=true]": (node: Node) => {
-      context.reportNode(node);
+      context.report({ node, messageId: "default" });
     },
   }),
-});
+};
+
+export const noConstEnum = { name, rule };

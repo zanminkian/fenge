@@ -1,12 +1,19 @@
+import type { Rule } from "eslint";
 import type { Node } from "estree";
-import { createSimpleRule, getRuleName } from "../utils.js";
+import { getRuleName } from "../utils.js";
 
-export const noExportAssignment = createSimpleRule({
-  name: getRuleName(import.meta.url),
-  message: "Disallow using `export =` statement.",
+const name = getRuleName(import.meta.url);
+const rule: Rule.RuleModule = {
+  meta: {
+    messages: {
+      default: "Disallow using `export =` statement.",
+    },
+  },
   create: (context) => ({
     TSExportAssignment: (node: Node) => {
-      context.reportNode(node);
+      context.report({ node, messageId: "default" });
     },
   }),
-});
+};
+
+export const noExportAssignment = { name, rule };

@@ -1,14 +1,20 @@
+import type { Rule } from "eslint";
 import type { Node } from "estree";
-import { createSimpleRule, getRuleName } from "../utils.js";
+import { getRuleName } from "../utils.js";
 
-export const noUntypedEmptyArray = createSimpleRule({
-  name: getRuleName(import.meta.url),
-  message:
-    "Defining a variable with an empty array should annotate the array type",
+const name = getRuleName(import.meta.url);
+const rule: Rule.RuleModule = {
+  meta: {
+    messages: {
+      default:
+        "Defining a variable with an empty array should annotate the array type",
+    },
+  },
   create: (context) => ({
     "VariableDeclarator:not([id.typeAnnotation]) > ArrayExpression.init[elements.length=0]":
       (node: Node) => {
-        context.reportNode(node);
+        context.report({ node, messageId: "default" });
       },
   }),
-});
+};
+export const noUntypedEmptyArray = { name, rule };
