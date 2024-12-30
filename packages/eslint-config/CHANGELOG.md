@@ -1,5 +1,12 @@
 # @fenge/eslint-config
 
+## 0.5.2
+
+### Patch Changes
+
+- 9fcef9d: fix(eslint-config): move `class-literal-property-style` back to ts base
+- 3f45e5f: feat(eslint-config): add rule `unicorn/prefer-object-from-entries`
+
 ## 0.5.1
 
 ### Patch Changes
