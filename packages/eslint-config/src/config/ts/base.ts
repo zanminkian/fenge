@@ -104,6 +104,7 @@ export function getTsBase() {
       "@typescript-eslint/adjacent-overload-signatures": "error",
       // "@typescript-eslint/array-type": ["error", 'array-simple'], // The default option is 'array'. Not very sure if we need to change the option. So disabled it.
       "@typescript-eslint/await-thenable": "error",
+      "@typescript-eslint/class-literal-property-style": "error",
       "@typescript-eslint/consistent-generic-constructors": "error",
       "@typescript-eslint/consistent-indexed-object-style": "error",
       "@typescript-eslint/consistent-type-assertions": [
