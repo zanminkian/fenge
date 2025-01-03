@@ -502,7 +502,10 @@ export function getJsBase() {
       "@fenge/call-arguments-length": "error",
       "@fenge/no-instanceof-builtin": "error",
       "@fenge/no-jsx-in-non-jsx-file": "error",
+      "@fenge/no-nested-class": "error",
+      "@fenge/no-nested-function": "error",
       "@fenge/no-restricted-loops": "error",
+      "@fenge/no-top-level-arrow-function": "error",
       "@fenge/no-unnecessary-template-string": "error",
 
       "@typescript-eslint/ban-ts-comment": [

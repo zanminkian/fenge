@@ -17,7 +17,7 @@ export function createRule({
   schema,
   fixable,
   type = "suggestion",
-  create,
+  create: createFn,
 }: {
   name: string;
   message: string;
@@ -39,7 +39,7 @@ export function createRule({
         description: message,
       },
     },
-    create,
+    create: createFn,
   };
   return { name, rule };
 }
@@ -61,10 +61,10 @@ export type ImportationNode =
  * @param check the check logic
  * @returns ESLint RuleListener
  */
-export const create = (
+export function create(
   context: Rule.RuleContext,
   check: (filename: string, source: string, node: ImportationNode) => boolean,
-): Rule.RuleListener => {
+): Rule.RuleListener {
   const handle = (node: ImportationNode) => {
     if (!node.source) return;
     if (!("value" in node.source)) return;
@@ -78,7 +78,7 @@ export const create = (
     ExportAllDeclaration: handle,
     ExportNamedDeclaration: handle,
   };
-};
+}
 
 export function getSourceType(source: string) {
   if (

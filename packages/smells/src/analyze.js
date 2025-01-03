@@ -46,7 +46,7 @@ async function getAnalysis(filepath) {
   /**
    * @param {any} node
    */
-  function walk(node) {
+  const walk = (node) => {
     if (!node || typeof node !== "object") {
       return;
     }
@@ -114,7 +114,7 @@ async function getAnalysis(filepath) {
         break;
     }
     Object.values(node).forEach((sub) => walk(sub));
-  }
+  };
 
   // this package require typescript as its peer dependencies
   const { parse } = await import("@typescript-eslint/typescript-estree").catch(
