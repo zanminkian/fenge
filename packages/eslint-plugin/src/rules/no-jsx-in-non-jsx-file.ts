@@ -13,12 +13,8 @@ const rule: Rule.RuleModule = {
     },
   },
   create: (context) => {
-    if (
-      context.filename.endsWith(".jsx") ||
-      context.filename.endsWith(".tsx")
-    ) {
-      return {};
-    }
+    // ignore jsx files
+    if (/\.[tj]sx$/.test(context.filename)) return {};
     return {
       ":matches(JSXElement, JSXFragment)": (node: Node) => {
         context.report({ node, messageId: `${name}/error` });
