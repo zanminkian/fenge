@@ -32,6 +32,10 @@
     "declarationMap": true,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "jsx": "preserve"
+
+    "jsx": "preserve",
+
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true
   }
 }
