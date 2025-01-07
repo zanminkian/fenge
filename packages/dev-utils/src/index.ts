@@ -3,7 +3,6 @@ import { createRequire } from "node:module";
 import path from "node:path";
 import process from "node:process";
 import { describe, it } from "node:test";
-import { fileURLToPath } from "node:url";
 import { RuleTester, type Rule } from "eslint";
 import { outdent } from "outdent";
 
@@ -115,9 +114,8 @@ async function genDoc({
 
   `.replaceAll(process.cwd(), "/foo");
 
-  const currentDir = path.dirname(fileURLToPath(import.meta.url));
   await fs.writeFile(
-    path.join(currentDir, "..", "doc", "rules", `${name}.md`),
+    path.join(process.cwd(), "doc", "rules", `${name}.md`),
     mdContent,
   );
 }

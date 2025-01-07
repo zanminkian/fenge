@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noRelativeParentImports } from "./no-relative-parent-imports.js";
 
 const valid = [

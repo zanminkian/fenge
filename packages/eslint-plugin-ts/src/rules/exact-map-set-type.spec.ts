@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { exactMapSetType } from "./exact-map-set-type.js";
 
 const valid = [

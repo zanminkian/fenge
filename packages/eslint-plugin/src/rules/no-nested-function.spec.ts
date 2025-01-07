@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noNestedFunction } from "./no-nested-function.js";
 
 const valid = [

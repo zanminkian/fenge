@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noRenameExports } from "./no-rename-exports.js";
 
 const valid = [

@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { callArgumentsLength } from "./call-arguments-length.js";
 
 const valid = [

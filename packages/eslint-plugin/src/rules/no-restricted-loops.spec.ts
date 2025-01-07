@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noRestrictedLoops } from "./no-restricted-loops.js";
 
 const valid = ["for(const bar of foo) {}", "while(condition){}"];

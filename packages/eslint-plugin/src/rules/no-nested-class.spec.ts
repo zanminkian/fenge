@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noNestedClass } from "./no-nested-class.js";
 
 const valid = [

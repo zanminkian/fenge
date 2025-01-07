@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noTopLevelArrowFunction } from "./no-top-level-arrow-function.js";
 
 const valid = [

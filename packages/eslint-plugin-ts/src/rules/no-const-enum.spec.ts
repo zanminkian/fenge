@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noConstEnum } from "./no-const-enum.js";
 
 const valid = ["enum E {}"];

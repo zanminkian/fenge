@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noPropertyDecorator } from "./no-property-decorator.js";
 
 const valid = [
