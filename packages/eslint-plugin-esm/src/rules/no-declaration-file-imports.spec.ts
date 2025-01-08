@@ -1,12 +1,7 @@
 import { test } from "../test.spec.js";
-import { noTsFileImports } from "./no-ts-file-imports.js";
+import { noDeclarationFileImports } from "./no-declaration-file-imports.js";
 
 const invalid = [
-  "import foo from './foo.ts'",
-  "import foo from './foo.cts'",
-  "import foo from './foo.mts'",
-  "import foo from './foo.tsx'",
-
   "import foo from 'foo.d.bar'",
   "import foo from './foo.d.bar'",
   "import foo from './foo/foo.d.bar'",
@@ -21,10 +16,18 @@ const invalid = [
   "import foo from './foo.d.mjs'",
   "import foo from './foo.d.jsx'",
 
-  "import foo from '/foo.ts'",
   "import foo from '/foo.d.js'",
 ];
 
-const valid = ["import foo from 'foo'"];
+const valid = [
+  "import foo from 'foo'",
 
-test({ valid, invalid, ...noTsFileImports });
+  "import foo from './foo.ts'",
+  "import foo from './foo.cts'",
+  "import foo from './foo.mts'",
+  "import foo from './foo.tsx'",
+
+  "import foo from '/foo.ts'",
+];
+
+test({ valid, invalid, ...noDeclarationFileImports });

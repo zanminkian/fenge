@@ -1,17 +1,13 @@
 <!-- prettier-ignore-start -->
-# no-ts-file-imports
+# no-declaration-file-imports
 
-Disallow importing from a declaration style file or a ts file
+Disallow importing from a declaration style file.
 
 ## Rule Details
 
 ### Fail
 
 ```ts
-import foo from './foo.ts'
-import foo from './foo.cts'
-import foo from './foo.mts'
-import foo from './foo.tsx'
 import foo from 'foo.d.bar'
 import foo from './foo.d.bar'
 import foo from './foo/foo.d.bar'
@@ -23,7 +19,6 @@ import foo from './foo.d.js'
 import foo from './foo.d.cjs'
 import foo from './foo.d.mjs'
 import foo from './foo.d.jsx'
-import foo from '/foo.ts'
 import foo from '/foo.d.js'
 ```
 
@@ -31,5 +26,10 @@ import foo from '/foo.d.js'
 
 ```ts
 import foo from 'foo'
+import foo from './foo.ts'
+import foo from './foo.cts'
+import foo from './foo.mts'
+import foo from './foo.tsx'
+import foo from '/foo.ts'
 ```
 <!-- prettier-ignore-end -->
