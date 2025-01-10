@@ -1,5 +1,18 @@
 # @fenge/eslint-config
 
+## 0.5.3
+
+### Patch Changes
+
+- d0e9357: feat: add rule `no-nested-function`
+- d0e9357: feat: add rule `no-top-level-arrow-function`
+- 2560801: chore: upgrade deps
+- d0e9357: feat: add rule `no-nested-class`
+- Updated dependencies [d0e9357]
+- Updated dependencies [d0e9357]
+- Updated dependencies [d0e9357]
+  - @fenge/eslint-plugin@0.1.3
+
 ## 0.5.2
 
 ### Patch Changes
