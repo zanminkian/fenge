@@ -20,6 +20,6 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@types/node": "22.9.1"
+    "@types/node": "22.10.5"
   }
 }
