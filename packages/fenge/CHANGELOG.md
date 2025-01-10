@@ -1,5 +1,17 @@
 # fenge
 
+## 0.3.3
+
+### Patch Changes
+
+- 2560801: chore: upgrade deps
+- Updated dependencies [d0e9357]
+- Updated dependencies [d0e9357]
+- Updated dependencies [2560801]
+- Updated dependencies [d0e9357]
+  - @fenge/eslint-config@0.5.3
+  - @fenge/tsconfig@0.2.1
+
 ## 0.3.2
 
 ### Patch Changes
