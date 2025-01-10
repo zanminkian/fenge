@@ -1,6 +1,6 @@
 {
   "name": "@fenge/eslint-config",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "A super strict eslint config for linting js/ts/package.json.",
   "keywords": [
     "opinionated",
@@ -29,8 +29,8 @@
   "dependencies": {
     "@fenge/eslint-plugin": "workspace:*",
     "@fenge/eslint-plugin-ts": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "8.18.2",
-    "@typescript-eslint/parser": "8.18.2",
+    "@typescript-eslint/eslint-plugin": "8.19.1",
+    "@typescript-eslint/parser": "8.19.1",
     "confusing-browser-globals": "1.0.11",
     "eslint-plugin-es-x": "8.4.1",
     "eslint-plugin-esm": "workspace:*",
@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@types/eslint-config-prettier": "6.11.3",
-    "@types/node": "22.9.1",
+    "@types/node": "22.10.5",
     "eslint": "8.57.1",
     "eslint-config-prettier": "9.1.0",
     "prettier": "3.4.2",

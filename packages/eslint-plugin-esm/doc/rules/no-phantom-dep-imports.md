@@ -26,6 +26,6 @@ import foo from '../foo'
 import foo from 'node:foo'
 import type Foo from 'estree'
 import type {Foo} from 'eslint'
-import eslint from 'eslint' // options: [{"allowDevDependencies":true}]
+import foo from '@fenge/dev-utils' // options: [{"allowDevDependencies":true}]
 ```
 <!-- prettier-ignore-end -->

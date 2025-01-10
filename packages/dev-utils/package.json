@@ -1,0 +1,19 @@
+{
+  "name": "@fenge/dev-utils",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "8.19.1",
+    "eslint": "8.57.1",
+    "outdent": "0.8.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "8.56.11",
+    "@types/node": "22.10.5"
+  }
+}

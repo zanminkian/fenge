@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noSideEffectImports } from "./no-side-effect-imports.js";
 
 const valid = [

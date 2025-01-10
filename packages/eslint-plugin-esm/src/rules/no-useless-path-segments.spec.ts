@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noUselessPathSegments } from "./no-useless-path-segments.js";
 
 const valid = [

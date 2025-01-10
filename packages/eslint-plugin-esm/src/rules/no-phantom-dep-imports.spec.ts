@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noPhantomDepImports } from "./no-phantom-dep-imports.js";
 
 const valid = [
@@ -10,7 +10,7 @@ const valid = [
   { code: "import type Foo from 'estree'" },
   { code: "import type {Foo} from 'eslint'" },
   {
-    code: "import eslint from 'eslint'",
+    code: "import foo from '@fenge/dev-utils'",
     options: [{ allowDevDependencies: true }],
   },
 ];

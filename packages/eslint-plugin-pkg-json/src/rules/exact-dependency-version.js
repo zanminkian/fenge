@@ -16,6 +16,12 @@ function isExactVersion(version) {
 }
 
 export const name = "exact-dependency-version";
+/**
+ * Background:
+ * This rule is for npm package projects,
+ * not for application projects (including node applications and frontend applications) because they usually have a lock file (pnpm-lock.yaml, package-lock.json) to ensure they are using the exact dependencies.
+ * As for npm package projects, they are expected to be stable when they are installed by other projects. So locking the dependency versions will be more stable for npm package projects.
+ */
 export const rule = {
   meta: {
     messages: {
@@ -28,8 +34,8 @@ export const rule = {
   create: (context) => ({
     "Program > ExpressionStatement > ObjectExpression": (node) => {
       node.properties
-        .filter((p) =>
-          ["dependencies", "devDependencies"].includes(p.key.value),
+        .filter(
+          (p) => ["dependencies", "devDependencies"].includes(p.key.value), // Should we remove devDependencies?
         )
         .flatMap((n) => n.value.properties)
         .filter((property) => !isExactVersion(property.value.value))

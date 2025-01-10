@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noJsxInNonJsxFile } from "./no-jsx-in-non-jsx-file.js";
 
 const codes = [

@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noEmptyExports } from "./no-empty-exports.js";
 
 const valid = [

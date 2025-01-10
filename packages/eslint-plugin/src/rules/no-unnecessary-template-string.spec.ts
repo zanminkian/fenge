@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noUnnecessaryTemplateString } from "./no-unnecessary-template-string.js";
 
 const valid = [

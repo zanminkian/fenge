@@ -1,6 +1,6 @@
 {
   "name": "@fenge/tsconfig",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A strict sharable tsconfig preset.",
   "keywords": [
     "tsconfig",
@@ -37,14 +37,14 @@
     "build": "tsc"
   },
   "dependencies": {
-    "commander": "12.1.0",
+    "commander": "13.0.0",
     "get-tsconfig": "4.8.1",
     "json5": "2.2.3",
     "print-diff": "2.0.0",
     "sort-keys": "5.1.0"
   },
   "devDependencies": {
-    "@types/node": "22.9.1"
+    "@types/node": "22.10.5"
   },
   "peerDependencies": {
     "typescript": "^5.7.0"

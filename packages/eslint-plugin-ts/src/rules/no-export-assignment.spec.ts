@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "@fenge/dev-utils";
 import { noExportAssignment } from "./no-export-assignment.js";
 
 const valid = ["export default {}", "exports = {}", "module.exports = {}"];

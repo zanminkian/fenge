@@ -28,12 +28,12 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@typescript-eslint/typescript-estree": "8.18.2",
-    "commander": "12.1.0",
+    "@typescript-eslint/typescript-estree": "8.19.1",
+    "commander": "13.0.0",
     "globby": "14.0.2"
   },
   "devDependencies": {
-    "@types/node": "22.9.1"
+    "@types/node": "22.10.5"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
