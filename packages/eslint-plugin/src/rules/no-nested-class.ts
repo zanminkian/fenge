@@ -18,9 +18,11 @@ const rule: Rule.RuleModule = {
     const handle = (node: Node) =>
       context.report({ node, messageId: `${name}/error` });
     return {
+      // ClassDeclaration is only allowed when parent is Program, or parent is ExportNamedDeclaration, or parent is ExportDefaultDeclaration
       "ClassDeclaration[parent.type!='Program'][parent.type!='ExportNamedDeclaration'][parent.type!='ExportDefaultDeclaration']":
         handle,
-      "ClassExpression[parent.type!='Program'][parent.type!='ExportNamedDeclaration'][parent.type!='ExportDefaultDeclaration']":
+      // ClassExpression is only allowed when parent is ExportNamedDeclaration, or parent is ExportDefaultDeclaration
+      "ClassExpression[parent.type!='ExportNamedDeclaration'][parent.type!='ExportDefaultDeclaration']":
         handle,
     };
   },

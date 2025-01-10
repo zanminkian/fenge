@@ -21,6 +21,7 @@ const invalid = [
   "const Foo = class{}",
   "let Foo = class Bar{}",
   "let Foo; Foo = class{}",
+  "(class {})",
 ];
 
 test({ valid, invalid, ...noNestedClass });

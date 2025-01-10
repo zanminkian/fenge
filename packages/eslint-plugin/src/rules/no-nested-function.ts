@@ -16,8 +16,10 @@ const rule: Rule.RuleModule = {
   },
   create: (context) => {
     const selectors = [
+      // FunctionDeclaration is only allowed when parent is Program, or parent is ExportNamedDeclaration, or parent is ExportDefaultDeclaration
       "FunctionDeclaration[parent.type!='Program'][parent.type!='ExportNamedDeclaration'][parent.type!='ExportDefaultDeclaration']", // function foo(){}
-      "FunctionExpression[parent.type!='Program'][parent.type!='MethodDefinition']", // function (){}
+      // FunctionExpression is only allowed when parent is MethodDefinition
+      "FunctionExpression[parent.type!='MethodDefinition']", // function (){}
     ];
     return {
       [`:matches(${selectors.join(", ")})`]: (node: Node) => {

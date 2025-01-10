@@ -17,6 +17,7 @@ function foo(){return class{}}
 const Foo = class{}
 let Foo = class Bar{}
 let Foo; Foo = class{}
+(class {})
 ```
 
 ### Pass
