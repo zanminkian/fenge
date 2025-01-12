@@ -3,10 +3,13 @@
 - `"checkJs": false`: Don't check js for better experience. User can add `// @ts-check` on the top of js file to check it manually.
 - `"module": "node16"`: According to https://www.typescriptlang.org/docs/handbook/modules/theory.html, we should use Node16 only.
 - `"moduleDetection": "force"`: https://github.com/zanminkian/fenge/issues/88#issuecomment-1734416707.
-- `lib`: 1. Typescript will include APIs for newer JS features matching the `target`. See https://www.typescriptlang.org/tsconfig#lib. Therefore, there is no need to add "ESNext" to lib. 2. In ts 4.5, lib files can be overrode by npm modules. See https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#supporting-lib-from-node_modules. Therefore, libs like "DOM" can be included by installing `@types/web`. No need to add "DOM" to lib.
 - `types`: Ts will load all the `node_modules/@types/*` declaration files when `types` is removed. Remove it will improve the extensibility.
 - `isolatedDeclarations`: Just wait and see. This flag will do harm to development experience. See [TS 5.5 release post](https://devblogs.microsoft.com/typescript/announcing-typescript-5-5).
 - `allowArbitraryExtensions`: 1. We encourage users to use tailwind in frontend project. Tailwind project do not need this this option. 2. Adding `/// <reference types="vite/client" />` to the top of frontend project entrance (like `main.ts`) works well for most of frontend projects. Adding to much `foo.d.ts` in project makes it complex. Using `/// <reference types="vite/client" />` is enough.
+
+## Why do we specify `lib`?
+
+The reason to specify lib is that the default is to load `<target>.full.lib.d.ts` which will pull in `DOM`. It's incorrect for some node cli or backend projects. Web projects can install `@types/web` to pull in `DOM`.
 
 ## Why do we put `esm.json`, `cjs.json` and `tsconfig.json` in the package root?
 
