@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noRenameImports } from "./no-rename-imports.js";
+import { noRenameImports } from "./no-rename-imports.ts";
 
 const valid = [
   "import Foo from 'foo'",

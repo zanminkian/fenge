@@ -1,7 +1,7 @@
 import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { test } from "@fenge/dev-utils";
-import { noGitIgnoredImports } from "./no-git-ignored-imports.js";
+import { noGitIgnoredImports } from "./no-git-ignored-imports.ts";
 
 const valid = [
   "import foo from 'foo'",

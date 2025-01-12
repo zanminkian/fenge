@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noInstanceofBuiltin } from "./no-instanceof-builtin.js";
+import { noInstanceofBuiltin } from "./no-instanceof-builtin.ts";
 
 const invalid = [
   // Primitive

@@ -1,4 +1,4 @@
-import { getJsCli } from "../js/cli.js";
+import { getJsCli } from "../js/cli.ts";
 
 export function getTsCli() {
   const jsCli = getJsCli();

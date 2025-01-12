@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noPropertyDecorator } from "./no-property-decorator.js";
+import { noPropertyDecorator } from "./no-property-decorator.ts";
 
 const valid = [
   `class A {

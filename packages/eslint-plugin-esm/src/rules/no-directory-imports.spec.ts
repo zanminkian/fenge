@@ -1,7 +1,7 @@
 import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { test } from "@fenge/dev-utils";
-import { noDirectoryImports } from "./no-directory-imports.js";
+import { noDirectoryImports } from "./no-directory-imports.ts";
 
 const valid = [
   "import foo from 'foo'",

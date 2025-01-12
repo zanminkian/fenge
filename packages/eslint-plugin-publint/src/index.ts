@@ -1,5 +1,5 @@
-import { createRule } from "./create-rule.js";
-import { processor } from "./processor.js";
+import { createRule } from "./create-rule.ts";
+import { processor } from "./processor.ts";
 
 export const rules = {
   suggestion: createRule("suggestion"),

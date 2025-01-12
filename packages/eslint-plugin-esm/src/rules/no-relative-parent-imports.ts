@@ -1,4 +1,4 @@
-import { create, createRule, getRuleName } from "../common.js";
+import { create, createRule, getRuleName } from "../common.ts";
 
 const depth = 3;
 

@@ -1,5 +1,5 @@
 import path from "node:path";
-import { create, createRule, getRuleName, getSourceType } from "../common.js";
+import { create, createRule, getRuleName, getSourceType } from "../common.ts";
 
 export const noUselessPathSegments = createRule({
   name: getRuleName(import.meta.url),

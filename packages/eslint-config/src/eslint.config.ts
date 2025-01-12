@@ -1,7 +1,7 @@
-import { base, type LinterOptions } from "./config/base.js";
-import { javascript } from "./config/javascript.js";
-import { packagejson } from "./config/packagejson.js";
-import { typescript } from "./config/typescript.js";
+import { base, type LinterOptions } from "./config/base.ts";
+import { javascript } from "./config/javascript.ts";
+import { packagejson } from "./config/packagejson.ts";
+import { typescript } from "./config/typescript.ts";
 
 type NoDuplicate<A extends unknown[]> = {
   [I in keyof A]: true extends {

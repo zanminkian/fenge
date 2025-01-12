@@ -1,8 +1,8 @@
-import { getTsBase } from "./ts/base.js";
-import { getTsCli } from "./ts/cli.js";
-import { getTsConfig } from "./ts/config.js";
-import { getTsDeclaration } from "./ts/declaration.js";
-import { getTsTest } from "./ts/test.js";
+import { getTsBase } from "./ts/base.ts";
+import { getTsCli } from "./ts/cli.ts";
+import { getTsConfig } from "./ts/config.ts";
+import { getTsDeclaration } from "./ts/declaration.ts";
+import { getTsTest } from "./ts/test.ts";
 
 export function typescript() {
   return [

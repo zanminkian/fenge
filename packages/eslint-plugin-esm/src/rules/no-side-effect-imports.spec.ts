@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noSideEffectImports } from "./no-side-effect-imports.js";
+import { noSideEffectImports } from "./no-side-effect-imports.ts";
 
 const valid = [
   "import 'reflect-metadata'",

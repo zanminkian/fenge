@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noRelativeParentImports } from "./no-relative-parent-imports.js";
+import { noRelativeParentImports } from "./no-relative-parent-imports.ts";
 
 const valid = [
   "import foo from 'foo'",

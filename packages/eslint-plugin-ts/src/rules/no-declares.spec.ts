@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noDeclares } from "./no-declares.js";
+import { noDeclares } from "./no-declares.ts";
 
 const invalidCodes = [
   "declare class A {}",

@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noConstEnum } from "./no-const-enum.js";
+import { noConstEnum } from "./no-const-enum.ts";
 
 const valid = ["enum E {}"];
 

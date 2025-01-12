@@ -1,4 +1,4 @@
-import { isWorkspaceRootPkg } from "../common.js";
+import { isWorkspaceRootPkg } from "../common.ts";
 
 export const name = "no-types-dependency-in-workspace-root";
 export const rule = {

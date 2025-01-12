@@ -1,6 +1,6 @@
 import assert from "node:assert";
 import { describe, it } from "node:test";
-import { typescript } from "./typescript.js";
+import { typescript } from "./typescript.ts";
 
 await describe("ts config", async () => {
   await it("ts main config rules values should be error", () => {

@@ -1,4 +1,4 @@
-import { getJsTest } from "../js/test.js";
+import { getJsTest } from "../js/test.ts";
 
 export function getTsTest() {
   const jsTest = getJsTest();

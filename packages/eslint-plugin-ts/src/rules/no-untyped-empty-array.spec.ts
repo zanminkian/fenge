@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noUntypedEmptyArray } from "./no-untyped-empty-array.js";
+import { noUntypedEmptyArray } from "./no-untyped-empty-array.ts";
 
 const valid = [
   "const arr: number[] = []",

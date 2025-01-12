@@ -1,4 +1,4 @@
-import { processor } from "./processor.js";
+import { processor } from "./processor.ts";
 import * as bottomDefault from "./rules/bottom-default.js";
 import * as exactDependencyVersion from "./rules/exact-dependency-version.js";
 import * as noConflictTypes from "./rules/no-conflict-types.js";

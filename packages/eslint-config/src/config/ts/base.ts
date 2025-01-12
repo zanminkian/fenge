@@ -1,6 +1,6 @@
 import * as fengeTsPlugin from "@fenge/eslint-plugin-ts";
 import tsParser from "@typescript-eslint/parser";
-import { getJsBase } from "../js/base.js";
+import { getJsBase } from "../js/base.ts";
 
 export function getTsBase() {
   const jsBase = getJsBase();

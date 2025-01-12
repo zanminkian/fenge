@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { create, createRule, getRuleName, getSourceType } from "../common.js";
-import { memoize } from "../utils.js";
+import { create, createRule, getRuleName, getSourceType } from "../common.ts";
+import { memoize } from "../utils.ts";
 
 export const noDirectoryImports = createRule({
   name: getRuleName(import.meta.url),

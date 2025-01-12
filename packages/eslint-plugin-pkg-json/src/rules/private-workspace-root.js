@@ -1,4 +1,4 @@
-import { isWorkspaceRootPkg } from "../common.js";
+import { isWorkspaceRootPkg } from "../common.ts";
 
 export const name = "private-workspace-root";
 export const rule = {

@@ -2,8 +2,8 @@ import childProcess from "node:child_process";
 import path from "node:path";
 import process from "node:process";
 import { isNativeError } from "node:util/types";
-import { create, createRule, getRuleName, getSourceType } from "../common.js";
-import { memoize } from "../utils.js";
+import { create, createRule, getRuleName, getSourceType } from "../common.ts";
+import { memoize } from "../utils.ts";
 
 export const noGitIgnoredImports = createRule({
   name: getRuleName(import.meta.url),

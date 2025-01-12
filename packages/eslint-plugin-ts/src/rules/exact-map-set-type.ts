@@ -1,6 +1,6 @@
 import type { Rule } from "eslint";
 import type { Node } from "estree";
-import { getRuleName } from "../utils.js";
+import { getRuleName } from "../utils.ts";
 
 const name = getRuleName(import.meta.url);
 const rule: Rule.RuleModule = {

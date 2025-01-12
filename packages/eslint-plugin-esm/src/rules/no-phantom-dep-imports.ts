@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
-import { create, createRule, getRuleName, getSourceType } from "../common.js";
+import { create, createRule, getRuleName, getSourceType } from "../common.ts";
 
 function isObject(value: unknown) {
   return value !== null && typeof value === "object";

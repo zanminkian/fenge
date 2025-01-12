@@ -2,8 +2,8 @@ import type { Rule } from "eslint";
 import type { ObjectExpression } from "estree";
 import type { MessageType } from "publint";
 import { formatMessage } from "publint/utils";
-import { getPublintInfo } from "./get-publint-info.js";
-import { getReportingNode } from "./get-reporting-node.js";
+import { getPublintInfo } from "./get-publint-info.ts";
+import { getReportingNode } from "./get-reporting-node.ts";
 
 export function createRule(type: MessageType): Rule.RuleModule {
   return {

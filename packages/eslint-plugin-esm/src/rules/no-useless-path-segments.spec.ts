@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noUselessPathSegments } from "./no-useless-path-segments.js";
+import { noUselessPathSegments } from "./no-useless-path-segments.ts";
 
 const valid = [
   'import xxx from "../a"',

@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noDeclarationFileImports } from "./no-declaration-file-imports.js";
+import { noDeclarationFileImports } from "./no-declaration-file-imports.ts";
 
 const invalid = [
   "import foo from 'foo.d.bar'",

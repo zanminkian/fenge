@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noTopLevelArrowFunction } from "./no-top-level-arrow-function.js";
+import { noTopLevelArrowFunction } from "./no-top-level-arrow-function.ts";
 
 const valid = [
   "function foo(){}",

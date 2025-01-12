@@ -1,5 +1,5 @@
 import { fileURLToPath } from "node:url";
-import { test } from "../test.spec.ts";
+import { test } from "@fenge/dev-utils";
 import { noInexistentRelativeImports } from "./no-inexistent-relative-imports.ts";
 
 const filename = fileURLToPath(import.meta.url);

@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noUnnecessaryTemplateString } from "./no-unnecessary-template-string.js";
+import { noUnnecessaryTemplateString } from "./no-unnecessary-template-string.ts";
 
 const valid = [
   "'abc'",

@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { exactMapSetType } from "./exact-map-set-type.js";
+import { exactMapSetType } from "./exact-map-set-type.ts";
 
 const valid = [
   "const m = new Map([['a','b']])",

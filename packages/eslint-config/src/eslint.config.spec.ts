@@ -1,6 +1,6 @@
 import assert from "node:assert";
 import { describe, it } from "node:test";
-import config from "./eslint.config.js";
+import config from "./eslint.config.ts";
 
 await describe("eslint.config", async () => {
   await it("length of default export should be 13", () => {

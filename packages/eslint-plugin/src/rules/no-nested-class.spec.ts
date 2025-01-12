@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noNestedClass } from "./no-nested-class.js";
+import { noNestedClass } from "./no-nested-class.ts";
 
 const valid = [
   "class Foo{}",

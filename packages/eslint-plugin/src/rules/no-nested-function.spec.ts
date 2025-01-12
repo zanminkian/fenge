@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noNestedFunction } from "./no-nested-function.js";
+import { noNestedFunction } from "./no-nested-function.ts";
 
 const valid = [
   // normal

@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noDynamicImports } from "./no-dynamic-imports.js";
+import { noDynamicImports } from "./no-dynamic-imports.ts";
 
 const valid = [
   "import('foo')",

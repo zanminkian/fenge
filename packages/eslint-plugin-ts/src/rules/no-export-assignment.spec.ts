@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noExportAssignment } from "./no-export-assignment.js";
+import { noExportAssignment } from "./no-export-assignment.ts";
 
 const valid = ["export default {}", "exports = {}", "module.exports = {}"];
 

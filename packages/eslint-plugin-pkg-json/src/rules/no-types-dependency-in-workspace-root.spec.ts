@@ -1,6 +1,6 @@
 import path from "node:path";
 import process from "node:process";
-import { test } from "../test.spec.js";
+import { test } from "../test.spec.ts";
 import { name, rule } from "./no-types-dependency-in-workspace-root.js";
 
 const s = JSON.stringify;

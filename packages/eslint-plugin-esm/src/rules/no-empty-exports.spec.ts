@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noEmptyExports } from "./no-empty-exports.js";
+import { noEmptyExports } from "./no-empty-exports.ts";
 
 const valid = [
   "var name = 123; export {name as age};",

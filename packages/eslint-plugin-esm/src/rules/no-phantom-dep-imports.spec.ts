@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noPhantomDepImports } from "./no-phantom-dep-imports.js";
+import { noPhantomDepImports } from "./no-phantom-dep-imports.ts";
 
 const valid = [
   { code: "import foo from '/foo'" },

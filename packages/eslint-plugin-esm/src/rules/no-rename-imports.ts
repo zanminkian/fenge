@@ -1,4 +1,4 @@
-import { createRule, DEFAULT_MESSAGE_ID, getRuleName } from "../common.js";
+import { createRule, DEFAULT_MESSAGE_ID, getRuleName } from "../common.ts";
 
 export const noRenameImports = createRule({
   name: getRuleName(import.meta.url),

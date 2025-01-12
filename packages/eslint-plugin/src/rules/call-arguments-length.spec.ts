@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { callArgumentsLength } from "./call-arguments-length.js";
+import { callArgumentsLength } from "./call-arguments-length.ts";
 
 const valid = [
   "push()",

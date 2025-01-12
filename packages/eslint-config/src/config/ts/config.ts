@@ -1,4 +1,4 @@
-import { getJsConfig } from "../js/config.js";
+import { getJsConfig } from "../js/config.ts";
 
 export function getTsConfig() {
   const jsConfig = getJsConfig();

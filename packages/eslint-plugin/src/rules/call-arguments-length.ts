@@ -1,6 +1,6 @@
 import type { Rule } from "eslint";
 import type { CallExpression, NewExpression } from "estree";
-import { getRuleName } from "../utils.js";
+import { getRuleName } from "../utils.ts";
 
 // TODO: If https://github.com/sindresorhus/eslint-plugin-unicorn/issues/1356 is implemented, migrate this rule to `eslint-plugin-unicorn`
 const name = getRuleName(import.meta.url);

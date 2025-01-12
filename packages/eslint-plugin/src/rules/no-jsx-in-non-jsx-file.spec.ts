@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noJsxInNonJsxFile } from "./no-jsx-in-non-jsx-file.js";
+import { noJsxInNonJsxFile } from "./no-jsx-in-non-jsx-file.ts";
 
 const codes = [
   "const Foo = () => <div></div>",

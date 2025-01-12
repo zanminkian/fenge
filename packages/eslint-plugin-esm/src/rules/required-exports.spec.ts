@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { requiredExports } from "./required-exports.js";
+import { requiredExports } from "./required-exports.ts";
 
 const valid = [
   "export {}",

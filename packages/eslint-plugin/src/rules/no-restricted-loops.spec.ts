@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import { noRestrictedLoops } from "./no-restricted-loops.js";
+import { noRestrictedLoops } from "./no-restricted-loops.ts";
 
 const valid = ["for(const bar of foo) {}", "while(condition){}"];
 

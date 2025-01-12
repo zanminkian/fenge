@@ -1,5 +1,5 @@
 import type { Rule } from "eslint";
-import { getRuleName } from "../utils.js";
+import { getRuleName } from "../utils.ts";
 
 // TODO: If https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2452 is accepted, migrate this rule to `eslint-plugin-unicorn`
 const name = getRuleName(import.meta.url);

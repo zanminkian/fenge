@@ -1,4 +1,4 @@
-import { test } from "../test.spec.js";
+import { test } from "../test.spec.ts";
 import { name, rule } from "./no-lifecycle-script.js";
 
 const s = JSON.stringify;
