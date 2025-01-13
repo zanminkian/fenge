@@ -35,7 +35,6 @@
 
     "jsx": "preserve",
 
-    "allowImportingTsExtensions": true,
     "rewriteRelativeImportExtensions": true
   }
 }
