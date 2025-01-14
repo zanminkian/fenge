@@ -29,8 +29,8 @@
   "dependencies": {
     "@fenge/eslint-plugin": "workspace:*",
     "@fenge/eslint-plugin-ts": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "8.19.1",
-    "@typescript-eslint/parser": "8.19.1",
+    "@typescript-eslint/eslint-plugin": "8.20.0",
+    "@typescript-eslint/parser": "8.20.0",
     "confusing-browser-globals": "1.0.11",
     "eslint-plugin-es-x": "8.4.1",
     "eslint-plugin-esm": "workspace:*",
@@ -40,7 +40,7 @@
     "eslint-plugin-pkg-json": "workspace:*",
     "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-publint": "workspace:*",
-    "eslint-plugin-react": "7.37.3",
+    "eslint-plugin-react": "7.37.4",
     "eslint-plugin-react-hooks": "5.1.0",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "eslint-plugin-sonarjs": "1.0.4",
@@ -51,7 +51,7 @@
     "@types/eslint-config-prettier": "6.11.3",
     "@types/node": "22.10.5",
     "eslint": "8.57.1",
-    "eslint-config-prettier": "9.1.0",
+    "eslint-config-prettier": "10.0.1",
     "prettier": "3.4.2",
     "tsx": "4.19.2"
   },
