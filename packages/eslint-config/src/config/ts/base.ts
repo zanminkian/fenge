@@ -171,6 +171,7 @@ export function getTsBase() {
       "@typescript-eslint/no-invalid-void-type": "error",
       "@typescript-eslint/no-misused-new": "error",
       "@typescript-eslint/no-misused-promises": "error",
+      "@typescript-eslint/no-misused-spread": "error",
       "@typescript-eslint/no-mixed-enums": "error",
       "@typescript-eslint/no-namespace": "error", // consider to add option `{"allowDefinitionFiles": false}` to strictly forbid `namespace` keyword
       "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
