@@ -1,5 +1,15 @@
 # eslint-plugin-esm
 
+## 0.5.0
+
+### Minor Changes
+
+- cb2a822: feat: remove `esm/no-ts-file-imports`, and add `esm/no-declaration-file-imports`
+
+### Patch Changes
+
+- cb2a822: feat: add rule `no-inexistent-relative-imports`
+
 ## 0.4.0
 
 ### Minor Changes

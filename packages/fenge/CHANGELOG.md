@@ -1,5 +1,21 @@
 # fenge
 
+## 0.4.0
+
+### Minor Changes
+
+- cb2a822: feat(fenge): improve compatible with TS 5.7
+
+  TypeScript 5.7 add a feature that we can import from relative ts file. That means, from now on, we can write completely ts. TypeScript now is a 100% programming language, rather than a enhancement of JavaScript.
+
+### Patch Changes
+
+- Updated dependencies [cb2a822]
+- Updated dependencies [cb2a822]
+- Updated dependencies [cb2a822]
+  - @fenge/eslint-config@0.5.4
+  - @fenge/tsconfig@0.3.0
+
 ## 0.3.3
 
 ### Patch Changes

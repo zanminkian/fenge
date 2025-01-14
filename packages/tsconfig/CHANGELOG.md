@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.3.0
+
+### Minor Changes
+
+- cb2a822: feat: allow importing ts files
+
 ## 0.2.1
 
 ### Patch Changes
