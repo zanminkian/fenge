@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.5.4
+
+### Patch Changes
+
+- cb2a822: feat: remove `esm/no-ts-file-imports`, and add `esm/no-declaration-file-imports`
+- cb2a822: feat: add rule `no-inexistent-relative-imports`
+- Updated dependencies [cb2a822]
+- Updated dependencies [cb2a822]
+  - eslint-plugin-esm@0.5.0
+
 ## 0.5.3
 
 ### Patch Changes
