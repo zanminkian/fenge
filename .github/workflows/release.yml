@@ -6,35 +6,10 @@ on:
       - main
       - prerelease
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
-
 jobs:
   release:
-    name: Release
-    runs-on: ubuntu-latest
     permissions:
       contents: write
+      id-token: write
       pull-requests: write
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js Env and Test
-        uses: actions/setup-node@v3
-        with:
-          node-version: lts/*
-      - run: corepack enable
-      - run: pnpm i
-      - run: pnpm test
-
-      - name: Create Release Pull Request or Publish
-        id: changesets
-        # https://github.com/changesets/action
-        uses: changesets/action@v1
-        with:
-          publish: pnpm release
-          commit: "chore: release"
-          title: "chore: release"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    uses: zanminkian/github-actions/.github/workflows/release.yml@main
