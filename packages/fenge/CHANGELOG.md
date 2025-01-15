@@ -1,5 +1,11 @@
 # fenge
 
+## 0.4.1
+
+### Patch Changes
+
+- @fenge/eslint-config@0.5.5
+
 ## 0.4.0
 
 ### Minor Changes
