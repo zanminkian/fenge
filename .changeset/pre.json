@@ -16,5 +16,5 @@
     "@fenge/tsconfig": "0.3.0",
     "@fenge/types": "0.2.0"
   },
-  "changesets": ["eleven-ghosts-report"]
+  "changesets": ["eleven-ghosts-report", "hungry-points-check"]
 }

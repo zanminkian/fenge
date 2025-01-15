@@ -1,5 +1,11 @@
 # fenge
 
+## 0.4.1-beta.1
+
+### Patch Changes
+
+- 8a6f64b: chore: no significant changes
+
 ## 0.4.1-beta.0
 
 ### Patch Changes
