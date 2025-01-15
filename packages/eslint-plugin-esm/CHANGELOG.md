@@ -1,5 +1,11 @@
 # eslint-plugin-esm
 
+## 0.6.0-beta.0
+
+### Minor Changes
+
+- 02d0164: chore(eslint-plugin-esm): make `no-inexistent-relative-imports` stricter
+
 ## 0.5.0
 
 ### Minor Changes
