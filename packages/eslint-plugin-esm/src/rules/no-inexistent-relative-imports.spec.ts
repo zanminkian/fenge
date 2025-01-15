@@ -9,8 +9,6 @@ const valid = [
 
   // with ext
   "import foo from './no-inexistent-relative-imports.spec.ts'",
-  // without ext
-  "import foo from './no-inexistent-relative-imports.spec'",
   "import foo from '../rules'",
   "import foo from '.'",
   "import foo from './'",
@@ -20,6 +18,8 @@ const valid = [
 
 const invalid = [
   "import foo from './no-inexistent-relative-imports.spec.js'",
+  // without ext
+  "import foo from './no-inexistent-relative-imports.spec'",
   "import foo from './inexistent-file'",
   "import foo from '../inexistent-file'",
 ].map((code) => ({ code, filename }));
