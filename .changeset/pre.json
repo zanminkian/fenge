@@ -16,5 +16,5 @@
     "@fenge/tsconfig": "0.3.0",
     "@fenge/types": "0.2.0"
   },
-  "changesets": []
+  "changesets": ["eleven-ghosts-report"]
 }
