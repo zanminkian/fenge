@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - prerelease
+      - test
 
 jobs:
   release:
@@ -14,3 +15,8 @@ jobs:
       pull-requests: write
     uses: zanminkian/github-actions/.github/workflows/release.yml@main
     secrets: inherit
+  test:
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ needs.release.outputs.published }}
