@@ -1,5 +1,15 @@
 # fenge
 
+## 0.4.2
+
+### Patch Changes
+
+- 0ea3682: chore: upgrade deps
+- Updated dependencies [1c35021]
+- Updated dependencies [0ea3682]
+  - @fenge/eslint-config@0.5.6
+  - @fenge/prettier-config@0.1.4
+
 ## 0.4.1
 
 ### Patch Changes

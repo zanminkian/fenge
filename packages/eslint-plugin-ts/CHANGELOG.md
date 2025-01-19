@@ -1,5 +1,11 @@
 # @fenge/eslint-plugin-ts
 
+## 0.2.1
+
+### Patch Changes
+
+- 1c35021: feat: add rule `no-misuse-spreading-parameter`
+
 ## 0.2.0
 
 ### Minor Changes

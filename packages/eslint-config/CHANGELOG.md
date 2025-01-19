@@ -1,5 +1,13 @@
 # @fenge/eslint-config
 
+## 0.5.6
+
+### Patch Changes
+
+- 1c35021: feat: add rule `no-misuse-spreading-parameter`
+- Updated dependencies [1c35021]
+  - @fenge/eslint-plugin-ts@0.2.1
+
 ## 0.5.5
 
 ### Patch Changes
