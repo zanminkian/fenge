@@ -98,6 +98,7 @@ export function getTsBase() {
       "@fenge-ts/no-const-enum": "error",
       "@fenge-ts/no-declares": "error",
       "@fenge-ts/no-export-assignment": "error",
+      "@fenge-ts/no-misuse-spreading-parameter": "error",
       "@fenge-ts/no-property-decorator": "error",
       "@fenge-ts/no-untyped-empty-array": "error",
       // typescript
