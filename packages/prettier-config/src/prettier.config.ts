@@ -24,12 +24,25 @@ const resolve = createRequire(import.meta.url).resolve;
 const tailwindConfig = await getTailwindConfig();
 
 export default {
-  plugins: [
-    "prettier-plugin-packagejson",
-    // "prettier-plugin-curly",
-    "@ianvs/prettier-plugin-sort-imports",
-    ...(tailwindConfig ? ["prettier-plugin-tailwindcss"] : []),
-  ].map((moduleName) => resolve(moduleName)),
-  importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
-  ...(tailwindConfig ? { tailwindConfig } : {}),
+  overrides: [
+    {
+      files: "package.json",
+      options: {
+        plugins: ["prettier-plugin-packagejson"].map((moduleName) =>
+          resolve(moduleName),
+        ),
+      },
+    },
+    {
+      files: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}",
+      options: {
+        plugins: [
+          "@ianvs/prettier-plugin-sort-imports",
+          ...(tailwindConfig ? ["prettier-plugin-tailwindcss"] : []),
+        ].map((moduleName) => resolve(moduleName)),
+        importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
+        ...(tailwindConfig ? { tailwindConfig } : {}),
+      },
+    },
+  ],
 };
