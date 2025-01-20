@@ -18,9 +18,9 @@
     "fenge": "workspace:*",
     "typescript": "5.7.3"
   },
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@10.0.0",
   "engines": {
     "node": ">=22.0.0",
-    "pnpm": "^9.0.0"
+    "pnpm": "^10.0.0"
   }
 }

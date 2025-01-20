@@ -290,7 +290,7 @@ export function getJsBase() {
       esm: esmPlugin,
       "simple-import-sort": simpleImportSortPlugin,
       "@fenge": fengePlugin,
-      "@typescript-eslint": tsPlugin,
+      "@typescript-eslint": { rules: tsPlugin.rules }, // TODO: Ugly. Submit a pr to typescript-plugin to fix it.
     },
     rules: {
       // 1. standard config rules
