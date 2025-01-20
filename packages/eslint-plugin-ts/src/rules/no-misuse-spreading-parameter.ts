@@ -4,7 +4,7 @@ import {
 } from "@typescript-eslint/utils";
 import type { Rule } from "eslint";
 import type { CallExpression, NewExpression } from "estree";
-import type * as ts from "typescript";
+import type ts from "typescript";
 import { getRuleName } from "../utils.ts";
 
 const name = getRuleName(import.meta.url);

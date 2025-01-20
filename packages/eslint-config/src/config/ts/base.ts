@@ -117,7 +117,7 @@ export function getTsBase() {
       ],
       "@typescript-eslint/consistent-type-definitions": ["error", "interface"], // TODO should we change to 'type'?
       "@typescript-eslint/consistent-type-exports": "error",
-      // "@typescript-eslint/consistent-type-imports": "error,
+      "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/dot-notation": ["error", { allowKeywords: true }],
       "@typescript-eslint/method-signature-style": "error",
       "@typescript-eslint/naming-convention": [
