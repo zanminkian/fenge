@@ -35,9 +35,10 @@ export function getPublintInfo(pkgPath: string): PublintInfo {
     return info;
   }
 
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
   const result = {
-    pkg: JSON.parse(fs.readFileSync(pkgPath, "utf8")),
-    messages: publint(path.dirname(pkgPath)).messages,
+    pkg,
+    messages: pkg.private ? [] : publint(path.dirname(pkgPath)).messages,
   };
   cache.set(pkgPath, result);
   return result;
