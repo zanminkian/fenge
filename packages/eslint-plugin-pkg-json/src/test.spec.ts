@@ -9,7 +9,9 @@ import { outdent } from "outdent";
 export type TestCase = string | { code: string; filename?: string };
 
 const tester = new RuleTester({
-  parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+  languageOptions: {
+    parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+  },
 });
 
 export async function test({
@@ -32,7 +34,7 @@ export async function test({
           typeof item !== "string"
             ? {
                 code: `(${item.code})`,
-                filename: item.filename,
+                ...(item.filename && { filename: item.filename }),
               }
             : { code: `(${item})` },
         )
@@ -52,7 +54,7 @@ export async function test({
           typeof item !== "string"
             ? {
                 code: `(${item.code})`,
-                filename: item.filename,
+                ...(item.filename && { filename: item.filename }),
               }
             : { code: `(${item})` },
         )

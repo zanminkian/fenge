@@ -1,8 +1,8 @@
 import fs from "node:fs/promises";
-import { createRequire } from "node:module";
 import path from "node:path";
 import process from "node:process";
 import { describe, it } from "node:test";
+import parser from "@typescript-eslint/parser";
 import { RuleTester, type Rule } from "eslint";
 import { outdent } from "outdent";
 
@@ -11,8 +11,10 @@ export type TestCase =
   | { code: string; filename?: string; options?: unknown };
 
 const tester = new RuleTester({
-  parser: createRequire(import.meta.url).resolve("@typescript-eslint/parser"),
-  parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+  languageOptions: {
+    parser,
+    parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+  },
 });
 
 export async function test({
@@ -51,7 +53,7 @@ export async function test({
             typeof testCase === "string" ? undefined : testCase.filename;
           tester.run(name, rule, {
             valid: [],
-            invalid: [{ code, errors, filename }],
+            invalid: [{ code, errors, ...(filename && { filename }) }],
             ...(typeof testCase === "object" && testCase.options
               ? { options: testCase.options }
               : {}),
