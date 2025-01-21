@@ -1,5 +1,16 @@
 # @fenge/eslint-config
 
+## 0.5.7
+
+### Patch Changes
+
+- 2e702e2: chore: upgrade deps
+- 10b7f69: feat: add rule `@typescript-eslint/consistent-type-imports`
+- Updated dependencies [2e702e2]
+- Updated dependencies [60c56ed]
+  - @fenge/eslint-plugin-ts@0.2.2
+  - eslint-plugin-publint@0.1.0
+
 ## 0.5.6
 
 ### Patch Changes

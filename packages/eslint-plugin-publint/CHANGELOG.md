@@ -1,5 +1,11 @@
 # eslint-plugin-publint
 
+## 0.1.0
+
+### Minor Changes
+
+- 60c56ed: feat: ignore `package.json`s whose `private` is true
+
 ## 0.0.5
 
 ### Patch Changes
