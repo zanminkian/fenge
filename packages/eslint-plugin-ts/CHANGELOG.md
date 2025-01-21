@@ -1,5 +1,11 @@
 # @fenge/eslint-plugin-ts
 
+## 0.2.2
+
+### Patch Changes
+
+- 2e702e2: chore: upgrade deps
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # fenge
 
+## 0.5.0
+
+### Minor Changes
+
+- 43f9dfa: chore: upgrade eslint to v9
+
+### Patch Changes
+
+- 2e702e2: chore: upgrade deps
+- Updated dependencies [2e702e2]
+- Updated dependencies [58e95d9]
+- Updated dependencies [10b7f69]
+- Updated dependencies [10748a1]
+  - @fenge/eslint-config@0.5.7
+  - @fenge/tsconfig@0.3.1
+  - @fenge/prettier-config@0.2.0
+
 ## 0.4.2
 
 ### Patch Changes

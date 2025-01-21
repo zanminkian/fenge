@@ -1,5 +1,11 @@
 # @fenge/prettier-config
 
+## 0.2.0
+
+### Minor Changes
+
+- 10748a1: refactor: move all `plugins` to `overrides`
+
 ## 0.1.4
 
 ### Patch Changes
