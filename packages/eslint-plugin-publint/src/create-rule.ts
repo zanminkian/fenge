@@ -5,8 +5,12 @@ import { formatMessage } from "publint/utils";
 import { getPublintInfo } from "./get-publint-info.ts";
 import { getReportingNode } from "./get-reporting-node.ts";
 
-export function createRule(type: MessageType): Rule.RuleModule {
+export function createRule(
+  type: MessageType,
+  meta: Rule.RuleMetaData,
+): Rule.RuleModule {
   return {
+    meta,
     create: (context: Rule.RuleContext) => {
       const { pkg, messages } = getPublintInfo(context.filename);
       const filteredMessages = messages.filter((msg) => msg.type === type);
