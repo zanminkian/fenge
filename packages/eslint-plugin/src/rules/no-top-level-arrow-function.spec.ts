@@ -9,15 +9,18 @@ const valid = [
 
   // allow one-line function
   "let foo = () => ''",
-  "let foo = () => {}",
-  "const foo = () => {}",
-  "let foo; foo = () => {}",
-  "export const foo = () => {}",
-  "export let foo = () => {}",
-  "export default () => {}",
+  "let foo = () => [\n]",
+  "let foo = () => ({})",
+  "const foo = () => ({})",
+  "let foo; foo = () => ({})",
+  "export const foo = () => ({})",
+  "export let foo = () => ({})",
+  "export default () => ({})",
 ];
 
 const invalid = [
+  "let foo = () => {}",
+  "const foo = () => {}",
   "let foo = () => {\n}",
   "const foo = () => {\n}",
   "let foo; foo = () => {\n}",

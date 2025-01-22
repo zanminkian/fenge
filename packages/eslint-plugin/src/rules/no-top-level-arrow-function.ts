@@ -1,5 +1,5 @@
 import type { Rule } from "eslint";
-import type { Node } from "estree";
+import type { ArrowFunctionExpression } from "estree";
 import { getRuleName } from "../utils.ts";
 
 const name = getRuleName(import.meta.url);
@@ -15,9 +15,10 @@ const rule: Rule.RuleModule = {
     },
   },
   create: (context) => {
-    const handle = (node: Node) => {
-      if (node.loc?.start.line === node.loc?.end.line) return;
-      context.report({ node, messageId: `${name}/error` });
+    const handle = (node: ArrowFunctionExpression) => {
+      if (node.body.type === "BlockStatement") {
+        context.report({ node, messageId: `${name}/error` });
+      }
     };
     return {
       "VariableDeclaration[parent.type='Program'] > VariableDeclarator > ArrowFunctionExpression":
