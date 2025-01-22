@@ -1,5 +1,11 @@
 # @fenge/eslint-plugin
 
+## 0.2.0
+
+### Minor Changes
+
+- d2e61d3: feat: `no-top-level-arrow-function` only report when the function body is `BlockStatement`
+
 ## 0.1.3
 
 ### Patch Changes

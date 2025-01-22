@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.5.8
+
+### Patch Changes
+
+- 17936c7: feat: add `for-direction`
+- Updated dependencies [0c3b8f0]
+- Updated dependencies [d2e61d3]
+  - eslint-plugin-publint@0.1.1
+  - @fenge/eslint-plugin@0.2.0
+
 ## 0.5.7
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # eslint-plugin-publint
 
+## 0.1.1
+
+### Patch Changes
+
+- 0c3b8f0: chore: add meta to rules
+
 ## 0.1.0
 
 ### Minor Changes
