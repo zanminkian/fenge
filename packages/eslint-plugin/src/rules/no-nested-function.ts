@@ -15,16 +15,16 @@ const rule: Rule.RuleModule = {
     },
   },
   create: (context) => {
-    const selectors = [
-      // FunctionDeclaration is only allowed when parent is Program, or parent is ExportNamedDeclaration, or parent is ExportDefaultDeclaration
-      "FunctionDeclaration[parent.type!='Program'][parent.type!='ExportNamedDeclaration'][parent.type!='ExportDefaultDeclaration']", // function foo(){}
-      // FunctionExpression is only allowed when parent is MethodDefinition
-      "FunctionExpression[parent.type!='MethodDefinition']", // function (){}
-    ];
+    const handle = (node: Node) =>
+      context.report({ node, messageId: `${name}/error` });
     return {
-      [`:matches(${selectors.join(", ")})`]: (node: Node) => {
-        context.report({ node, messageId: `${name}/error` });
-      },
+      // FunctionDeclaration is only allowed when parent is Program, or parent is ExportNamedDeclaration, or parent is ExportDefaultDeclaration
+      // function foo(){}
+      "FunctionDeclaration[parent.type!='Program'][parent.type!='ExportNamedDeclaration'][parent.type!='ExportDefaultDeclaration']":
+        handle,
+      // FunctionExpression is only allowed when parent is MethodDefinition
+      // function (){}
+      "FunctionExpression[parent.type!='MethodDefinition']": handle,
     };
   },
 };

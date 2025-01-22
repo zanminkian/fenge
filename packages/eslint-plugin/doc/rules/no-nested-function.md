@@ -8,6 +8,8 @@ Non top-level functions are expected to be arrow functions instead of function d
 ### Fail
 
 ```ts
+Foo.prototype.bar = function(){}
+Foo.prototype.bar = function bar(){}
 const foo = function(){}
 const foo = function foo(){}
 let foo; foo = function(){}

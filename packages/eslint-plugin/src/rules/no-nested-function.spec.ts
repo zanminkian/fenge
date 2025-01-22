@@ -17,6 +17,8 @@ const valid = [
 
 const invalid = [
   // normal
+  "Foo.prototype.bar = function(){}",
+  "Foo.prototype.bar = function bar(){}",
   "const foo = function(){}",
   "const foo = function foo(){}",
   "let foo; foo = function(){}",

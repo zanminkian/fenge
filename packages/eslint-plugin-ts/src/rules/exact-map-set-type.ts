@@ -10,16 +10,15 @@ const rule: Rule.RuleModule = {
     },
   },
   create: (context) => {
-    const selectors = [
-      // new Set();
-      "Identifier[name=/^(Set|Map|WeakSet|WeakMap)$/][parent.type='NewExpression'][parent.arguments.length=0][parent.typeArguments=undefined]",
-      // class Foo {foo: Set}
-      "Identifier[name=/^(Set|Map|WeakSet|WeakMap)$/][parent.type!='NewExpression'][parent.typeArguments=undefined]",
-    ];
+    const handle = (node: Node) =>
+      context.report({ node, messageId: "default" });
     return {
-      [`:matches(${selectors.join(", ")})`]: (node: Node) => {
-        context.report({ node, messageId: "default" });
-      },
+      // new Set();
+      "Identifier[name=/^(Set|Map|WeakSet|WeakMap)$/][parent.type='NewExpression'][parent.arguments.length=0][parent.typeArguments=undefined]":
+        handle,
+      // class Foo {foo: Set}
+      "Identifier[name=/^(Set|Map|WeakSet|WeakMap)$/][parent.type!='NewExpression'][parent.typeArguments=undefined]":
+        handle,
     };
   },
 };
