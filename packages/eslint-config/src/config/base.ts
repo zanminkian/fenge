@@ -1,9 +1,7 @@
 import childProcess from "node:child_process";
+import type { Linter } from "eslint";
 
-export interface LinterOptions {
-  reportUnusedDisableDirectives?: "error" | "warn" | "off";
-  noInlineConfig?: boolean;
-}
+export type LinterOptions = Linter.LinterOptions;
 
 function gitignore() {
   // There are 2 kinds of exception:
@@ -23,10 +21,7 @@ function gitignore() {
   ] as const;
 }
 
-export function base({
-  reportUnusedDisableDirectives = "off",
-  noInlineConfig = false,
-}: LinterOptions = {}) {
+export function base(linterOptions: LinterOptions = {}) {
   return [
     ...gitignore(), // global ignore
     {
@@ -36,10 +31,7 @@ export function base({
         "**/*.{ts,cts,mts,tsx}",
         "**/package.json",
       ],
-      linterOptions: {
-        reportUnusedDisableDirectives,
-        noInlineConfig,
-      },
+      linterOptions,
     },
     // Ignore unsupported files.
     // This config is for suppressing error when linting a directory which does not contain supported files.
