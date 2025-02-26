@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.3.2
+
+### Patch Changes
+
+- 2be3d29: chore: upgrade deps
+
 ## 0.3.1
 
 ### Patch Changes

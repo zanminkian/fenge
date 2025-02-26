@@ -1,5 +1,18 @@
 # fenge
 
+## 0.5.2
+
+### Patch Changes
+
+- 2be3d29: chore: upgrade deps
+- Updated dependencies [ba3e2f5]
+- Updated dependencies [c44f1fb]
+- Updated dependencies [5df3ebf]
+- Updated dependencies [2be3d29]
+  - @fenge/eslint-config@0.5.9
+  - @fenge/prettier-config@0.2.1
+  - @fenge/tsconfig@0.3.2
+
 ## 0.5.1
 
 ### Patch Changes
