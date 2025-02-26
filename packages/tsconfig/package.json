@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "commander": "13.1.0",
-    "get-tsconfig": "4.9.0",
+    "get-tsconfig": "4.10.0",
     "json5": "2.2.3",
     "print-diff": "2.0.0",
     "sort-keys": "5.1.0"
