@@ -1,5 +1,12 @@
 # @fenge/prettier-config
 
+## 0.2.1
+
+### Patch Changes
+
+- 5df3ebf: feat(prettier-config): improve compatibility with tailwindcss v4
+- 2be3d29: chore: upgrade deps
+
 ## 0.2.0
 
 ### Minor Changes

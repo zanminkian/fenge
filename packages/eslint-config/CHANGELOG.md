@@ -1,5 +1,16 @@
 # @fenge/eslint-config
 
+## 0.5.9
+
+### Patch Changes
+
+- ba3e2f5: feat(eslint-config): add rule `@typescript-eslint/no-unnecessary-boolean-literal-compare`
+- c44f1fb: refactor(eslint-config): builder options defaults to `{}`
+- 2be3d29: chore: upgrade deps
+- Updated dependencies [2be3d29]
+  - eslint-plugin-publint@0.1.2
+  - @fenge/eslint-plugin-ts@0.2.3
+
 ## 0.5.8
 
 ### Patch Changes
