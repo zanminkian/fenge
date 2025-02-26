@@ -1,47 +1,32 @@
-import fs from "node:fs/promises";
 import { createRequire } from "node:module";
-import path from "node:path";
-import process from "node:process";
-
-async function getTailwindConfig() {
-  const exists = (filepath: string) =>
-    fs
-      .access(filepath)
-      .then(() => true)
-      .catch(() => false);
-  return (
-    await Promise.all(
-      ["js", "ts", "json"]
-        .map((i) => path.resolve(process.cwd(), `tailwind.config.${i}`))
-        .map(async (filepath) =>
-          (await exists(filepath)) ? filepath : undefined,
-        ),
-    )
-  ).find(Boolean);
-}
 
 const resolve = createRequire(import.meta.url).resolve;
-const tailwindConfig = await getTailwindConfig();
+const resolvePlugins = (plugins: string[]) =>
+  plugins.map((plugin) => resolve(plugin));
 
 export default {
   overrides: [
     {
       files: "package.json",
       options: {
-        plugins: ["prettier-plugin-packagejson"].map((moduleName) =>
-          resolve(moduleName),
-        ),
+        plugins: resolvePlugins(["prettier-plugin-packagejson"]),
       },
     },
     {
-      files: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}",
+      files: "*.{js,cjs,mjs,ts,cts,mts}",
       options: {
-        plugins: [
+        plugins: resolvePlugins(["@ianvs/prettier-plugin-sort-imports"]),
+        importOrderParserPlugins: ["typescript", "decorators-legacy"],
+      },
+    },
+    {
+      files: "*.{jsx,tsx}",
+      options: {
+        plugins: resolvePlugins([
           "@ianvs/prettier-plugin-sort-imports",
-          ...(tailwindConfig ? ["prettier-plugin-tailwindcss"] : []),
-        ].map((moduleName) => resolve(moduleName)),
+          "prettier-plugin-tailwindcss",
+        ]),
         importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
-        ...(tailwindConfig ? { tailwindConfig } : {}),
       },
     },
   ],
