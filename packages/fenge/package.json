@@ -64,7 +64,7 @@
     "@types/node": "22.13.5"
   },
   "peerDependencies": {
-    "typescript": "^5.6.0"
+    "typescript": "^5.7.0"
   },
   "peerDependenciesMeta": {
     "typescript": {
