@@ -24,7 +24,7 @@
   "exports": "./dist/eslint.config.js",
   "scripts": {
     "build": "tsc",
-    "test": "node --test --import tsx/esm \"**/*.spec.ts\""
+    "test": "node --test --experimental-strip-types \"**/*.spec.ts\""
   },
   "dependencies": {
     "@fenge/eslint-plugin": "workspace:*",
@@ -52,8 +52,7 @@
     "@types/node": "22.13.5",
     "eslint": "9.21.0",
     "eslint-config-prettier": "10.0.1",
-    "prettier": "3.5.2",
-    "tsx": "4.19.3"
+    "prettier": "3.5.2"
   },
   "peerDependencies": {
     "eslint": ">=8.57.1"

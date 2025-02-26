@@ -25,13 +25,12 @@
   "exports": "./dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "node --test --import tsx/esm \"**/*.spec.ts\""
+    "test": "node --test --experimental-strip-types \"**/*.spec.ts\""
   },
   "devDependencies": {
     "@types/estree": "1.0.6",
     "@types/node": "22.13.5",
     "eslint": "9.21.0",
-    "outdent": "0.8.0",
-    "tsx": "4.19.3"
+    "outdent": "0.8.0"
   }
 }

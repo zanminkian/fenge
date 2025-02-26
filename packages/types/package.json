@@ -27,11 +27,10 @@
     }
   },
   "scripts": {
-    "test": "node --test --import tsx/esm \"**/*.spec.ts\""
+    "test": "node --test --experimental-strip-types \"**/*.spec.ts\""
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "0.6.1",
-    "@types/node": "22.13.5",
-    "tsx": "4.19.3"
+    "@types/node": "22.13.5"
   }
 }
