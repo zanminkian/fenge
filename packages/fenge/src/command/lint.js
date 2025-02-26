@@ -31,7 +31,6 @@ export async function lint(paths = [], options = {}) {
       topic: "📏 Checking linting",
       dryRun,
       env: {
-        ESLINT_USE_FLAT_CONFIG: "true", // TODO remove it once upgrade to eslint 9
         ...(config && { FENGE_CONFIG: config }),
         ...(useDefaultConfig && { FENGE_USE_DEFAULT_CONFIG: "true" }),
       },
