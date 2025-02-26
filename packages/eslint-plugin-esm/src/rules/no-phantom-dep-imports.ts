@@ -57,9 +57,15 @@ export const noPhantomDepImports = createRule({
   ],
   create: (context) =>
     create(context, (filename, source, node) => {
-      const {
-        allowDevDependencies = false,
-      }: { allowDevDependencies: boolean } = context.options[0] ?? {};
+      const option = context.options[0];
+      // default false
+      const allowDevDependencies: boolean =
+        (typeof option === "object" &&
+          option &&
+          "allowDevDependencies" in option &&
+          typeof option.allowDevDependencies === "boolean" &&
+          option.allowDevDependencies) ??
+        false;
 
       // ignore `import {foo} from './'`
       // check `import {foo} from 'node:foo'` and `import {foo} from 'foo'`

@@ -30,7 +30,7 @@
   "devDependencies": {
     "@types/estree": "1.0.6",
     "@types/node": "22.10.5",
-    "eslint": "9.18.0",
+    "eslint": "9.21.0",
     "outdent": "0.8.0",
     "tsx": "4.19.2"
   }

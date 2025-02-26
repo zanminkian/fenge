@@ -7,7 +7,7 @@ import { getReportingNode } from "./get-reporting-node.ts";
 
 export function createRule(
   type: MessageType,
-  meta: Rule.RuleMetaData,
+  meta: NonNullable<Rule.RuleModule["meta"]>,
 ): Rule.RuleModule {
   return {
     meta,

@@ -4,7 +4,7 @@ import { processor } from "./processor.ts";
 
 function getMeta({
   recommended = true,
-}: { recommended?: boolean } = {}): Rule.RuleMetaData {
+}: { recommended?: boolean } = {}): NonNullable<Rule.RuleModule["meta"]> {
   return {
     docs: {
       url: "https://www.npmjs.com/package/eslint-plugin-publint",
