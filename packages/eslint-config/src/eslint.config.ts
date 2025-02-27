@@ -1,3 +1,4 @@
+import type { Linter } from "eslint";
 import { base, type LinterOptions } from "./config/base.ts";
 import { javascript } from "./config/javascript.ts";
 import { packagejson } from "./config/packagejson.ts";
@@ -31,7 +32,7 @@ interface ConfigItem {
 
 export type BuilderOptions = LinterOptions;
 export class Builder {
-  private readonly configs: object[] = [];
+  private readonly configs: Linter.Config[] = [];
 
   constructor(options: BuilderOptions = {}) {
     this.configs.push(...base(options));

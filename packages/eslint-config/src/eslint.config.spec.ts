@@ -9,11 +9,7 @@ await describe("eslint.config", async () => {
 
   await it("no warns", () => {
     config.forEach((configItem) => {
-      if (
-        "rules" in configItem &&
-        typeof configItem.rules === "object" &&
-        configItem.rules
-      ) {
+      if (configItem.rules) {
         Object.values(configItem.rules).forEach((value) => {
           assert.notStrictEqual(getValueString(value), "warn");
         });
@@ -94,7 +90,7 @@ await describe("eslint.config", async () => {
     ];
     for (const configItem of config) {
       const containingDeprecatedRules = Object.keys(
-        "rules" in configItem && configItem.rules ? configItem.rules : {},
+        configItem.rules ?? {},
       ).filter((rule) => deprecatedRules.includes(rule));
       assert.deepStrictEqual(containingDeprecatedRules, []);
     }

@@ -21,7 +21,7 @@ function gitignore() {
   ] as const;
 }
 
-export function base(linterOptions: LinterOptions = {}) {
+export function base(linterOptions: LinterOptions = {}): Linter.Config[] {
   return [
     ...gitignore(), // global ignore
     {
