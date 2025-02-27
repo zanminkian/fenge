@@ -8,7 +8,7 @@ import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { lilconfig } from "lilconfig";
 import ora from "ora";
-import colors from "yoctocolors";
+import colors from "yoctocolors"; // TODO: Use [util.styleText](https://nodejs.org/api/util.html#utilstyletextformat-text-options) once we drop support for Node.js < 20.12.0.
 
 /**
  * @param {string} filepath
@@ -89,27 +89,25 @@ export function execAsync(command, { topic, dryRun, env }) {
     const cp = childProcess.spawn(cmd, args, {
       env: { FORCE_COLOR: "true", ...process.env, ...env },
     });
-    let stdout = Buffer.from([]);
-    let stderr = Buffer.from([]);
+    let stdout = Buffer.alloc(0);
+    let stderr = Buffer.alloc(0);
     cp.stdout.on("data", (data) => {
       stdout = Buffer.concat([stdout, data]);
     });
     cp.stderr.on("data", (data) => {
       stderr = Buffer.concat([stderr, data]);
     });
-    // The 'close' event will always emit after 'exit' was already emitted, or 'error' if the child failed to spawn.
-    cp.on("close", () => {
-      process.stdout.write(stdout);
-      process.stderr.write(stderr);
-    });
     cp.on("error", (err) => {
       spinner.fail(
         `${topic} got error in ${colors.yellow(getSpentTime(startTime))}`,
       );
+      process.stderr.write(err.message);
       resolve(getExitCode(err));
     });
-    // The 'exit' event may or may not fire after an error has occurred.
-    cp.on("exit", (code, signal) => {
+    // Why not listen to the 'exit' event?
+    // 1. The 'close' event will always emit after 'exit' was already emitted, or 'error' if the child failed to spawn.
+    // 2. The 'exit' event may or may not fire after an error has occurred.
+    cp.on("close", (code, signal) => {
       const exitCode = getExitCode({ code, signal });
       if (exitCode === 0) {
         spinner.succeed(
@@ -120,6 +118,8 @@ export function execAsync(command, { topic, dryRun, env }) {
           `${topic} failed in ${colors.yellow(getSpentTime(startTime))}`,
         );
       }
+      process.stdout.write(stdout);
+      process.stderr.write(stderr);
       resolve(exitCode);
     });
     process.on("SIGINT", () => !cp.killed && cp.kill("SIGINT"));
