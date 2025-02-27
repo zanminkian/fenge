@@ -18,7 +18,7 @@ const valid = [
     ].map((code) => ({
       code,
       filename: "foo.ts",
-      options: [{ ignoreDeclaration: true }],
+      options: [{ allowDeclaration: true }],
     })),
   );
 

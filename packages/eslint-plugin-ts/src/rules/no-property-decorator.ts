@@ -13,7 +13,7 @@ const rule: Rule.RuleModule = {
       {
         type: "object",
         properties: {
-          ignoreDeclaration: { type: "boolean" },
+          allowDeclaration: { type: "boolean" },
         },
         additionalProperties: false,
       },
@@ -24,7 +24,7 @@ const rule: Rule.RuleModule = {
       if (
         "declare" in node &&
         node.declare &&
-        context.options[0]?.ignoreDeclaration
+        context.options[0]?.allowDeclaration
       ) {
         return;
       }
