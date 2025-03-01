@@ -34,7 +34,12 @@ const isIgnored = memoize((filePath: string) => {
   try {
     return (
       childProcess
-        .execSync(`git check-ignore ${filePath}`, { encoding: "utf8" })
+        // Adding `stdio: 'pipe'` to depress unexpected error messages in console.
+        // For example, `git check-ignore /absolute/path/to/file` (even wrapped with try-catch) will print something unnecessary.
+        .execSync(`git check-ignore ${filePath}`, {
+          encoding: "utf8",
+          stdio: "pipe",
+        })
         .trim() === filePath
     );
   } catch (e) {
