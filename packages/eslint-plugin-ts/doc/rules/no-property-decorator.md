@@ -33,6 +33,6 @@ class A {
 class A {
     @Inject()
     declare private readonly name: string;
-  } // filename: foo.ts, options: [{"ignoreDeclaration":true}]
+  } // filename: foo.ts, options: [{"allowDeclaration":true}]
 ```
 <!-- prettier-ignore-end -->

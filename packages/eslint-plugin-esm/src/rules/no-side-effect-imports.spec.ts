@@ -4,9 +4,6 @@ import { noSideEffectImports } from "./no-side-effect-imports.ts";
 const valid = [
   "import 'reflect-metadata'",
   "import {} from 'reflect-metadata'",
-  "import 'foo.css'",
-  "import './foo.css'",
-  "import 'module.css'",
   "import {foo} from 'foo'",
 ];
 
@@ -18,6 +15,10 @@ const invalid = [
   "import './reflect-metadata'",
   "import './foo.module.css'",
   "import 'foo.module.css'",
+
+  "import 'foo.css'",
+  "import './foo.css'",
+  "import 'module.css'",
 ];
 
 test({ valid, invalid, ...noSideEffectImports });

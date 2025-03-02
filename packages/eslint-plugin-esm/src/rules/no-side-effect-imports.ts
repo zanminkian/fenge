@@ -4,14 +4,14 @@ import { createRule, DEFAULT_MESSAGE_ID, getRuleName } from "../common.ts";
 const ignores = [
   "^reflect-metadata$",
   // https://github.com/vitejs/vite/blob/main/packages/vite/client.d.ts
-  "(?<!\\.module)\\.css$",
-  "(?<!\\.module)\\.scss$",
-  "(?<!\\.module)\\.sass$",
-  "(?<!\\.module)\\.less$",
-  "(?<!\\.module)\\.styl$",
-  "(?<!\\.module)\\.stylus$",
-  "(?<!\\.module)\\.pcss$",
-  "(?<!\\.module)\\.sss$",
+  // "(?<!\\.module)\\.css$",
+  // "(?<!\\.module)\\.scss$",
+  // "(?<!\\.module)\\.sass$",
+  // "(?<!\\.module)\\.less$",
+  // "(?<!\\.module)\\.styl$",
+  // "(?<!\\.module)\\.stylus$",
+  // "(?<!\\.module)\\.pcss$",
+  // "(?<!\\.module)\\.sss$",
 ];
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import

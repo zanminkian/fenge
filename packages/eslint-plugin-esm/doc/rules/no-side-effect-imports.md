@@ -15,6 +15,9 @@ import {} from './foo'
 import './reflect-metadata'
 import './foo.module.css'
 import 'foo.module.css'
+import 'foo.css'
+import './foo.css'
+import 'module.css'
 ```
 
 ### Pass
@@ -22,9 +25,6 @@ import 'foo.module.css'
 ```ts
 import 'reflect-metadata'
 import {} from 'reflect-metadata'
-import 'foo.css'
-import './foo.css'
-import 'module.css'
 import {foo} from 'foo'
 ```
 <!-- prettier-ignore-end -->
