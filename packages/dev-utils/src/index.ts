@@ -6,9 +6,11 @@ import parser from "@typescript-eslint/parser";
 import { RuleTester, type Rule } from "eslint";
 import { outdent } from "outdent";
 
-export type TestCase =
-  | string
-  | { code: string; filename?: string; options?: unknown };
+export interface TestCase {
+  code: string;
+  filename?: string;
+  options?: unknown;
+}
 
 const tester = new RuleTester({
   languageOptions: {
@@ -20,43 +22,53 @@ const tester = new RuleTester({
 export async function test({
   name,
   rule,
-  valid,
-  invalid,
+  valid: originValid,
+  invalid: originInvalid,
   errors = 1,
+  transform = (code) => code,
 }: {
   name: string;
   rule: Rule.RuleModule;
-  valid: TestCase[];
-  invalid: TestCase[];
+  valid: (TestCase | string)[];
+  invalid: (TestCase | string)[];
   errors?: number;
+  transform?: (code: string) => string;
 }) {
+  const normalize = (testCases: (TestCase | string)[]): TestCase[] =>
+    testCases.map((testCase) =>
+      typeof testCase === "string" ? { code: transform(testCase) } : testCase,
+    );
+  const valid = normalize(originValid);
+  const invalid = normalize(originInvalid);
+  const transformedValid = valid.map((testCase) => ({
+    ...testCase,
+    code: transform(testCase.code),
+  }));
+  const transformedInvalid = invalid.map((testCase) => ({
+    ...testCase,
+    code: transform(testCase.code),
+  }));
   await describe(name, async () => {
     await Promise.all(
-      valid.map(async (testCase) => {
+      transformedValid.map(async (testCase) => {
         await it(JSON.stringify(testCase), () => {
           tester.run(name, rule, {
             valid: [testCase],
             invalid: [],
-            ...(typeof testCase === "object" && testCase.options
-              ? { options: testCase.options }
-              : {}),
+            ...(testCase.options ? { options: testCase.options } : {}),
           });
         });
       }),
     );
 
     await Promise.all(
-      invalid.map(async (testCase) => {
+      transformedInvalid.map(async (testCase) => {
         await it(JSON.stringify(testCase), () => {
-          const code = typeof testCase === "string" ? testCase : testCase.code;
-          const filename =
-            typeof testCase === "string" ? undefined : testCase.filename;
+          const { code, filename, options } = testCase;
           tester.run(name, rule, {
             valid: [],
             invalid: [{ code, errors, ...(filename && { filename }) }],
-            ...(typeof testCase === "object" && testCase.options
-              ? { options: testCase.options }
-              : {}),
+            ...(options ? { options } : {}),
           });
         });
       }),
@@ -79,9 +91,6 @@ async function genDoc({
 }) {
   const handle = (testCases: TestCase[]) =>
     testCases
-      .map((testCase) =>
-        typeof testCase === "string" ? { code: testCase } : testCase,
-      )
       .map((testCase) => {
         if (!testCase.filename && !testCase.options) {
           return testCase.code;
