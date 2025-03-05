@@ -54,6 +54,7 @@ program
     "--default",
     "force to use built-in default config, ignore specified config and local config",
   )
+  .option("--timing", "print timing information")
   .option(
     "-d, --dry-run",
     "print what command will be executed under the hood instead of executing",
