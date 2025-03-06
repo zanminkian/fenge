@@ -1,5 +1,11 @@
 # eslint-plugin-publint
 
+## 0.1.3
+
+### Patch Changes
+
+- ee96c15: chore: upgrade deps
+
 ## 0.1.2
 
 ### Patch Changes

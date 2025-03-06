@@ -1,5 +1,20 @@
 # @fenge/eslint-config
 
+## 0.5.10
+
+### Patch Changes
+
+- ee96c15: chore: upgrade deps
+- 67f3677: feat(eslint-config): add rule `promise/no-return-wrap` and `promise/prefer-catch`
+- 3927795: chore(eslint-config): remove rule `import/newline-after-import`
+- Updated dependencies [ee96c15]
+- Updated dependencies [501e3b4]
+- Updated dependencies [69c449c]
+- Updated dependencies [da63d2e]
+  - eslint-plugin-publint@0.1.3
+  - @fenge/eslint-plugin-ts@0.3.0
+  - eslint-plugin-esm@0.6.1
+
 ## 0.5.9
 
 ### Patch Changes

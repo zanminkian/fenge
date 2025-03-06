@@ -1,5 +1,11 @@
 # smells
 
+## 0.0.9
+
+### Patch Changes
+
+- ee96c15: chore: upgrade deps
+
 ## 0.0.8
 
 ### Patch Changes

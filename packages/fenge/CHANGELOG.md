@@ -1,5 +1,18 @@
 # fenge
 
+## 0.5.3
+
+### Patch Changes
+
+- ee96c15: chore: upgrade deps
+- e0456a0: feat(fenge): support `--timing` option for CLI
+- 8de30ed: fix(fenge): fix the problem that eslint messages disappear sometimes when error occurs
+- Updated dependencies [ee96c15]
+- Updated dependencies [67f3677]
+- Updated dependencies [3927795]
+  - @fenge/prettier-config@0.2.2
+  - @fenge/eslint-config@0.5.10
+
 ## 0.5.2
 
 ### Patch Changes

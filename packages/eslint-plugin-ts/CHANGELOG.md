@@ -1,5 +1,15 @@
 # @fenge/eslint-plugin-ts
 
+## 0.3.0
+
+### Minor Changes
+
+- 69c449c: refactor(eslint-plugin-ts): rename property name `ignoreDeclaration` to `allowDeclaration` in `no-property-decorator` rule
+
+### Patch Changes
+
+- ee96c15: chore: upgrade deps
+
 ## 0.2.3
 
 ### Patch Changes
