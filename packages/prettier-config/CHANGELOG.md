@@ -1,5 +1,11 @@
 # @fenge/prettier-config
 
+## 0.2.2
+
+### Patch Changes
+
+- ee96c15: chore: upgrade deps
+
 ## 0.2.1
 
 ### Patch Changes

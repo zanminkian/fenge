@@ -1,5 +1,12 @@
 # eslint-plugin-esm
 
+## 0.6.1
+
+### Patch Changes
+
+- 501e3b4: feat(eslint-plugin-esm): disallow side effect imports for `no-side-effect-imports` rule
+- da63d2e: fix(eslint-plugin-esm): depress unexpected error messages in console
+
 ## 0.6.0
 
 ### Minor Changes
