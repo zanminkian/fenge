@@ -281,7 +281,6 @@ export function getJsBase() {
 
       // 2. code style for a better readability
       "arrow-body-style": ["error", "as-needed"],
-      "import/newline-after-import": ["error", { count: 1 }],
       // Sort imports by prettier. Turn in off.
       // "simple-import-sort/imports": [
       //   "error",
@@ -370,6 +369,7 @@ export function getJsBase() {
       // import
       "import/export": "error",
       "import/first": "error",
+      // "import/newline-after-import": "error", // already handled by prettier's plugin `@ianvs/prettier-plugin-sort-imports`
       "import/no-absolute-path": "error",
       "import/no-commonjs": [
         "error",
