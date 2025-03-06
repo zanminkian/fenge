@@ -235,23 +235,6 @@ export function getJsBase() {
     // 'wrap-iife': ['error', 'any', { functionPrototypeMethods: true }],
     // 'yield-star-spacing': ['error', 'both'],
     yoda: ['error', 'never'],
-
-    'import/export': 'error',
-    'import/first': 'error',
-    'import/no-absolute-path': ['error', { esmodule: true, commonjs: true, amd: false }],
-    'import/no-duplicates': 'error',
-    'import/no-named-default': 'error',
-    'import/no-webpack-loader-syntax': 'error',
-
-    'n/handle-callback-err': ['error', '^(err|error)$'],
-    'n/no-callback-literal': 'error',
-    'n/no-deprecated-api': 'error',
-    'n/no-exports-assign': 'error',
-    'n/no-new-require': 'error',
-    'n/no-path-concat': 'error',
-    'n/process-exit-as-throw': 'error',
-
-    'promise/param-names': 'error'
   } as const;
 
   return {
@@ -385,6 +368,9 @@ export function getJsBase() {
       "fp/no-arguments": "error",
       "fp/no-delete": "error",
       // import
+      "import/export": "error",
+      "import/first": "error",
+      "import/no-absolute-path": "error",
       "import/no-commonjs": [
         "error",
         {
@@ -398,12 +384,21 @@ export function getJsBase() {
        * 2. Reexporting like `export * from 'foo'` will be difficult.
        */
       "import/no-default-export": "error",
+      "import/no-duplicates": "error",
       "import/no-dynamic-require": "error",
       "import/no-empty-named-blocks": "error", // The feature of this rule is already handled by Prettier. But we still put it here.
       "import/no-mutable-exports": "error", // forbid code like `export let count = 3`
+      "import/no-named-default": "error",
       "import/no-relative-packages": "error", // forbid to import module from other monorepo packages by relative paths
       "import/no-self-import": "error",
+      "import/no-webpack-loader-syntax": "error",
       // n
+      "n/handle-callback-err": ["error", "^(err|error)$"],
+      "n/no-callback-literal": "error",
+      "n/no-deprecated-api": "error",
+      "n/no-exports-assign": "error",
+      "n/no-new-require": "error",
+      "n/no-path-concat": "error",
       "n/no-process-exit": "error",
       "n/prefer-global/buffer": ["error", "never"],
       "n/prefer-global/console": "error",
@@ -412,6 +407,11 @@ export function getJsBase() {
       "n/prefer-global/text-encoder": "error",
       "n/prefer-global/url": "error",
       "n/prefer-global/url-search-params": "error",
+      "n/process-exit-as-throw": "error",
+      // promise
+      "promise/no-return-wrap": "error",
+      "promise/param-names": "error",
+      "promise/prefer-catch": "error",
       // react
       "react/jsx-key": "error",
       "react/jsx-no-duplicate-props": "error",
