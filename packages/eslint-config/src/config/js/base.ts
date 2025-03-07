@@ -413,6 +413,7 @@ export function getJsBase() {
       "promise/param-names": "error",
       "promise/prefer-catch": "error",
       // react
+      "react/hook-use-state": "error",
       "react/jsx-key": "error",
       "react/jsx-no-duplicate-props": "error",
       "react/jsx-no-undef": "error",
