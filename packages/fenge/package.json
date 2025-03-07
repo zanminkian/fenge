@@ -61,7 +61,7 @@
     "yoctocolors": "2.1.1"
   },
   "devDependencies": {
-    "@types/node": "22.13.5"
+    "@types/node": "22.13.10"
   },
   "peerDependencies": {
     "typescript": "^5.7.0"
