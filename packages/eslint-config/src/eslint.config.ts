@@ -1,5 +1,5 @@
 import type { Linter } from "eslint";
-import { base, type LinterOptions } from "./config/base.ts";
+import { base, type BaseOptions } from "./config/base.ts";
 import { javascript } from "./config/javascript.ts";
 import { packagejson } from "./config/packagejson.ts";
 import { typescript } from "./config/typescript.ts";
@@ -30,7 +30,7 @@ interface ConfigItem {
     | Record<string, RuleValue>;
 }
 
-export type BuilderOptions = LinterOptions;
+export type BuilderOptions = BaseOptions;
 export class Builder {
   private readonly configs: Linter.Config[] = [];
 

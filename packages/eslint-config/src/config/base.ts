@@ -1,29 +1,32 @@
 import childProcess from "node:child_process";
 import type { Linter } from "eslint";
 
-export type LinterOptions = Linter.LinterOptions;
+export type BaseOptions = Linter.LinterOptions;
 
-function gitignore() {
-  // There are 2 kinds of exception:
-  // 1. Git is not installed. The `stdout` will be null.
-  // 2. The running directory is not initialized by `git init` command. The `stdout` will an empty string.
-  const { stdout } = childProcess.spawnSync(
-    "git",
-    ["ls-files", "--others", "--ignored", "--exclude-standard", "--directory"],
-    { encoding: "utf8" },
-  );
-  // https://eslint.org/docs/latest/use/configure/configuration-files#specifying-files-and-ignores
+export function base(options: BaseOptions = {}): Linter.Config[] {
   return [
+    // Global ignore. Refer: https://eslint.org/docs/latest/use/configure/configuration-files#specifying-files-and-ignores.
     {
       name: "fenge/gitignore",
-      ignores: (stdout || "").split("\n").filter(Boolean),
+      // There are 2 kinds of exception when running `git ls-files`:
+      // 1. Git is not installed. The `stdout` will be null.
+      // 2. The running directory is not initialized by `git init` command. The `stdout` will an empty string.
+      ignores: (
+        childProcess.spawnSync(
+          "git",
+          [
+            "ls-files",
+            "--others",
+            "--ignored",
+            "--exclude-standard",
+            "--directory",
+          ],
+          { encoding: "utf8" },
+        ).stdout || ""
+      )
+        .split("\n")
+        .filter(Boolean),
     },
-  ] as const;
-}
-
-export function base(linterOptions: LinterOptions = {}): Linter.Config[] {
-  return [
-    ...gitignore(), // global ignore
     {
       name: "fenge/common",
       files: [
@@ -31,7 +34,7 @@ export function base(linterOptions: LinterOptions = {}): Linter.Config[] {
         "**/*.{ts,cts,mts,tsx}",
         "**/package.json",
       ],
-      linterOptions,
+      linterOptions: options,
     },
     // Ignore unsupported files.
     // This config is for suppressing error when linting a directory which does not contain supported files.
