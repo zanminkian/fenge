@@ -413,7 +413,7 @@ export function getJsBase() {
       "promise/param-names": "error",
       "promise/prefer-catch": "error",
       // react
-      "react/hook-use-state": "error",
+      // "react/hook-use-state": "error", // This rule will cause some warnings because we don't specify the version of react.
       "react/jsx-filename-extension": [
         "error",
         { allow: "as-needed", extensions: [".jsx", ".tsx"] },
@@ -421,6 +421,7 @@ export function getJsBase() {
       "react/jsx-key": "error",
       "react/jsx-no-duplicate-props": "error",
       "react/jsx-no-undef": "error",
+      "react/jsx-no-useless-fragment": "error",
       // react-hooks
       "react-hooks/exhaustive-deps": "error",
       "react-hooks/rules-of-hooks": "error",
@@ -448,6 +449,8 @@ export function getJsBase() {
         "error",
         {
           styles: {
+            react: { named: true },
+
             child_process: { default: true },
             fs: { default: true },
             "fs/promises": { default: true },
