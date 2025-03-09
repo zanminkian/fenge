@@ -414,6 +414,10 @@ export function getJsBase() {
       "promise/prefer-catch": "error",
       // react
       "react/hook-use-state": "error",
+      "react/jsx-filename-extension": [
+        "error",
+        { allow: "as-needed", extensions: [".jsx", ".tsx"] },
+      ],
       "react/jsx-key": "error",
       "react/jsx-no-duplicate-props": "error",
       "react/jsx-no-undef": "error",
@@ -503,7 +507,6 @@ export function getJsBase() {
 
       "@fenge/call-arguments-length": "error",
       "@fenge/no-instanceof-builtin": "error",
-      "@fenge/no-jsx-in-non-jsx-file": "error",
       "@fenge/no-nested-class": "error",
       "@fenge/no-nested-function": "error",
       "@fenge/no-restricted-loops": "error",
