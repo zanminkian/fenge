@@ -1,5 +1,21 @@
 # fenge
 
+## 0.6.0
+
+### Minor Changes
+
+- d416aa0: feat(tsconfig): set `module` and `moduleResolution` to `nodenext`
+
+### Patch Changes
+
+- 590fe72: chore: upgrade deps
+- Updated dependencies [84db81d]
+- Updated dependencies [d416aa0]
+- Updated dependencies [d36061e]
+- Updated dependencies [a20ec6a]
+  - @fenge/eslint-config@0.5.11
+  - @fenge/tsconfig@0.4.0
+
 ## 0.5.3
 
 ### Patch Changes
