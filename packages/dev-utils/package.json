@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@typescript-eslint/parser": "8.26.0",
-    "eslint": "9.21.0",
+    "eslint": "9.22.0",
     "outdent": "0.8.0"
   },
   "devDependencies": {
