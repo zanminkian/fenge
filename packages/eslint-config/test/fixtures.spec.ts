@@ -6,19 +6,37 @@ import { after, before, describe, it } from "node:test";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const fixturesDir = path.join(__dirname, "fixtures");
+const fixturesDir = path.join(__dirname, "..", "src", "fixtures");
 
-const testData = new Map<string, string>([
+const testData = new Map<string, { code: string; rule: string }>([
   [
-    path.join(fixturesDir, "react/foo1.js"),
-    "export function Foo1() { return <div>Foo1</div>; }",
+    path.join(fixturesDir, "react/jsx-filename-extension/foo1.js"),
+    {
+      code: "export function Foo1() { return <div>Foo1</div>; }",
+      rule: "react/jsx-filename-extension",
+    },
   ],
   [
-    path.join(fixturesDir, "react/foo1.mjs"),
-    "export function Foo1() { return <div>Foo1</div>; }",
+    path.join(fixturesDir, "react/jsx-filename-extension/foo1.mjs"),
+    {
+      code: "export function Foo1() { return <div>Foo1</div>; }",
+      rule: "react/jsx-filename-extension",
+    },
   ],
-  [path.join(fixturesDir, "react/foo2.jsx"), 'export const foo2 = "foo2";'],
-  [path.join(fixturesDir, "react/foo2.tsx"), 'export const foo2 = "foo2";'],
+  [
+    path.join(fixturesDir, "react/jsx-filename-extension/foo2.jsx"),
+    {
+      code: 'export const foo2 = "foo2";',
+      rule: "react/jsx-filename-extension",
+    },
+  ],
+  [
+    path.join(fixturesDir, "react/jsx-filename-extension/foo2.tsx"),
+    {
+      code: 'export const foo2 = "foo2";',
+      rule: "react/jsx-filename-extension",
+    },
+  ],
 ]);
 
 await describe("fixtures", async () => {
@@ -33,8 +51,8 @@ await describe("fixtures", async () => {
 
     // write files
     await Promise.all(
-      Array.from(testData.entries()).map(([filePath, content]) =>
-        fs.writeFile(filePath, content),
+      Array.from(testData.entries()).map(([filePath, { code }]) =>
+        fs.writeFile(filePath, code),
       ),
     );
   });
@@ -53,9 +71,31 @@ await describe("fixtures", async () => {
       ],
       { encoding: "utf8" },
     );
+
     assert.strictEqual(res.status, 1);
     for (const file of testData.keys()) {
-      assert.strictEqual(res.stdout.includes(file), true, `Failed on ${file}`);
+      assert.strictEqual(
+        res.stdout.includes(file),
+        true,
+        `Failed on file ${file}.`,
+      );
+    }
+
+    const ruleCountMap = new Map<string, number>();
+    for (const [, { rule }] of testData) {
+      ruleCountMap.set(rule, (ruleCountMap.get(rule) ?? 0) + 1);
+    }
+    for (const [rule, count] of ruleCountMap) {
+      assert.strictEqual(
+        res.stdout.includes(rule),
+        true,
+        `Failed on rule ${rule}.`,
+      );
+      assert.strictEqual(
+        res.stdout.match(new RegExp(`[^/]${rule}[^/]`, "g"))?.length,
+        count,
+        `Failed on rule ${rule}.`,
+      );
     }
   });
 });
