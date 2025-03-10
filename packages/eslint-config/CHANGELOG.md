@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.5.11
+
+### Patch Changes
+
+- 84db81d: feat(eslint-config): add rule `react/jsx-props-no-spread-multi` and `react/jsx-uses-vars`
+- d36061e: feat(eslint-config): replace rule `@fenge/no-jsx-in-non-jsx-file` with `react/jsx-filename-extension`
+- a20ec6a: feat(eslint-config): add rule `react/jsx-no-useless-fragment`
+- Updated dependencies [9f27f60]
+  - @fenge/eslint-plugin@0.3.0
+
 ## 0.5.10
 
 ### Patch Changes

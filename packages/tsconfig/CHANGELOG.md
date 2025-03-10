@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.4.0
+
+### Minor Changes
+
+- d416aa0: feat(tsconfig): set `module` and `moduleResolution` to `nodenext`
+
 ## 0.3.2
 
 ### Patch Changes
