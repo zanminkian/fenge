@@ -49,7 +49,7 @@ await describe("fixtures", async () => {
       [
         "--config",
         path.join(__dirname, "../dist/eslint.config.js"),
-        ...Array.from(testData.keys()),
+        ...testData.keys(),
       ],
       { encoding: "utf8" },
     );

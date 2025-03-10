@@ -422,6 +422,8 @@ export function getJsBase() {
       "react/jsx-no-duplicate-props": "error",
       "react/jsx-no-undef": "error",
       "react/jsx-no-useless-fragment": "error",
+      "react/jsx-props-no-spread-multi": "error",
+      "react/jsx-uses-vars": "error",
       // react-hooks
       "react-hooks/exhaustive-deps": "error",
       "react-hooks/rules-of-hooks": "error",
