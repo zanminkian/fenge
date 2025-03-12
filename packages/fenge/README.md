@@ -73,7 +73,53 @@
 
 <details>
 <summary>English</summary>
-Coming soon...
+
+### Core: `Type Safety`, `Formatting`, and `Linting`
+
+After years of practice, we have found that the three main aspects affecting modern JavaScript project code quality and development experience are:
+
+- **Type Safety**: Used to detect type and spelling errors in advance, such as whether object methods are called correctly, whether function parameters match the expected types within the function body, etc.
+- **Formatting**: Used to unify code style, improve readability, and reduce conflicts. It mainly focuses on issues like indentation, line breaks, single/double quotes, with/without semicolons, etc.
+- **Linting**: Used to identify logical flaws and poor practices early, reducing bugs and maintenance costs. Its focus can be anywhere except for `Formatting`, such as redefining variables, switch statements without break, cyclomatic complexity, etc.
+
+These three aspects are also built-in features in more advanced runtimes like [Deno](https://deno.com), which [Node](https://nodejs.org) does not natively support. Instead, the community offers a variety of tools: TypeScript, Flow, Biome, ESLint, oxc-lint, Prettier, dprint. Using these tools in Node projects brings three major issues impacting **development experience**:
+
+- **Tool Selection Problem**: Which set of tools should I choose to optimize the above three problems? If I choose different toolsets for the next Node project, how do I handle it?
+- **Tool Conflict and Integration Problem**: After determining the tools to use, do these tools conflict with each other? Should formatting or linting come first when committing code? What is the best practice for integrating these tools?
+- **Complex Configuration Problem**: Each tool has complex and difficult-to-understand configurations scattered across the project root directory (or `package.json`). This not only looks messy but also increases the learning curve. Even if the tools are consistent across Node projects, the configurations may vary, leading to inconsistent development experiences.
+
+To address these issues, there are now many tutorials explaining the configuration and practices of TypeScript + Prettier + ESLint, which can alleviate some problems but still expose users to a cluttered toolchain and cumbersome configurations. Our goal is not this; our goal is to **provide a unified tool that abstracts away these complex details, offering a simple, consistent, and ready-to-use development experience**.
+
+### Relationship between `Type Safety`, `Formatting`, and `Linting`
+
+To illustrate the relationship among these three, let's take the most representative solutions `TypeScript`, `Prettier`, and `ESLint` as examples.
+
+| -              | Type Safety | Formatting | Linting |
+| -------------- | ----------- | ---------- | ------- |
+| Representative | TypeScript  | Prettier   | ESLint  |
+| Focus on Logic | ✅          | ❌         | ✅      |
+| Auto Fixing    | ❌          | ✅         | ✅      |
+
+Over time, these three areas have developed certain intersections:
+
+1. Intersection between `Type Safety` and `Linting`: For example, "mismatched function parameter count" can be detected by both TypeScript and ESLint.
+2. Intersection between `Formatting` and `Linting`: For example, "whether to end with a semicolon" or "use single or double quotes" can be detected and fixed by both Prettier and ESLint.
+
+Although there are overlaps among them today, the ideal situation is that **Type Safety, Formatting, and Linting focus on different domains without overlap**.
+
+### Why Separate Formatting from Linting
+
+While `Type Safety` might also overlap with `Linting`, the community generally does not confuse TypeScript with ESLint, so this aspect is not elaborated here. However, many people in the community combine `Formatting` and `Linting` together, such as [@antfu/eslint-config](https://github.com/antfu/eslint-config). We strongly **do not recommend** doing this for several reasons:
+
+1. They serve different purposes; specialized tasks should be handled by specialized tools.
+2. Formatting and Linting impose different cognitive loads. When reviewing code, we often don't need to pay attention to Formatting changes, but we must carefully check Linting changes because Formatting changes are generally safe, while Linting changes may contain incorrect fixes.
+3. Since Linting changes may contain incorrect fixes, when used with Git Hooks, mixing Linting and Formatting fixes can lead to erroneous fixes entering Git Commits directly, making bugs harder to detect.
+4. The community trend is to separate Formatters and Linters. For example, early versions of ESLint were also used for formatting, but starting from v8.53.0, [ESLint deprecated Formatting Rules](https://eslint.org/blog/2023/10/deprecating-formatting-rules). Deno and Biome also separate `Linter` and `Formatter`.
+
+### Summary
+
+In summary, Type Safety, Formatting, and Linting are three indispensable aspects of the future JavaScript and TypeScript code ecosystem. Before Node provides official solutions, these three areas have been fragmented, difficult to use, and negatively impacted code quality. We couldn't wait for Node to provide related solutions, so we created `Fenge` to shield developers from complexity, simplify their workflow, and allow them to focus on business logic.
+
 </details>
 
 ## Features
