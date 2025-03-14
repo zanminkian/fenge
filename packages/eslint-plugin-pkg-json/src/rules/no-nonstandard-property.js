@@ -37,7 +37,7 @@ const standardProperties = new Set([
   // node https://nodejs.org/api/packages.html#nodejs-packagejson-field-definitions
   // "name",
   // "main",
-  "packageManager",
+  // "packageManager",
   "type",
   "exports",
   "imports",
