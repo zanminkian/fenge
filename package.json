@@ -18,9 +18,19 @@
     "fenge": "workspace:*",
     "typescript": "5.8.2"
   },
-  "packageManager": "pnpm@10.5.0",
+  "packageManager": "pnpm@10.6.3",
   "engines": {
     "node": ">=22.14.0",
     "pnpm": "^10.0.0"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=22.14.0"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "10.6.3"
+    }
   }
 }

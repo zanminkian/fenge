@@ -29,6 +29,7 @@ const standardProperties = new Set([
   "engines",
   "os",
   "cpu",
+  "devEngines",
   "private",
   "publishConfig",
   "workspaces",

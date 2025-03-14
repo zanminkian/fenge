@@ -21,6 +21,7 @@ export function packagejson() {
         "pkg-json/no-types-dependency-in-workspace-root": "error",
         "pkg-json/top-types": "error",
         "pkg-json/private-workspace-root": "error",
+        "pkg-json/required-dev-engines": "error",
         "pkg-json/required-engines": "error",
         "pkg-json/required-hashbang": "error",
         "pkg-json/required-repository": "error",

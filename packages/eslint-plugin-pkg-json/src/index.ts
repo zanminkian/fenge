@@ -7,6 +7,7 @@ import * as noLifecycleScript from "./rules/no-lifecycle-script.js";
 import * as noNonstandardProperty from "./rules/no-nonstandard-property.js";
 import * as noTypesDependencyInWorkspaceRoot from "./rules/no-types-dependency-in-workspace-root.js";
 import * as privateWorkspaceRoot from "./rules/private-workspace-root.js";
+import * as requiredDevEngines from "./rules/required-dev-engines.js";
 import * as requiredEngines from "./rules/required-engines.js";
 import * as requiredHashbang from "./rules/required-hashbang.js";
 import * as requiredRepository from "./rules/required-repository.js";
@@ -23,6 +24,7 @@ export const rules = Object.fromEntries(
     noNonstandardProperty,
     noTypesDependencyInWorkspaceRoot,
     privateWorkspaceRoot,
+    requiredDevEngines,
     requiredEngines,
     requiredHashbang,
     requiredRepository,
