@@ -364,12 +364,12 @@ export function getJsBase() {
       "es-x/no-legacy-object-prototype-accessor-methods": "error",
       "es-x/no-top-level-await": "error",
       // esm
+      "esm/existing-file-imports": "error",
       "esm/no-declaration-file-imports": "error",
       "esm/no-directory-imports": "error",
       "esm/no-dynamic-imports": "error",
       "esm/no-empty-exports": "error",
       "esm/no-git-ignored-imports": "error",
-      "esm/no-inexistent-relative-imports": "error",
       "esm/no-phantom-dep-imports": "error",
       "esm/no-relative-parent-imports": "error",
       "esm/no-rename-exports": "error",
