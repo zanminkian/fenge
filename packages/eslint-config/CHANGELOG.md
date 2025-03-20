@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.5.13
+
+### Patch Changes
+
+- b6cbd84: fix(eslint-config): pure js should work now
+
 ## 0.5.12
 
 ### Patch Changes
