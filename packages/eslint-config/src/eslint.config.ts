@@ -33,13 +33,16 @@ interface ConfigItem {
 export type BuilderOptions = BaseOptions;
 export class Builder {
   private readonly configs: Linter.Config[] = [];
+  private readonly options: BuilderOptions;
+
+  private readonly enabled = new Set<"js" | "ts" | "pkg">();
 
   constructor(options: BuilderOptions = {}) {
-    this.configs.push(...base(options));
+    this.options = options;
   }
 
   toConfig() {
-    return this.configs;
+    return [...base(this.options, [...this.enabled]), ...this.configs];
   }
 
   private setup(
@@ -69,14 +72,17 @@ export class Builder {
   }
 
   enableTypeScript<T extends TsRuleKey[]>(options: Options<T> = {}) {
+    this.enabled.add("ts");
     return this.setup(typescript(), options);
   }
 
   enableJavaScript<T extends JsRuleKey[]>(options: Options<T> = {}) {
+    this.enabled.add("js");
     return this.setup(javascript(), options);
   }
 
   enablePackageJson<T extends PkgRuleKey[]>(options: Options<T> = {}) {
+    this.enabled.add("pkg");
     return this.setup(packagejson(), options);
   }
 

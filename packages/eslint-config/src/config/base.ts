@@ -3,7 +3,16 @@ import type { Linter } from "eslint";
 
 export type BaseOptions = Linter.LinterOptions;
 
-export function base(options: BaseOptions = {}): Linter.Config[] {
+export function base(
+  options: BaseOptions = {},
+  enabled: ("js" | "ts" | "pkg")[] = [],
+): Linter.Config[] {
+  const filesMap = {
+    js: "**/*.{js,cjs,mjs,jsx}",
+    ts: "**/*.{ts,cts,mts,tsx}",
+    pkg: "package.json",
+  } as const;
+  const files = enabled.map((key) => filesMap[key]);
   return [
     // Global ignore. Refer: https://eslint.org/docs/latest/use/configure/configuration-files#specifying-files-and-ignores.
     {
@@ -29,11 +38,7 @@ export function base(options: BaseOptions = {}): Linter.Config[] {
     },
     {
       name: "fenge/common",
-      files: [
-        "**/*.{js,cjs,mjs,jsx}",
-        "**/*.{ts,cts,mts,tsx}",
-        "**/package.json",
-      ],
+      files,
       linterOptions: options,
     },
     // Ignore unsupported files.
@@ -41,11 +46,7 @@ export function base(options: BaseOptions = {}): Linter.Config[] {
     {
       name: "fenge/ignore",
       files: ["**"], // I've tried all. Only '**' works.
-      ignores: [
-        "**/*.{js,cjs,mjs,jsx}",
-        "**/*.{ts,cts,mts,tsx}",
-        "**/package.json",
-      ],
+      ignores: files,
       processor: {
         preprocess: (_text: string, _filename: string) => [""],
         postprocess: (_messages: unknown[][]) => [], // Returning empty array to ignore all errors
