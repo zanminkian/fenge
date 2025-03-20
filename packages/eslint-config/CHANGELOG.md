@@ -1,5 +1,17 @@
 # @fenge/eslint-config
 
+## 0.5.12
+
+### Patch Changes
+
+- 995ac57: feat(eslint-config): disallow `.[mc][tj]s` file extension
+- Updated dependencies [01657a8]
+- Updated dependencies [0b642a5]
+- Updated dependencies [0d630e7]
+- Updated dependencies [5a33140]
+  - eslint-plugin-esm@0.7.0
+  - eslint-plugin-pkg-json@0.2.0
+
 ## 0.5.11
 
 ### Patch Changes
