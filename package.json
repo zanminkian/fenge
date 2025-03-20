@@ -8,7 +8,7 @@
     "build": "pnpm -r build",
     "install": "pnpm build",
     "prepare": "fenge install",
-    "release": "changeset publish",
+    "release": "pnpm -r publish && changeset tag",
     "style": "fenge",
     "style:update": "fenge -u",
     "test": "pnpm -r test && pnpm style && exit $(git status --porcelain | wc -l)"
