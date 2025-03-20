@@ -24,7 +24,7 @@
   "exports": "./dist/eslint.config.js",
   "scripts": {
     "build": "tsc",
-    "test": "node --test --experimental-strip-types \"**/*.spec.ts\""
+    "test": "node --test --experimental-strip-types"
   },
   "dependencies": {
     "@fenge/eslint-plugin": "workspace:*",

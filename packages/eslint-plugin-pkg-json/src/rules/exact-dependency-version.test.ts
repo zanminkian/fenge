@@ -1,4 +1,4 @@
-import { test } from "../test.spec.ts";
+import { test } from "../test.test.ts";
 import { name, rule } from "./exact-dependency-version.js";
 
 const s = JSON.stringify;

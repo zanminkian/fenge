@@ -1,6 +1,6 @@
 import path from "node:path";
 import process from "node:process";
-import { test } from "../test.spec.ts";
+import { test } from "../test.test.ts";
 import { name, rule } from "./required-dev-engines.js";
 
 const s = JSON.stringify;

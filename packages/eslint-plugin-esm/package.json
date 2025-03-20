@@ -26,7 +26,7 @@
   "exports": "./dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "node --test --experimental-strip-types \"**/*.spec.ts\""
+    "test": "node --test --experimental-strip-types"
   },
   "devDependencies": {
     "@fenge/dev-utils": "workspace:*",

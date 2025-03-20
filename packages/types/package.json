@@ -27,7 +27,7 @@
     }
   },
   "scripts": {
-    "test": "node --test --experimental-strip-types \"**/*.spec.ts\""
+    "test": "node --test --experimental-strip-types"
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "0.6.1",

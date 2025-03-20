@@ -8,13 +8,13 @@ const valid = [
   "import foo from 'foo'",
 
   // with ext
-  "import foo from './existing-file-imports.spec.ts'",
+  "import foo from './existing-file-imports.test.ts'",
 ].map((code) => ({ code, filename }));
 
 const invalid = [
-  "import foo from './existing-file-imports.spec.js'",
+  "import foo from './existing-file-imports.test.js'",
   // without ext
-  "import foo from './existing-file-imports.spec'",
+  "import foo from './existing-file-imports.test'",
   "import foo from './inexistent-file'",
   "import foo from '../inexistent-file'",
   // directory

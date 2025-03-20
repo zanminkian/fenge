@@ -25,7 +25,7 @@
   "exports": "./dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "node --test --experimental-strip-types \"**/*.spec.ts\""
+    "test": "node --test --experimental-strip-types"
   },
   "devDependencies": {
     "@types/node": "22.13.10",

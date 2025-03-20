@@ -1,31 +1,31 @@
 import path from "node:path";
 import process from "node:process";
-import { test } from "../test.spec.ts";
-import { name, rule } from "./no-dependencies-in-workspace-root.js";
+import { test } from "../test.test.ts";
+import { name, rule } from "./private-workspace-root.js";
 
 const s = JSON.stringify;
 
 const valid = [
   {
-    code: s({ dependencies: {} }),
+    code: s({}),
     filename: path.join(process.cwd(), "./package.json"),
   },
   {
-    code: s({ dependencies: { foo: "bar" } }),
-    filename: path.join(process.cwd(), "./package.json"),
-  },
-  {
-    code: s({ devDependencies: {} }),
+    code: s({ private: true }),
     filename: path.join(process.cwd(), "../../package.json"),
   },
 ];
 const invalid = [
   {
-    code: s({ dependencies: {} }),
+    code: s({}),
     filename: path.join(process.cwd(), "../../package.json"),
   },
   {
-    code: s({ devDependencies: {}, dependencies: { foo: "bar" } }),
+    code: s({ private: false }),
+    filename: path.join(process.cwd(), "../../package.json"),
+  },
+  {
+    code: s({ private: "true" }),
     filename: path.join(process.cwd(), "../../package.json"),
   },
 ];
