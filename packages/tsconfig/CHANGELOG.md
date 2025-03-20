@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.4.1
+
+### Patch Changes
+
+- 1c16e81: chore: no `*.spec.ts`
+
 ## 0.4.0
 
 ### Minor Changes

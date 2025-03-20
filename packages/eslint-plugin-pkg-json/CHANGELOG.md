@@ -1,5 +1,16 @@
 # eslint-plugin-pkg-json
 
+## 0.2.0
+
+### Minor Changes
+
+- 0d630e7: feat(eslint-plugin-pkg-json): disallow `packageManager` for `no-nonstandard-property` rule
+- 5a33140: feat: `required-engines` works for public package.json now
+
+### Patch Changes
+
+- 0b642a5: feat: add rule `pkg-json/required-dev-engines`
+
 ## 0.1.3
 
 ### Patch Changes

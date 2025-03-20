@@ -1,5 +1,14 @@
 # fenge
 
+## 0.6.1
+
+### Patch Changes
+
+- Updated dependencies [1c16e81]
+- Updated dependencies [995ac57]
+  - @fenge/tsconfig@0.4.1
+  - @fenge/eslint-config@0.5.12
+
 ## 0.6.0
 
 ### Minor Changes

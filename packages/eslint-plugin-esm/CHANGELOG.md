@@ -1,5 +1,11 @@
 # eslint-plugin-esm
 
+## 0.7.0
+
+### Minor Changes
+
+- 01657a8: feat(eslint-plugin-esm): rename `no-inexistent-relative-imports` to `existing-file-imports`
+
 ## 0.6.1
 
 ### Patch Changes
