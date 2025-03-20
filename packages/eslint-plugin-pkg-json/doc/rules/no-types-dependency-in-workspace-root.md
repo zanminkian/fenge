@@ -8,9 +8,9 @@ Should not install `@types/*` in workspace root
 ### Fail
 
 ```ts
-{"dependencies":{"@types/node":"foo","@types/bar":"bar"}} // filename: /root/projects/my/fenge/package.json
-{"dependencies":{"@types/node":"foo"},"devDependencies":{"@types/types":"bar"}} // filename: /root/projects/my/fenge/package.json
-{"dependencies":{"@types/node":"foo","@types/types":"bar"}} // filename: /root/projects/my/fenge/package.json
+{"dependencies":{"@types/node":"foo","@types/bar":"bar"}} // filename: /foo/test/no-types-dependency-in-workspace-root/pkg.json
+{"dependencies":{"@types/node":"foo"},"devDependencies":{"@types/types":"bar"}} // filename: /foo/test/no-types-dependency-in-workspace-root/pkg.json
+{"dependencies":{"@types/node":"foo","@types/types":"bar"}} // filename: /foo/test/no-types-dependency-in-workspace-root/pkg.json
 ```
 
 ### Pass
@@ -18,8 +18,8 @@ Should not install `@types/*` in workspace root
 ```ts
 {"dependencies":{"@types/node":"foo"}} // filename: /foo/package.json
 {"devDependencies":{"@types/node":"foo"}} // filename: /foo/package.json
-{"dependencies":{}} // filename: /root/projects/my/fenge/package.json
-{"dependencies":{"types/node":"foo"}} // filename: /root/projects/my/fenge/package.json
-{"devDependencies":{"@types":"foo"}} // filename: /root/projects/my/fenge/package.json
+{"dependencies":{}} // filename: /foo/test/no-types-dependency-in-workspace-root/pkg.json
+{"dependencies":{"types/node":"foo"}} // filename: /foo/test/no-types-dependency-in-workspace-root/pkg.json
+{"devDependencies":{"@types":"foo"}} // filename: /foo/test/no-types-dependency-in-workspace-root/pkg.json
 ```
 <!-- prettier-ignore-end -->

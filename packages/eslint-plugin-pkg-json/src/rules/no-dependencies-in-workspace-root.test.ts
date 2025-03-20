@@ -16,17 +16,26 @@ const valid = [
   },
   {
     code: s({ devDependencies: {} }),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/no-dependencies-in-workspace-root/pkg.json",
+    ),
   },
 ];
 const invalid = [
   {
     code: s({ dependencies: {} }),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/no-dependencies-in-workspace-root/pkg.json",
+    ),
   },
   {
     code: s({ devDependencies: {}, dependencies: { foo: "bar" } }),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/no-dependencies-in-workspace-root/pkg.json",
+    ),
   },
 ];
 

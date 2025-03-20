@@ -8,8 +8,8 @@ Should not install packages into `dependencies` in workspace root
 ### Fail
 
 ```ts
-{"dependencies":{}} // filename: /root/projects/my/fenge/package.json
-{"devDependencies":{},"dependencies":{"foo":"bar"}} // filename: /root/projects/my/fenge/package.json
+{"dependencies":{}} // filename: /foo/test/no-dependencies-in-workspace-root/pkg.json
+{"devDependencies":{},"dependencies":{"foo":"bar"}} // filename: /foo/test/no-dependencies-in-workspace-root/pkg.json
 ```
 
 ### Pass
@@ -17,6 +17,6 @@ Should not install packages into `dependencies` in workspace root
 ```ts
 {"dependencies":{}} // filename: /foo/package.json
 {"dependencies":{"foo":"bar"}} // filename: /foo/package.json
-{"devDependencies":{}} // filename: /root/projects/my/fenge/package.json
+{"devDependencies":{}} // filename: /foo/test/no-dependencies-in-workspace-root/pkg.json
 ```
 <!-- prettier-ignore-end -->

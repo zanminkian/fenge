@@ -16,32 +16,50 @@ const valid = [
   },
   {
     code: s({ dependencies: {} }),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/no-types-dependency-in-workspace-root/pkg.json",
+    ),
   },
   {
     code: s({ dependencies: { "types/node": "foo" } }),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/no-types-dependency-in-workspace-root/pkg.json",
+    ),
   },
   {
     code: s({ devDependencies: { "@types": "foo" } }),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/no-types-dependency-in-workspace-root/pkg.json",
+    ),
   },
 ];
 const invalid = [
   {
     code: s({ dependencies: { "@types/node": "foo", "@types/bar": "bar" } }),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/no-types-dependency-in-workspace-root/pkg.json",
+    ),
   },
   {
     code: s({
       dependencies: { "@types/node": "foo" },
       devDependencies: { "@types/types": "bar" },
     }),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/no-types-dependency-in-workspace-root/pkg.json",
+    ),
   },
   {
     code: s({ dependencies: { "@types/node": "foo", "@types/types": "bar" } }),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/no-types-dependency-in-workspace-root/pkg.json",
+    ),
   },
 ];
 

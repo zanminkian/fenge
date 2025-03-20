@@ -8,15 +8,15 @@
 ### Fail
 
 ```ts
-{} // filename: /root/projects/my/fenge/package.json
-{"private":false} // filename: /root/projects/my/fenge/package.json
-{"private":"true"} // filename: /root/projects/my/fenge/package.json
+{} // filename: /foo/test/private-workspace-root/pkg.json
+{"private":false} // filename: /foo/test/private-workspace-root/pkg.json
+{"private":"true"} // filename: /foo/test/private-workspace-root/pkg.json
 ```
 
 ### Pass
 
 ```ts
 {} // filename: /foo/package.json
-{"private":true} // filename: /root/projects/my/fenge/package.json
+{"private":true} // filename: /foo/test/private-workspace-root/pkg.json
 ```
 <!-- prettier-ignore-end -->

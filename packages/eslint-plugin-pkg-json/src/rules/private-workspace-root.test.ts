@@ -12,21 +12,33 @@ const valid = [
   },
   {
     code: s({ private: true }),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/private-workspace-root/pkg.json",
+    ),
   },
 ];
 const invalid = [
   {
     code: s({}),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/private-workspace-root/pkg.json",
+    ),
   },
   {
     code: s({ private: false }),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/private-workspace-root/pkg.json",
+    ),
   },
   {
     code: s({ private: "true" }),
-    filename: path.join(process.cwd(), "../../package.json"),
+    filename: path.join(
+      process.cwd(),
+      "./test/private-workspace-root/pkg.json",
+    ),
   },
 ];
 
