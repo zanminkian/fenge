@@ -64,16 +64,10 @@ export const rule = {
 };
 
 function checkAndGet(obj, property, context) {
-  if (obj.type !== "ObjectExpression") {
-    context?.report({
-      node: obj,
-      messageId: "missingField",
-      data: { field: property },
-    });
-    return undefined;
-  }
-
-  const foundProperty = obj.properties.find((p) => p.key.value === property);
+  const foundProperty =
+    obj.type !== "ObjectExpression"
+      ? undefined
+      : obj.properties.find((p) => p.key.value === property);
   if (!foundProperty) {
     context?.report({
       node: obj,
@@ -82,5 +76,6 @@ function checkAndGet(obj, property, context) {
     });
     return undefined;
   }
+
   return foundProperty.value;
 }
