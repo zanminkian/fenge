@@ -54,7 +54,7 @@ Here are the best practices if you are using this package.
 ├── src
 │   └── index.ts
 ├── test
-│   └── index.spec.ts
+│   └── index.test.ts
 ├── package.json
 ├── tsconfig.build.json
 └── tsconfig.json
@@ -74,7 +74,7 @@ Here are the best practices if you are using this package.
 {
   "extends": "./tsconfig",
   "include": ["src"],
-  "exclude": ["**/*.spec.ts", "**/*.test.ts"]
+  "exclude": ["**/*.test.ts"]
 }
 ```
 
@@ -88,14 +88,14 @@ You don't need `tsconfig.build.json`.
 │   │   ├── src
 │   │   │   └── main.ts
 │   │   ├── test
-│   │   │   └── main.spec.ts
+│   │   │   └── main.test.ts
 │   │   ├── package.json
 │   │   └── tsconfig.json
 │   └── app2
 │       ├── src
 │       │   └── main.ts
 │       ├── test
-│       │   └── main.spec.ts
+│       │   └── main.test.ts
 │       ├── package.json
 │       └── tsconfig.json
 ├── package.json
@@ -116,7 +116,7 @@ You don't need `tsconfig.build.json`.
 {
   "extends": "../../tsconfig",
   "include": ["src"],
-  "exclude": ["**/*.spec.ts", "**/*.test.ts"]
+  "exclude": ["**/*.test.ts"]
 }
 ```
 

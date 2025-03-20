@@ -36,7 +36,7 @@ export async function initAction(options) {
   const generatingTsconfigContent = `{
   "extends": "${options.ext ?? (await importJson("../package.json")).name}",
   "include": ["src"],
-  "exclude": ["**/*.spec.ts", "**/*.test.ts"]
+  "exclude": ["**/*.test.ts"]
 }
 `;
 

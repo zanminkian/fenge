@@ -177,7 +177,7 @@ Config `tsconfig.build.json` file in your project root.
 {
   "extends": "./tsconfig.json",
   "include": ["src"],
-  "exclude": ["**/*.spec.ts", "**/*.test.ts"]
+  "exclude": ["**/*.test.ts"]
 }
 ```
 
