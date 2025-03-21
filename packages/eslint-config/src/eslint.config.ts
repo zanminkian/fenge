@@ -42,7 +42,7 @@ export class Builder {
   }
 
   toConfig() {
-    return [...base(this.options, [...this.enabled]), ...this.configs];
+    return [...base(this.options, this.enabled), ...this.configs];
   }
 
   private setup(

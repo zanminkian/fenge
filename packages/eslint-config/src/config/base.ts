@@ -4,15 +4,15 @@ import type { Linter } from "eslint";
 export type BaseOptions = Linter.LinterOptions;
 
 export function base(
-  options: BaseOptions = {},
-  enabled: ("js" | "ts" | "pkg")[] = [],
+  options: BaseOptions,
+  enabled: Set<"js" | "ts" | "pkg">,
 ): Linter.Config[] {
   const filesMap = {
     js: "**/*.{js,cjs,mjs,jsx}",
     ts: "**/*.{ts,cts,mts,tsx}",
     pkg: "package.json",
   } as const;
-  const files = enabled.map((key) => filesMap[key]);
+  const files = [...enabled].map((key) => filesMap[key]);
   return [
     // Global ignore. Refer: https://eslint.org/docs/latest/use/configure/configuration-files#specifying-files-and-ignores.
     {
