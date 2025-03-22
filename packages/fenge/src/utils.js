@@ -41,18 +41,6 @@ export async function resolveConfig(module, loadPath) {
 }
 
 /**
- * Usage: `importJson(import.meta.url, '../xx.json')`
- * @param {string} importMetaUrl
- * @param {string} jsonPath
- * @returns {Promise<any>}
- */
-export async function importJson(importMetaUrl, jsonPath) {
-  return JSON.parse(
-    await fs.readFile(path.resolve(dir(importMetaUrl), jsonPath), "utf8"),
-  );
-}
-
-/**
  * @param {number} startTime
  */
 function getSpentTime(startTime) {

@@ -3,13 +3,11 @@
 import process from "node:process";
 import { initAction, setup } from "@fenge/tsconfig/setup";
 import { Command } from "commander";
+import pkgJson from "../../package.json" with { type: "json" };
 import { format } from "../command/format.js";
 import { install } from "../command/install.js";
 import { lint } from "../command/lint.js";
 import { uninstall } from "../command/uninstall.js";
-import { importJson } from "../utils.js";
-
-const pkgJson = await importJson(import.meta.url, "../../package.json");
 
 const program = new Command().enablePositionalOptions();
 

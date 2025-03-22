@@ -7,17 +7,7 @@ import { parseTsconfig } from "get-tsconfig";
 import JSON5 from "json5";
 import { printUnifiedDiff } from "print-diff";
 import sortKeys from "sort-keys";
-
-/**
- * @param {string} filepath
- */
-async function importJson(filepath) {
-  const absolutePath = path.resolve(
-    path.dirname(fileURLToPath(import.meta.url)),
-    filepath,
-  );
-  return JSON.parse(await fs.readFile(absolutePath, "utf8"));
-}
+import packageJson from "../package.json" with { type: "json" };
 
 /**
  * @param {string} filepath
@@ -34,7 +24,7 @@ async function exists(filepath) {
  */
 export async function initAction(options) {
   const generatingTsconfigContent = `{
-  "extends": "${options.ext ?? (await importJson("../package.json")).name}",
+  "extends": "${options.ext ?? packageJson.name}",
   "include": ["src"],
   "exclude": ["**/*.test.ts"]
 }
