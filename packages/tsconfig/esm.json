@@ -27,6 +27,7 @@
     "verbatimModuleSyntax": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
     "stripInternal": true,
     "declaration": true,
     "declarationMap": true,
