@@ -1,5 +1,11 @@
 # @fenge/eslint-plugin
 
+## 0.4.0
+
+### Minor Changes
+
+- 28d8553: chore: required node ^18.20.0 or >=20.10.0
+
 ## 0.3.0
 
 ### Minor Changes

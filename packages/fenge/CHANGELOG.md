@@ -1,5 +1,21 @@
 # fenge
 
+## 0.7.0
+
+### Minor Changes
+
+- 28d8553: chore: required node ^18.20.0 or >=20.10.0
+
+### Patch Changes
+
+- Updated dependencies [fe27531]
+- Updated dependencies [28d8553]
+  - @fenge/tsconfig@0.5.0
+  - @fenge/prettier-config@0.3.0
+  - prettier-ignore@0.3.0
+  - @fenge/eslint-config@0.6.0
+  - @fenge/types@0.3.0
+
 ## 0.6.2
 
 ### Patch Changes

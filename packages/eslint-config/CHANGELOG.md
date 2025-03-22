@@ -1,5 +1,20 @@
 # @fenge/eslint-config
 
+## 0.6.0
+
+### Minor Changes
+
+- 28d8553: chore: required node ^18.20.0 or >=20.10.0
+
+### Patch Changes
+
+- Updated dependencies [28d8553]
+  - eslint-plugin-pkg-json@0.3.0
+  - eslint-plugin-publint@0.2.0
+  - eslint-plugin-esm@0.8.0
+  - @fenge/eslint-plugin-ts@0.4.0
+  - @fenge/eslint-plugin@0.4.0
+
 ## 0.5.13
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@fenge/types",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A type patch for TypeScript, enhancing type-safe for built-in JavaScript apis.",
   "keywords": [
     "ecmascript",
