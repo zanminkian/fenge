@@ -1,8 +1,5 @@
-import { createRequire } from "node:module";
-
-const resolve = createRequire(import.meta.url).resolve;
 const resolvePlugins = (plugins: string[]) =>
-  plugins.map((plugin) => resolve(plugin));
+  plugins.map((plugin) => import.meta.resolve(plugin));
 
 export default {
   overrides: [
