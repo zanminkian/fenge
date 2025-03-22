@@ -1,5 +1,11 @@
 # eslint-plugin-esm
 
+## 0.8.0
+
+### Minor Changes
+
+- 28d8553: chore: required node ^18.20.0 or >=20.10.0
+
 ## 0.7.0
 
 ### Minor Changes

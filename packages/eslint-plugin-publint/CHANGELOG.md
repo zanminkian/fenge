@@ -1,5 +1,11 @@
 # eslint-plugin-publint
 
+## 0.2.0
+
+### Minor Changes
+
+- 28d8553: chore: required node ^18.20.0 or >=20.10.0
+
 ## 0.1.3
 
 ### Patch Changes
