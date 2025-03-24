@@ -2,8 +2,7 @@ import childProcess from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import type { Message, Result } from "publint";
-import type { Pkg } from "publint/utils";
+import type { Result } from "publint";
 
 /**
  * Sync function of `(await import('publint')).publint()`.
@@ -15,7 +14,7 @@ function publint(pkgDir: string) {
     path.dirname(fileURLToPath(import.meta.url)),
     "publint.cli.js",
   );
-  const result: Result = JSON.parse(
+  const result: Result | null = JSON.parse(
     childProcess.execSync(`node ${publintPath} ${pkgDir}`, {
       encoding: "utf8",
     }),
@@ -23,22 +22,19 @@ function publint(pkgDir: string) {
   return result;
 }
 
-export interface PublintInfo {
-  pkg: Pkg;
-  messages: Message[];
-}
-
-const cache = new Map<string, PublintInfo>();
-export function getPublintInfo(pkgPath: string): PublintInfo {
+const cache = new Map<string, Result>();
+export function getPublintInfo(pkgPath: string) {
   const info = cache.get(pkgPath);
   if (info) {
     return info;
   }
 
   const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
-  const result = {
+  const result: Result = {
     pkg,
-    messages: pkg.private ? [] : publint(path.dirname(pkgPath)).messages,
+    messages: pkg.private
+      ? []
+      : (publint(path.dirname(pkgPath))?.messages ?? []),
   };
   cache.set(pkgPath, result);
   return result;
