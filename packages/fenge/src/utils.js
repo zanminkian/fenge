@@ -138,21 +138,23 @@ function getExitCode(error) {
 export async function getBinPath(
   moduleName,
   from = fileURLToPath(import.meta.url),
+  cliName = moduleName,
 ) {
   const fromPath =
     !from.endsWith(path.sep) && (await fs.stat(from)).isDirectory()
       ? from + path.sep
       : from;
-  const cliName = moduleName;
   const packageJsonPath = createRequire(fromPath).resolve(
     `${moduleName}/package.json`,
   );
   /** @type {any} */
   const packageJson = JSON.parse(await fs.readFile(packageJsonPath, "utf8"));
-  const modulePath = packageJsonPath.slice(0, -"/package.json".length);
+  const modulePath = path.dirname(packageJsonPath);
   const binPath =
     typeof packageJson.bin === "string"
       ? packageJson.bin
       : packageJson.bin[cliName];
+  if (typeof binPath !== "string")
+    throw new Error(`Cannot find bin ${cliName} in module ${moduleName}`);
   return path.resolve(modulePath, binPath);
 }
