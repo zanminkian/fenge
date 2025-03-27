@@ -1,5 +1,16 @@
 # @fenge/eslint-config
 
+## 0.6.1
+
+### Patch Changes
+
+- c4931eb: chore: upgrade deps
+- 9b7c7f4: feat: add rule `n/no-unpublished-bin`
+- d15775e: feat: add more rules of `eslint-plugin-unicorn`
+- Updated dependencies [c4931eb]
+- Updated dependencies [e62e708]
+  - eslint-plugin-publint@0.2.1
+
 ## 0.6.0
 
 ### Minor Changes

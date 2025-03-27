@@ -1,5 +1,12 @@
 # eslint-plugin-publint
 
+## 0.2.1
+
+### Patch Changes
+
+- c4931eb: chore: upgrade deps
+- e62e708: fix(eslint-plugin-publint): fix crash when there is no pnpm or yarn installed
+
 ## 0.2.0
 
 ### Minor Changes
