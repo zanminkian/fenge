@@ -1,5 +1,15 @@
 # fenge
 
+## 0.7.1
+
+### Patch Changes
+
+- c4931eb: chore: upgrade deps
+- Updated dependencies [c4931eb]
+- Updated dependencies [9b7c7f4]
+- Updated dependencies [d15775e]
+  - @fenge/eslint-config@0.6.1
+
 ## 0.7.0
 
 ### Minor Changes
