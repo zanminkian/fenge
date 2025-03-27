@@ -414,6 +414,7 @@ export function getJsBase() {
       "n/no-new-require": "error",
       "n/no-path-concat": "error",
       "n/no-process-exit": "error",
+      "n/no-unpublished-bin": "error",
       "n/prefer-global/buffer": ["error", "never"],
       "n/prefer-global/console": "error",
       "n/prefer-global/process": ["error", "never"],
