@@ -329,7 +329,7 @@ npm run prepare
 ## Contributing
 
 - Clone this repository.
-- Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`.
+- Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable` or globally install [@rnm/pm](https://www.npmjs.com/package/@rnm/pm).
 - Install dependencies using `pnpm install`.
 - Run `pnpm style:update` to develop.
 - Start coding and submit your PR.

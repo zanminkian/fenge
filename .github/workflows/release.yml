@@ -13,4 +13,5 @@ jobs:
       id-token: write
       pull-requests: write
     uses: zanminkian/github-actions/.github/workflows/release.yml@main
-    secrets: inherit
+    secrets:
+      TOKENS: ${{ secrets.TOKENS }}
