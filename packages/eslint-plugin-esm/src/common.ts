@@ -35,7 +35,7 @@ export function createRule({
       },
       type,
       docs: {
-        // TODO: add url
+        url: `https://github.com/zanminkian/fenge/blob/main/packages/eslint-plugin-esm/doc/rules/${name}.md`,
         description: message,
       },
     },
@@ -46,7 +46,7 @@ export function createRule({
 
 export function getRuleName(importMetaUrl: string) {
   // remove '.js' extension
-  return path.basename(fileURLToPath(importMetaUrl)).slice(0, -3);
+  return path.parse(fileURLToPath(importMetaUrl)).name;
 }
 
 export type ImportationNode =
