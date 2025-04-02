@@ -11,6 +11,7 @@ import { noRenameImports } from "./rules/no-rename-imports.ts";
 import { noSideEffectImports } from "./rules/no-side-effect-imports.ts";
 import { noUselessPathSegments } from "./rules/no-useless-path-segments.ts";
 import { requiredExports } from "./rules/required-exports.ts";
+import { topSideEffectImports } from "./rules/top-side-effect-imports.ts";
 
 export const rules = {
   [existingFileImports.name]: existingFileImports.rule,
@@ -26,4 +27,5 @@ export const rules = {
   [noSideEffectImports.name]: noSideEffectImports.rule,
   [noUselessPathSegments.name]: noUselessPathSegments.rule,
   [requiredExports.name]: requiredExports.rule,
+  [topSideEffectImports.name]: topSideEffectImports.rule,
 };

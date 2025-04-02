@@ -377,6 +377,7 @@ export function getJsBase() {
       "esm/no-side-effect-imports": "error",
       "esm/no-useless-path-segments": "error",
       "esm/required-exports": "error",
+      "esm/top-side-effect-imports": "error",
       // fp
       "fp/no-arguments": "error",
       "fp/no-delete": "error",
