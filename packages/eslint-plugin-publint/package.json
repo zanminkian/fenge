@@ -23,7 +23,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "publint": "0.3.9"
+    "publint": "0.3.10"
   },
   "devDependencies": {
     "@types/estree": "1.0.6",
