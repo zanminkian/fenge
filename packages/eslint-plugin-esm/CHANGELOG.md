@@ -1,5 +1,11 @@
 # eslint-plugin-esm
 
+## 0.8.1
+
+### Patch Changes
+
+- 57c267d: feat: add rule `esm/top-side-effect-imports`
+
 ## 0.8.0
 
 ### Minor Changes

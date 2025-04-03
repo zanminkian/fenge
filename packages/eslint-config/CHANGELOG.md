@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.6.2
+
+### Patch Changes
+
+- 57c267d: feat: add rule `esm/top-side-effect-imports`
+- Updated dependencies [57c267d]
+- Updated dependencies [106e43b]
+  - eslint-plugin-esm@0.8.1
+  - eslint-plugin-publint@0.2.2
+
 ## 0.6.1
 
 ### Patch Changes
