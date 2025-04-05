@@ -1,11 +1,12 @@
 {
   "name": "@fenge/types",
   "version": "0.3.0",
-  "description": "A type patch for TypeScript, enhancing type-safe for built-in JavaScript apis.",
+  "description": "A type replacement for enhancing TypeScript built-in apis.",
   "keywords": [
     "ecmascript",
     "typescript",
     "ts-reset",
+    "replacement",
     "type-fest",
     "types"
   ],
@@ -18,23 +19,25 @@
   "license": "MIT",
   "author": "hellozmj@qq.com",
   "type": "module",
-  "exports": {
-    ".": {
-      "types": "./src/index.d.ts"
-    },
-    "./*": {
-      "types": "./src/*.d.ts"
-    }
-  },
+  "types": "./dist/lib.es2020.d.ts",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
+    "build": "node --experimental-strip-types ./script/build.cli.ts",
     "test": "node --test --experimental-strip-types"
   },
   "devDependencies": {
-    "@total-typescript/ts-reset": "0.6.1",
-    "@types/node": "22.14.1"
+    "@types/node": "22.14.1",
+    "typescript": "5.8.3"
+  },
+  "peerDependencies": {
+    "@types/node": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/node": {
+      "optional": true
+    }
   },
   "engines": {
     "node": "^18.20.0 || >=20.10.0"
