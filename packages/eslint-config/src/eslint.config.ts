@@ -22,7 +22,7 @@ interface Options<T extends string[]> {
   omit?: NoDuplicate<T>;
 }
 interface ConfigItem {
-  name: string;
+  name?: string;
   files: string[];
   plugins?: Record<string, object>;
   rules:
