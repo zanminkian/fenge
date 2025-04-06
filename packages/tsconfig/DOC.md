@@ -28,3 +28,7 @@ We can remove the `tsconfig.json` in the root of monorepo project. But when open
 - Node 16 supports es2022
 - Node 18 supports es2022
 - [Node 18 does not support some features of es2023](https://github.com/tsconfig/bases/issues/217)
+
+## Why don't we specify `types` field?
+
+Ts will load all the `node_modules/@types/*` declaration files when `types` field is removed. It's not very type-safe when one of `@types/*` packages modifies the global scope declaration. The best practice is `"types": ["node", "web"]`. It means only `@types/node` and `@types/web` are allowed modifying global scope declaration. But Ts will throw an error when one of `@types/node` and `@types/web` is not installed.
