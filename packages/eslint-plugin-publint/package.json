@@ -19,6 +19,9 @@
   "author": "hellozmj@qq.com",
   "type": "module",
   "exports": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc"
   },

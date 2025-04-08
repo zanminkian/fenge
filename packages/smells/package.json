@@ -24,6 +24,9 @@
     "./package.json": "./package.json"
   },
   "bin": "./dist/smells.cli.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc"
   },

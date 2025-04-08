@@ -22,6 +22,9 @@
   "author": "hellozmj@qq.com",
   "type": "module",
   "exports": "./dist/eslint.config.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "node --test --experimental-strip-types"

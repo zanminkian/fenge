@@ -20,6 +20,9 @@
   "author": "hellozmj@qq.com",
   "type": "module",
   "exports": "./dist/prettier.config.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc"
   },
