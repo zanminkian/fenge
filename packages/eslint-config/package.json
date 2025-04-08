@@ -41,7 +41,7 @@
     "eslint-plugin-pkg-json": "workspace:*",
     "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-publint": "workspace:*",
-    "eslint-plugin-react": "7.37.4",
+    "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "eslint-plugin-sonarjs": "1.0.4",
