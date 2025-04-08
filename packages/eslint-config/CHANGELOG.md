@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.6.3
+
+### Patch Changes
+
+- a18f616: feat(eslint-config): make `name` of `ConfigItem` optional
+
 ## 0.6.2
 
 ### Patch Changes
