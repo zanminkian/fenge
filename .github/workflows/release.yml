@@ -1,10 +1,8 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - main
-      - prerelease
+  - push
+  - pull_request
 
 jobs:
   release:

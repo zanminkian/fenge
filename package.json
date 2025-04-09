@@ -8,7 +8,7 @@
     "build": "pnpm -r build",
     "install": "pnpm build",
     "prepare": "fenge install",
-    "release": "pnpm -r publish && changeset tag",
+    "release": "pnpm -r publish",
     "style": "fenge",
     "style:update": "fenge -u",
     "test": "pnpm style && pnpm -r test"
