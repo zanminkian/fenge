@@ -1,5 +1,11 @@
 # eslint-plugin-publint
 
+## 0.2.3
+
+### Patch Changes
+
+- a8963ee: chore: upgrade deps
+
 ## 0.2.2
 
 ### Patch Changes

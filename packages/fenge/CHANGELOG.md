@@ -1,5 +1,14 @@
 # fenge
 
+## 0.7.4
+
+### Patch Changes
+
+- a8963ee: chore: upgrade deps
+- Updated dependencies [a8963ee]
+- Updated dependencies [c833fd7]
+  - @fenge/eslint-config@0.6.4
+
 ## 0.7.3
 
 ### Patch Changes
