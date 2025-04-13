@@ -35,7 +35,7 @@
     "@typescript-eslint/eslint-plugin": "8.26.0",
     "@typescript-eslint/parser": "8.26.0",
     "confusing-browser-globals": "1.0.11",
-    "eslint-plugin-check-file": "3.1.0",
+    "eslint-plugin-check-file": "3.2.0",
     "eslint-plugin-es-x": "8.6.1",
     "eslint-plugin-esm": "workspace:*",
     "eslint-plugin-fp": "2.3.0",
@@ -54,7 +54,7 @@
   "devDependencies": {
     "@types/node": "22.13.10",
     "eslint": "9.22.0",
-    "eslint-config-prettier": "10.1.1"
+    "eslint-config-prettier": "10.1.2"
   },
   "peerDependencies": {
     "eslint": ">=8.57.1"
