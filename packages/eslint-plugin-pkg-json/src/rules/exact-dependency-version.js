@@ -4,8 +4,14 @@ function isExactVersion(version) {
   if (!version) {
     return false;
   }
+  if (version.startsWith("file:")) {
+    return true;
+  }
   if (version.startsWith("workspace:")) {
     return version === "workspace:*";
+  }
+  if (version.startsWith("npm:")) {
+    return isValidSemVer(version.split("@")[1]);
   }
   return isValidSemVer(version);
 }
