@@ -1,5 +1,14 @@
 # @fenge/eslint-config
 
+## 0.6.4
+
+### Patch Changes
+
+- a8963ee: chore: upgrade deps
+- c833fd7: feat: add rule `@typescript-eslint/prefer-nullish-coalescing`
+- Updated dependencies [a8963ee]
+  - eslint-plugin-publint@0.2.3
+
 ## 0.6.3
 
 ### Patch Changes
