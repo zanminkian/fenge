@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.3.1
+
+### Patch Changes
+
+- 3ba345e: feat(eslint-plugin-pkg-json): support `npm:` and `file:` protocol for `exact-dependency-version` rule
+
 ## 0.3.0
 
 ### Minor Changes

@@ -1,5 +1,12 @@
 # @fenge/eslint-config
 
+## 0.6.5
+
+### Patch Changes
+
+- Updated dependencies [3ba345e]
+  - eslint-plugin-pkg-json@0.3.1
+
 ## 0.6.4
 
 ### Patch Changes
