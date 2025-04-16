@@ -30,9 +30,10 @@ interface ConfigItem {
     | Record<string, RuleValue>;
 }
 
+export type LinterConfig = Linter.Config;
 export type BuilderOptions = BaseOptions;
 export class Builder {
-  private readonly configs: Linter.Config[] = [];
+  private readonly configs: LinterConfig[] = [];
   private readonly options: BuilderOptions;
 
   private readonly enabled = new Set<"js" | "ts" | "pkg">();
