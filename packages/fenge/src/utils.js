@@ -58,7 +58,7 @@ function getSpentTime(startTime) {
 /**
  * @param {string[]} command
  * @param {{topic: string, dryRun: boolean, env: Record<string, string>}} options
- * @returns {Promise<number>}
+ * @returns {Promise<{code: number|null, signal: NodeJS.Signals | null}>}
  */
 export function execAsync(command, { topic, dryRun, env }) {
   return new Promise((resolve, reject) => {
@@ -70,7 +70,7 @@ export function execAsync(command, { topic, dryRun, env }) {
     }
     if (dryRun) {
       process.stdout.write(`${colors.green(cmd)} ${args.join(" ")};\n\n`);
-      return resolve(0);
+      return resolve({ code: 0, signal: null });
     }
 
     const spinner = ora(`${topic}...`).start();
@@ -86,18 +86,13 @@ export function execAsync(command, { topic, dryRun, env }) {
       stderr = Buffer.concat([stderr, data]);
     });
     cp.on("error", (err) => {
-      spinner.fail(
-        `${topic} got error in ${colors.yellow(getSpentTime(startTime))}`,
-      );
-      process.stderr.write(err.message);
-      resolve(getExitCode(err));
+      reject(err);
     });
     // Why not listen to the 'exit' event?
     // 1. The 'close' event will always emit after 'exit' was already emitted, or 'error' if the child failed to spawn.
     // 2. The 'exit' event may or may not fire after an error has occurred.
     cp.on("close", (code, signal) => {
-      const exitCode = getExitCode({ code, signal });
-      if (exitCode === 0) {
+      if (code === 0) {
         spinner.succeed(
           `${topic} succeeded in ${colors.yellow(getSpentTime(startTime))}`,
         );
@@ -108,27 +103,11 @@ export function execAsync(command, { topic, dryRun, env }) {
       }
       process.stdout.write(stdout);
       process.stderr.write(stderr);
-      resolve(exitCode);
+      resolve({ code, signal });
     });
     process.on("SIGINT", () => !cp.killed && cp.kill("SIGINT"));
     process.on("SIGTERM", () => !cp.killed && cp.kill("SIGTERM"));
   });
-}
-
-/**
- * @param {object} error
- */
-function getExitCode(error) {
-  if ("signal" in error && error.signal === "SIGINT") {
-    return 2;
-  }
-  if ("signal" in error && error.signal === "SIGTERM") {
-    return 15;
-  }
-  if ("code" in error && typeof error.code === "number") {
-    return error.code;
-  }
-  return 1;
 }
 
 /**

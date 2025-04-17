@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 // @ts-check
+import os from "node:os";
 import process from "node:process";
 import { initAction, setup } from "@fenge/tsconfig/setup";
 import { Command } from "commander";
@@ -8,6 +9,22 @@ import { format } from "../command/format.js";
 import { install } from "../command/install.js";
 import { lint } from "../command/lint.js";
 import { uninstall } from "../command/uninstall.js";
+
+/**
+ * @param {{code: number|null, signal: NodeJS.Signals | null}} param
+ * @returns {never}
+ */
+function exit({ code, signal }) {
+  if (code !== null) {
+    process.exit(code);
+  } else if (signal !== null) {
+    process.exit(128 + os.constants.signals[signal]);
+  } else {
+    throw new Error(
+      "Internal Error. Code and signal should not be null at the same time.",
+    );
+  }
+}
 
 const program = new Command().enablePositionalOptions();
 
@@ -35,11 +52,14 @@ program
   )
   .argument("[paths...]", "dir or file paths to format and lint")
   .action(async (paths, options) => {
-    let code = (await format(paths, options)) || (await lint(paths, options));
-    if (options.fix || options.update) {
-      code ||= await format(paths, options);
+    let result = await format(paths, options);
+    if (result.code === 0) {
+      result = await lint(paths, options);
+      if (result.code === 0) {
+        result = await format(paths, options);
+      }
     }
-    process.exit(code);
+    exit(result);
   });
 
 program
@@ -58,7 +78,7 @@ program
     "print what command will be executed under the hood instead of executing",
   )
   .argument("[paths...]", "dir or file paths to lint")
-  .action(async (paths, options) => process.exit(await lint(paths, options)));
+  .action(async (paths, options) => exit(await lint(paths, options)));
 
 program
   .command("format")
@@ -75,7 +95,7 @@ program
     "print what command will be executed under the hood instead of executing",
   )
   .argument("[paths...]", "dir or file paths to format")
-  .action(async (paths, options) => process.exit(await format(paths, options)));
+  .action(async (paths, options) => exit(await format(paths, options)));
 
 program
   .command("install")
