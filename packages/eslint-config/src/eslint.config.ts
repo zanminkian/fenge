@@ -42,7 +42,7 @@ export class Builder {
     this.options = options;
   }
 
-  toConfig() {
+  toConfig(): LinterConfig[] {
     return [...base(this.options, this.enabled), ...this.configs];
   }
 
