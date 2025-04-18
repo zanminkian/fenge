@@ -84,6 +84,10 @@ export function getTsBase() {
         // But setting `project: "tsconfig.json"` will cause parser error when the project root tsconfig.json is `{ extends: "fenge/tsconfig" }`
         projectService: true,
       },
+      globals: {
+        ...jsBase.languageOptions.globals,
+        NodeJS: false,
+      },
     },
     plugins: {
       ...jsBase.plugins,
