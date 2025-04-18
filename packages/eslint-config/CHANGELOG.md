@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.6.8
+
+### Patch Changes
+
+- 3c6eafe: fix: export LinterConfig type for portability
+
 ## 0.6.7
 
 ### Patch Changes
