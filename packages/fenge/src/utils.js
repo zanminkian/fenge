@@ -74,7 +74,10 @@ export function execAsync(command, { topic, dryRun, env }) {
     }
 
     const spinner = ora(`${topic}...`).start();
-    const cp = childProcess.spawn(cmd, args, {
+    /**
+     * @type {childProcess.ChildProcessWithoutNullStreams | undefined}
+     */
+    let cp = childProcess.spawn(cmd, args, {
       env: { FORCE_COLOR: "true", ...process.env, ...env },
     });
     let stdout = Buffer.alloc(0);
@@ -103,10 +106,16 @@ export function execAsync(command, { topic, dryRun, env }) {
       }
       process.stdout.write(stdout);
       process.stderr.write(stderr);
+      cp = undefined; // When the cp exited, we should clean cp to prevent memory leak.
       resolve({ code, signal });
     });
-    process.on("SIGINT", () => !cp.killed && cp.kill("SIGINT"));
-    process.on("SIGTERM", () => !cp.killed && cp.kill("SIGTERM"));
+
+    /**
+     * @param {NodeJS.Signals} signal
+     */
+    const listener = (signal) => cp && !cp.killed && cp.kill(signal);
+    process.on("SIGINT", listener);
+    process.on("SIGTERM", listener);
   });
 }
 
