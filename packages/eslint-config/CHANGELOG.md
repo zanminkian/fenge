@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.6.7
+
+### Patch Changes
+
+- 853a04c: fix: allow `NodeJS` as global in ts files
+
 ## 0.6.6
 
 ### Patch Changes
