@@ -106,7 +106,10 @@ export function execAsync(command, { topic, dryRun, env }) {
       }
       process.stdout.write(stdout);
       process.stderr.write(stderr);
-      cp = undefined; // When the cp exited, we should clean cp to prevent memory leak.
+      // When the cp exited, we should clean cp and the buffer to prevent memory leak.
+      stdout = Buffer.alloc(0);
+      stderr = Buffer.alloc(0);
+      cp = undefined;
       resolve({ code, signal });
     });
 
