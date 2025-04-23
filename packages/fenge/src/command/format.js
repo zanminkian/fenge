@@ -8,23 +8,24 @@ import { dir, execAsync, getBinPath } from "../utils.js";
  * @param {Array<string>} paths
  * @param {{update?: boolean, write?: boolean, dryRun?: boolean, config?: string, default?: boolean}} options
  */
-export async function format(paths = [], options = {}) {
-  const {
+export async function format(
+  paths = [],
+  {
     update = false,
     write = false,
     dryRun = false,
     config,
     default: useDefaultConfig = false,
-  } = options;
-
-  const ignores = [".gitignore", ".prettierignore", prettierignore]
-    .map((p) => path.resolve(p))
-    .flatMap((p) => ["--ignore-path", p]);
+  } = {},
+) {
   return execAsync(
     [
       // "node",
       await getPrettierPath(useDefaultConfig),
-      ...ignores,
+      // setup 3 ignore files
+      ...[".gitignore", ".prettierignore", prettierignore]
+        .map((p) => path.resolve(p))
+        .flatMap((p) => ["--ignore-path", p]),
       "--log-level",
       "warn",
       "--config",

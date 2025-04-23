@@ -3,6 +3,7 @@ import { Buffer } from "node:buffer";
 import childProcess from "node:child_process";
 import fs from "node:fs/promises";
 import { createRequire } from "node:module";
+import os from "node:os";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
@@ -58,21 +59,20 @@ function getSpentTime(startTime) {
 /**
  * @param {string[]} command
  * @param {{topic: string, dryRun: boolean, env: Record<string, string>}} options
- * @returns {Promise<{code: number|null, signal: NodeJS.Signals | null}>}
+ * @returns {Promise<number>}
  */
 export function execAsync(command, { topic, dryRun, env }) {
+  const [cmd, ...args] = command;
+  if (!cmd) {
+    return Promise.reject(new Error("cmd not found"));
+  }
+  if (dryRun) {
+    process.stdout.write(`${colors.green(cmd)} ${args.join(" ")};\n\n`);
+    return Promise.resolve(0);
+  }
+
   return new Promise((resolve, reject) => {
     const startTime = Date.now();
-
-    const [cmd, ...args] = command;
-    if (!cmd) {
-      return reject(new Error("cmd not found"));
-    }
-    if (dryRun) {
-      process.stdout.write(`${colors.green(cmd)} ${args.join(" ")};\n\n`);
-      return resolve({ code: 0, signal: null });
-    }
-
     const spinner = ora(`${topic}...`).start();
     /**
      * @type {childProcess.ChildProcessWithoutNullStreams | undefined}
@@ -110,7 +110,7 @@ export function execAsync(command, { topic, dryRun, env }) {
       stdout = Buffer.alloc(0);
       stderr = Buffer.alloc(0);
       cp = undefined;
-      resolve({ code, signal });
+      resolve(code ?? (signal ? 128 + os.constants.signals[signal] : 1));
     });
 
     /**
