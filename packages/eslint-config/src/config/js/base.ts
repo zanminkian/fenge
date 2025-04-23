@@ -521,6 +521,7 @@ export function getJsBase() {
       "unicorn/prefer-number-properties": "error",
       "unicorn/prefer-object-from-entries": "error",
       "unicorn/prefer-optional-catch-binding": "error",
+      "unicorn/prefer-reflect-apply": "error", // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2365
       "unicorn/prefer-regexp-test": "error",
       "unicorn/prefer-string-replace-all": "error",
       "unicorn/prefer-string-slice": "error",
