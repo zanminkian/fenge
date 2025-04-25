@@ -32,9 +32,6 @@
   "exports": {
     "./eslint-config": "./src/re-export/eslint.config.js",
     "./prettier-config": "./src/re-export/prettier.config.js",
-    "./types": {
-      "types": "./types/index.d.ts"
-    },
     "./tsconfig": "./tsconfig/index.json",
     "./tsconfig.json": "./tsconfig/index.json",
     "./tsconfig/esm": "./tsconfig/esm.json",
@@ -50,7 +47,6 @@
     "@fenge/eslint-config": "workspace:*",
     "@fenge/prettier-config": "workspace:*",
     "@fenge/tsconfig": "workspace:*",
-    "@fenge/types": "workspace:*",
     "commander": "13.1.0",
     "eslint": "9.22.0",
     "lilconfig": "3.1.3",

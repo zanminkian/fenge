@@ -126,7 +126,7 @@ In summary, Type Safety, Formatting, and Linting are three indispensable aspects
 
 Based on the philosophy outlined above, this tool offers the following features:
 
-- 💪 **Enhanced Type Safety**: This tool provides the strictest `tsconfig` settings and type patches to bolster the type safety of TypeScript projects. It is also compatible with pure JavaScript projects.
+- 💪 **Enhanced Type Safety**: This tool provides the strictest `tsconfig` settings to bolster the type safety of TypeScript projects. It is also compatible with pure JavaScript projects.
 - 💃 **Formatting**: This tool ensures code consistency across your codebase and minimizes merge conflicts by automatically formatting code. It additionally supports the sorting of imports and `package.json` files.
 - 📏 **Linting**: This tool comes equipped with a comprehensive set of rules for static code analysis, which helps catch errors and prevent poor coding practices in JavaScript.
 - 🪝 **Git Hooks**: After installation, committing code via Git triggers automatic formatting and linting checks. No additional package installations are required.
@@ -194,26 +194,6 @@ tsc -p ./tsconfig.build.json --noEmit
 ```
 
 For more beat practices, please refer to [@fenge/tsconfig](https://www.npmjs.com/package/@fenge/tsconfig).
-
-#### Import type patch
-
-Add a [triple-slash-directive](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) `/// <reference types="fenge/types" />` at the top of the ts file that serves as the entry point for your application or package. This will make the entire project more type-safe. The built-in type patch `fenge/types` re-exports from [@fenge/types](https://www.npmjs.com/package/@fenge/types).
-
-Application/Package Entry Point (eg: `src/main.ts` or `src/app.ts`)
-
-```ts
-/// <reference types="fenge/types" />
-import foo from "./foo";
-```
-
-Other File (eg: `src/other-file.ts`)
-
-<!-- prettier-ignore-start -->
-```ts
-console.log(JSON.parse('{"foo":"foo"}').bar.length);
-         // ^^^^^^^^^^^^^^^^^^^^^^^^^^^ ❌ Object is of type 'unknown'.
-```
-<!-- prettier-ignore-end -->
 
 ### Formatting & Linting
 
