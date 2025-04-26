@@ -550,6 +550,10 @@ export function getJsBase() {
       "@typescript-eslint/no-this-alias": "error",
       "@typescript-eslint/no-useless-empty-export": "error",
       "@typescript-eslint/prefer-for-of": "error",
+      "@typescript-eslint/triple-slash-reference": [
+        "error",
+        { lib: "never", path: "never", types: "never" }, // TODO: submit a PR to this rule to support `"never"` as the option
+      ],
     },
   } as const;
 }
