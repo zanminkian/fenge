@@ -1,4 +1,4 @@
-import type { Node } from "estree";
+import type { Rule } from "eslint";
 import { createRule, DEFAULT_MESSAGE_ID, getRuleName } from "../common.ts";
 
 export const noEmptyExports = createRule({
@@ -6,7 +6,7 @@ export const noEmptyExports = createRule({
   message: "Disallow `export {}`.",
   create: (context) => ({
     "ExportNamedDeclaration[specifiers.length=0][declaration=null]": (
-      node: Node,
+      node: Rule.Node,
     ) => {
       context.report({ node, messageId: DEFAULT_MESSAGE_ID });
     },

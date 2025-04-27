@@ -1,5 +1,4 @@
 import type { Rule } from "eslint";
-import type { Node } from "estree";
 import { getRuleName } from "../utils.ts";
 
 const name = getRuleName(import.meta.url);
@@ -20,7 +19,9 @@ const rule: Rule.RuleModule = {
     ],
   },
   create: (context) => ({
-    "ClassBody > PropertyDefinition[decorators.length>0]": (node: Node) => {
+    "ClassBody > PropertyDefinition[decorators.length>0]": (
+      node: Rule.Node,
+    ) => {
       if (
         "declare" in node &&
         node.declare &&

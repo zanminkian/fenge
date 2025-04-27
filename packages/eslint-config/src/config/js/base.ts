@@ -552,7 +552,7 @@ export function getJsBase() {
       "@typescript-eslint/prefer-for-of": "error",
       "@typescript-eslint/triple-slash-reference": [
         "error",
-        { lib: "never", path: "never", types: "never" }, // TODO: submit a PR to this rule to support `"never"` as the option
+        { lib: "never", path: "never", types: "never" }, // TODO: submit a PR to this rule to support `"never"` as the option. Refer https://github.com/typescript-eslint/typescript-eslint/issues/11196
       ],
     },
   } as const;

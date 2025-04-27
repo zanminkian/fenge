@@ -1,5 +1,4 @@
 import type { Rule } from "eslint";
-import type { Node } from "estree";
 import { getRuleName } from "../utils.ts";
 
 // TODO: If https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2453 is accepted, migrate this rule to `eslint-plugin-unicorn`
@@ -21,7 +20,7 @@ const rule: Rule.RuleModule = {
   },
   create: (context) => ({
     ":matches(ForStatement, ForInStatement, DoWhileStatement, ForOfStatement[await=true])":
-      (node: Node) => {
+      (node: Rule.Node) => {
         context.report({ node, messageId: `${name}/error` });
       },
   }),

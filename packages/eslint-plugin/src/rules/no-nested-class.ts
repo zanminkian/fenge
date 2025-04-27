@@ -1,5 +1,4 @@
 import type { Rule } from "eslint";
-import type { Node } from "estree";
 import { getRuleName } from "../utils.ts";
 
 const name = getRuleName(import.meta.url);
@@ -15,7 +14,7 @@ const rule: Rule.RuleModule = {
     },
   },
   create: (context) => {
-    const handle = (node: Node) =>
+    const handle = (node: Rule.Node) =>
       context.report({ node, messageId: `${name}/error` });
     return {
       // ClassDeclaration is only allowed when parent is Program, or parent is ExportNamedDeclaration, or parent is ExportDefaultDeclaration
