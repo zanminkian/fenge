@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.6.9
+
+### Patch Changes
+
+- aa7d44f: feat(eslint-config): add rule `unicorn/prefer-reflect-apply`
+- 57b9b81: chore: upgrade deps
+- fa9dc89: feat(eslint-config): add rule `@typescript-eslint/triple-slash-reference`
+- Updated dependencies [ecbfb0b]
+  - eslint-plugin-publint@0.2.4
+
 ## 0.6.8
 
 ### Patch Changes
