@@ -1,5 +1,20 @@
 # fenge
 
+## 0.8.0
+
+### Minor Changes
+
+- 8e6f32a: refactor(fenge)!: remove `@fenge/types`, drop support for type patches
+
+### Patch Changes
+
+- 57b9b81: chore: upgrade deps
+- Updated dependencies [aa7d44f]
+- Updated dependencies [57b9b81]
+- Updated dependencies [fa9dc89]
+  - @fenge/eslint-config@0.6.9
+  - @fenge/prettier-config@0.3.1
+
 ## 0.7.8
 
 ### Patch Changes
