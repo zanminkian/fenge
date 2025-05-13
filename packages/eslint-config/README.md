@@ -6,7 +6,7 @@
 [![](https://packagephobia.com/badge?p=@fenge/eslint-config)](https://packagephobia.com/result?p=@fenge/eslint-config)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://makeapullrequest.com)
 
-A strict eslint config preset containing a comprehensive set of rules for linting `js` / `ts` / `package.json` files. Based on [standard.js](https://github.com/standard/standard) without any stylistic opinions.
+A strict eslint config preset containing a comprehensive set of rules for linting `js` / `ts` / `package.json` files.
 
 ## Feature
 
@@ -17,7 +17,6 @@ A strict eslint config preset containing a comprehensive set of rules for lintin
 - Pure JavaScript project friendly.
 - React friendly.
 - NestJS friendly.
-- Based on [standard.js](https://github.com/standard/standard), introduced more stricter rules.
 - Have no stylistic opinions. Prettier friendly.
 - Respect `.gitignore`.
 - [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), compose easily!
