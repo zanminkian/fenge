@@ -5,6 +5,7 @@ import { noDynamicImports } from "./rules/no-dynamic-imports.ts";
 import { noEmptyExports } from "./rules/no-empty-exports.ts";
 import { noGitIgnoredImports } from "./rules/no-git-ignored-imports.ts";
 import { noPhantomDepImports } from "./rules/no-phantom-dep-imports.ts";
+import { noQuerySuffixes } from "./rules/no-query-suffixes.ts";
 import { noRelativeParentImports } from "./rules/no-relative-parent-imports.ts";
 import { noRenameExports } from "./rules/no-rename-exports.ts";
 import { noRenameImports } from "./rules/no-rename-imports.ts";
@@ -21,6 +22,7 @@ export const rules = {
   [noEmptyExports.name]: noEmptyExports.rule,
   [noGitIgnoredImports.name]: noGitIgnoredImports.rule,
   [noPhantomDepImports.name]: noPhantomDepImports.rule,
+  [noQuerySuffixes.name]: noQuerySuffixes.rule,
   [noRelativeParentImports.name]: noRelativeParentImports.rule,
   [noRenameExports.name]: noRenameExports.rule,
   [noRenameImports.name]: noRenameImports.rule,
