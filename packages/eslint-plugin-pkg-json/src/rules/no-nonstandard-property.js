@@ -54,17 +54,37 @@ export const rule = {
       description:
         "Disallow using the property that is out of node and npm standard",
     },
+    schema: [
+      {
+        type: "object",
+        properties: {
+          allow: {
+            type: "array",
+            items: {
+              type: "string",
+            },
+            description:
+              "An array of custom property names to allow in addition to the standard properties.",
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
   },
-  create: (context) => ({
-    "Program > ExpressionStatement > ObjectExpression": (node) => {
-      node.properties
-        .filter((property) => !standardProperties.has(property.key.value))
-        .forEach((property) => {
-          context.report({
-            node: property.key,
-            messageId: name,
+  create: (context) => {
+    const { allow = [] } = context.options[0] || {};
+    const allowedProperties = new Set([...standardProperties, ...allow]);
+    return {
+      "Program > ExpressionStatement > ObjectExpression": (node) => {
+        node.properties
+          .filter((property) => !allowedProperties.has(property.key.value))
+          .forEach((property) => {
+            context.report({
+              node: property.key,
+              messageId: name,
+            });
           });
-        });
-    },
-  }),
+      },
+    };
+  },
 };
