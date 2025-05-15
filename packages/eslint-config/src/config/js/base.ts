@@ -458,6 +458,7 @@ export function getJsBase() {
       "@fenge/no-nested-function": "error",
       "@fenge/no-restricted-loops": "error",
       "@fenge/no-top-level-arrow-function": "error",
+      "@fenge/no-triple-slash-directive": "error",
       "@fenge/no-unnecessary-template-string": "error",
 
       "@typescript-eslint/ban-ts-comment": [
@@ -471,10 +472,6 @@ export function getJsBase() {
       "@typescript-eslint/no-this-alias": "error",
       "@typescript-eslint/no-useless-empty-export": "error",
       "@typescript-eslint/prefer-for-of": "error",
-      "@typescript-eslint/triple-slash-reference": [
-        "error",
-        { lib: "never", path: "never", types: "never" }, // TODO: submit a PR to this rule to support `"never"` as the option. Refer https://github.com/typescript-eslint/typescript-eslint/issues/11196
-      ],
     },
   } as const;
 }

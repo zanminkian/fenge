@@ -4,6 +4,7 @@ import { noNestedClass } from "./rules/no-nested-class.ts";
 import { noNestedFunction } from "./rules/no-nested-function.ts";
 import { noRestrictedLoops } from "./rules/no-restricted-loops.ts";
 import { noTopLevelArrowFunction } from "./rules/no-top-level-arrow-function.ts";
+import { noTripleSlashDirective } from "./rules/no-triple-slash-directive.ts";
 import { noUnnecessaryTemplateString } from "./rules/no-unnecessary-template-string.ts";
 
 export const rules = {
@@ -13,5 +14,6 @@ export const rules = {
   [noNestedFunction.name]: noNestedFunction.rule,
   [noRestrictedLoops.name]: noRestrictedLoops.rule,
   [noTopLevelArrowFunction.name]: noTopLevelArrowFunction.rule,
+  [noTripleSlashDirective.name]: noTripleSlashDirective.rule,
   [noUnnecessaryTemplateString.name]: noUnnecessaryTemplateString.rule,
 };
