@@ -7,7 +7,7 @@ const valid = [
   { code: "import foo from '../foo'" },
   { code: "import foo from 'node:foo'" },
 
-  { code: "import type Foo from 'estree'" },
+  { code: "import type Foo from 'json-schema'" },
   { code: "import type {Foo} from 'eslint'" },
   {
     code: "import foo from '@fenge/dev-utils'",

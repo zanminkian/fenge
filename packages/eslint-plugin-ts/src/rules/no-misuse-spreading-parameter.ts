@@ -3,9 +3,11 @@ import {
   type ParserServicesWithTypeInformation,
 } from "@typescript-eslint/utils";
 import type { Rule } from "eslint";
-import type { CallExpression, NewExpression } from "estree";
 import type ts from "typescript";
-import { getRuleName } from "../utils.ts";
+import { getRuleName, type GetNode } from "../utils.ts";
+
+type CallExpression = GetNode<"CallExpression">;
+type NewExpression = GetNode<"NewExpression">;
 
 const name = getRuleName(import.meta.url);
 const rule: Rule.RuleModule = {

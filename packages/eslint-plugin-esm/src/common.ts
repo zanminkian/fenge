@@ -1,13 +1,13 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Rule } from "eslint";
-import type {
-  ExportAllDeclaration,
-  ExportNamedDeclaration,
-  ImportDeclaration,
-  ImportExpression,
-} from "estree";
 import type { JSONSchema4 } from "json-schema";
+import type { GetNode } from "./utils.ts";
+
+type ExportAllDeclaration = GetNode<"ExportAllDeclaration">;
+type ExportNamedDeclaration = GetNode<"ExportNamedDeclaration">;
+type ImportDeclaration = GetNode<"ImportDeclaration">;
+type ImportExpression = GetNode<"ImportExpression">;
 
 export const DEFAULT_MESSAGE_ID = "default";
 

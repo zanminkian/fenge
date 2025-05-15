@@ -1,14 +1,11 @@
-import type { Expression, Node, Pattern } from "estree";
+import type { Node } from "estree";
 
-export function getReportingNode(
-  node: Expression | Pattern,
-  paths: string[],
-): Node {
+export function getReportingNode(node: Node, paths: string[]): Node {
   const [field, ...restPaths] = paths;
   if (!field) {
     return node;
   }
-  let next: Expression | Pattern | undefined = undefined;
+  let next: Node | undefined = undefined;
   if (node.type === "ObjectExpression") {
     const property = node.properties.find(
       (property) =>

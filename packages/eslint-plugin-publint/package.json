@@ -29,7 +29,7 @@
     "publint": "0.3.12"
   },
   "devDependencies": {
-    "@types/estree": "1.0.6",
+    "@types/estree": "1.0.7",
     "@types/node": "22.14.1",
     "eslint": "9.22.0"
   },

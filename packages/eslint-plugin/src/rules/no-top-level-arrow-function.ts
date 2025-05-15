@@ -1,6 +1,7 @@
 import type { Rule } from "eslint";
-import type { ArrowFunctionExpression } from "estree";
-import { getRuleName } from "../utils.ts";
+import { getRuleName, type GetNode } from "../utils.ts";
+
+type ArrowFunctionExpression = GetNode<"ArrowFunctionExpression">;
 
 const name = getRuleName(import.meta.url);
 const rule: Rule.RuleModule = {
