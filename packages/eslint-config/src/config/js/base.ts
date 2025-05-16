@@ -268,12 +268,12 @@ export function getJsBase() {
       "check-file/filename-blocklist": [
         "error",
         {
-          "**/*.mjs": "*.js",
-          "**/*.cjs": "*.js",
-          "**/*.mts": "*.ts",
-          "**/*.cts": "*.ts",
+          "**/{.,}*.mjs": "*.js",
+          "**/{.,}*.cjs": "*.js",
+          "**/{.,}*.mts": "*.ts",
+          "**/{.,}*.cts": "*.ts",
 
-          "**/*.spec.*": "*.test.*", // Node.js built-in support *.test.js. See https://nodejs.org/api/test.html#running-tests-from-the-command-line.
+          "**/{.,}*.spec.*": "*.test.*", // Node.js built-in support *.test.js. See https://nodejs.org/api/test.html#running-tests-from-the-command-line.
         },
       ],
       // es
