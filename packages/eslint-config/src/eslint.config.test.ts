@@ -4,7 +4,7 @@ import config from "./eslint.config.ts";
 
 await describe("eslint.config", async () => {
   await it("length of default export should be 13", () => {
-    assert.strictEqual(config.length, 13);
+    assert.strictEqual(config.length, 14);
   });
 
   await it("no warns", () => {

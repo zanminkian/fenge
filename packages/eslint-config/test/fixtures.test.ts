@@ -1,9 +1,9 @@
 import assert from "node:assert";
-import childProcess from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { after, before, describe, it } from "node:test";
 import { fileURLToPath } from "node:url";
+import { runLint } from "./run-lint.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const fixturesDir = path.join(__dirname, "..", "src", "fixtures");
@@ -62,15 +62,7 @@ await describe("fixtures", async () => {
   });
 
   await it("should have error", () => {
-    const res = childProcess.spawnSync(
-      path.join(__dirname, "../node_modules/.bin/eslint"),
-      [
-        "--config",
-        path.join(__dirname, "../dist/eslint.config.js"),
-        ...testData.keys(),
-      ],
-      { encoding: "utf8" },
-    );
+    const res = runLint([...testData.keys()]);
 
     assert.strictEqual(res.status, 1);
     for (const file of testData.keys()) {

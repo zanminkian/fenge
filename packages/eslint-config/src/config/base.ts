@@ -1,5 +1,6 @@
 import childProcess from "node:child_process";
 import type { Linter } from "eslint";
+import checkFilePlugin from "eslint-plugin-check-file";
 
 export type BaseOptions = Linter.LinterOptions;
 
@@ -12,7 +13,14 @@ export function base(
     ts: "**/*.{ts,cts,mts,tsx}",
     pkg: "package.json",
   } as const;
-  const files = [...enabled].map((key) => filesMap[key]);
+  const blockedFilesMap = {
+    "**/.env.*": ".*.env",
+    "**/.*rc": "*.config.js",
+    "**/.*rc.*": "*.config.*",
+  } as const;
+
+  const enabledPatterns = [...enabled].map((key) => filesMap[key]);
+  const blockedPatterns = Object.keys(blockedFilesMap);
   return [
     // Global ignore. Refer: https://eslint.org/docs/latest/use/configure/configuration-files#specifying-files-and-ignores.
     {
@@ -38,15 +46,30 @@ export function base(
     },
     {
       name: "fenge/common",
-      files,
+      files: enabledPatterns,
       linterOptions: options,
+    },
+    {
+      name: "fenge/disallowed-files",
+      files: blockedPatterns,
+      ignores: enabledPatterns,
+      processor: {
+        preprocess: (_text: string, _filename: string) => [""],
+        postprocess: (messages) => messages[0] ?? [],
+      },
+      plugins: {
+        "check-file": checkFilePlugin,
+      },
+      rules: {
+        "check-file/filename-blocklist": ["error", blockedFilesMap],
+      },
     },
     // Ignore unsupported files.
     // This config is for suppressing error when linting a directory which does not contain supported files.
     {
       name: "fenge/ignore",
       files: ["**"], // I've tried all. Only '**' works.
-      ignores: files,
+      ignores: [...enabledPatterns, ...blockedPatterns],
       processor: {
         preprocess: (_text: string, _filename: string) => [""],
         postprocess: (_messages: unknown[][]) => [], // Returning empty array to ignore all errors
