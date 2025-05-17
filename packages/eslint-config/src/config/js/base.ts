@@ -274,6 +274,9 @@ export function getJsBase() {
           "**/{.,}*.cts": "*.ts",
 
           "**/{.,}*.spec.*": "*.test.*", // Node.js built-in support *.test.js. See https://nodejs.org/api/test.html#running-tests-from-the-command-line.
+
+          "**/.*rc.js": "*.config.js",
+          "**/.*rc.ts": "*.config.ts",
         },
       ],
       // es
