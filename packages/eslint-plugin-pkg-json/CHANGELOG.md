@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.3.2
+
+### Patch Changes
+
+- 6386e07: feat(eslint-plugin-pkg-json): add `allow` option to `no-nonstandard-property`
+
 ## 0.3.1
 
 ### Patch Changes
