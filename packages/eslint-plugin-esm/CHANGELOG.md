@@ -1,5 +1,11 @@
 # eslint-plugin-esm
 
+## 0.8.2
+
+### Patch Changes
+
+- 0888d6f: feat(eslint-plugin-esm): add rule `no-query-suffixes`
+
 ## 0.8.1
 
 ### Patch Changes

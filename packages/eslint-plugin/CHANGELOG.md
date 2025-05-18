@@ -1,5 +1,11 @@
 # @fenge/eslint-plugin
 
+## 0.4.1
+
+### Patch Changes
+
+- f3e21de: feat: add rule `no-triple-slash-directive`
+
 ## 0.4.0
 
 ### Minor Changes

@@ -1,5 +1,20 @@
 # @fenge/eslint-config
 
+## 0.6.10
+
+### Patch Changes
+
+- cbc772a: fix(eslint-config): additionally disallow files starting with dot for `mjs`/`cjs`/`mts`/`cts`
+- f3e21de: feat: add rule `no-triple-slash-directive`
+- b383916: feat: disallow `.*rc.js` files and `.*rc.ts` files
+- 442981f: feat(eslint-config): disallow some file patterns
+- Updated dependencies [6386e07]
+- Updated dependencies [f3e21de]
+- Updated dependencies [0888d6f]
+  - eslint-plugin-pkg-json@0.3.2
+  - @fenge/eslint-plugin@0.4.1
+  - eslint-plugin-esm@0.8.2
+
 ## 0.6.9
 
 ### Patch Changes
