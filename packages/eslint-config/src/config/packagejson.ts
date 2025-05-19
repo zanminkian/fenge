@@ -26,7 +26,7 @@ export function packagejson() {
         "pkg-json/required-hashbang": "error",
         "pkg-json/required-repository": "error",
         "pkg-json/type-module": "error",
-        // "publint/suggestion": "error",
+        "publint/suggestion": "error",
         "publint/warning": "error",
         "publint/error": "error",
       },

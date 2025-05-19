@@ -26,6 +26,9 @@
       "types": "./src/*.d.ts"
     }
   },
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "node --test --experimental-strip-types"
   },
