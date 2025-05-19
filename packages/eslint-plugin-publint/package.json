@@ -23,7 +23,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "node --test --experimental-strip-types"
   },
   "dependencies": {
     "publint": "0.3.12"

@@ -23,10 +23,12 @@ function publint(pkgDir: string) {
 }
 
 const cache = new Map<string, Result>();
-export function getPublintInfo(pkgPath: string) {
-  const info = cache.get(pkgPath);
-  if (info) {
-    return info;
+export function getPublintInfo(pkgPath: string, useCache = true) {
+  if (useCache) {
+    const info = cache.get(pkgPath);
+    if (info) {
+      return info;
+    }
   }
 
   const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
@@ -36,6 +38,6 @@ export function getPublintInfo(pkgPath: string) {
       ? []
       : (publint(path.dirname(pkgPath))?.messages ?? []),
   };
-  cache.set(pkgPath, result);
+  if (useCache) cache.set(pkgPath, result);
   return result;
 }

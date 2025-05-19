@@ -1,3 +1,4 @@
+// @ts-check
 import process from "node:process";
 import { publint } from "publint";
 
