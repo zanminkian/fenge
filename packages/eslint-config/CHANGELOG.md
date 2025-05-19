@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.6.11
+
+### Patch Changes
+
+- c63e198: feat(eslint-config): enable `publint/suggestion`
+
 ## 0.6.10
 
 ### Patch Changes
