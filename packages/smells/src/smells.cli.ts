@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { Command } from "commander";
 import { analyze } from "./analyze.js";
+import { isJs, isTs } from "./utils.ts";
 
 const version: string = JSON.parse(
   await fs.readFile(
@@ -35,89 +36,87 @@ program
   .action(async (pattern, options) => {
     const analysis = await analyze(pattern, options.ignore);
     if (options.detail) {
-      analysis.anyTypes.forEach((i) => {
-        console.log("Any Type", i);
-      });
-      analysis.assertions.forEach((i) => {
-        console.log("Assertion", i);
-      });
-      analysis.nonNullAssertions.forEach((i) => {
-        console.log("Non-null Assertion", i);
-      });
-      analysis.renamedImports.forEach((i) => {
-        console.log("Renamed Import", i);
-      });
-      analysis.importExpressions.forEach((i) => {
-        console.log("Import Expression", i);
-      });
-      analysis.instanceofOperators.forEach((i) => {
-        console.log("Instanceof Operator", i);
-      });
-      analysis.exportDefaults.forEach((i) => {
-        console.log("Export Default", i);
-      });
-      analysis.nodeProtocolImports.forEach((i) => {
-        console.log("Node Protocol Import", i);
-      });
-      analysis.metaProperties.forEach((i) => {
-        console.log("Meta Property", i);
+      [...analysis.entries()].forEach(([file, value]) => {
+        Object.entries(value).forEach(([key, locs]) => {
+          if (typeof locs !== "number") {
+            locs.forEach((loc) => {
+              console.log(
+                `${key.padEnd(25)} ${file} ${loc.start.line}:${loc.start.column}`,
+              );
+            });
+          }
+        });
       });
     }
+
+    const result = {
+      "Code lines and files count": {
+        "Code Lines": [...analysis.values()].reduce(
+          (count, item) => item.codeLines + count,
+          0,
+        ),
+        "TS Files": [...analysis.keys()].reduce(
+          (count, file) => count + Number(isTs(file)),
+          0,
+        ),
+        "JS Files": [...analysis.keys()].reduce(
+          (count, file) => count + Number(isJs(file)),
+          0,
+        ),
+        "Analyzed Files": [...analysis.keys()].length,
+      },
+      "Type flaws count": {
+        "Any Types": [...analysis.values()].reduce(
+          (count, item) => item.anyTypes.length + count,
+          0,
+        ),
+        Assertions: [...analysis.values()].reduce(
+          (count, item) => item.assertions.length + count,
+          0,
+        ),
+        "Non-null Assertions": [...analysis.values()].reduce(
+          (count, item) => item.nonNullAssertions.length + count,
+          0,
+        ),
+      },
+      "Code style flaws count": {
+        "Renamed Imports": [...analysis.values()].reduce(
+          (count, item) => item.renamedImports.length + count,
+          0,
+        ),
+        "Import Expressions": [...analysis.values()].reduce(
+          (count, item) => item.importExpressions.length + count,
+          0,
+        ),
+        "Instanceof Operators": [...analysis.values()].reduce(
+          (count, item) => item.instanceofOperators.length + count,
+          0,
+        ),
+      },
+      "Module interop issues count": {
+        "Export Defaults": [...analysis.values()].reduce(
+          (count, item) => item.exportDefaults.length + count,
+          0,
+        ),
+      },
+      "Cross-platform issues count": {
+        "Node Protocol Imports": [...analysis.values()].reduce(
+          (count, item) => item.nodeProtocolImports.length + count,
+          0,
+        ),
+        "Meta Properties": [...analysis.values()].reduce(
+          (count, item) => item.metaProperties.length + count,
+          0,
+        ),
+      },
+    };
+
     if (options.format === "json") {
-      console.log(
-        JSON.stringify({
-          // 1. Code lines and files count:
-          codeLines: analysis.codeLines,
-          tsFiles: analysis.tsFiles,
-          jsFiles: analysis.jsFiles,
-          analyzedFiles: analysis.analyzedFiles,
-
-          // 2. Type flaws count:
-          anyTypes: analysis.anyTypes.length,
-          assertions: analysis.assertions.length,
-          nonNullAssertions: analysis.nonNullAssertions.length,
-
-          // 3. Code style flaws count:
-          renamedImports: analysis.renamedImports.length,
-          importExpressions: analysis.importExpressions.length,
-          instanceofOperators: analysis.instanceofOperators.length,
-
-          // 4. Module interop issues count:
-          exportDefaults: analysis.exportDefaults.length,
-
-          // 5. Cross-platform issues count:
-          nodeProtocolImports: analysis.nodeProtocolImports.length,
-          metaProperties: analysis.metaProperties.length,
-        }),
-      );
+      console.log(JSON.stringify(result));
     } else {
-      console.log("1. Code lines and files count:");
-      console.table({
-        "Code Lines": analysis.codeLines,
-        "TS Files": analysis.tsFiles,
-        "JS Files": analysis.jsFiles,
-        "Analyzed Files": analysis.analyzedFiles,
-      });
-      console.log("2. Type flaws count:");
-      console.table({
-        "Any Types": analysis.anyTypes.length,
-        Assertions: analysis.assertions.length,
-        "Non-null Assertions": analysis.nonNullAssertions.length,
-      });
-      console.log("3. Code style flaws count:");
-      console.table({
-        "Renamed Imports": analysis.renamedImports.length,
-        "Import Expressions": analysis.importExpressions.length,
-        "Instanceof Operators": analysis.instanceofOperators.length,
-      });
-      console.log("4. Module interop issues count:");
-      console.table({
-        "Export Defaults": analysis.exportDefaults.length,
-      });
-      console.log("5. Cross-platform issues count:");
-      console.table({
-        "Node Protocol Imports": analysis.nodeProtocolImports.length,
-        "Meta Properties": analysis.metaProperties.length,
+      Object.entries(result).forEach(([key, value], index) => {
+        console.log(`${index}. ${key}`);
+        console.table(value);
       });
     }
   });

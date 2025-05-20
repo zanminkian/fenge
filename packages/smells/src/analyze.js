@@ -1,20 +1,7 @@
 // @ts-check
 import fs from "node:fs/promises";
-import { globby } from "globby";
-
-/**
- * @param {string} file
- */
-function isTs(file) {
-  return /\.(ts|mts|cts|tsx)$/.test(file);
-}
-
-/**
- * @param {string} file
- */
-function isJs(file) {
-  return /\.(js|mjs|cjs|jsx)$/.test(file);
-}
+import { parse } from "./parse.ts";
+import { walkDir } from "./utils.ts";
 
 /**
  * @param {string} filepath ts or js file absolute path
@@ -56,10 +43,10 @@ async function getAnalysis(filepath) {
         break;
       case "TSAsExpression":
       case "TSTypeAssertion":
-        if (node.typeAnnotation.typeName?.name === "const") {
-          break;
+        // ignore `as const`
+        if (node.typeAnnotation.typeName?.name !== "const") {
+          result.assertions.push(node.loc);
         }
-        result.assertions.push(node.loc);
         break;
       case "TSNonNullExpression":
         result.nonNullAssertions.push(node.loc);
@@ -116,17 +103,8 @@ async function getAnalysis(filepath) {
     Object.values(node).forEach((sub) => walk(sub));
   };
 
-  // this package require typescript as its peer dependencies
-  const { parse } = await import("@typescript-eslint/typescript-estree").catch(
-    (e) => {
-      throw new Error(
-        "Importing `@typescript-eslint/typescript-estree` fail! Please make sure that typescript has been installed or npm config `legacy-peer-deps` is disabled.",
-        { cause: e },
-      );
-    },
-  );
   walk(
-    parse(code, {
+    await parse(code, {
       jsx: filepath.endsWith("x") || filepath.endsWith("js"),
       loc: true,
     }),
@@ -137,99 +115,13 @@ async function getAnalysis(filepath) {
 /**
  * @param {string} pattern
  * @param {string|undefined} ignore
- * @param {(file: string)=>Promise<void>} cb
- */
-async function walkDir(pattern, ignore, cb) {
-  const promises = (
-    await globby(pattern, {
-      absolute: true,
-      gitignore: true,
-      ...(!!ignore && { ignore: [ignore] }),
-    })
-  )
-    .filter((filePath) => isJs(filePath) || isTs(filePath))
-    .map((filePath) => cb(filePath));
-  await Promise.all(promises);
-}
-
-/**
- * @param {string} pattern
- * @param {string|undefined} ignore
  */
 export async function analyze(pattern, ignore) {
-  const result = {
-    /** @type {string[]} */ anyTypes: [],
-    /** @type {string[]} */ assertions: [],
-    /** @type {string[]} */ nonNullAssertions: [],
-    /** @type {string[]} */ renamedImports: [],
-    /** @type {string[]} */ importExpressions: [],
-    /** @type {string[]} */ instanceofOperators: [],
-    /** @type {string[]} */ exportDefaults: [],
-    /** @type {string[]} */ nodeProtocolImports: [],
-    /** @type {string[]} */ metaProperties: [],
-    codeLines: 0,
-    tsFiles: 0,
-    jsFiles: 0,
-    analyzedFiles: 0,
-  };
-
+  /** @type {Map<string, Awaited<ReturnType<typeof getAnalysis>>>} */
+  const result = new Map();
   await walkDir(pattern, ignore, async (file) => {
-    try {
-      const analysis = await getAnalysis(file);
-
-      result.anyTypes.push(
-        ...analysis.anyTypes.map(
-          (loc) => `${file} ${loc.start.line}:${loc.start.column}`,
-        ),
-      );
-      result.assertions.push(
-        ...analysis.assertions.map(
-          (loc) => `${file} ${loc.start.line}:${loc.start.column}`,
-        ),
-      );
-      result.nonNullAssertions.push(
-        ...analysis.nonNullAssertions.map(
-          (loc) => `${file} ${loc.start.line}:${loc.start.column}`,
-        ),
-      );
-      result.renamedImports.push(
-        ...analysis.renamedImports.map(
-          (loc) => `${file} ${loc.start.line}:${loc.start.column}`,
-        ),
-      );
-      result.importExpressions.push(
-        ...analysis.importExpressions.map(
-          (loc) => `${file} ${loc.start.line}:${loc.start.column}`,
-        ),
-      );
-      result.instanceofOperators.push(
-        ...analysis.instanceofOperators.map(
-          (loc) => `${file} ${loc.start.line}:${loc.start.column}`,
-        ),
-      );
-      result.exportDefaults.push(
-        ...analysis.exportDefaults.map(
-          (loc) => `${file} ${loc.start.line}:${loc.start.column}`,
-        ),
-      );
-      result.nodeProtocolImports.push(
-        ...analysis.nodeProtocolImports.map(
-          (loc) => `${file} ${loc.start.line}:${loc.start.column}`,
-        ),
-      );
-      result.metaProperties.push(
-        ...analysis.metaProperties.map(
-          (loc) => `${file} ${loc.start.line}:${loc.start.column}`,
-        ),
-      );
-
-      result.codeLines += analysis.codeLines;
-      result.tsFiles += isTs(file) ? 1 : 0;
-      result.jsFiles += isJs(file) ? 1 : 0;
-      result.analyzedFiles += 1;
-    } catch (e) {
-      throw new Error(`Analyze ${file} fail!`, { cause: e });
-    }
+    const analysis = await getAnalysis(file);
+    result.set(file, analysis);
   });
   return result;
 }
