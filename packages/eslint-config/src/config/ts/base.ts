@@ -226,7 +226,7 @@ export function getTsBase() {
           allowBoolean: false,
           allowNever: false,
           allowNullish: false,
-          allowNumber: false,
+          // allowNumber: false,
           allowRegExp: false,
         },
       ],
