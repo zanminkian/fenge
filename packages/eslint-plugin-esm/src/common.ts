@@ -1,8 +1,9 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Rule } from "eslint";
-import type { JSONSchema4 } from "json-schema";
 import type { GetNode } from "./utils.ts";
+
+type ExtractArray<T> = T extends Array<infer U> ? U[] : never;
 
 type ExportAllDeclaration = GetNode<"ExportAllDeclaration">;
 type ExportNamedDeclaration = GetNode<"ExportNamedDeclaration">;
@@ -21,7 +22,7 @@ export function createRule({
 }: {
   name: string;
   message: string;
-  schema?: JSONSchema4[];
+  schema?: ExtractArray<Rule.RuleMetaData["schema"]>; // I would like to use `JSONSchema4[]` only.
   fixable?: Rule.RuleMetaData["fixable"];
   type?: Rule.RuleMetaData["type"];
   create: (context: Rule.RuleContext) => Rule.RuleListener;

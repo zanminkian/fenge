@@ -24,7 +24,7 @@ import foo from '/foo'
 import foo from './foo'
 import foo from '../foo'
 import foo from 'node:foo'
-import type Foo from 'json-schema'
+import type Foo from 'node'
 import type {Foo} from 'eslint'
 import foo from '@fenge/dev-utils' // options: [{"allowDevDependencies":true}]
 ```
