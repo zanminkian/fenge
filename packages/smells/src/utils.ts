@@ -1,11 +1,15 @@
 import { globby } from "globby";
 
+export function isJs(file: string) {
+  return /\.(js|mjs|cjs|jsx)$/.test(file);
+}
+
 export function isTs(file: string) {
   return /\.(ts|mts|cts|tsx)$/.test(file);
 }
 
-export function isJs(file: string) {
-  return /\.(js|mjs|cjs|jsx)$/.test(file);
+export function isDts(file: string) {
+  return /\.d\.(ts|mts|cts|tsx)$/.test(file);
 }
 
 export async function walkDir(

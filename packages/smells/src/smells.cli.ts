@@ -4,7 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { Command } from "commander";
 import { analyze } from "./analyze.js";
-import { isJs, isTs } from "./utils.ts";
+import { isDts, isJs, isTs } from "./utils.ts";
 
 const version: string = JSON.parse(
   await fs.readFile(
@@ -55,12 +55,16 @@ program
           (count, item) => item.codeLines + count,
           0,
         ),
+        "JS Files": [...analysis.keys()].reduce(
+          (count, file) => count + Number(isJs(file)),
+          0,
+        ),
         "TS Files": [...analysis.keys()].reduce(
           (count, file) => count + Number(isTs(file)),
           0,
         ),
-        "JS Files": [...analysis.keys()].reduce(
-          (count, file) => count + Number(isJs(file)),
+        "TS Declaration Files": [...analysis.keys()].reduce(
+          (count, file) => count + Number(isDts(file)),
           0,
         ),
         "Analyzed Files": [...analysis.keys()].length,
