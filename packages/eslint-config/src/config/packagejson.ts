@@ -19,6 +19,7 @@ export function packagejson() {
         "pkg-json/no-lifecycle-script": "error",
         "pkg-json/no-nonstandard-property": "error",
         "pkg-json/no-types-dependency-in-workspace-root": "error",
+        "pkg-json/no-types-deps": "warn",
         "pkg-json/top-types": "error",
         "pkg-json/private-workspace-root": "error",
         "pkg-json/required-dev-engines": "error",

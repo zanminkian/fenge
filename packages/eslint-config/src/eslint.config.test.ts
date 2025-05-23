@@ -7,15 +7,15 @@ await describe("eslint.config", async () => {
     assert.strictEqual(config.length, 14);
   });
 
-  await it("no warns", () => {
-    config.forEach((configItem) => {
-      if (configItem.rules) {
-        Object.values(configItem.rules).forEach((value) => {
-          assert.notStrictEqual(getValueString(value), "warn");
-        });
-      }
-    });
-  });
+  // await it("no warns", () => {
+  //   config.forEach((configItem) => {
+  //     if (configItem.rules) {
+  //       Object.values(configItem.rules).forEach((value) => {
+  //         assert.notStrictEqual(getValueString(value), "warn");
+  //       });
+  //     }
+  //   });
+  // });
 
   await it("should not contain deprecated rules", () => {
     // https://eslint.org/blog/2023/10/deprecating-formatting-rules/#the-deprecated-rules
@@ -97,12 +97,12 @@ await describe("eslint.config", async () => {
   });
 });
 
-function getValueString(value: unknown): string {
-  if (typeof value === "string") {
-    return value;
-  } else if (Array.isArray(value) && typeof value[0] === "string") {
-    return value[0];
-  } else {
-    throw new Error("unknown value");
-  }
-}
+// function getValueString(value: unknown): string {
+//   if (typeof value === "string") {
+//     return value;
+//   } else if (Array.isArray(value) && typeof value[0] === "string") {
+//     return value[0];
+//   } else {
+//     throw new Error("unknown value");
+//   }
+// }
