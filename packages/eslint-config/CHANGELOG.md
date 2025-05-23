@@ -1,5 +1,16 @@
 # @fenge/eslint-config
 
+## 0.6.12
+
+### Patch Changes
+
+- 0e0423d: feat(eslint-config): allow number for `@typescript-eslint/restrict-template-expressions` rule
+- 8957a82: feat: add rule `no-types-deps`
+- 84859a0: feat: add `no-restricted-deps` rule
+- Updated dependencies [8957a82]
+- Updated dependencies [84859a0]
+  - eslint-plugin-pkg-json@0.3.3
+
 ## 0.6.11
 
 ### Patch Changes

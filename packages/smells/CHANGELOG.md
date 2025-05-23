@@ -1,5 +1,11 @@
 # smells
 
+## 0.1.1
+
+### Patch Changes
+
+- 37fd6f8: feat(smells): count ts declaration files
+
 ## 0.1.0
 
 ### Minor Changes

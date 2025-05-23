@@ -1,5 +1,12 @@
 # eslint-plugin-pkg-json
 
+## 0.3.3
+
+### Patch Changes
+
+- 8957a82: feat: add rule `no-types-deps`
+- 84859a0: feat: add `no-restricted-deps` rule
+
 ## 0.3.2
 
 ### Patch Changes
