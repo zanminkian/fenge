@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.5.1
+
+### Patch Changes
+
+- aa179c7: chore: upgrade deps
+
 ## 0.5.0
 
 ### Minor Changes
