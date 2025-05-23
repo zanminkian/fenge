@@ -5,6 +5,7 @@ import * as noConflictTypes from "./rules/no-conflict-types.js";
 import * as noDependenciesInWorkspaceRoot from "./rules/no-dependencies-in-workspace-root.js";
 import * as noLifecycleScript from "./rules/no-lifecycle-script.js";
 import * as noNonstandardProperty from "./rules/no-nonstandard-property.js";
+import * as noRestrictedDeps from "./rules/no-restricted-deps.js";
 import * as noTypesDependencyInWorkspaceRoot from "./rules/no-types-dependency-in-workspace-root.js";
 import * as noTypesDeps from "./rules/no-types-deps.js";
 import * as privateWorkspaceRoot from "./rules/private-workspace-root.js";
@@ -23,6 +24,7 @@ export const rules = Object.fromEntries(
     noDependenciesInWorkspaceRoot,
     noLifecycleScript,
     noNonstandardProperty,
+    noRestrictedDeps,
     noTypesDependencyInWorkspaceRoot,
     noTypesDeps,
     privateWorkspaceRoot,
