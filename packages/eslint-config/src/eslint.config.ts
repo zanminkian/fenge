@@ -51,15 +51,14 @@ export class Builder {
     { pick, omit }: Options<string[]>,
   ) {
     const select = (ruleKey: string) => {
-      if (!pick && !omit) {
-        return true;
-      } else if (pick && !omit) {
-        return pick.includes(ruleKey);
-      } else if (!pick && omit) {
-        return !omit.includes(ruleKey);
-      } else {
-        throw new Error("You cannot specify both pick and omit");
+      let result = true;
+      if (pick) {
+        result &&= pick.includes(ruleKey);
       }
+      if (omit) {
+        result &&= !omit.includes(ruleKey);
+      }
+      return result;
     };
     const result = configItems.map((configItem) => ({
       ...configItem,
