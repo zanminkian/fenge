@@ -12,9 +12,17 @@ type NoDuplicate<A extends unknown[]> = {
     : A[I];
 };
 
-type JsRuleKey = keyof ReturnType<typeof javascript>[0]["rules"];
-type TsRuleKey = keyof ReturnType<typeof typescript>[0]["rules"];
-type PkgRuleKey = keyof ReturnType<typeof packagejson>[0]["rules"];
+type OriginJsRuleKey = keyof ReturnType<typeof javascript>[0]["rules"];
+type OriginTsRuleKey = keyof ReturnType<typeof typescript>[0]["rules"];
+type OriginPkgRuleKey = keyof ReturnType<typeof packagejson>[0]["rules"];
+
+type GetPlugins<T extends string> = T extends `${infer Left}/${string}`
+  ? Left
+  : never;
+
+type JsRuleKey = OriginJsRuleKey | `${GetPlugins<OriginJsRuleKey>}/*`;
+type TsRuleKey = OriginTsRuleKey | `${GetPlugins<OriginTsRuleKey>}/*`;
+type PkgRuleKey = OriginPkgRuleKey | `${GetPlugins<OriginPkgRuleKey>}/*`;
 
 type RuleValue = "error" | "warn" | "off" | ["error" | "warn", ...unknown[]];
 interface Options<T extends string[]> {
@@ -50,13 +58,19 @@ export class Builder {
     configItems: readonly { rules: object }[],
     { pick, omit }: Options<string[]>,
   ) {
+    const match = (pattern: string, ruleKey: string) => {
+      if (pattern === ruleKey) return true;
+      if (pattern.endsWith("/*"))
+        return ruleKey.startsWith(pattern.slice(0, -1));
+      return false;
+    };
     const select = (ruleKey: string) => {
       let result = true;
       if (pick) {
-        result &&= pick.includes(ruleKey);
+        result &&= pick.some((pattern) => match(pattern, ruleKey));
       }
       if (omit) {
-        result &&= !omit.includes(ruleKey);
+        result &&= !omit.some((pattern) => match(pattern, ruleKey));
       }
       return result;
     };
