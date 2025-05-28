@@ -199,6 +199,10 @@ export function getTsBase() {
       "@typescript-eslint/no-unsafe-unary-minus": "error",
       "@typescript-eslint/no-wrapper-object-types": "error",
       "@typescript-eslint/non-nullable-type-assertion-style": "error",
+      "@typescript-eslint/only-throw-error": [
+        "error",
+        { allowThrowingUnknown: false },
+      ],
       "@typescript-eslint/prefer-as-const": "error",
       "@typescript-eslint/prefer-function-type": "error",
       "@typescript-eslint/prefer-literal-enum-member": "error",
