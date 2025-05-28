@@ -1,5 +1,11 @@
 # @fenge/types
 
+## 0.4.0
+
+### Minor Changes
+
+- d6d5e78: feat(types): rewrite totally. support type safe for `Relect.xx`
+
 ## 0.3.0
 
 ### Minor Changes

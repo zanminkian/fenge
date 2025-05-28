@@ -1,5 +1,12 @@
 # @fenge/eslint-config
 
+## 0.6.13
+
+### Patch Changes
+
+- 9d1bc83: feat(eslint-config): support glob pattern for Builder
+- c36af37: feat(eslint-config): allow `pick` and `omit` at the same time
+
 ## 0.6.12
 
 ### Patch Changes
