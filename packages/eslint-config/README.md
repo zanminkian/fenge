@@ -11,7 +11,7 @@ A strict eslint config preset containing a comprehensive set of rules for lintin
 ## Feature
 
 - Lint `js` / `mjs` / `cjs` / `jsx` / `ts` / `mts` / `cts` / `tsx` / `package.json` files only.
-- Strict. More than 300+ rules.
+- Strict. More than 400+ rules.
 - Highly customizable by omitting unwanted.
 - Type safe. TypeScript friendly.
 - Pure JavaScript project friendly.
