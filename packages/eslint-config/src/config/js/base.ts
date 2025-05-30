@@ -379,6 +379,7 @@ export function getJsBase() {
       "sonarjs/prefer-immediate-return": "error",
       // unicorn
       // 'unicorn/no-null': 'error', // null can be useful when interact with json.
+      "unicorn/catch-error-name": ["error", { ignore: ["^e$", "^err$"] }],
       "unicorn/consistent-assert": "error",
       "unicorn/consistent-date-clone": "error",
       "unicorn/consistent-destructuring": "error",
@@ -427,6 +428,7 @@ export function getJsBase() {
       "unicorn/no-thenable": "error",
       "unicorn/no-this-assignment": "error",
       "unicorn/no-typeof-undefined": "error",
+      "unicorn/no-unnecessary-await": "error",
       "unicorn/no-unreadable-array-destructuring": "error",
       "unicorn/no-unreadable-iife": "error",
       "unicorn/no-useless-fallback-in-spread": "error",
