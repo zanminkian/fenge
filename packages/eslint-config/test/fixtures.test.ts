@@ -46,13 +46,13 @@ await describe("fixtures", async () => {
       Array.from(testData.keys())
         .map((filePath) => path.dirname(filePath))
         .filter((value, index, self) => self.indexOf(value) === index)
-        .map((dir) => fs.mkdir(dir, { recursive: true })),
+        .map(async (dir) => await fs.mkdir(dir, { recursive: true })),
     );
 
     // write files
     await Promise.all(
-      Array.from(testData.entries()).map(([filePath, { code }]) =>
-        fs.writeFile(filePath, code),
+      Array.from(testData.entries()).map(
+        async ([filePath, { code }]) => await fs.writeFile(filePath, code),
       ),
     );
   });

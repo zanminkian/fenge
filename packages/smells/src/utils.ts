@@ -25,6 +25,6 @@ export async function walkDir(
     })
   )
     .filter((filePath) => isJs(filePath) || isTs(filePath))
-    .map((filePath) => cb(filePath));
+    .map(async (filePath) => await cb(filePath));
   await Promise.all(promises);
 }

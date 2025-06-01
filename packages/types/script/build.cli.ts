@@ -15,11 +15,12 @@ async function copyFiles(dest = path.join(cwd, "src")) {
     })
   )
     .filter(({ name }) => name.startsWith("lib.") && name.endsWith(".d.ts"))
-    .map(({ name, parentPath }) =>
-      fs.copyFile(
-        path.join(parentPath, name),
-        path.join(dest, `${path.parse(name).name}.txt`),
-      ),
+    .map(
+      async ({ name, parentPath }) =>
+        await fs.copyFile(
+          path.join(parentPath, name),
+          path.join(dest, `${path.parse(name).name}.txt`),
+        ),
     );
 
   await Promise.all(promises);

@@ -45,7 +45,7 @@ await describe(async () => {
     assert.equal("files" in pkg, false);
     assert.equal(messages.length, 1);
     assert.equal(messages[0]?.type, "suggestion");
-    assert.equal(messages[0]?.code, "USE_FILES");
+    assert.equal(messages[0].code, "USE_FILES");
     assert.equal(
       formatMessage(messages[0], pkg, { color: false }),
       "The package publishes internal tests or config files. You can use pkg.files to only publish certain files and save user bandwidth.",

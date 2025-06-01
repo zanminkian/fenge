@@ -193,6 +193,7 @@ export function getTsBase() {
       "@typescript-eslint/no-unnecessary-type-arguments": "error",
       "@typescript-eslint/no-unnecessary-type-assertion": "error",
       "@typescript-eslint/no-unnecessary-type-constraint": "error",
+      "@typescript-eslint/no-unnecessary-type-conversion": "error",
       "@typescript-eslint/no-unsafe-call": "error",
       "@typescript-eslint/no-unsafe-declaration-merging": "error",
       "@typescript-eslint/no-unsafe-enum-comparison": "error",
@@ -215,6 +216,7 @@ export function getTsBase() {
       "@typescript-eslint/prefer-readonly": "error",
       "@typescript-eslint/prefer-regexp-exec": "error",
       "@typescript-eslint/prefer-return-this-type": "error",
+      "@typescript-eslint/promise-function-async": "error",
       "@typescript-eslint/restrict-plus-operands": [
         "error",
         {
