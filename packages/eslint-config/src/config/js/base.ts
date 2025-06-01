@@ -288,6 +288,7 @@ export function getJsBase() {
       "es-x/no-top-level-await": "error",
       // esm
       "esm/existing-file-imports": "error",
+      "esm/no-circular-imports": "error",
       "esm/no-declaration-file-imports": "error",
       "esm/no-directory-imports": "error",
       "esm/no-dynamic-imports": "error",

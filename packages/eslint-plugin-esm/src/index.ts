@@ -1,4 +1,5 @@
 import { existingFileImports } from "./rules/existing-file-imports.ts";
+import { noCircularImports } from "./rules/no-circular-imports.ts";
 import { noDeclarationFileImports } from "./rules/no-declaration-file-imports.ts";
 import { noDirectoryImports } from "./rules/no-directory-imports.ts";
 import { noDynamicImports } from "./rules/no-dynamic-imports.ts";
@@ -16,6 +17,7 @@ import { topSideEffectImports } from "./rules/top-side-effect-imports.ts";
 
 export const rules = {
   [existingFileImports.name]: existingFileImports.rule,
+  [noCircularImports.name]: noCircularImports.rule,
   [noDeclarationFileImports.name]: noDeclarationFileImports.rule,
   [noDirectoryImports.name]: noDirectoryImports.rule,
   [noDynamicImports.name]: noDynamicImports.rule,
