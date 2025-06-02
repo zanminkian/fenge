@@ -9,7 +9,7 @@ export async function parse(
 ): Promise<AST<TSESTreeOptions>> {
   // this package require typescript as its peer dependencies
   const estree = await import("@typescript-eslint/typescript-estree").catch(
-    (e) => {
+    (e: unknown) => {
       throw new Error(
         "Importing `@typescript-eslint/typescript-estree` fail! Please make sure that typescript has been installed or npm config `legacy-peer-deps` is disabled.",
         { cause: e },
