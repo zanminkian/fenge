@@ -1,11 +1,12 @@
 import type { Rule } from "eslint";
-import { getRuleName } from "../utils.ts";
+import { getDocUrl, getRuleName } from "../utils.ts";
 
 // TODO deprecate this rule if https://github.com/sindresorhus/eslint-plugin-unicorn/issues/71 is implemented.
 const name = getRuleName(import.meta.url);
 const rule: Rule.RuleModule = {
   meta: {
     docs: {
+      url: getDocUrl(name),
       description:
         "Disallow using template string when it's unnecessary. Use normal literal string expression instead.",
     },

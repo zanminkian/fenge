@@ -1,5 +1,5 @@
 import type { Rule } from "eslint";
-import { getRuleName, type GetNode } from "../utils.ts";
+import { getDocUrl, getRuleName, type GetNode } from "../utils.ts";
 
 type ArrowFunctionExpression = GetNode<"ArrowFunctionExpression">;
 
@@ -7,6 +7,7 @@ const name = getRuleName(import.meta.url);
 const rule: Rule.RuleModule = {
   meta: {
     docs: {
+      url: getDocUrl(name),
       description:
         "Top-level functions are expected to be function declarations instead of arrow functions.",
     },

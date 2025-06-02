@@ -1,5 +1,5 @@
 import type { Rule } from "eslint";
-import { getRuleName } from "../utils.ts";
+import { getDocUrl, getRuleName } from "../utils.ts";
 
 // TODO: If https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2453 is accepted, migrate this rule to `eslint-plugin-unicorn`
 const name = getRuleName(import.meta.url);
@@ -10,6 +10,7 @@ const name = getRuleName(import.meta.url);
 const rule: Rule.RuleModule = {
   meta: {
     docs: {
+      url: getDocUrl(name),
       description:
         "Only allow `while` and `for-of` loops. `for`, `for-in`, `do-while` and `for-await-of` loops are disallowed.",
     },

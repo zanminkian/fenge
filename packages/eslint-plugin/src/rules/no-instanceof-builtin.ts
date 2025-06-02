@@ -1,11 +1,12 @@
 import type { Rule } from "eslint";
-import { getRuleName } from "../utils.ts";
+import { getDocUrl, getRuleName } from "../utils.ts";
 
 // TODO: If https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2452 is accepted, migrate this rule to `eslint-plugin-unicorn`
 const name = getRuleName(import.meta.url);
 const rule: Rule.RuleModule = {
   meta: {
     docs: {
+      url: getDocUrl(name),
       description: "Right hand of `instanceof` can't be a builtin class.",
     },
     messages: {

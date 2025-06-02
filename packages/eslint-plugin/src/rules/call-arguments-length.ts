@@ -1,5 +1,5 @@
 import type { Rule } from "eslint";
-import { getRuleName, type GetNode } from "../utils.ts";
+import { getDocUrl, getRuleName, type GetNode } from "../utils.ts";
 
 type CallExpression = GetNode<"CallExpression">;
 type NewExpression = GetNode<"NewExpression">;
@@ -9,6 +9,7 @@ const name = getRuleName(import.meta.url);
 const rule: Rule.RuleModule = {
   meta: {
     docs: {
+      url: getDocUrl(name),
       description:
         "Disallow calling a function with incorrect arguments length.",
     },

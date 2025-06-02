@@ -1,10 +1,11 @@
 import type { Rule } from "eslint";
-import { getRuleName } from "../utils.ts";
+import { getDocUrl, getRuleName } from "../utils.ts";
 
 const name = getRuleName(import.meta.url);
 const rule: Rule.RuleModule = {
   meta: {
     docs: {
+      url: getDocUrl(name),
       description: "Disallow triple slash directives (/// <...>) in code.",
     },
     messages: {
