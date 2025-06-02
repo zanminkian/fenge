@@ -5,7 +5,7 @@ import { createRule, getRuleName, getSourceType } from "../common.ts";
 /**
  * Key is the source file, value is its imports.
  */
-const store = new Map<string, string[]>();
+const store = new Map<string, Set<string>>();
 
 function isCircular(
   currentFile: string,
@@ -16,7 +16,7 @@ function isCircular(
   }
   visited.add(currentFile);
 
-  const dependencies = store.get(currentFile) ?? [];
+  const dependencies = store.get(currentFile) ?? new Set<string>();
   for (const dependency of dependencies) {
     const [isCircularResult, circularPaths] = isCircular(
       path.resolve(path.dirname(currentFile), dependency),
@@ -37,7 +37,7 @@ export const noCircularImports = createRule({
   message: "Circular imports are not allowed.",
   create: (context) => {
     const filePath = context.filename;
-    const imports = store.get(filePath) ?? [];
+    const imports = store.get(filePath) ?? new Set<string>();
     store.set(filePath, imports);
 
     return {
@@ -47,7 +47,7 @@ export const noCircularImports = createRule({
           getSourceType(node.source.value) !== "local"
         )
           return;
-        imports.push(node.source.value);
+        imports.add(node.source.value);
       },
 
       "ImportDeclaration:exit": (node) => {
