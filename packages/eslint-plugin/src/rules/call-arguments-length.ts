@@ -17,7 +17,27 @@ const rule: Rule.RuleModule = {
       [`${name}/error`]:
         "The arguments length of calling `{{ functionPattern }}` should be {{ lengthMsg }}",
     },
-    schema: [{ type: "object" }], // TODO: enhance schema for checking options
+    schema: [
+      {
+        type: "object",
+        patternProperties: {
+          ".*": {
+            anyOf: [
+              { type: "number" },
+              {
+                type: "object",
+                properties: {
+                  min: { type: "number" },
+                  max: { type: "number" },
+                },
+                additionalProperties: false,
+              },
+            ],
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
   },
   create: (context) => {
     const getLengthMsg = (expectedLength: unknown) => {

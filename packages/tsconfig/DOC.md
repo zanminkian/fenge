@@ -21,7 +21,7 @@ Because before TS 5.0, TS always look up the extends by path, while ignoring `ex
 
 We can remove the `tsconfig.json` in the root of monorepo project. But when opening a `*.test.ts` file using VSCode, TypeScript will fall back to use the root `tsconfig.json`. If there is no `tsconfig.json` in the root of monorepo project, opening `*.test.ts` file using VSCode will shows incorrect errors.
 
-> TODO: Once [this issue](https://github.com/microsoft/TypeScript/issues/60748) has been solved. We can add `"include": ["${configDir}/src"]` and `"exclude": ["**/*.test.ts"]` to `cjs.json` and `esm.json`. And then remove the root `tsconfig.json`.
+To remove the root `tsconfig.json`, we need [this issue](https://github.com/microsoft/TypeScript/issues/60748) to be accepted and implemented. After that, we can add `"include": ["${configDir}/src"]` and `"exclude": ["**/*.test.ts"]` to `cjs.json` and `esm.json`, and then remove the root `tsconfig.json`. Unfortunately, the issue is not accepted.
 
 ## Why setting `lib` and `target` to `es2022`?
 
