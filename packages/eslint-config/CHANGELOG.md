@@ -1,5 +1,24 @@
 # @fenge/eslint-config
 
+## 0.6.14
+
+### Patch Changes
+
+- 613a491: feat: add rule `unicorn/no-unnecessary-array-flat-depth`
+- 2c39626: feat(eslint-config): add `@typescript-eslint/prefer-regexp-exec` rule
+- 823cf9f: feat: add rules
+- 0fad059: feat(eslint-config): add rules
+- ef8c2d0: feat: add rule `@typescript-eslint/no-confusing-void-expression`
+- 457fdd6: feat(eslint-config): disallow throwing `unknown`
+- 1cf09b1: feat: add rule `esm/no-circular-imports`
+- 6278a1a: chore: upgrade deps
+- 4d5e2b2: feat: add rule `@typescript-eslint/use-unknown-in-catch-callback-variable`
+- c70c35e: chore: upgrade deps
+- Updated dependencies [1cf09b1]
+- Updated dependencies [6278a1a]
+  - eslint-plugin-esm@0.8.3
+  - @fenge/eslint-plugin-ts@0.4.1
+
 ## 0.6.13
 
 ### Patch Changes
