@@ -11,7 +11,7 @@ export function base(
   const filesMap = {
     js: "**/*.{js,cjs,mjs,jsx}",
     ts: "**/*.{ts,cts,mts,tsx}",
-    pkg: "package.json",
+    pkg: "**/package.json",
   } as const;
   const blockedFilesMap = {
     "**/.env.*": ".*.env",
