@@ -1,5 +1,11 @@
 # eslint-plugin-esm
 
+## 0.8.3
+
+### Patch Changes
+
+- 1cf09b1: feat: add rule `esm/no-circular-imports`
+
 ## 0.8.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # prettier-ignore
 
+## 0.4.0
+
+### Minor Changes
+
+- 8aa2025: feat(prettier-ignore): do not ignore `dist` as it should be ignored in `.gitignore`
+
 ## 0.3.0
 
 ### Minor Changes
