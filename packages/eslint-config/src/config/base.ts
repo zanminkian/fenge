@@ -17,6 +17,12 @@ export function base(
     "**/.env.*": ".*.env",
     "**/.*rc": "*.config.js",
     "**/.*rc.*": "*.config.*",
+
+    "**/*.{cjs,mjs,cts,mts}": "*.{js,ts}",
+    "**/*.spec.{js,cjs,mjs,jsx,ts,cts,mts,tsx}":
+      "*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}", // Node.js built-in support *.test.js. See https://nodejs.org/api/test.html#running-tests-from-the-command-line.
+    "**/.*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}":
+      "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}",
   } as const;
 
   const enabledPatterns = [...enabled].map((key) => filesMap[key]);
@@ -46,17 +52,8 @@ export function base(
     },
     {
       name: "fenge/common",
-      files: enabledPatterns,
+      files: [...enabledPatterns, ...blockedPatterns],
       linterOptions: options,
-    },
-    {
-      name: "fenge/disallowed-files",
-      files: blockedPatterns,
-      ignores: enabledPatterns,
-      processor: {
-        preprocess: (_text: string, _filename: string) => [""],
-        postprocess: (messages) => messages[0] ?? [],
-      },
       plugins: {
         "check-file": checkFilePlugin,
       },

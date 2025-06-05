@@ -70,16 +70,16 @@ describe("disallow-file-patterns", () => {
 
   it("disallow some file patterns", async () => {
     const promises = Object.entries({
-      ".env.corepack": "",
-      ".env.json": "",
+      ".env.corepack": "foobar",
+      ".env.json": "foobar",
 
-      ".eslintrc": "",
-      ".prettierrc": "",
+      ".eslintrc": "foobar",
+      ".prettierrc": "foobar",
 
-      ".eslintrc.js": "",
-      ".prettierrc.js": "",
-      ".foorc.json": "",
-      ".foorc.yaml": "",
+      ".eslintrc.js": "foobar",
+      ".prettierrc.js": "foobar",
+      ".foorc.json": "foobar",
+      ".foorc.yaml": "foobar",
     })
       .map(
         ([file, content]) => [path.join(fixturesDir, file), content] as const,

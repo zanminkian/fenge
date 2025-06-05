@@ -1,7 +1,6 @@
 import * as fengePlugin from "@fenge/eslint-plugin";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import confusingKeys from "confusing-browser-globals";
-import checkFilePlugin from "eslint-plugin-check-file";
 import esxPlugin from "eslint-plugin-es-x";
 import * as esmPlugin from "eslint-plugin-esm";
 import fpPlugin from "eslint-plugin-fp";
@@ -184,7 +183,6 @@ export function getJsBase() {
       },
     },
     plugins: {
-      "check-file": checkFilePlugin,
       fp: fpPlugin,
       n: nPlugin,
       import: importPlugin,
@@ -270,17 +268,6 @@ export function getJsBase() {
       // "prefer-object-spread": "error",
       "prefer-spread": "error",
       "prefer-template": "error",
-      // check-file
-      "check-file/filename-blocklist": [
-        "error",
-        {
-          "**/*.{cjs,mjs,cts,mts}": "*.{js,ts}",
-          "**/*.spec.{js,cjs,mjs,jsx,ts,cts,mts,tsx}":
-            "*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}", // Node.js built-in support *.test.js. See https://nodejs.org/api/test.html#running-tests-from-the-command-line.
-          "**/.*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}":
-            "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}",
-        },
-      ],
       // es
       "es-x/no-accessor-properties": "error",
       "es-x/no-async-iteration": "error",
