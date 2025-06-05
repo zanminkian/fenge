@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.6.15
+
+### Patch Changes
+
+- dfa7bd9: feat(eslint-config): disallow files whose name starts with dot
+
 ## 0.6.14
 
 ### Patch Changes
