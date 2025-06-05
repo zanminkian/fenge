@@ -64,16 +64,5 @@ export function base(
         "check-file/filename-blocklist": ["error", blockedFilesMap],
       },
     },
-    // Ignore unsupported files.
-    // This config is for suppressing error when linting a directory which does not contain supported files.
-    {
-      name: "fenge/ignore",
-      files: ["**"], // I've tried all. Only '**' works.
-      ignores: [...enabledPatterns, ...blockedPatterns],
-      processor: {
-        preprocess: (_text: string, _filename: string) => [""],
-        postprocess: (_messages: unknown[][]) => [], // Returning empty array to ignore all errors
-      },
-    },
   ] as const;
 }
