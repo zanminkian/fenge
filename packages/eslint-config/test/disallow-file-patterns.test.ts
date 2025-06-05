@@ -99,7 +99,7 @@ describe("disallow-file-patterns", () => {
     await Promise.all(promises);
   });
 
-  it("should allow .env.{js,cjs,mjs,jsx,ts,cts,tsx,json} files", async () => {
+  it("disallow .env.{js,cjs,mjs,jsx,ts,cts,tsx,json} files", async () => {
     const promises = Object.entries({
       ".foo.js": "export const foo = 1;",
       ".foo.jsx": "export function Foo() {return <div>foo</div>;}",
@@ -118,10 +118,10 @@ describe("disallow-file-patterns", () => {
         const res = runLint([file]);
         await fs.rm(file);
 
-        assert.strictEqual(res.status, 0);
+        assert.strictEqual(res.status, 1);
         assert.strictEqual(
           res.stdout.includes("check-file/filename-blocklist"),
-          false,
+          true,
           res.stdout,
         );
       });
