@@ -1,4 +1,4 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
-  "baseBranch": "main"
+  "baseBranch": "main",
+  "privatePackages": { "version": true, "tag": true }
 }
