@@ -1,5 +1,6 @@
 import * as fengePlugin from "@fenge/eslint-plugin";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 import confusingKeys from "confusing-browser-globals";
 import esxPlugin from "eslint-plugin-es-x";
 import * as esmPlugin from "eslint-plugin-esm";
@@ -166,6 +167,7 @@ export function getJsBase() {
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
+      parser: tsParser, // Unfortunately parser cannot be a string. Eslint should support it. https://eslint.org/docs/latest/use/configure/configuration-files-new#configuring-a-custom-parser-and-its-options
       parserOptions: {
         // TODO `ecmaVersion` and `sourceType` are no standard here. import/no-default-export required this
         ecmaVersion: "latest",
