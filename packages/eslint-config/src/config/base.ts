@@ -2,7 +2,15 @@ import childProcess from "node:child_process";
 import type { Linter } from "eslint";
 import checkFilePlugin from "eslint-plugin-check-file";
 
-export type BaseOptions = Linter.LinterOptions;
+export interface BaseOptions {
+  linterOptions?: Linter.LinterOptions;
+  /**
+   * The key represents the file pattern to block.
+   * If the value is `false`, files matching the key pattern are allowed.
+   * If the value is a `string`, files matching the key pattern are blocked, and the string indicates the preferred filename pattern.
+   */
+  blockedFiles?: Record<string, string | false>;
+}
 
 export function base(
   options: BaseOptions,
@@ -53,12 +61,22 @@ export function base(
     {
       name: "fenge/common",
       files: [...enabledPatterns, ...blockedPatterns],
-      linterOptions: options,
+      ...(options.linterOptions
+        ? { linterOptions: options.linterOptions }
+        : {}),
       plugins: {
         "check-file": checkFilePlugin,
       },
       rules: {
-        "check-file/filename-blocklist": ["error", blockedFilesMap],
+        "check-file/filename-blocklist": [
+          "error",
+          Object.fromEntries(
+            Object.entries<string | false>({
+              ...blockedFilesMap,
+              ...options.blockedFiles,
+            }).filter(([_, value]) => value),
+          ),
+        ],
       },
     },
   ] as const;
