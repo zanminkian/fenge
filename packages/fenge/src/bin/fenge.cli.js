@@ -13,7 +13,7 @@ const program = new Command().enablePositionalOptions();
 
 program
   .name(pkgJson.name)
-  .version(pkgJson.version)
+  .version(pkgJson.version, "-v, --version")
   .description("format and then lint code")
   .option(
     "-f, --fix",
