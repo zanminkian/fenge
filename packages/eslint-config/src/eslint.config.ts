@@ -31,7 +31,7 @@ interface Options<T extends string[]> {
 }
 interface ConfigItem {
   name?: string;
-  files: string[];
+  files?: string[];
   plugins?: Record<string, object>;
   rules:
     | Partial<Record<PkgRuleKey | JsRuleKey | TsRuleKey, RuleValue>>
