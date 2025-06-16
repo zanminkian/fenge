@@ -104,6 +104,15 @@ const jsonReplacements = [
   },
 ];
 
+const objectReplacements = [
+  // Object.assign
+  {
+    file: "lib.es2015.core.d",
+    searchValue: "assign(target: object, ...sources: any[]): any;",
+    replaceValue: "assign(target: object, ...sources: any[]): unknown;",
+  },
+];
+
 export const replacements: {
   file: string;
   searchValue: string;
@@ -113,4 +122,5 @@ export const replacements: {
   ...promiseReplacements,
   ...containerReplacements,
   ...jsonReplacements,
+  ...objectReplacements,
 ];
