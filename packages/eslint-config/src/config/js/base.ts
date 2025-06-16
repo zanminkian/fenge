@@ -178,7 +178,7 @@ export function getJsBase() {
       },
       globals: {
         ...Object.fromEntries(
-          Object.entries(globals.browser)
+          Object.entries(globals["shared-node-browser"])
             .filter(([k]) => !confusingKeys.includes(k))
             .filter(([k]) => !["self", "global"].includes(k)), // prefer `globalThis`
         ),
