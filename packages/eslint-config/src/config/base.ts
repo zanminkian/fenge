@@ -31,6 +31,8 @@ export function base(
       "*.test.{js,cjs,mjs,jsx,ts,cts,mts,tsx}", // Node.js built-in support *.test.js. See https://nodejs.org/api/test.html#running-tests-from-the-command-line.
     "**/.*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}":
       "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}",
+
+    "**/*.d.*.ts": "**/*.d.ts",
   } as const;
 
   const enabledPatterns = [...enabled].map((key) => filesMap[key]);

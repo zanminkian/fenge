@@ -21,8 +21,9 @@ describe("disallow-file-patterns", () => {
     await fs.rm(fixturesDir, { recursive: true });
   });
 
-  it("disallow mjs, cjs, mts and cts", async () => {
+  it("disallow files", async () => {
     const promises = Object.entries({
+      // 1.
       "foo.mjs": "",
       "foo.cjs": "",
       "foo.mts": "",
@@ -47,60 +48,21 @@ describe("disallow-file-patterns", () => {
       "foo.spec.cts": "",
       // "foo.spec.tsx": "", // TODO: typescript-eslint bug.
 
-      ".eslintrc.js": "",
+      ".eslintrc.js": "foobar",
       // ".foorc.ts": "", // TODO: typescript-eslint bug.
-    })
-      .map(
-        ([file, content]) => [path.join(fixturesDir, file), content] as const,
-      )
-      .map(async ([file, content]) => {
-        await fs.writeFile(file, content);
-        const res = runLint([file]);
-        await fs.rm(file);
 
-        assert.strictEqual(res.status, 1);
-        assert.strictEqual(
-          res.stdout.includes("check-file/filename-blocklist"),
-          true,
-          res.stdout,
-        );
-      });
-    await Promise.all(promises);
-  });
-
-  it("disallow some file patterns", async () => {
-    const promises = Object.entries({
+      // 2.
       ".env.corepack": "foobar",
       ".env.json": "foobar",
 
       ".eslintrc": "foobar",
       ".prettierrc": "foobar",
 
-      ".eslintrc.js": "foobar",
       ".prettierrc.js": "foobar",
       ".foorc.json": "foobar",
       ".foorc.yaml": "foobar",
-    })
-      .map(
-        ([file, content]) => [path.join(fixturesDir, file), content] as const,
-      )
-      .map(async ([file, content]) => {
-        await fs.writeFile(file, content);
-        const res = runLint([file]);
-        await fs.rm(file);
 
-        assert.strictEqual(res.status, 1);
-        assert.strictEqual(
-          res.stdout.includes("check-file/filename-blocklist"),
-          true,
-          res.stdout,
-        );
-      });
-    await Promise.all(promises);
-  });
-
-  it("disallow .env.{js,cjs,mjs,jsx,ts,cts,tsx,json} files", async () => {
-    const promises = Object.entries({
+      // 3.
       ".foo.js": "export const foo = 1;",
       ".foo.jsx": "export function Foo() {return <div>foo</div>;}",
       // ".foo.ts": "export const foo = 1;", // TODO: Should be allowed, but commented out because of typescript-eslint bug. Once fixed, uncomment.
@@ -109,6 +71,9 @@ describe("disallow-file-patterns", () => {
       ".env.jsx": "export function Foo() {return <div>foo</div>;}",
       // ".env.ts": "export const foo = 1;",
       // ".env.tsx": "export function Foo() {return <div>foo</div>;}",
+
+      // 4.
+      "foo.d.bar.ts": "",
     })
       .map(
         ([file, content]) => [path.join(fixturesDir, file), content] as const,
