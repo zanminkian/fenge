@@ -356,6 +356,7 @@ export function getJsBase() {
       "react/jsx-no-useless-fragment": "error",
       "react/jsx-props-no-spread-multi": "error",
       "react/jsx-uses-vars": "error",
+      "react/jsx-fragments": "error",
       // react-hooks
       "react-hooks/exhaustive-deps": "error",
       "react-hooks/rules-of-hooks": "error",

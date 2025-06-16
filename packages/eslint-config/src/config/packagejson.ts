@@ -6,7 +6,7 @@ export function packagejson() {
     {
       name: "fenge/packagejson",
       files: ["**/package.json"],
-      processor: "pkg-json/processor",
+      processor: "pkg-json/processor", // TODO: Remove this. Use `languageOptions`.
       plugins: {
         "pkg-json": pkg,
         publint,
