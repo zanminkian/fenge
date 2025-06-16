@@ -22,6 +22,10 @@ export const rule = {
         "graceful-fs": "Use built-in `node:fs` module instead.",
         "fs-extra": "Use built-in `node:fs` module instead.",
 
+        "node-fetch": "Use built-in `fetch` api instead.",
+        axios: "Use built-in `fetch` api instead.",
+        got: "Use built-in `fetch` api instead.",
+
         // TODO: Uncomment this when we drop support for Node v18.
         // chalk: "Use built-in util.styleText api instead.",
         // picocolors: "Use built-in util.styleText api instead.",
