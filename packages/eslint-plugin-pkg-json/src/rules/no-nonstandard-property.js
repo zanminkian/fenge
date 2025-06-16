@@ -34,13 +34,19 @@ const standardProperties = new Set([
   "publishConfig",
   "workspaces",
 
-  // node https://nodejs.org/api/packages.html#nodejs-packagejson-field-definitions
+  // For node. See https://nodejs.org/api/packages.html#nodejs-packagejson-field-definitions.
   // "name",
   // "main",
-  // "packageManager",
+  // "packageManager", // Corepack will be removed from node in Node 25.
   "type",
   "exports",
   "imports",
+
+  // For TypeScript.
+  // TODO: Remove `types`.
+  // We need types because of `libReplacement`. `exports` not works for `libReplacement`.
+  // This is the bug of TypeScript. Once TS support `exports` field for `libReplacement`, we should remove `types`.
+  "types",
 ]);
 
 export const name = "no-nonstandard-property";
