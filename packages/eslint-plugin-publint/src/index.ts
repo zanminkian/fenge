@@ -1,6 +1,5 @@
 import type { Rule } from "eslint";
 import { createRule } from "./create-rule.ts";
-import { processor } from "./processor.ts";
 
 function getMeta({
   recommended = true,
@@ -18,5 +17,3 @@ export const rules = {
   warning: createRule("warning", getMeta()),
   error: createRule("error", getMeta()),
 };
-
-export const processors = { processor };

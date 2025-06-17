@@ -1,5 +1,5 @@
 import type { Rule } from "eslint";
-import type { ObjectExpression } from "estree";
+import type { AST } from "jsonc-eslint-parser";
 import type { MessageType } from "publint";
 import { formatMessage } from "publint/utils";
 import { getPublintInfo } from "./get-publint-info.ts";
@@ -16,12 +16,12 @@ export function createRule(
       const filteredMessages = messages.filter((msg) => msg.type === type);
       if (filteredMessages.length <= 0) return {};
       return {
-        "Program > ExpressionStatement > ObjectExpression": (
-          node: ObjectExpression,
+        "Program > JSONExpressionStatement > JSONObjectExpression": (
+          node: AST.JSONObjectExpression,
         ) => {
           filteredMessages.forEach((msg) => {
             context.report({
-              node: getReportingNode(node, msg.path),
+              node: getReportingNode(node, msg.path) as any,
               message:
                 formatMessage(msg, pkg, { color: false }) ??
                 JSON.stringify(msg),

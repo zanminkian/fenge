@@ -9,8 +9,8 @@ export const rule = {
     },
   },
   create: (context) => ({
-    "Program > ExpressionStatement ObjectExpression": (node) => {
-      if (node.parent.type === "ExpressionStatement") {
+    "Program > JSONExpressionStatement JSONObjectExpression": (node) => {
+      if (node.parent.type === "JSONExpressionStatement") {
         return;
       }
       const index = node.properties.findIndex((p) => p.key.value === "types");

@@ -20,7 +20,7 @@ export const rule = {
       return {};
     }
     return {
-      "Program > ExpressionStatement > ObjectExpression": (node) => {
+      "Program > JSONExpressionStatement > JSONObjectExpression": (node) => {
         // 1. check required fields
         const devEngines = checkAndGet(node, "devEngines", context);
         if (!devEngines) {
@@ -65,7 +65,7 @@ export const rule = {
 
 function checkAndGet(obj, property, context) {
   const foundProperty =
-    obj.type !== "ObjectExpression"
+    obj.type !== "JSONObjectExpression"
       ? undefined
       : obj.properties.find((p) => p.key.value === property);
   if (!foundProperty) {

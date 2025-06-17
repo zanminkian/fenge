@@ -81,7 +81,7 @@ export const rule = {
     const { allow = [] } = context.options[0] || {};
     const allowedProperties = new Set([...standardProperties, ...allow]);
     return {
-      "Program > ExpressionStatement > ObjectExpression": (node) => {
+      "Program > JSONExpressionStatement > JSONObjectExpression": (node) => {
         node.properties
           .filter((property) => !allowedProperties.has(property.key.value))
           .forEach((property) => {

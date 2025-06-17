@@ -10,7 +10,7 @@ export const rule = {
     },
   },
   create: (context) => ({
-    "Program > ExpressionStatement > ObjectExpression": (node) => {
+    "Program > JSONExpressionStatement > JSONObjectExpression": (node) => {
       if (
         node.properties.find((p) => p.key.value === "private")?.value?.value ===
         true
@@ -27,9 +27,9 @@ export const rule = {
         });
       }
       if (
-        (repositoryProperty.value.type === "ObjectExpression" &&
+        (repositoryProperty.value.type === "JSONObjectExpression" &&
           repositoryProperty.value.properties.length === 0) ||
-        (repositoryProperty.value.type === "Literal" &&
+        (repositoryProperty.value.type === "JSONLiteral" &&
           !repositoryProperty.value.value)
       ) {
         return context.report({

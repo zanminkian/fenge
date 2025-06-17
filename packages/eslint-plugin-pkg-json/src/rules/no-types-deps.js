@@ -29,7 +29,7 @@ export const rule = {
     const allowedTypes = new Set(allow);
 
     return {
-      "Program > ExpressionStatement > ObjectExpression": (node) => {
+      "Program > JSONExpressionStatement > JSONObjectExpression": (node) => {
         node.properties
           .filter((p) =>
             ["dependencies", "devDependencies"].includes(p.key.value),

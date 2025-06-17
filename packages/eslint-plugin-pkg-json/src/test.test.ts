@@ -5,13 +5,14 @@ import process from "node:process";
 import { describe, it } from "node:test";
 import { fileURLToPath } from "node:url";
 import { RuleTester, type Rule } from "eslint";
+import parser from "jsonc-eslint-parser";
 import { outdent } from "outdent";
 
 export type TestCase = string | { code: string; filename?: string };
 
 const tester = new RuleTester({
   languageOptions: {
-    parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+    parser,
   },
 });
 
@@ -34,10 +35,10 @@ export async function test({
         .map((item) =>
           typeof item !== "string"
             ? {
-                code: `(${item.code})`,
+                code: item.code,
                 ...(item.filename && { filename: item.filename }),
               }
-            : { code: `(${item})` },
+            : { code: item },
         )
         .map(async (item) => {
           await it(item.code, () => {
@@ -54,10 +55,10 @@ export async function test({
         .map((item) =>
           typeof item !== "string"
             ? {
-                code: `(${item.code})`,
+                code: item.code,
                 ...(item.filename && { filename: item.filename }),
               }
-            : { code: `(${item})` },
+            : { code: item },
         )
         .map(async (item) => {
           await it(item.code, () => {

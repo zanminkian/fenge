@@ -28,11 +28,14 @@ Config `eslint.config.js`
 
 ```js
 import * as publint from "eslint-plugin-publint";
+import parser from "eslint-plugin-publint/jsonc-eslint-parser";
 
 export default [
   {
     files: ["**/package.json"],
-    processor: "publint/processor",
+    languageOptions: {
+      parser,
+    },
     plugins: { publint },
     rules: {
       /**

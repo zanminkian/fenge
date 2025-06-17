@@ -22,7 +22,7 @@ export const rule = {
     },
   },
   create: (context) => ({
-    "Program > ExpressionStatement > ObjectExpression": (node) => {
+    "Program > JSONExpressionStatement > JSONObjectExpression": (node) => {
       if (
         node.properties.find((p) => p.key.value === "private")?.value?.value ===
         true

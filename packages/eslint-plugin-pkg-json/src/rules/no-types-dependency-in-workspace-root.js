@@ -16,7 +16,7 @@ export const rule = {
       return {};
     }
     return {
-      "Program > ExpressionStatement > ObjectExpression": (node) => {
+      "Program > JSONExpressionStatement > JSONObjectExpression": (node) => {
         node.properties
           .filter((p) =>
             ["dependencies", "devDependencies"].includes(p.key.value),

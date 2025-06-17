@@ -1,4 +1,5 @@
 import * as pkg from "eslint-plugin-pkg-json";
+import parser from "eslint-plugin-pkg-json/jsonc-eslint-parser";
 import * as publint from "eslint-plugin-publint";
 
 export function packagejson() {
@@ -6,7 +7,9 @@ export function packagejson() {
     {
       name: "fenge/packagejson",
       files: ["**/package.json"],
-      processor: "pkg-json/processor", // TODO: Remove this. Use `languageOptions`.
+      languageOptions: {
+        parser,
+      },
       plugins: {
         "pkg-json": pkg,
         publint,

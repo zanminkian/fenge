@@ -9,7 +9,7 @@ export const rule = {
     },
   },
   create: (context) => ({
-    "Program > ExpressionStatement > ObjectExpression": (node) => {
+    "Program > JSONExpressionStatement > JSONObjectExpression": (node) => {
       const typeProperty = node.properties.find((p) => p.key.value === "type");
       if (!typeProperty) {
         return context.report({

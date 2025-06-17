@@ -18,7 +18,7 @@ export const rule = {
       return {};
     }
     return {
-      "Program > ExpressionStatement > ObjectExpression": (node) => {
+      "Program > JSONExpressionStatement > JSONObjectExpression": (node) => {
         node.properties
           .filter((p) => p.key.value === "dependencies")
           .forEach((property) => {

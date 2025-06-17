@@ -18,7 +18,10 @@
   "license": "MIT",
   "author": "hellozmj@qq.com",
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./jsonc-eslint-parser": "./dist/jsonc-eslint-parser.js"
+  },
   "files": [
     "dist"
   ],
@@ -27,10 +30,10 @@
     "test": "node --test --experimental-strip-types"
   },
   "dependencies": {
+    "jsonc-eslint-parser": "2.4.0",
     "publint": "0.3.12"
   },
   "devDependencies": {
-    "@types/estree": "1.0.7",
     "@types/node": "22.14.1",
     "eslint": "9.22.0"
   },

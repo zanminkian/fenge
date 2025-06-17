@@ -30,12 +30,15 @@ Config `eslint.config.js`
 
 ```js
 import * as pkg from "eslint-plugin-pkg-json";
+import parser from 'eslint-plugin-pkg-json/jsonc-eslint-parser';
 
 export default [
   ...
   {
     files: ["**/package.json"],
-    processor: "pkg-json/processor",
+    languageOptions: {
+      parser,
+    },
     plugins: { "pkg-json": pkg },
     rules: {
       "pkg-json/no-lifecycle-script": "error",

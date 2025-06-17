@@ -11,12 +11,12 @@ export const rule = {
     },
   },
   create: (context) => ({
-    "Program > ExpressionStatement > ObjectExpression": (node) => {
+    "Program > JSONExpressionStatement > JSONObjectExpression": (node) => {
       const privateField = node.properties.find(
         (p) => p.key.value === "private",
       );
       if (
-        privateField?.value.type === "Literal" &&
+        privateField?.value.type === "JSONLiteral" &&
         privateField?.value.value === true
       ) {
         return;
@@ -25,7 +25,7 @@ export const rule = {
       const engines = node.properties.find((p) => p.key.value === "engines");
       if (
         !engines ||
-        engines.value.type !== "ObjectExpression" ||
+        engines.value.type !== "JSONObjectExpression" ||
         engines.value.properties.length <= 0
       ) {
         return context.report({

@@ -22,13 +22,19 @@
   "license": "MIT",
   "author": "hellozmj@qq.com",
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./jsonc-eslint-parser": "./dist/jsonc-eslint-parser.js"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "tsc",
     "test": "node --test --experimental-strip-types"
+  },
+  "dependencies": {
+    "jsonc-eslint-parser": "2.4.0"
   },
   "devDependencies": {
     "@types/node": "22.14.1",

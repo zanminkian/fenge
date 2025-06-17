@@ -11,19 +11,19 @@ export const rule = {
     },
   },
   create: (context) => ({
-    "Program > ExpressionStatement > ObjectExpression": (node) => {
+    "Program > JSONExpressionStatement > JSONObjectExpression": (node) => {
       const bin = node.properties.find((p) => p.key.value === "bin");
       if (!bin) {
         return;
       }
-      if (bin.value.type === "Literal") {
+      if (bin.value.type === "JSONLiteral") {
         if (typeof bin.value.value !== "string") {
           return reportNotStandard(context, bin.value);
         }
         if (!isValidBinPath(context.filename, bin.value.value)) {
           return reportInvalidBinPath(context, bin.value);
         }
-      } else if (bin.value.type === "ObjectExpression") {
+      } else if (bin.value.type === "JSONObjectExpression") {
         bin.value.properties.forEach((property) => {
           if (typeof property.value.value !== "string") {
             return reportNotStandard(context, property.value);

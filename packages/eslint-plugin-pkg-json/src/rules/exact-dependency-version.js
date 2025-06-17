@@ -33,7 +33,7 @@ export const rule = {
     },
   },
   create: (context) => ({
-    "Program > ExpressionStatement > ObjectExpression": (node) => {
+    "Program > JSONExpressionStatement > JSONObjectExpression": (node) => {
       node.properties
         .filter(
           (p) => ["dependencies", "devDependencies"].includes(p.key.value), // Should we remove devDependencies?

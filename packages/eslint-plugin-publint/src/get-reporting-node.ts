@@ -1,24 +1,27 @@
-import type { Node } from "estree";
+import type { AST } from "jsonc-eslint-parser";
 
-export function getReportingNode(node: Node, paths: string[]): Node {
+export function getReportingNode(
+  node: AST.JSONNode,
+  paths: string[],
+): AST.JSONNode {
   const [field, ...restPaths] = paths;
   if (!field) {
     return node;
   }
-  let next: Node | undefined = undefined;
-  if (node.type === "ObjectExpression") {
+  let next: AST.JSONNode | undefined = undefined;
+  if (node.type === "JSONObjectExpression") {
     const property = node.properties.find(
       (property) =>
         "key" in property &&
         "value" in property.key &&
         property.key.value === field,
     );
-    if (property && property.type !== "SpreadElement") {
+    if (property) {
       next = property.value;
     }
-  } else if (node.type === "ArrayExpression") {
+  } else if (node.type === "JSONArrayExpression") {
     const element = node.elements[Number(field)];
-    if (element && element.type !== "SpreadElement") {
+    if (element) {
       next = element;
     }
   }

@@ -1,4 +1,3 @@
-import { processor } from "./processor.ts";
 import * as bottomDefault from "./rules/bottom-default.js";
 import * as exactDependencyVersion from "./rules/exact-dependency-version.js";
 import * as noConflictTypes from "./rules/no-conflict-types.js";
@@ -36,4 +35,3 @@ export const rules = Object.fromEntries(
     typeModule,
   ].map((i) => [i.name, i.rule]),
 );
-export const processors = { processor };
