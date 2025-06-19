@@ -16,6 +16,7 @@ const invalid = [
   "function foo(){const foo = class {}}",
   "function foo(){return class Foo{}}",
   "function foo(){return class{}}",
+  "class Foo {foo(){class Bar{}}}",
 
   // normal
   "const Foo = class{}",

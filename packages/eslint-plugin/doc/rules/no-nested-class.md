@@ -14,6 +14,7 @@ function foo(){class Foo{}}
 function foo(){const foo = class {}}
 function foo(){return class Foo{}}
 function foo(){return class{}}
+class Foo {foo(){class Bar{}}}
 const Foo = class{}
 let Foo = class Bar{}
 let Foo; Foo = class{}
