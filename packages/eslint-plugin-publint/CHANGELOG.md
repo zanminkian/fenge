@@ -1,5 +1,11 @@
 # eslint-plugin-publint
 
+## 0.3.0
+
+### Minor Changes
+
+- b42adb6: refactor!: use parser instead of processor
+
 ## 0.2.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # smells
 
+## 0.1.3
+
+### Patch Changes
+
+- df7db9e: chore: upgrade deps
+
 ## 0.1.2
 
 ### Patch Changes
