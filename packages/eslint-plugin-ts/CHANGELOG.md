@@ -1,5 +1,11 @@
 # @fenge/eslint-plugin-ts
 
+## 0.4.3
+
+### Patch Changes
+
+- 1a94b53: fix(eslint-plugin-ts): fix crash on `no-misuse-spreading-parameter` rule
+
 ## 0.4.2
 
 ### Patch Changes

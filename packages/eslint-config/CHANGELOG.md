@@ -1,5 +1,12 @@
 # @fenge/eslint-config
 
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies [1a94b53]
+  - @fenge/eslint-plugin-ts@0.4.3
+
 ## 0.7.0
 
 ### Minor Changes
