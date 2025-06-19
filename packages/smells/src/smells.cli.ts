@@ -6,7 +6,7 @@ import { Command } from "commander";
 import { analyze } from "./analyze.js";
 import { isDts, isJs, isTs } from "./utils.ts";
 
-const version: string = JSON.parse(
+const { name, version }: { name: string; version: string } = JSON.parse(
   await fs.readFile(
     path.join(
       path.dirname(fileURLToPath(import.meta.url)),
@@ -15,12 +15,12 @@ const version: string = JSON.parse(
     ),
     "utf8",
   ),
-).version;
+);
 
 const program = new Command();
 program
-  .name("smells")
-  .version(version)
+  .name(name)
+  .version(version, "-v, --version")
   .description("analyze js/ts project quality and print the report")
   .option(
     "-f, --format <type>",
