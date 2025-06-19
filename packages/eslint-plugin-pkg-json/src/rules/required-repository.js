@@ -2,11 +2,10 @@ export const name = "required-repository";
 export const rule = {
   meta: {
     messages: {
-      [name]: "`repository` field should be specified in a public package.json",
+      [name]: "`repository` field is required in a public package.json",
     },
     docs: {
-      description:
-        "`repository` field should be specified in a public package.json",
+      description: "`repository` field is required in a public package.json",
     },
   },
   create: (context) => ({

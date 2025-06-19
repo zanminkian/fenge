@@ -1,7 +1,7 @@
 <!-- prettier-ignore-start -->
 # required-repository
 
-`repository` field should be specified in a public package.json
+`repository` field is required in a public package.json
 
 ## Rule Details
 
