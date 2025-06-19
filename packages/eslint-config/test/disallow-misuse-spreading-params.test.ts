@@ -88,4 +88,27 @@ describe("disallow-misuse-spreading-params", () => {
       true,
     );
   });
+
+  it("case 4", async () => {
+    const file = path.join(fixturesDir, "foo4.ts");
+    await fs.writeFile(
+      file,
+      "const foo: any = (...e: any[]) => e; foo(...Object.values({}));",
+    );
+    const res = runLint([file]);
+    await fs.rm(file);
+
+    assert.equal(res.status, 1);
+    assert.equal(
+      res.stdout.includes("@fenge-ts/no-misuse-spreading-parameter"),
+      true,
+      res.stdout,
+    );
+    assert.equal(
+      res.stdout.includes(
+        "Disallow spreading parameter when the corresponding place in the function definition is not a rest parameter",
+      ),
+      true,
+    );
+  });
 });

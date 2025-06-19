@@ -28,14 +28,14 @@ const rule: Rule.RuleModule = {
       parserServices ??= ESLintUtils.getParserServices(context as any);
       checker ??= parserServices.program.getTypeChecker();
 
-      const dotDotDot = checker
+      const declaration = checker
         .getResolvedSignature(
           parserServices.esTreeNodeToTSNodeMap.get(node as any) as
             | ts.CallExpression
             | ts.NewExpression,
         )
-        ?.getDeclaration()
-        .parameters.at(index)?.dotDotDotToken;
+        ?.getDeclaration(); // Note: `getDeclaration` may return `undefined` when the calling function is `any` type. This is a bug of TypeScript.
+      const dotDotDot = declaration?.parameters.at(index)?.dotDotDotToken;
       // Using `dotDotDot?.kind === ts.SyntaxKind.DotDotDotToken` is the best. But relying ts is not good.
       return typeof dotDotDot?.kind === "number";
     };
