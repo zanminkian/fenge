@@ -1,5 +1,27 @@
 # @fenge/eslint-config
 
+## 0.7.0
+
+### Minor Changes
+
+- fc794bc: feat(eslint-config): only allow variables shared by Node.js and browser
+- 95b457f: feat(eslint-config)!: allow specify blocked files
+- b0bca89: feat(eslint-config): move `@typescript-eslint/parser` to js base
+
+### Patch Changes
+
+- 063a41e: feat(eslint-config): `files` field is optional now
+- a4a2f3d: feat(eslint-config): add rule `react/jsx-fragments`
+- df7db9e: chore: upgrade deps
+- 3748c77: feat(eslint-config): disallow files pattern `**/*.d.*.ts`
+- Updated dependencies [c76339b]
+- Updated dependencies [f2b6a0d]
+- Updated dependencies [df7db9e]
+- Updated dependencies [b42adb6]
+  - eslint-plugin-pkg-json@0.4.0
+  - @fenge/eslint-plugin-ts@0.4.2
+  - eslint-plugin-publint@0.3.0
+
 ## 0.6.15
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # fenge
 
+## 0.9.0
+
+### Minor Changes
+
+- 8254de8: chore: change option `-V` to `-v`
+
+### Patch Changes
+
+- Updated dependencies [063a41e]
+- Updated dependencies [a4a2f3d]
+- Updated dependencies [fc794bc]
+- Updated dependencies [df7db9e]
+- Updated dependencies [3748c77]
+- Updated dependencies [95b457f]
+- Updated dependencies [b0bca89]
+  - @fenge/eslint-config@0.7.0
+
 ## 0.8.6
 
 ### Patch Changes

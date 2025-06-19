@@ -1,5 +1,11 @@
 # @fenge/types
 
+## 0.4.1
+
+### Patch Changes
+
+- a0ac4f1: feat(types): type safe for `Object.assign`
+
 ## 0.4.0
 
 ### Minor Changes

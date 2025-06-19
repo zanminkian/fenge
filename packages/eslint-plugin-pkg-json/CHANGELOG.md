@@ -1,5 +1,16 @@
 # eslint-plugin-pkg-json
 
+## 0.4.0
+
+### Minor Changes
+
+- b42adb6: refactor!: use parser instead of processor
+
+### Patch Changes
+
+- c76339b: feat(eslint-plugin-pkg-json): disallow deps about http for `no-restricted-deps` rule
+- f2b6a0d: feat(eslint-plugin-pkg-json): allow `types` field for `no-nonstandard-property` rule
+
 ## 0.3.3
 
 ### Patch Changes
