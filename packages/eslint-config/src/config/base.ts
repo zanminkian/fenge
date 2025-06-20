@@ -32,7 +32,7 @@ export function base(
     "**/.*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}":
       "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}",
 
-    "**/*.d.*.ts": "**/*.d.ts",
+    "**/*.d.*.{ts,cts,mts,tsx}": "**/*.d.{ts,cts,mts,tsx}",
   } as const;
 
   const enabledPatterns = [...enabled].map((key) => filesMap[key]);
