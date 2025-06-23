@@ -1,7 +1,7 @@
 <!-- prettier-ignore-start -->
 # required-dev-engines
 
-`devEngines` field should be specified in the root package.json and must contain `runtime` and `packageManager` with `name` and `version` properties. If `onFail` is present, it must be `error`. The `version` in `packageManager` must be a valid SemVer.
+`devEngines` field is required in the root package.json and must contain `runtime` and `packageManager` with `name` and `version` properties. If `onFail` is present, it must be `error`. The `version` in `packageManager` must be a valid SemVer.
 
 ## Rule Details
 

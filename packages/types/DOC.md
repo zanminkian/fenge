@@ -17,3 +17,7 @@ There is a `/// <reference lib="es2020" />` in `@types/node/index.d.ts` since v1
 Code above will not work. Only `types` field works.
 
 > TODO: Submit an issue to TypeScript.
+
+## Why does peer dependency of `@types/node` require `>=16.18.120`?
+
+`>=16.6.0` is enough, but it's too old.
