@@ -28,6 +28,7 @@ export function packagejson() {
         "pkg-json/private-workspace-root": "error",
         "pkg-json/required-dev-engines": "error",
         "pkg-json/required-engines": "error",
+        "pkg-json/required-files": "error",
         "pkg-json/required-hashbang": "error",
         "pkg-json/required-repository": "error",
         "pkg-json/type-module": "error",

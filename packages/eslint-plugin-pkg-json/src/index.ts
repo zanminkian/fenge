@@ -10,6 +10,7 @@ import * as noTypesDeps from "./rules/no-types-deps.js";
 import * as privateWorkspaceRoot from "./rules/private-workspace-root.js";
 import * as requiredDevEngines from "./rules/required-dev-engines.js";
 import * as requiredEngines from "./rules/required-engines.js";
+import * as requiredFiles from "./rules/required-files.js";
 import * as requiredHashbang from "./rules/required-hashbang.js";
 import * as requiredRepository from "./rules/required-repository.js";
 import * as topTypes from "./rules/top-types.js";
@@ -29,6 +30,7 @@ export const rules = Object.fromEntries(
     privateWorkspaceRoot,
     requiredDevEngines,
     requiredEngines,
+    requiredFiles,
     requiredHashbang,
     requiredRepository,
     topTypes,
