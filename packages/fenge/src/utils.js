@@ -9,7 +9,7 @@ import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { lilconfig } from "lilconfig";
 import ora from "ora";
-import colors from "yoctocolors"; // TODO: Use [util.styleText](https://nodejs.org/api/util.html#utilstyletextformat-text-options) once we drop support for Node.js < 20.12.0.
+import colors from "yoctocolors";
 
 /**
  * @param {string} filepath

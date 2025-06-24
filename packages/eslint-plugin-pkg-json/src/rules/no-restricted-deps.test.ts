@@ -9,9 +9,6 @@ const valid = [
     dependencies: { "some-package": "1.0.0" },
     devDependencies: { "another-package": "2.0.0" },
   }),
-  s({
-    peerDependencies: { "fs-extra": "1.0.0" },
-  }),
 ];
 
 const invalid = [
@@ -23,11 +20,17 @@ const invalid = [
   }),
   s({
     dependencies: { "fs-extra": "1.0.0" },
-    peerDependencies: { lodash: "2.0.0" },
+    peerDependencies: { foo: "2.0.0" },
   }),
   s({
     dependencies: { lodash: "1.0.0" },
-    peerDependencies: { "fs-extra": "2.0.0" },
+    peerDependencies: { foo: "2.0.0" },
+  }),
+  s({
+    peerDependencies: { "fs-extra": "1.0.0" },
+  }),
+  s({
+    peerDependencies: { axios: "^1.0.0" },
   }),
 ];
 

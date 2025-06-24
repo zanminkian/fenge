@@ -45,7 +45,9 @@ export const rule = {
       "Program > JSONExpressionStatement > JSONObjectExpression": (node) => {
         node.properties
           .filter((p) =>
-            ["dependencies", "devDependencies"].includes(p.key.value),
+            ["dependencies", "devDependencies", "peerDependencies"].includes(
+              p.key.value,
+            ),
           )
           .flatMap((n) => n.value.properties)
           .filter((property) => disallowedDependencies.has(property.key.value))
