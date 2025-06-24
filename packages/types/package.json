@@ -28,7 +28,7 @@
     "test": "node --test --experimental-strip-types"
   },
   "devDependencies": {
-    "@types/node": "22.14.1",
+    "@types/node": "18.19.112",
     "typescript": "5.8.3"
   },
   "peerDependencies": {

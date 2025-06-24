@@ -48,7 +48,7 @@
     "sort-keys": "5.1.0"
   },
   "devDependencies": {
-    "@types/node": "22.14.1"
+    "@types/node": "18.19.112"
   },
   "peerDependencies": {
     "typescript": "^5.7.0"

@@ -52,7 +52,7 @@
     "globals": "16.2.0"
   },
   "devDependencies": {
-    "@types/node": "22.14.1",
+    "@types/node": "18.19.112",
     "eslint": "9.22.0",
     "eslint-config-prettier": "10.1.5"
   },
