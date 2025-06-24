@@ -4,6 +4,7 @@ import { noDeclarationFileImports } from "./rules/no-declaration-file-imports.ts
 import { noDirectoryImports } from "./rules/no-directory-imports.ts";
 import { noDynamicImports } from "./rules/no-dynamic-imports.ts";
 import { noEmptyExports } from "./rules/no-empty-exports.ts";
+import { noExternalSrcImports } from "./rules/no-external-src-imports.ts";
 import { noGitIgnoredImports } from "./rules/no-git-ignored-imports.ts";
 import { noPhantomDepImports } from "./rules/no-phantom-dep-imports.ts";
 import { noQuerySuffixes } from "./rules/no-query-suffixes.ts";
@@ -22,6 +23,7 @@ export const rules = {
   [noDirectoryImports.name]: noDirectoryImports.rule,
   [noDynamicImports.name]: noDynamicImports.rule,
   [noEmptyExports.name]: noEmptyExports.rule,
+  [noExternalSrcImports.name]: noExternalSrcImports.rule,
   [noGitIgnoredImports.name]: noGitIgnoredImports.rule,
   [noPhantomDepImports.name]: noPhantomDepImports.rule,
   [noQuerySuffixes.name]: noQuerySuffixes.rule,

@@ -284,6 +284,7 @@ export function getJsBase() {
       "esm/no-directory-imports": "error",
       "esm/no-dynamic-imports": "error",
       "esm/no-empty-exports": "error",
+      "esm/no-external-src-imports": "error",
       "esm/no-git-ignored-imports": "error",
       "esm/no-phantom-dep-imports": "error",
       "esm/no-query-suffixes": "error",
