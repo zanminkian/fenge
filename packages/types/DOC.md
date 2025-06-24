@@ -18,6 +18,6 @@ Code above will not work. Only `types` field works.
 
 > TODO: Submit an issue to TypeScript.
 
-## Why does peer dependency of `@types/node` require `>=16.18.120`?
+## Why does peer dependency of `@types/node` require `>=16.18.126`?
 
-`>=16.6.0` is enough, but it's too old.
+`>=16.6.0` is enough, but it's too old. v16.18.126 is the final version of v16.
