@@ -33,6 +33,10 @@
   "bin": {
     "tsconfig": "./src/tsconfig.cli.js"
   },
+  "files": [
+    "src",
+    "*.json"
+  ],
   "scripts": {
     "build": "tsc --noEmit"
   },

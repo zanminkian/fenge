@@ -40,6 +40,11 @@
     "./tsconfig/cjs.json": "./tsconfig/cjs.json"
   },
   "bin": "./src/bin/fenge.cli.js",
+  "files": [
+    "src",
+    "tsconfig",
+    "tsconfig.json"
+  ],
   "scripts": {
     "build": "tsc --noEmit"
   },
