@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.4.2
+
+### Patch Changes
+
+- 83eeabd: fix(eslint-plugin-pkg-json): optimize error message
+
 ## 0.4.1
 
 ### Patch Changes
