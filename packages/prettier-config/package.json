@@ -1,6 +1,6 @@
 {
   "name": "@fenge/prettier-config",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "An elegant prettier shareable config.",
   "keywords": [
     "prettier",
