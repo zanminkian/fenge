@@ -1,5 +1,23 @@
 # @fenge/eslint-config
 
+## 0.7.2
+
+### Patch Changes
+
+- 55652ba: feat: add rule `esm/no-extenal-src-imports`
+- c6e7472: feat: add rule `compatible-engines-node-version`
+- 055eea8: feat(eslint-config): disallow discouraged extensions for declaration files
+- 641ac58: feat: add `required-files` rule to enforce files field in public package.json
+- 451f982: chore: upgrade deps
+- Updated dependencies [435ade1]
+- Updated dependencies [55652ba]
+- Updated dependencies [c6e7472]
+- Updated dependencies [641ac58]
+- Updated dependencies [451f982]
+  - eslint-plugin-pkg-json@0.4.1
+  - eslint-plugin-esm@0.8.4
+  - @fenge/eslint-plugin-ts@0.4.4
+
 ## 0.7.1
 
 ### Patch Changes

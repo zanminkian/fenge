@@ -1,6 +1,6 @@
 {
   "name": "@fenge/types",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A type replacement for enhancing TypeScript built-in apis.",
   "keywords": [
     "ecmascript",

@@ -1,5 +1,13 @@
 # eslint-plugin-pkg-json
 
+## 0.4.1
+
+### Patch Changes
+
+- 435ade1: feat(eslint-plguin-pkg-json): check `peerDependencies` for no-restricted-deps rule
+- c6e7472: feat: add rule `compatible-engines-node-version`
+- 641ac58: feat: add `required-files` rule to enforce files field in public package.json
+
 ## 0.4.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @fenge/types
 
+## 0.4.2
+
+### Patch Changes
+
+- 8219934: feat(types): relax the requirement of peerDependencies
+
 ## 0.4.1
 
 ### Patch Changes

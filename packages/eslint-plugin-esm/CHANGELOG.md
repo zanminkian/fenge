@@ -1,5 +1,11 @@
 # eslint-plugin-esm
 
+## 0.8.4
+
+### Patch Changes
+
+- 55652ba: feat: add rule `esm/no-extenal-src-imports`
+
 ## 0.8.3
 
 ### Patch Changes
