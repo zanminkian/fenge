@@ -1,6 +1,6 @@
 {
   "name": "@fenge/eslint-config",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "A super strict eslint config for linting js/ts/package.json.",
   "keywords": [
     "opinionated",
