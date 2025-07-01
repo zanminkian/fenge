@@ -100,14 +100,14 @@ export class Builder {
     return this.setup(packagejson(), options);
   }
 
+  enableAll() {
+    return this.enablePackageJson().enableJavaScript().enableTypeScript();
+  }
+
   append(config: ConfigItem) {
     this.configs.push(config);
     return this;
   }
 }
 
-export default new Builder()
-  .enablePackageJson()
-  .enableJavaScript()
-  .enableTypeScript()
-  .toConfig();
+export default new Builder().enableAll().toConfig();
