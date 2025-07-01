@@ -1,3 +1,4 @@
+import eslintCommentsPlugin from "@eslint-community/eslint-plugin-eslint-comments";
 import * as fengePlugin from "@fenge/eslint-plugin";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
@@ -194,6 +195,7 @@ export function getJsBase() {
       sonarjs: sonarjsPlugin,
       unicorn: unicornPlugin,
       "es-x": esxPlugin,
+      "eslint-comments": eslintCommentsPlugin,
       esm: esmPlugin,
       "simple-import-sort": simpleImportSortPlugin,
       "@fenge": fengePlugin,
@@ -277,6 +279,16 @@ export function getJsBase() {
       "es-x/no-hashbang": "error",
       "es-x/no-legacy-object-prototype-accessor-methods": "error",
       "es-x/no-top-level-await": "error",
+      // eslint-comments
+      "eslint-comments/disable-enable-pair": "error",
+      "eslint-comments/no-aggregating-enable": "error",
+      "eslint-comments/no-duplicate-disable": "error",
+      "eslint-comments/no-unlimited-disable": "error",
+      "eslint-comments/no-unused-enable": "error",
+      "eslint-comments/no-use": [
+        "error",
+        { allow: ["eslint-disable-line", "eslint-disable-next-line"] },
+      ],
       // esm
       "esm/existing-file-imports": "error",
       "esm/no-circular-imports": "error",
