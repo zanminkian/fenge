@@ -1,6 +1,6 @@
 {
   "name": "@fenge/eslint-plugin-ts",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "An eslint plugin for TypeScript",
   "keywords": [
     "strict",

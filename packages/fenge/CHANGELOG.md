@@ -1,5 +1,14 @@
 # fenge
 
+## 0.9.4
+
+### Patch Changes
+
+- Updated dependencies [578a9c0]
+- Updated dependencies [9a39156]
+- Updated dependencies [23e7d00]
+  - @fenge/eslint-config@0.7.4
+
 ## 0.9.3
 
 ### Patch Changes

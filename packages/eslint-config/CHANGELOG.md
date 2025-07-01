@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.7.4
+
+### Patch Changes
+
+- 578a9c0: chore: upgrade deps
+- 9a39156: feat(eslint-config): add plugin `@eslint-community/eslint-plugin-eslint-comments`
+- 23e7d00: feat(eslint-config): add `enableAll` method
+- Updated dependencies [578a9c0]
+  - @fenge/eslint-plugin-ts@0.4.5
+
 ## 0.7.3
 
 ### Patch Changes
