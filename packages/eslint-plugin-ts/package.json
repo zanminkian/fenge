@@ -28,7 +28,7 @@
     "test": "node --test --experimental-strip-types"
   },
   "dependencies": {
-    "@typescript-eslint/utils": "8.35.0"
+    "@typescript-eslint/utils": "8.35.1"
   },
   "devDependencies": {
     "@fenge/dev-utils": "workspace:*",
