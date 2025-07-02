@@ -1,5 +1,13 @@
 # @fenge/eslint-config
 
+## 0.7.5
+
+### Patch Changes
+
+- e6e85f8: feat(eslint-config): add rule `no-useless-assignment`
+- Updated dependencies [0e780db]
+  - eslint-plugin-pkg-json@0.4.3
+
 ## 0.7.4
 
 ### Patch Changes

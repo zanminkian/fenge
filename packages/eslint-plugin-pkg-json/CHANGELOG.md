@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.4.3
+
+### Patch Changes
+
+- 0e780db: feat(eslint-plugin-pkg-json): disallow `import-meta-resolve` by default
+
 ## 0.4.2
 
 ### Patch Changes
