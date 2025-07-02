@@ -58,7 +58,7 @@
     "eslint-config-prettier": "10.1.5"
   },
   "peerDependencies": {
-    "eslint": ">=8.57.1"
+    "eslint": ">=9"
   },
   "peerDependenciesMeta": {
     "eslint": {

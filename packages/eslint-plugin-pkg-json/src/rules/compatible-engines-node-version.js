@@ -42,15 +42,12 @@ export const rule = {
         enginesNodeVersion = semver
           .minVersion(nodeField.value.value.trim())
           ?.toString();
-        if (!enginesNodeVersion) {
-          context.report({
-            node: nodeField.value,
-            messageId: "invalidVersion",
-          });
-          return;
-        }
-      } catch {
-        context.report({ node: nodeField.value, messageId: "invalidVersion" });
+      } catch {}
+      if (!enginesNodeVersion) {
+        context.report({
+          node: nodeField.value,
+          messageId: "invalidVersion",
+        });
         return;
       }
 
@@ -66,9 +63,8 @@ export const rule = {
           fs.readFileSync(typesNodePkgPath, "utf8"),
         );
         typesNodeVersion = typesNodePkg.version;
-      } catch {
-        return;
-      }
+      } catch {}
+      if (!typesNodeVersion) return;
       if (!semver.lte(toMinor(typesNodeVersion), toMinor(enginesNodeVersion))) {
         context.report({
           node: getDependenciesTypesNodeField(node)?.value ?? nodeField.value,
