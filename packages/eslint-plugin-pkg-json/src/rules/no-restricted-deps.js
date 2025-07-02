@@ -27,12 +27,14 @@ export const rule = {
         got: "Use built-in `fetch` api instead.",
 
         // TODO: Uncomment this when we drop support for Node v18.
-        // chalk: "Use built-in util.styleText api instead.",
+        // Why no chalk? Because chalk has some features that built-in styleText does not support.
         // picocolors: "Use built-in util.styleText api instead.",
         // yoctocolors: "Use built-in util.styleText api instead.",
         // "ansi-colors": "Use built-in util.styleText api instead.",
         // colorette: "Use built-in util.styleText api instead.",
 
+        "import-meta-resolve":
+          "Use built-in `import.meta.resolve` api or built-in `node:module` instead.",
         lodash: "Use modern ES6+ apis instead.",
       },
     ],
