@@ -1,5 +1,15 @@
 # fenge
 
+## 0.9.6
+
+### Patch Changes
+
+- Updated dependencies [5af6e5f]
+- Updated dependencies [0dd39e7]
+- Updated dependencies [642a22c]
+  - @fenge/prettier-config@0.3.6
+  - @fenge/eslint-config@0.7.6
+
 ## 0.9.5
 
 ### Patch Changes
