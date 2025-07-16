@@ -25,9 +25,9 @@ type TsRuleKey = OriginTsRuleKey | `${GetPlugins<OriginTsRuleKey>}/*`;
 type PkgRuleKey = OriginPkgRuleKey | `${GetPlugins<OriginPkgRuleKey>}/*`;
 
 type RuleValue = "error" | "warn" | "off" | ["error" | "warn", ...unknown[]];
-interface Options<T extends string[]> {
-  pick?: NoDuplicate<T>;
-  omit?: NoDuplicate<T>;
+interface Options<P extends string[], O extends string[]> {
+  pick?: NoDuplicate<P>;
+  omit?: NoDuplicate<O>;
 }
 interface ConfigItem {
   name?: string;
@@ -56,7 +56,7 @@ export class Builder {
 
   private setup(
     configItems: readonly { rules: object }[],
-    { pick, omit }: Options<string[]>,
+    { pick, omit }: Options<string[], string[]>,
   ) {
     const match = (pattern: string, ruleKey: string) => {
       if (pattern === ruleKey) return true;
@@ -85,17 +85,23 @@ export class Builder {
     return this;
   }
 
-  enableTypeScript<T extends TsRuleKey[]>(options: Options<T> = {}) {
+  enableTypeScript<P extends TsRuleKey[], O extends TsRuleKey[]>(
+    options: Options<P, O> = {},
+  ) {
     this.enabled.add("ts");
     return this.setup(typescript(), options);
   }
 
-  enableJavaScript<T extends JsRuleKey[]>(options: Options<T> = {}) {
+  enableJavaScript<P extends JsRuleKey[], O extends JsRuleKey[]>(
+    options: Options<P, O> = {},
+  ) {
     this.enabled.add("js");
     return this.setup(javascript(), options);
   }
 
-  enablePackageJson<T extends PkgRuleKey[]>(options: Options<T> = {}) {
+  enablePackageJson<P extends PkgRuleKey[], O extends PkgRuleKey[]>(
+    options: Options<P, O> = {},
+  ) {
     this.enabled.add("pkg");
     return this.setup(packagejson(), options);
   }
