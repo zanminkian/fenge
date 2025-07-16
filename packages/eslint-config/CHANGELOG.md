@@ -1,5 +1,14 @@
 # @fenge/eslint-config
 
+## 0.7.6
+
+### Patch Changes
+
+- 0dd39e7: chore: upgrade deps
+- 642a22c: fix(eslint-config): fix wrong types for Builder
+- Updated dependencies [0dd39e7]
+  - @fenge/eslint-plugin-ts@0.4.6
+
 ## 0.7.5
 
 ### Patch Changes
