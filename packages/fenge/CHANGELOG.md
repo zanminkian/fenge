@@ -1,5 +1,11 @@
 # fenge
 
+## 0.9.7
+
+### Patch Changes
+
+- 49d739f: refactor: use `pretty-ms`
+
 ## 0.9.6
 
 ### Patch Changes
