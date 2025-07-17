@@ -9,6 +9,7 @@ import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { lilconfig } from "lilconfig";
 import ora from "ora";
+import prettyMs from "pretty-ms";
 import colors from "yoctocolors";
 
 /**
@@ -39,21 +40,6 @@ export async function resolveConfig(module, loadPath) {
   return loadPath
     ? await searcher.load(loadPath)
     : await searcher.search(process.cwd());
-}
-
-/**
- * @param {number} startTime
- */
-function getSpentTime(startTime) {
-  const cost = Date.now() - startTime;
-  if (cost < 1000) {
-    return `${cost}ms`;
-  } else if (cost < 60 * 1000) {
-    return `${cost / 1000}s`;
-  } else {
-    const second = Math.floor(cost / 1000);
-    return `${Math.floor(second / 60)}m${Math.floor(second % 60)}s`;
-  }
 }
 
 /**
@@ -97,11 +83,11 @@ export function execAsync(command, { topic, dryRun, env }) {
     cp.on("close", (code, signal) => {
       if (code === 0) {
         spinner.succeed(
-          `${topic} succeeded in ${colors.yellow(getSpentTime(startTime))}`,
+          `${topic} succeeded in ${colors.yellow(prettyMs(Date.now() - startTime))}`,
         );
       } else {
         spinner.fail(
-          `${topic} failed in ${colors.yellow(getSpentTime(startTime))}`,
+          `${topic} failed in ${colors.yellow(prettyMs(Date.now() - startTime))}`,
         );
       }
       process.stdout.write(stdout);
