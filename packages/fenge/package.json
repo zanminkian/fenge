@@ -32,22 +32,15 @@
   "exports": {
     "./eslint-config": "./src/re-export/eslint.config.js",
     "./prettier-config": "./src/re-export/prettier.config.js",
-    "./tsconfig": "./tsconfig/index.json",
-    "./tsconfig.json": "./tsconfig/index.json",
-    "./tsconfig/esm": "./tsconfig/esm.json",
-    "./tsconfig/esm.json": "./tsconfig/esm.json",
-    "./tsconfig/cjs": "./tsconfig/cjs.json",
-    "./tsconfig/cjs.json": "./tsconfig/cjs.json",
-    "./tsconfig/node": "./tsconfig/node.json",
-    "./tsconfig/node.json": "./tsconfig/node.json",
-    "./tsconfig/web": "./tsconfig/web.json",
-    "./tsconfig/web.json": "./tsconfig/web.json"
+    "./tsconfig": "./tsconfig/esm.json",
+    "./tsconfig.json": "./tsconfig/esm.json",
+    "./tsconfig/*.json": "./tsconfig/*.json",
+    "./tsconfig/*": "./tsconfig/*.json"
   },
   "bin": "./src/bin/fenge.cli.js",
   "files": [
     "src",
-    "tsconfig",
-    "tsconfig.json"
+    "tsconfig"
   ],
   "scripts": {
     "build": "tsc --noEmit"
