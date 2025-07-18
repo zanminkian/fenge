@@ -37,7 +37,11 @@
     "./tsconfig/esm": "./tsconfig/esm.json",
     "./tsconfig/esm.json": "./tsconfig/esm.json",
     "./tsconfig/cjs": "./tsconfig/cjs.json",
-    "./tsconfig/cjs.json": "./tsconfig/cjs.json"
+    "./tsconfig/cjs.json": "./tsconfig/cjs.json",
+    "./tsconfig/node": "./tsconfig/node.json",
+    "./tsconfig/node.json": "./tsconfig/node.json",
+    "./tsconfig/web": "./tsconfig/web.json",
+    "./tsconfig/web.json": "./tsconfig/web.json"
   },
   "bin": "./src/bin/fenge.cli.js",
   "files": [

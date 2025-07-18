@@ -1,0 +1,3 @@
+{
+  "extends": "@fenge/tsconfig/node.json"
+}

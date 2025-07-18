@@ -173,9 +173,21 @@ Config `tsconfig.json` file in your project root.
 
 Config `tsconfig.build.json` file in your project root.
 
+For Node.js app:
+
 ```json
 {
-  "extends": "./tsconfig.json",
+  "extends": ["./tsconfig.json", "fenge/tsconfig/node"],
+  "include": ["src"],
+  "exclude": ["**/*.test.ts"]
+}
+```
+
+For Web app:
+
+```json
+{
+  "extends": ["./tsconfig.json", "fenge/tsconfig/web"],
   "include": ["src"],
   "exclude": ["**/*.test.ts"]
 }

@@ -70,9 +70,21 @@ Here are the best practices if you are using this package.
 
 #### tsconfig.build.json
 
+For Node.js app:
+
 ```json
 {
-  "extends": "./tsconfig",
+  "extends": ["./tsconfig.json", "@fenge/tsconfig/node"],
+  "include": ["src"],
+  "exclude": ["**/*.test.ts"]
+}
+```
+
+For Web app:
+
+```json
+{
+  "extends": ["./tsconfig.json", "@fenge/tsconfig/web"],
   "include": ["src"],
   "exclude": ["**/*.test.ts"]
 }
@@ -112,9 +124,21 @@ You don't need `tsconfig.build.json`.
 
 #### tsconfig.json in each app
 
+For Node.js app:
+
 ```json
 {
-  "extends": "../../tsconfig",
+  "extends": ["../../tsconfig.json", "@fenge/tsconfig/node"],
+  "include": ["src"],
+  "exclude": ["**/*.test.ts"]
+}
+```
+
+For Web app:
+
+```json
+{
+  "extends": ["../../tsconfig.json", "@fenge/tsconfig/web"],
   "include": ["src"],
   "exclude": ["**/*.test.ts"]
 }
