@@ -1,5 +1,14 @@
 # fenge
 
+## 0.9.7
+
+### Patch Changes
+
+- 3690226: feat: add `node` and `web` tsconfig
+- Updated dependencies [3690226]
+- Updated dependencies [8f74adc]
+  - @fenge/tsconfig@0.6.0
+
 ## 0.9.6
 
 ### Patch Changes

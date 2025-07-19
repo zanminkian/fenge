@@ -1,5 +1,15 @@
 # @fenge/tsconfig
 
+## 0.6.0
+
+### Minor Changes
+
+- 8f74adc: refactor: drop some exports and move tsconfig files to a folder
+
+### Patch Changes
+
+- 3690226: feat: add `node` and `web` tsconfig
+
 ## 0.5.1
 
 ### Patch Changes
