@@ -10,7 +10,7 @@ const cwd = path.join(dirname, "..");
 
 async function getTsConfigContent() {
   const content = await fs.readFile(
-    path.join(dirname, "..", "..", "tsconfig", "esm.json"),
+    path.join(dirname, "..", "..", "tsconfig", "tsconfig", "esm.json"),
     "utf8",
   );
   const tsconfig: any = JSON.parse(content);

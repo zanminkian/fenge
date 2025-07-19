@@ -22,24 +22,16 @@
   "type": "module",
   "exports": {
     "./setup": "./src/setup.js",
-    "./cjs.json": "./cjs.json",
-    "./esm.json": "./esm.json",
-    "./tsconfig.json": "./tsconfig.json",
-    "./node.json": "./node.json",
-    "./web.json": "./web.json",
-    "./cjs": "./cjs.json",
-    "./esm": "./esm.json",
-    "./tsconfig": "./tsconfig.json",
-    "./node": "./node.json",
-    "./web": "./web.json",
-    ".": "./tsconfig.json"
+    "./*.json": "./tsconfig/*.json",
+    "./*": "./tsconfig/*.json",
+    ".": "./tsconfig/esm.json"
   },
   "bin": {
     "tsconfig": "./src/tsconfig.cli.js"
   },
   "files": [
     "src",
-    "*.json"
+    "tsconfig"
   ],
   "scripts": {
     "build": "tsc --noEmit"
