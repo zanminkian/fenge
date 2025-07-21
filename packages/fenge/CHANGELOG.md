@@ -1,5 +1,14 @@
 # fenge
 
+## 0.9.8
+
+### Patch Changes
+
+- Updated dependencies [8390dab]
+- Updated dependencies [3bee872]
+  - @fenge/tsconfig@0.6.1
+  - @fenge/prettier-config@0.3.7
+
 ## 0.9.7
 
 ### Patch Changes

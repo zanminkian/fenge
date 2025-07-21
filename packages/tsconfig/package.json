@@ -1,6 +1,6 @@
 {
   "name": "@fenge/tsconfig",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A strict sharable tsconfig preset.",
   "keywords": [
     "tsconfig",
