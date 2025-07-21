@@ -1,5 +1,11 @@
 # @fenge/prettier-config
 
+## 0.3.7
+
+### Patch Changes
+
+- 3bee872: chore: upgrade deps
+
 ## 0.3.6
 
 ### Patch Changes

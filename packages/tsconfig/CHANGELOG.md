@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.6.1
+
+### Patch Changes
+
+- 8390dab: fix(tsconfig): fix crash when calling diff sub-command
+
 ## 0.6.0
 
 ### Minor Changes
