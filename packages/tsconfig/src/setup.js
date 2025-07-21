@@ -48,13 +48,13 @@ export async function diffAction(options) {
   const {
     path: filepath = ".",
     name = "tsconfig.json",
-    to = "tsconfig.json",
+    to = "esm.json",
   } = options;
 
   const cwd = process.cwd();
   const dir = path.dirname(fileURLToPath(import.meta.url));
 
-  const recommendedTsconfigPath = path.resolve(dir, "..", to);
+  const recommendedTsconfigPath = path.resolve(dir, "..", "tsconfig", to);
   const projectTsconfigPath = path.resolve(cwd, filepath, name);
   if (!(await exists(recommendedTsconfigPath))) {
     throw new Error(`Tsconfig ${recommendedTsconfigPath} is not found!`);
@@ -121,8 +121,8 @@ export function setup(program, options = {}) {
     )
     .option(
       "-t, --to <filename>",
-      "which built-in recommended tsconfig file to compare with. possible values are 'tsconfig.json'|'esm.json'|'cjs.json'",
-      "tsconfig.json",
+      "which built-in recommended tsconfig file to compare with. possible values are 'esm.json'|'cjs.json'",
+      "esm.json",
     )
     .action(options.diffAction ?? diffAction);
   return program;
