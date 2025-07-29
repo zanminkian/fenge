@@ -1,7 +1,5 @@
 const resolvePlugins = (plugins: string[]) =>
-  // TODO: Remove this comment below when we drop support for Node v18.
-  // eslint-disable-next-line @typescript-eslint/promise-function-async
-  plugins.map((plugin) => import.meta.resolve?.(plugin));
+  plugins.map((plugin) => import.meta.resolve(plugin));
 
 export default {
   overrides: [
