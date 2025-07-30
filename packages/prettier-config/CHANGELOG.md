@@ -1,5 +1,11 @@
 # @fenge/prettier-config
 
+## 0.3.8
+
+### Patch Changes
+
+- 2af5216: fix: fix exported types
+
 ## 0.3.7
 
 ### Patch Changes

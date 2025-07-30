@@ -1,5 +1,13 @@
 # @fenge/eslint-config
 
+## 0.7.7
+
+### Patch Changes
+
+- f496eac: chore: upgrade deps
+- Updated dependencies [f496eac]
+  - @fenge/eslint-plugin-ts@0.4.7
+
 ## 0.7.6
 
 ### Patch Changes
