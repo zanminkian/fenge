@@ -27,7 +27,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "4.5.1",
+    "@ianvs/prettier-plugin-sort-imports": "4.6.1",
     "prettier-plugin-packagejson": "2.5.19",
     "prettier-plugin-tailwindcss": "0.6.14"
   },
