@@ -32,10 +32,14 @@
     "typescript": "5.9.2"
   },
   "peerDependencies": {
-    "@types/node": ">=16.18.126"
+    "@types/node": ">=16.18.126",
+    "typescript": "~5.9.2"
   },
   "peerDependenciesMeta": {
     "@types/node": {
+      "optional": true
+    },
+    "typescript": {
       "optional": true
     }
   },

@@ -16,14 +16,9 @@ and limitations under the License.
 
 /// <reference no-default-lib="true"/>
 
-/// <reference lib="es2024" />
-/// <reference lib="esnext.intl" />
-/// <reference lib="esnext.decorators" />
-/// <reference lib="esnext.disposable" />
-/// <reference lib="esnext.collection" />
-/// <reference lib="esnext.array" />
-/// <reference lib="esnext.iterator" />
-/// <reference lib="esnext.promise" />
-/// <reference lib="esnext.float16" />
-/// <reference lib="esnext.error" />
-/// <reference lib="esnext.sharedmemory" />
+interface ErrorConstructor {
+    /**
+     * Indicates whether the argument provided is a built-in Error instance or not.
+     */
+    isError(error: unknown): error is Error;
+}

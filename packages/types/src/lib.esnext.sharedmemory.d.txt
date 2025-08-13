@@ -16,14 +16,10 @@ and limitations under the License.
 
 /// <reference no-default-lib="true"/>
 
-/// <reference lib="es2024" />
-/// <reference lib="esnext.intl" />
-/// <reference lib="esnext.decorators" />
-/// <reference lib="esnext.disposable" />
-/// <reference lib="esnext.collection" />
-/// <reference lib="esnext.array" />
-/// <reference lib="esnext.iterator" />
-/// <reference lib="esnext.promise" />
-/// <reference lib="esnext.float16" />
-/// <reference lib="esnext.error" />
-/// <reference lib="esnext.sharedmemory" />
+interface Atomics {
+    /**
+     * Performs a finite-time microwait by signaling to the operating system or
+     * CPU that the current executing code is in a spin-wait loop.
+     */
+    pause(n?: number): void;
+}
