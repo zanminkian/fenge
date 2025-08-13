@@ -33,6 +33,8 @@
     "@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
     "@fenge/eslint-plugin": "workspace:*",
     "@fenge/eslint-plugin-ts": "workspace:*",
+    "@html-eslint/eslint-plugin": "0.46.0",
+    "@html-eslint/parser": "0.46.0",
     "@typescript-eslint/eslint-plugin": "8.40.0",
     "@typescript-eslint/parser": "8.40.0",
     "confusing-browser-globals": "1.0.11",

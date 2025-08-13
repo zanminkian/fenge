@@ -1,5 +1,6 @@
 import type { Linter } from "eslint";
 import { base, type BaseOptions } from "./config/base.ts";
+import { html } from "./config/html.ts";
 import { javascript } from "./config/javascript.ts";
 import { packagejson } from "./config/packagejson.ts";
 import { typescript } from "./config/typescript.ts";
@@ -15,6 +16,7 @@ type NoDuplicate<A extends unknown[]> = {
 type OriginJsRuleKey = keyof ReturnType<typeof javascript>[0]["rules"];
 type OriginTsRuleKey = keyof ReturnType<typeof typescript>[0]["rules"];
 type OriginPkgRuleKey = keyof ReturnType<typeof packagejson>[0]["rules"];
+type OriginHtmlRuleKey = keyof ReturnType<typeof html>[0]["rules"];
 
 type GetPlugins<T extends string> = T extends `${infer Left}/${string}`
   ? Left
@@ -23,6 +25,7 @@ type GetPlugins<T extends string> = T extends `${infer Left}/${string}`
 type JsRuleKey = OriginJsRuleKey | `${GetPlugins<OriginJsRuleKey>}/*`;
 type TsRuleKey = OriginTsRuleKey | `${GetPlugins<OriginTsRuleKey>}/*`;
 type PkgRuleKey = OriginPkgRuleKey | `${GetPlugins<OriginPkgRuleKey>}/*`;
+type HtmlRuleKey = OriginHtmlRuleKey | `${GetPlugins<OriginHtmlRuleKey>}/*`;
 
 type RuleValue = "error" | "warn" | "off" | ["error" | "warn", ...unknown[]];
 interface Options<P extends string[], O extends string[]> {
@@ -44,7 +47,7 @@ export class Builder {
   private readonly configs: LinterConfig[] = [];
   private readonly options: BuilderOptions;
 
-  private readonly enabled = new Set<"js" | "ts" | "pkg">();
+  private readonly enabled = new Set<"js" | "ts" | "pkg" | "html">();
 
   constructor(options: BuilderOptions = {}) {
     this.options = options;
@@ -106,8 +109,18 @@ export class Builder {
     return this.setup(packagejson(), options);
   }
 
+  enableHtml<P extends HtmlRuleKey[], O extends HtmlRuleKey[]>(
+    options: Options<P, O> = {},
+  ) {
+    this.enabled.add("html");
+    return this.setup(html(), options);
+  }
+
   enableAll() {
-    return this.enablePackageJson().enableJavaScript().enableTypeScript();
+    return this.enableHtml()
+      .enablePackageJson()
+      .enableJavaScript()
+      .enableTypeScript();
   }
 
   append(config: ConfigItem) {

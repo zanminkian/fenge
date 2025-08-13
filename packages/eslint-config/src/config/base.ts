@@ -14,12 +14,13 @@ export interface BaseOptions {
 
 export function base(
   options: BaseOptions,
-  enabled: Set<"js" | "ts" | "pkg">,
+  enabled: Set<"js" | "ts" | "pkg" | "html">,
 ): Linter.Config[] {
   const filesMap = {
     js: "**/*.{js,cjs,mjs,jsx}",
     ts: "**/*.{ts,cts,mts,tsx}",
     pkg: "**/package.json",
+    html: "**/*.html",
   } as const;
   const blockedFilesMap = {
     "**/.env.*": ".*.env",
