@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "node --test --experimental-strip-types"
+    "test": "node --test"
   },
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "4.5.0",

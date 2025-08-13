@@ -19,12 +19,12 @@
     "typescript": "5.9.2"
   },
   "engines": {
-    "node": ">=22.14.0"
+    "node": ">=22.18.0"
   },
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": ">=22.14.0"
+      "version": ">=22.18.0"
     },
     "packageManager": {
       "name": "pnpm",

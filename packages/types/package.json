@@ -24,8 +24,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "node --experimental-strip-types ./script/build.cli.ts",
-    "test": "node --test --experimental-strip-types"
+    "build": "node ./script/build.cli.ts",
+    "test": "node --test"
   },
   "devDependencies": {
     "@types/node": "18.19.121",

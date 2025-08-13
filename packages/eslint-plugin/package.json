@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "node --test --experimental-strip-types"
+    "test": "node --test"
   },
   "devDependencies": {
     "@fenge/dev-utils": "workspace:*",
