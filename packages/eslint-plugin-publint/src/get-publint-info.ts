@@ -15,7 +15,8 @@ function publint(pkgDir: string) {
     "publint.cli.js",
   );
   const result: Result | null = JSON.parse(
-    childProcess.execSync(`node ${publintPath} ${pkgDir}`, {
+    // We need to wrap the path in quotes to avoid issues with spaces in the path
+    childProcess.execSync(`node '${publintPath}' '${pkgDir}'`, {
       encoding: "utf8",
     }),
   );
