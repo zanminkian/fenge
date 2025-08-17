@@ -28,7 +28,7 @@
     "test": "node --test"
   },
   "devDependencies": {
-    "@types/node": "18.19.121",
+    "@types/node": "18.19.123",
     "typescript": "5.9.2"
   },
   "peerDependencies": {

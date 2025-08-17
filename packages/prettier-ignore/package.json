@@ -24,7 +24,7 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@types/node": "18.19.121"
+    "@types/node": "18.19.123"
   },
   "engines": {
     "node": "^18.20.0 || >=20.10.0"

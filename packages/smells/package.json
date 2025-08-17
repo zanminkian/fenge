@@ -36,7 +36,7 @@
     "globby": "14.1.0"
   },
   "devDependencies": {
-    "@types/node": "18.19.121"
+    "@types/node": "18.19.123"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
