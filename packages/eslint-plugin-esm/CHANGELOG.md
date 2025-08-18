@@ -1,5 +1,11 @@
 # eslint-plugin-esm
 
+## 0.8.5
+
+### Patch Changes
+
+- bb9dd1a: feat: `no-phantom-dep-imports` rule supports electron
+
 ## 0.8.4
 
 ### Patch Changes
