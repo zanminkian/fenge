@@ -1,5 +1,11 @@
 # @fenge/types
 
+## 0.5.0
+
+### Minor Changes
+
+- b4d6d1f: chore!: upgrade typescript version to 5.9.2
+
 ## 0.4.2
 
 ### Patch Changes

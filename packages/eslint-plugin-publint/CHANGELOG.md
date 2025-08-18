@@ -1,5 +1,11 @@
 # eslint-plugin-publint
 
+## 0.3.1
+
+### Patch Changes
+
+- 710ad89: fix: avoid crash when the working dir has spaces
+
 ## 0.3.0
 
 ### Minor Changes

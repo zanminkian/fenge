@@ -1,5 +1,17 @@
 # @fenge/eslint-config
 
+## 0.7.8
+
+### Patch Changes
+
+- 9581aea: chore: upgrade deps
+- Updated dependencies [710ad89]
+- Updated dependencies [bb9dd1a]
+- Updated dependencies [9581aea]
+  - eslint-plugin-publint@0.3.1
+  - eslint-plugin-esm@0.8.5
+  - @fenge/eslint-plugin-ts@0.4.8
+
 ## 0.7.7
 
 ### Patch Changes
