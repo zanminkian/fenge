@@ -96,7 +96,12 @@ export const noPhantomDepImports = createRule({
       // TODO: Optimize the error message which is reported on `import foo from 'node:foo'`
       // 1. check `import foo from 'node:foo'`
       if (source.startsWith("node:")) {
-        return !("@types/node" in devDep || "@types/node" in dep);
+        return !(
+          "@types/node" in devDep ||
+          "@types/node" in dep ||
+          "electron" in devDep ||
+          "electron" in dep
+        );
       }
 
       // 2. check `import foo from 'foo'`
@@ -118,7 +123,8 @@ export const noPhantomDepImports = createRule({
           typeDepName in devDep
         );
       } else {
-        return allowDevDependencies ? !(isInDep || isInDev) : !isInDep;
+        const allowDev = source === "electron" ? true : allowDevDependencies;
+        return allowDev ? !(isInDep || isInDev) : !isInDep;
       }
     }),
 });

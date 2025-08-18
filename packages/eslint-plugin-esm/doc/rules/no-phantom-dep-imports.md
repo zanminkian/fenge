@@ -27,5 +27,7 @@ import foo from 'node:foo'
 import type Foo from 'node'
 import type {Foo} from 'eslint'
 import foo from '@fenge/dev-utils' // options: [{"allowDevDependencies":true}]
+import bar from 'node:bar' // filename: /foo/test/no-phantom-dep-imports/for-electron/bar.js
+import {app} from 'electron' // filename: /foo/test/no-phantom-dep-imports/for-electron/bar.js
 ```
 <!-- prettier-ignore-end -->
