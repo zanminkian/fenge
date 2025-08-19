@@ -3,9 +3,12 @@
 - `"checkJs": false`: Don't check js for better experience. User can add `// @ts-check` on the top of js file to check it manually.
 - `"module": "node16"`: According to https://www.typescriptlang.org/docs/handbook/modules/theory.html, we should use Node16 only.
 - `"moduleDetection": "force"`: https://github.com/zanminkian/fenge/issues/88#issuecomment-1734416707.
-- `types`: Ts will load all the `node_modules/@types/*` declaration files when `types` is removed. Remove it will improve the extensibility.
 - `isolatedDeclarations`: Just wait and see. This flag will do harm to development experience. See [TS 5.5 release post](https://devblogs.microsoft.com/typescript/announcing-typescript-5-5).
 - `allowArbitraryExtensions`: 1. We encourage users to use tailwind in frontend project. Tailwind project do not need this this option. 2. Adding `/// <reference types="vite/client" />` to the top of frontend project entrance (like `main.ts`) works well for most of frontend projects. Adding to much `foo.d.ts` in project makes it complex. Using `/// <reference types="vite/client" />` is enough.
+
+## Why `"types": []`?
+
+Ts will load all the `node_modules/@types/*` declaration files when `types` is removed. It's not type safe enough. Also, it's recommended in TS 5.9.
 
 ## Why do we specify `lib`?
 

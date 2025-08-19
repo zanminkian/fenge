@@ -17,6 +17,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
 
+    "types": [],
     "lib": ["es2022"],
     "target": "es2022",
     "module": "nodenext",
