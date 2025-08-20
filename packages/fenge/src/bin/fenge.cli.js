@@ -38,7 +38,7 @@ program
     let result = await format(paths, options);
     if (result === 0) {
       result = await lint(paths, options);
-      if (result === 0) {
+      if (result === 0 && (options.fix || options.update)) {
         result = await format(paths, options);
       }
     }

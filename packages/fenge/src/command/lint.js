@@ -20,7 +20,6 @@ export async function lint(
 ) {
   return execAsync(
     [
-      // "node",
       await getEslintPath(useDefaultConfig),
       "--config",
       path.join(dir(import.meta.url), "..", "config", "eslint.config.js"),

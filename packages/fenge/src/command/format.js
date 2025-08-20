@@ -20,7 +20,6 @@ export async function format(
 ) {
   return execAsync(
     [
-      // "node",
       await getPrettierPath(useDefaultConfig),
       // setup 3 ignore files
       ...[".gitignore", ".prettierignore", prettierignore]
