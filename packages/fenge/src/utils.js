@@ -7,10 +7,10 @@ import os from "node:os";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
+import { styleText } from "node:util";
 import { lilconfig } from "lilconfig";
 import ora from "ora";
 import prettyMs from "pretty-ms";
-import colors from "yoctocolors";
 
 /**
  * @param {string} filepath
@@ -53,7 +53,7 @@ export function execAsync(command, { topic, dryRun, env }) {
     return Promise.reject(new Error("cmd not found"));
   }
   if (dryRun) {
-    process.stdout.write(`${colors.green(cmd)} ${args.join(" ")};\n\n`);
+    process.stdout.write(`${styleText("green", cmd)} ${args.join(" ")};\n\n`);
     return Promise.resolve(0);
   }
 
@@ -83,11 +83,11 @@ export function execAsync(command, { topic, dryRun, env }) {
     cp.on("close", (code, signal) => {
       if (code === 0) {
         spinner.succeed(
-          `${topic} succeeded in ${colors.yellow(prettyMs(Date.now() - startTime))}`,
+          `${topic} succeeded in ${styleText("yellow", prettyMs(Date.now() - startTime))}`,
         );
       } else {
         spinner.fail(
-          `${topic} failed in ${colors.yellow(prettyMs(Date.now() - startTime))}`,
+          `${topic} failed in ${styleText("yellow", prettyMs(Date.now() - startTime))}`,
         );
       }
       process.stdout.write(stdout);
