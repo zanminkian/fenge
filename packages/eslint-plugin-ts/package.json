@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@fenge/dev-utils": "workspace:*",
-    "@types/node": "18.19.123",
+    "@types/node": "20.19.11",
     "eslint": "9.22.0",
     "typescript": "5.9.2"
   },
