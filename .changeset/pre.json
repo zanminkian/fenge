@@ -1,0 +1,20 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@fenge/dev-utils": "0.0.0",
+    "@fenge/eslint-config": "0.7.8",
+    "@fenge/eslint-plugin": "0.4.1",
+    "eslint-plugin-esm": "0.8.5",
+    "eslint-plugin-pkg-json": "0.4.3",
+    "eslint-plugin-publint": "0.3.1",
+    "@fenge/eslint-plugin-ts": "0.4.8",
+    "fenge": "0.9.10",
+    "@fenge/prettier-config": "0.3.9",
+    "prettier-ignore": "0.4.0",
+    "smells": "0.1.8",
+    "@fenge/tsconfig": "0.6.1",
+    "@fenge/types": "0.5.0"
+  },
+  "changesets": []
+}
