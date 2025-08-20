@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.7.0-beta.0
+
+### Minor Changes
+
+- 3ca28fb: feat(tsconfig): add `"types": []`
+
 ## 0.6.1
 
 ### Patch Changes

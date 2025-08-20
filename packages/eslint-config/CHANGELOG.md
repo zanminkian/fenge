@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.7.9-beta.0
+
+### Patch Changes
+
+- c81cfc1: chore: upgrade deps
+- Updated dependencies [c81cfc1]
+- Updated dependencies [ed4d4f3]
+  - @fenge/eslint-plugin-ts@0.4.9-beta.0
+  - eslint-plugin-publint@0.3.2-beta.0
+
 ## 0.7.8
 
 ### Patch Changes

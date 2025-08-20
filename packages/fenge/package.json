@@ -1,6 +1,6 @@
 {
   "name": "fenge",
-  "version": "0.9.10",
+  "version": "0.10.0-beta.0",
   "description": "A CLI tool for code quality",
   "keywords": [
     "cli",
