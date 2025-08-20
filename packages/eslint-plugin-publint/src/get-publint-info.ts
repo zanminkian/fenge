@@ -1,6 +1,7 @@
 import childProcess from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
+import process from "node:process";
 import { fileURLToPath } from "node:url";
 import type { Result } from "publint";
 
@@ -9,18 +10,25 @@ import type { Result } from "publint";
  * If publint provides sync function, this function should be deleted.
  */
 function publint(pkgDir: string) {
-  // publint doesn't provide sync function
   const publintPath = path.join(
     path.dirname(fileURLToPath(import.meta.url)),
     "publint.cli.js",
   );
-  const result: Result | null = JSON.parse(
-    // We need to wrap the path in quotes to avoid issues with spaces in the path
-    childProcess.execSync(`node '${publintPath}' '${pkgDir}'`, {
-      encoding: "utf8",
-    }),
+  // Use spawnSync for cross-platform compatibility
+  const result = childProcess.spawnSync(
+    process.execPath, // Node executable
+    [publintPath, pkgDir], // Arguments
+    { encoding: "utf8" },
   );
-  return result;
+
+  if (result.error || result.status !== 0) {
+    throw new Error("Run publint.cli.js failed.", {
+      cause: result.error ?? result.stderr,
+    });
+  }
+
+  const publintResult: Result | null = JSON.parse(result.stdout);
+  return publintResult;
 }
 
 const cache = new Map<string, Result>();
