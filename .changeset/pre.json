@@ -16,5 +16,9 @@
     "@fenge/tsconfig": "0.6.1",
     "@fenge/types": "0.5.0"
   },
-  "changesets": []
+  "changesets": [
+    "calm-carrots-fold",
+    "mighty-animals-sing",
+    "silent-moons-teach"
+  ]
 }

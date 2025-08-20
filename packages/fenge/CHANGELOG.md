@@ -1,5 +1,19 @@
 # fenge
 
+## 0.10.0-beta.0
+
+### Minor Changes
+
+- 3ca28fb: feat(tsconfig): add `"types": []`
+
+### Patch Changes
+
+- c81cfc1: chore: upgrade deps
+- Updated dependencies [c81cfc1]
+- Updated dependencies [3ca28fb]
+  - @fenge/eslint-config@0.7.9-beta.0
+  - @fenge/tsconfig@0.7.0-beta.0
+
 ## 0.9.10
 
 ### Patch Changes
