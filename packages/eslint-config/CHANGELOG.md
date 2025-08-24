@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.7.11
+
+### Patch Changes
+
+- 3eb0d07: fix: use language field for html to make it work
+
 ## 0.7.10
 
 ### Patch Changes
