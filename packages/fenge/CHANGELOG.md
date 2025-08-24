@@ -1,5 +1,22 @@
 # fenge
 
+## 0.10.0
+
+### Minor Changes
+
+- 55d6cfb: feat(tsconfig): add `"types": []`
+
+### Patch Changes
+
+- 0fec2ae: chore: upgrade deps
+- 506941a: fix: should not format when not passing `-u` or `-f`
+- Updated dependencies [0fec2ae]
+- Updated dependencies [17bc9cc]
+- Updated dependencies [55d6cfb]
+- Updated dependencies [fe74e82]
+  - @fenge/eslint-config@0.7.10
+  - @fenge/tsconfig@0.7.0
+
 ## 0.9.11
 
 ### Patch Changes
