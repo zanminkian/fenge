@@ -8,8 +8,9 @@ export function html() {
       plugins: {
         "@html-eslint": htmlPlugin,
       },
+      language: "@html-eslint/html",
       rules: {
-        "@html-eslint/require-lang": "error",
+        // "@html-eslint/require-lang": "error",
         "@html-eslint/require-img-alt": "error",
         "@html-eslint/require-doctype": "error",
         "@html-eslint/require-title": "error",
