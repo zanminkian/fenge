@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.7.10
+
+### Patch Changes
+
+- 0fec2ae: chore: upgrade deps
+- 17bc9cc: feat: disable `esm/required-exports` for entrances
+- fe74e82: feat: support html
+- Updated dependencies [0fec2ae]
+  - @fenge/eslint-plugin-ts@0.4.9
+
 ## 0.7.9
 
 ### Patch Changes

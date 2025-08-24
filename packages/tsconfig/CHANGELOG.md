@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.7.0
+
+### Minor Changes
+
+- 55d6cfb: feat(tsconfig): add `"types": []`
+
 ## 0.6.1
 
 ### Patch Changes
