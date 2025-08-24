@@ -1,5 +1,12 @@
 # @fenge/eslint-config
 
+## 0.7.9
+
+### Patch Changes
+
+- Updated dependencies [0e299e1]
+  - eslint-plugin-publint@0.3.2
+
 ## 0.7.8
 
 ### Patch Changes
