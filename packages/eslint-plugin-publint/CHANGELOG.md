@@ -1,5 +1,11 @@
 # eslint-plugin-publint
 
+## 0.3.2
+
+### Patch Changes
+
+- 0e299e1: fix: use `spawnSync` to avoid crash on windows
+
 ## 0.3.1
 
 ### Patch Changes
