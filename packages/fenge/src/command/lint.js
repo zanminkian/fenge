@@ -20,6 +20,7 @@ export async function lint(
 ) {
   return execAsync(
     [
+      process.execPath,
       await getEslintPath(useDefaultConfig),
       "--config",
       path.join(dir(import.meta.url), "..", "config", "eslint.config.js"),
@@ -44,9 +45,10 @@ export async function lint(
  * @param {boolean} useDefaultConfig
  */
 async function getEslintPath(useDefaultConfig) {
-  const builtinBinPath = await getBinPath("eslint");
   if (useDefaultConfig) {
-    return builtinBinPath;
+    return await getBinPath("eslint");
   }
-  return await getBinPath("eslint", process.cwd()).catch(() => builtinBinPath);
+  return await getBinPath("eslint", process.cwd()).catch(() =>
+    getBinPath("eslint"),
+  );
 }

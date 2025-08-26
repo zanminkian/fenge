@@ -19,9 +19,6 @@ import globals from "globals";
 export function getJsBase() {
   // copied from https://github.com/standard/eslint-config-standard/blob/master/src/index.ts
   const standardConfigRules = {
-    "no-var": "error",
-    "object-shorthand": ["error", "properties"],
-
     "accessor-pairs": [
       "error",
       { setWithoutGet: true, enforceForClassMembers: true },
@@ -265,14 +262,16 @@ export function getJsBase() {
       "no-useless-escape": "error",
       "no-useless-rename": "error",
       "no-useless-return": "error",
-      "require-await": "error",
-      "require-yield": "error",
+      "no-var": "error",
+      "object-shorthand": "error",
       "prefer-arrow-callback": "error",
       "prefer-exponentiation-operator": "error",
       "prefer-object-has-own": "error",
       // "prefer-object-spread": "error",
       "prefer-spread": "error",
       "prefer-template": "error",
+      "require-await": "error",
+      "require-yield": "error",
       // es
       "es-x/no-accessor-properties": "error",
       "es-x/no-async-iteration": "error",

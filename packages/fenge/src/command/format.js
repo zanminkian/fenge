@@ -20,6 +20,7 @@ export async function format(
 ) {
   return execAsync(
     [
+      process.execPath,
       await getPrettierPath(useDefaultConfig),
       // setup 3 ignore files
       ...[".gitignore", ".prettierignore", prettierignore]
@@ -51,11 +52,10 @@ export async function format(
  * @param {boolean} useDefaultConfig
  */
 async function getPrettierPath(useDefaultConfig) {
-  const builtinBinPath = await getBinPath("prettier");
   if (useDefaultConfig) {
-    return builtinBinPath;
+    return await getBinPath("prettier");
   }
-  return await getBinPath("prettier", process.cwd()).catch(
-    () => builtinBinPath,
+  return await getBinPath("prettier", process.cwd()).catch(() =>
+    getBinPath("prettier"),
   );
 }
