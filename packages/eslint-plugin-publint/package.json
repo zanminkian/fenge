@@ -34,10 +34,10 @@
     "publint": "0.3.12"
   },
   "devDependencies": {
-    "@types/node": "18.19.123",
+    "@types/node": "20.19.11",
     "eslint": "9.22.0"
   },
   "engines": {
-    "node": "^18.20.0 || >=20.10.0"
+    "node": ">=20.19.0"
   }
 }

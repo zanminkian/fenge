@@ -56,11 +56,10 @@
     "ora": "8.2.0",
     "prettier": "3.6.2",
     "prettier-ignore": "workspace:*",
-    "pretty-ms": "9.2.0",
-    "yoctocolors": "2.1.2"
+    "pretty-ms": "9.2.0"
   },
   "devDependencies": {
-    "@types/node": "18.19.123"
+    "@types/node": "20.19.11"
   },
   "peerDependencies": {
     "typescript": "^5.7.0"
@@ -71,6 +70,6 @@
     }
   },
   "engines": {
-    "node": "^18.20.0 || >=20.10.0"
+    "node": ">=20.19.0"
   }
 }
