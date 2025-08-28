@@ -66,6 +66,14 @@ export function execAsync(command, { topic, dryRun, env }) {
     let cp = childProcess.spawn(cmd, args, {
       env: { FORCE_COLOR: "true", ...process.env, ...env },
     });
+
+    /**
+     * @param {NodeJS.Signals} signal
+     */
+    const listener = (signal) => cp && !cp.killed && cp.kill(signal);
+    process.on("SIGINT", listener);
+    process.on("SIGTERM", listener);
+
     let stdout = Buffer.alloc(0);
     let stderr = Buffer.alloc(0);
     cp.stdout.on("data", (data) => {
@@ -75,6 +83,8 @@ export function execAsync(command, { topic, dryRun, env }) {
       stderr = Buffer.concat([stderr, data]);
     });
     cp.on("error", (err) => {
+      process.removeListener("SIGINT", listener);
+      process.removeListener("SIGTERM", listener);
       reject(err);
     });
     // Why not listen to the 'exit' event?
@@ -96,15 +106,11 @@ export function execAsync(command, { topic, dryRun, env }) {
       stdout = Buffer.alloc(0);
       stderr = Buffer.alloc(0);
       cp = undefined;
+
+      process.removeListener("SIGINT", listener);
+      process.removeListener("SIGTERM", listener);
       resolve(code ?? (signal ? 128 + os.constants.signals[signal] : 1));
     });
-
-    /**
-     * @param {NodeJS.Signals} signal
-     */
-    const listener = (signal) => cp && !cp.killed && cp.kill(signal);
-    process.on("SIGINT", listener);
-    process.on("SIGTERM", listener);
   });
 }
 

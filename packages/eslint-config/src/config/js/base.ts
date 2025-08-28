@@ -289,6 +289,8 @@ export function getJsBase() {
       "eslint-comments/no-unused-enable": "error",
       "eslint-comments/no-use": [
         "error",
+        // Refer ESLint doc: https://eslint.org/docs/latest/use/command-line-interface#--no-inline-config
+        // And https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-use.html
         { allow: ["eslint-disable-line", "eslint-disable-next-line"] },
       ],
       // esm
