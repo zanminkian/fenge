@@ -43,11 +43,37 @@ export async function resolveConfig(module, loadPath) {
 }
 
 /**
+ * Creates a spinner wrapper for async functions that shows progress and timing
+ * @template {readonly unknown[]} TArgs - The arguments type for the function
+ * @template {{ code: number }} TReturn - The return type that must have a code property
+ * @param {(...args: TArgs) => Promise<TReturn>} func - The async function to wrap
+ * @param {string} topic - The topic/description to show in the spinner
+ * @returns {(...args: TArgs) => Promise<TReturn>} The wrapped function with spinner
+ */
+export function spin(func, topic) {
+  return async (...args) => {
+    const startTime = Date.now();
+    const spinner = ora(`${topic}...`).start();
+    /** @type {"succeed" | "fail"} */
+    let succeedOrFail = "fail";
+    try {
+      const result = await func(...args);
+      if (result.code === 0) succeedOrFail = "succeed";
+      return result;
+    } finally {
+      spinner[succeedOrFail](
+        `${topic} ${succeedOrFail} in ${colors.yellow(prettyMs(Date.now() - startTime))}`,
+      );
+    }
+  };
+}
+
+/**
  * @param {string[]} command
- * @param {{topic: string, dryRun: boolean, env: Record<string, string>}} options
+ * @param {{dryRun: boolean, env: Record<string, string>}} options
  * @returns {Promise<{code: number, stdout: string, stderr: string}>}
  */
-export function execAsync(command, { topic, dryRun, env }) {
+function execCmd(command, { dryRun, env }) {
   const [cmd, ...args] = command;
   if (!cmd) {
     return Promise.reject(new Error("cmd not found"));
@@ -61,8 +87,6 @@ export function execAsync(command, { topic, dryRun, env }) {
   }
 
   return new Promise((resolve, reject) => {
-    const startTime = Date.now();
-    const spinner = ora(`${topic}...`).start();
     /**
      * @type {childProcess.ChildProcessWithoutNullStreams | undefined}
      */
@@ -94,15 +118,6 @@ export function execAsync(command, { topic, dryRun, env }) {
     // 1. The 'close' event will always emit after 'exit' was already emitted, or 'error' if the child failed to spawn.
     // 2. The 'exit' event may or may not fire after an error has occurred.
     cp.on("close", (code, signal) => {
-      if (code === 0) {
-        spinner.succeed(
-          `${topic} succeeded in ${colors.yellow(prettyMs(Date.now() - startTime))}`,
-        );
-      } else {
-        spinner.fail(
-          `${topic} failed in ${colors.yellow(prettyMs(Date.now() - startTime))}`,
-        );
-      }
       const stdoutString = stdout.toString("utf8");
       const stderrString = stderr.toString("utf8");
       // When the cp exited, we should clean cp and the buffer to prevent memory leak.
@@ -120,6 +135,11 @@ export function execAsync(command, { topic, dryRun, env }) {
     });
   });
 }
+
+/**
+ * @param {string} topic
+ */
+export const execAsync = (topic) => spin(execCmd, topic);
 
 /**
  * @param {string} moduleName `eslint` or `prettier` or `@commitlint/cli` or `lint-staged`

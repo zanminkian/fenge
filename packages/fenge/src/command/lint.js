@@ -18,7 +18,7 @@ export async function lint(
     timing = false,
   } = {},
 ) {
-  return execAsync(
+  return execAsync("📏 Checking linting")(
     [
       process.execPath,
       await getEslintPath(useDefaultConfig),
@@ -30,7 +30,6 @@ export async function lint(
       ),
     ],
     {
-      topic: "📏 Checking linting",
       dryRun,
       env: {
         ...(config && { FENGE_CONFIG: config }),

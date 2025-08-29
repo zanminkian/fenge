@@ -18,7 +18,7 @@ export async function format(
     default: useDefaultConfig = false,
   } = {},
 ) {
-  return execAsync(
+  return execAsync("💃 Checking formatting")(
     [
       process.execPath,
       await getPrettierPath(useDefaultConfig),
@@ -38,7 +38,6 @@ export async function format(
       ),
     ],
     {
-      topic: "💃 Checking formatting",
       dryRun,
       env: {
         ...(config && { FENGE_CONFIG: config }),
