@@ -36,13 +36,19 @@ program
   .argument("[paths...]", "dir or file paths to format and lint")
   .action(async (paths, options) => {
     let result = await format(paths, options);
-    if (result === 0) {
+    result.stdout && console.log(result.stdout);
+    result.stderr && console.error(result.stderr);
+    if (result.code === 0) {
       result = await lint(paths, options);
-      if (result === 0 && (options.fix || options.update)) {
+      result.stdout && console.log(result.stdout);
+      result.stderr && console.error(result.stderr);
+      if (result.code === 0 && (options.fix || options.update)) {
         result = await format(paths, options);
+        result.stdout && console.log(result.stdout);
+        result.stderr && console.error(result.stderr);
       }
     }
-    process.exit(result);
+    process.exit(result.code);
   });
 
 program
@@ -61,7 +67,12 @@ program
     "print what command will be executed under the hood instead of executing",
   )
   .argument("[paths...]", "dir or file paths to lint")
-  .action(async (paths, options) => process.exit(await lint(paths, options)));
+  .action(async (paths, options) => {
+    const { code, stdout, stderr } = await lint(paths, options);
+    stdout && console.log(stdout);
+    stderr && console.error(stderr);
+    process.exit(code);
+  });
 
 program
   .command("format")
@@ -78,7 +89,12 @@ program
     "print what command will be executed under the hood instead of executing",
   )
   .argument("[paths...]", "dir or file paths to format")
-  .action(async (paths, options) => process.exit(await format(paths, options)));
+  .action(async (paths, options) => {
+    const { code, stdout, stderr } = await format(paths, options);
+    stdout && console.log(stdout);
+    stderr && console.error(stderr);
+    process.exit(code);
+  });
 
 program
   .command("install")

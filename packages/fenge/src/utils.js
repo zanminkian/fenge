@@ -45,7 +45,7 @@ export async function resolveConfig(module, loadPath) {
 /**
  * @param {string[]} command
  * @param {{topic: string, dryRun: boolean, env: Record<string, string>}} options
- * @returns {Promise<number>}
+ * @returns {Promise<{code: number, stdout: string, stderr: string}>}
  */
 export function execAsync(command, { topic, dryRun, env }) {
   const [cmd, ...args] = command;
@@ -53,8 +53,11 @@ export function execAsync(command, { topic, dryRun, env }) {
     return Promise.reject(new Error("cmd not found"));
   }
   if (dryRun) {
-    process.stdout.write(`${colors.green(cmd)} ${args.join(" ")};\n\n`);
-    return Promise.resolve(0);
+    return Promise.resolve({
+      code: 0,
+      stdout: `${colors.green(cmd)} ${args.join(" ")};\n`,
+      stderr: "",
+    });
   }
 
   return new Promise((resolve, reject) => {
@@ -100,8 +103,8 @@ export function execAsync(command, { topic, dryRun, env }) {
           `${topic} failed in ${colors.yellow(prettyMs(Date.now() - startTime))}`,
         );
       }
-      process.stdout.write(stdout);
-      process.stderr.write(stderr);
+      const stdoutString = stdout.toString("utf8");
+      const stderrString = stderr.toString("utf8");
       // When the cp exited, we should clean cp and the buffer to prevent memory leak.
       stdout = Buffer.alloc(0);
       stderr = Buffer.alloc(0);
@@ -109,7 +112,11 @@ export function execAsync(command, { topic, dryRun, env }) {
 
       process.removeListener("SIGINT", listener);
       process.removeListener("SIGTERM", listener);
-      resolve(code ?? (signal ? 128 + os.constants.signals[signal] : 1));
+      resolve({
+        code: code ?? (signal ? 128 + os.constants.signals[signal] : 1),
+        stdout: stdoutString.trim(),
+        stderr: stderrString.trim(),
+      });
     });
   });
 }
