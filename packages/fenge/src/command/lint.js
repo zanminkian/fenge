@@ -5,14 +5,13 @@ import { dir, execAsync, getBinPath } from "../utils.js";
 
 /**
  * @param {Array<string>} paths
- * @param {{update?: boolean, fix?: boolean, dryRun?: boolean, config?: string, default?: boolean, timing?: boolean}} options
+ * @param {{update?: boolean, fix?: boolean, config?: string, default?: boolean, timing?: boolean}} options
  */
 export async function lint(
   paths = [],
   {
     update = false,
     fix = false,
-    dryRun = false,
     config,
     default: useDefaultConfig = false,
     timing = false,
@@ -30,7 +29,6 @@ export async function lint(
       ),
     ],
     {
-      dryRun,
       env: {
         ...(config && { FENGE_CONFIG: config }),
         ...(useDefaultConfig && { FENGE_USE_DEFAULT_CONFIG: "true" }),

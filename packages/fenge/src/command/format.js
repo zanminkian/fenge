@@ -6,14 +6,13 @@ import { dir, execAsync, getBinPath } from "../utils.js";
 
 /**
  * @param {Array<string>} paths
- * @param {{update?: boolean, write?: boolean, dryRun?: boolean, config?: string, default?: boolean}} options
+ * @param {{update?: boolean, write?: boolean, config?: string, default?: boolean}} options
  */
 export async function format(
   paths = [],
   {
     update = false,
     write = false,
-    dryRun = false,
     config,
     default: useDefaultConfig = false,
   } = {},
@@ -38,7 +37,6 @@ export async function format(
       ),
     ],
     {
-      dryRun,
       env: {
         ...(config && { FENGE_CONFIG: config }),
         ...(useDefaultConfig && { FENGE_USE_DEFAULT_CONFIG: "true" }),
