@@ -28,7 +28,7 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@typescript-eslint/utils": "8.40.0"
+    "@typescript-eslint/utils": "8.41.0"
   },
   "devDependencies": {
     "@fenge/dev-utils": "workspace:*",
