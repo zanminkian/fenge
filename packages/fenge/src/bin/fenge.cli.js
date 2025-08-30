@@ -31,6 +31,9 @@ program
   )
   .argument("[paths...]", "dir or file paths to format and lint")
   .action(async (paths, options) => {
+    /**
+     * @type {{code: number, stdout: string, stderr: string, fixedFiles?: string[]}}
+     */
     let result = await format(paths, options);
     result.stdout && console.log(result.stdout);
     result.stderr && console.error(result.stderr);
@@ -38,8 +41,12 @@ program
       result = await lint(paths, options);
       result.stdout && console.log(result.stdout);
       result.stderr && console.error(result.stderr);
-      if (result.code === 0 && (options.fix || options.update)) {
-        result = await format(paths, options);
+      if (
+        result.code === 0 &&
+        (options.fix || options.update) &&
+        result.fixedFiles?.length
+      ) {
+        result = await format(result.fixedFiles, options);
         result.stdout && console.log(result.stdout);
         result.stderr && console.error(result.stderr);
       }
