@@ -29,6 +29,10 @@ program
     "--default",
     "force to use built-in default config, built-in prettier and built-in eslint. ignore specified config, local config, local prettier and local eslint",
   )
+  .option(
+    "-d, --dry-run",
+    "print what command will be executed under the hood instead of executing",
+  )
   .argument("[paths...]", "dir or file paths to format and lint")
   .action(async (paths, options) => {
     /**
@@ -65,6 +69,10 @@ program
     "force to use built-in default config, ignore specified config and local config",
   )
   .option("--timing", "print timing information")
+  .option(
+    "-d, --dry-run",
+    "print what command will be executed under the hood instead of executing",
+  )
   .argument("[paths...]", "dir or file paths to lint")
   .action(async (paths, options) => {
     const { code, stdout, stderr } = await lint(paths, options);
@@ -82,6 +90,10 @@ program
   .option(
     "--default",
     "force to use built-in default config, ignore specified config and local config",
+  )
+  .option(
+    "-d, --dry-run",
+    "print what command will be executed under the hood instead of executing",
   )
   .argument("[paths...]", "dir or file paths to format")
   .action(async (paths, options) => {

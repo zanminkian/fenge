@@ -70,13 +70,20 @@ export function spin(func, topic) {
 
 /**
  * @param {string[]} command
- * @param {{env: Record<string, string>}} options
+ * @param {{dryRun: boolean, env: Record<string, string>}} options
  * @returns {Promise<{code: number, stdout: string, stderr: string}>}
  */
-function execCmd(command, { env }) {
+function execCmd(command, { dryRun, env }) {
   const [cmd, ...args] = command;
   if (!cmd) {
     return Promise.reject(new Error("cmd not found"));
+  }
+  if (dryRun) {
+    return Promise.resolve({
+      code: 0,
+      stdout: `${colors.green(cmd)} ${args.join(" ")};\n`,
+      stderr: "",
+    });
   }
 
   return new Promise((resolve, reject) => {
