@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.7.12
+
+### Patch Changes
+
+- f5feb39: chore: upgrade deps
+- 3e69e2b: feat(eslint-config): add eslint-plugin-regexp and its rules
+- 048e466: feat: always enable `object-shorthand`
+- Updated dependencies [f5feb39]
+  - @fenge/eslint-plugin-ts@0.4.10
+
 ## 0.7.11
 
 ### Patch Changes

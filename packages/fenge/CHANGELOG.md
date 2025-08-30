@@ -1,5 +1,16 @@
 # fenge
 
+## 0.10.2
+
+### Patch Changes
+
+- b9d2984: perf: only format those files were fixed
+- Updated dependencies [f5feb39]
+- Updated dependencies [3e69e2b]
+- Updated dependencies [048e466]
+  - @fenge/prettier-config@0.3.10
+  - @fenge/eslint-config@0.7.12
+
 ## 0.10.1
 
 ### Patch Changes
