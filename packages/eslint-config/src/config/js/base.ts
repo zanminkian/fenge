@@ -293,6 +293,7 @@ export function getJsBase() {
         // And https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-use.html
         { allow: ["eslint-disable-line", "eslint-disable-next-line"] },
       ],
+      "eslint-comments/require-description": "error",
       // esm
       "esm/existing-file-imports": "error",
       "esm/no-circular-imports": "error",
