@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@types/node": "18.19.123",
-    "@types/semver": "7.7.0",
+    "@types/semver": "7.7.1",
     "eslint": "9.22.0",
     "outdent": "0.8.0"
   },
