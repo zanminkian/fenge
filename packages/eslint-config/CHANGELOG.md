@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.7.13
+
+### Patch Changes
+
+- f00756c: fix: self closing for void elements
+- 44af90a: feat: add rule `eslint-comments/require-description`, close #417
+- 46ed97c: chore: upgrade deps
+- Updated dependencies [46ed97c]
+  - @fenge/eslint-plugin-ts@0.4.11
+
 ## 0.7.12
 
 ### Patch Changes
