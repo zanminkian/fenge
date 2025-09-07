@@ -25,28 +25,26 @@ export async function test({
   valid: originValid,
   invalid: originInvalid,
   errors = 1,
-  transform = (code) => code,
 }: {
   name: string;
   rule: Rule.RuleModule;
   valid: (TestCase | string)[];
   invalid: (TestCase | string)[];
   errors?: number;
-  transform?: (code: string) => string;
 }) {
   const normalize = (testCases: (TestCase | string)[]): TestCase[] =>
     testCases.map((testCase) =>
-      typeof testCase === "string" ? { code: transform(testCase) } : testCase,
+      typeof testCase === "string" ? { code: testCase } : testCase,
     );
   const valid = normalize(originValid);
   const invalid = normalize(originInvalid);
   const transformedValid = valid.map((testCase) => ({
     ...testCase,
-    code: transform(testCase.code),
+    code: testCase.code,
   }));
   const transformedInvalid = invalid.map((testCase) => ({
     ...testCase,
-    code: transform(testCase.code),
+    code: testCase.code,
   }));
   await describe(name, async () => {
     await Promise.all(
