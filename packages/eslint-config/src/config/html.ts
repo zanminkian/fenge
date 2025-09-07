@@ -18,7 +18,10 @@ export function html() {
         "@html-eslint/no-duplicate-id": "error",
         "@html-eslint/require-li-container": "error",
         "@html-eslint/no-obsolete-tags": "error",
-        "@html-eslint/require-closing-tags": "error",
+        "@html-eslint/require-closing-tags": [ // Follow the style of Prettier
+          "error",
+          { selfClosing: "always" },
+        ],
         "@html-eslint/no-duplicate-attrs": "error",
         "@html-eslint/use-baseline": "error",
         "@html-eslint/no-duplicate-in-head": "error",
