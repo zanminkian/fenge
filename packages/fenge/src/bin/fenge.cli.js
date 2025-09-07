@@ -17,13 +17,16 @@ program
   .description("format and then lint code")
   .option(
     "-f, --fix",
-    "automatically fix linting problems only, will not format code",
+    "automatically fix linting problems only, will not format code (Warning: use with caution as this may not be completely safe)",
   )
   .option(
     "-w, --write",
     "automatically format code only, will not fix linting problems",
   )
-  .option("-u, --update", "automatically format code and fix linting problems")
+  .option(
+    "-u, --update",
+    "automatically format code and fix linting problems (Warning: use with caution as this may not be completely safe)",
+  )
   .option("-c, --config <path>", "path to configuration file")
   .option(
     "--default",
@@ -61,8 +64,14 @@ program
 program
   .command("lint")
   .description("lint code")
-  .option("-f, --fix", "automatically fix linting problems")
-  .option("-u, --update", "alias for '--fix' option")
+  .option(
+    "-f, --fix",
+    "automatically fix linting problems (Warning: use with caution as this may not be completely safe)",
+  )
+  .option(
+    "-u, --update",
+    "alias for '--fix' option (Warning: use with caution as this may not be completely safe)",
+  )
   .option("-c, --config <path>", "path to configuration file")
   .option(
     "--default",
