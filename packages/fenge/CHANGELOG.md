@@ -1,5 +1,13 @@
 # fenge
 
+## 0.10.4
+
+### Patch Changes
+
+- 1f82659: feat(fenge): add more info for cli help
+- Updated dependencies [5b092bb]
+  - @fenge/eslint-config@0.7.14
+
 ## 0.10.3
 
 ### Patch Changes

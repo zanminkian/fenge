@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.7.14
+
+### Patch Changes
+
+- 5b092bb: feat: disable `no-console` for test files
+
 ## 0.7.13
 
 ### Patch Changes
