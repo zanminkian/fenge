@@ -7,6 +7,7 @@ export function getJsTest() {
       "**/*.{test,spec}.{js,cjs,mjs,jsx}",
     ],
     rules: {
+      "no-console": "off",
       "es-x/no-top-level-await": "off",
       "esm/no-phantom-dep-imports": ["error", { allowDevDependencies: true }],
       "esm/required-exports": "off",
