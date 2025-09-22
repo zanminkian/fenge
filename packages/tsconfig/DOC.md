@@ -33,3 +33,7 @@ To remove the root `tsconfig.json`, we need [this issue](https://github.com/micr
 ## Why don't we specify `types` field?
 
 Ts will load all the `node_modules/@types/*` declaration files when `types` field is removed. It's not very type-safe when one of `@types/*` packages modifies the global scope declaration. The best practice is `"types": ["node", "web"]`. It means only `@types/node` and `@types/web` are allowed modifying global scope declaration. But Ts will throw an error when one of `@types/node` and `@types/web` is not installed.
+
+## Why `"rootDir": "${configDir}/src"`?
+
+We require projects to put source code in `src` directory. Why? Let's say we have a file `foo.ts` in `src`. `foo.ts` content has `import packageJson from '../package.json';`. If we don't set `rootDir`, the `dist` directory will have a `src` directory and a `package.json` in it.

@@ -24,6 +24,7 @@
     "moduleResolution": "nodenext",
 
     "allowJs": true,
+    "rootDir": "${configDir}/src",
     "outDir": "${configDir}/dist",
     "verbatimModuleSyntax": true,
     "experimentalDecorators": true,
