@@ -81,7 +81,7 @@ function exec({
 }): [boolean, string] {
   try {
     childProcess.execSync(
-      `${path.join(cwd, "node_modules", ".bin", "tsc")} --project ${project} ${noLib ? "--noLib" : ""} --noEmit`,
+      `${path.join(cwd, "node_modules", ".bin", "tsc")} --project ${project} ${noLib ? "--noLib" : ""} --noEmit --rootDir test`,
       {
         encoding: "utf8",
       },
