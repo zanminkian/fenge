@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.8.0
+
+### Minor Changes
+
+- 3e25e2f: feat(tsconfig): add `"rootDir": "${configDir}/src"` to tsconfig
+
 ## 0.7.0
 
 ### Minor Changes
