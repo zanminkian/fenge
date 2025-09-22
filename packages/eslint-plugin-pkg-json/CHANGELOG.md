@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.4.4
+
+### Patch Changes
+
+- e85826b: chore: upgrade deps
+
 ## 0.4.3
 
 ### Patch Changes

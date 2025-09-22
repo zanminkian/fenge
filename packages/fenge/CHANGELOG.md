@@ -1,5 +1,18 @@
 # fenge
 
+## 0.11.0
+
+### Minor Changes
+
+- 3e25e2f: feat(tsconfig): add `"rootDir": "${configDir}/src"` to tsconfig
+
+### Patch Changes
+
+- Updated dependencies [3e25e2f]
+- Updated dependencies [e85826b]
+  - @fenge/tsconfig@0.8.0
+  - @fenge/eslint-config@0.7.15
+
 ## 0.10.4
 
 ### Patch Changes
