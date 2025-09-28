@@ -28,7 +28,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tscx --exclude '**/*.test.ts'"
   },
   "dependencies": {
     "@typescript-eslint/typescript-estree": "8.42.0",

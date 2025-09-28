@@ -21,7 +21,7 @@
     "prettierignore"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tscx --exclude '**/*.test.ts'"
   },
   "devDependencies": {
     "@types/node": "18.19.123"

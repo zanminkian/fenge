@@ -24,7 +24,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tscx --exclude '**/*.test.ts'",
     "test": "node --test"
   },
   "devDependencies": {

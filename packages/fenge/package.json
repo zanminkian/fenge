@@ -43,7 +43,7 @@
     "tsconfig"
   ],
   "scripts": {
-    "build": "tsc --noEmit"
+    "build": "tscx --exclude '**/*.test.ts' --noEmit"
   },
   "dependencies": {
     "@fenge/eslint-config": "workspace:*",
