@@ -33,6 +33,9 @@ export const rule = {
         // "ansi-colors": "Use built-in util.styleText api instead.",
         // colorette: "Use built-in util.styleText api instead.",
 
+        "package-up": "Use built-in `module.findPackageJSON` api instead.",
+        "read-package-up": "Use built-in `module.findPackageJSON` api instead.",
+
         "import-meta-resolve":
           "Use built-in `import.meta.resolve` api or built-in `node:module` instead.",
         lodash: "Use modern ES6+ apis instead.",
