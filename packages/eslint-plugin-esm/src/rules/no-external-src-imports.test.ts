@@ -7,7 +7,6 @@ const valid = [
   "import foo from './valid-file.js'",
   "import foo from '../valid-file.js'",
   "import foo from '../../src/foo.js'",
-  "import baz from '../../package.json' with {type: 'json'}",
 
   "import foo from 'node:foo'",
   "import foo from 'foo'",
@@ -21,6 +20,7 @@ const invalid = [
   "import foo from '../../src'",
   "import baz from '../../package.js'",
   "import baz from '../../pkg.json' with {type: 'json'}",
+  "import baz from '../../package.json' with {type: 'json'}",
   "import baz from '../../../package.json' with {type: 'json'}",
   "import qux from '/tmp/external-file'",
 ].map((code) => ({

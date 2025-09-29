@@ -14,11 +14,11 @@ function check(filename: string, source: string) {
   const srcPath = /^.*?\/src\//.exec(filename)?.[0];
   if (srcPath) {
     const sourcePath = path.resolve(path.dirname(filename), source);
-    // TODO: Disallow importing the nearest package.json when [module.findPackageJSON](https://nodejs.org/api/module.html#modulefindpackagejsonspecifier-base) is stable and we drop Node.js <= 20.
-    if (sourcePath === path.join(path.dirname(srcPath), "package.json")) {
-      // Allow importing the nearest package.json
-      return false;
-    }
+    // Disallow importing the nearest package.json. Use [module.findPackageJSON](https://nodejs.org/api/module.html#modulefindpackagejsonspecifier-base) or [package-up](https://github.com/sindresorhus/package-up) instead.
+    // if (sourcePath === path.join(path.dirname(srcPath), "package.json")) {
+    //   // Allow importing the nearest package.json
+    //   return false;
+    // }
     if (!sourcePath.startsWith(srcPath)) {
       return true;
     }
