@@ -2,8 +2,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
-import packageJson from "../../package.json" with { type: "json" };
-import { dir, exists, getBinPath } from "../utils.js";
+import { dir, exists, getBinPath, getPkgJson } from "../utils.js";
 
 /**
  * @param {string} file
@@ -22,7 +21,7 @@ async function writeGitHook(file, content) {
 
   const hookFilePath = path.resolve(hooksPath, file);
   if (await exists(hookFilePath)) {
-    const pkgJsonName = packageJson.name; // fenge
+    const pkgJsonName = (await getPkgJson()).name; // fenge
     if (!(await fs.readFile(hookFilePath, "utf8")).includes(pkgJsonName)) {
       throw new Error(
         `Cannot install git hook file since ${hookFilePath} is already existing. Please remove it first.`,

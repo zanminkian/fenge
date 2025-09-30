@@ -13,6 +13,17 @@ import prettyMs from "pretty-ms";
 import colors from "yoctocolors";
 
 /**
+ * @returns {Promise<{name: string, version: string}>}
+ */
+export async function getPkgJson() {
+  const content = await fs.readFile(
+    path.join(dir(import.meta.url), "..", "package.json"),
+    "utf8",
+  );
+  return JSON.parse(content);
+}
+
+/**
  * @param {string} filepath
  */
 export async function exists(filepath) {
