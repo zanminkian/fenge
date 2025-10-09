@@ -1,5 +1,15 @@
 # @fenge/tsconfig
 
+## 0.9.0
+
+### Minor Changes
+
+- db7ba4b: refactor!(tsconfig): remove `rootDir`
+
+### Patch Changes
+
+- e3f5738: chore: upgrade deps
+
 ## 0.8.0
 
 ### Minor Changes
