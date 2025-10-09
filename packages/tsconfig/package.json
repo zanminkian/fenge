@@ -34,7 +34,7 @@
     "tsconfig"
   ],
   "scripts": {
-    "build": "tscx --exclude '**/*.test.ts' --noEmit"
+    "test": "tsc --noEmit"
   },
   "dependencies": {
     "commander": "13.1.0",

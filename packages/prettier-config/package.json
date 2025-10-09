@@ -24,7 +24,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tscx --exclude '**/*.test.ts'"
+    "build": "tscx --include src --exclude '**/*.test.ts'"
   },
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "4.7.0",

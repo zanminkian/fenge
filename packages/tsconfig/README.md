@@ -128,9 +128,7 @@ For Node.js app:
 
 ```json
 {
-  "extends": ["../../tsconfig.json", "@fenge/tsconfig/node"],
-  "include": ["src"],
-  "exclude": ["**/*.test.ts"]
+  "extends": ["../../tsconfig.json", "@fenge/tsconfig/node"]
 }
 ```
 
@@ -138,9 +136,7 @@ For Web app:
 
 ```json
 {
-  "extends": ["../../tsconfig.json", "@fenge/tsconfig/web"],
-  "include": ["src"],
-  "exclude": ["**/*.test.ts"]
+  "extends": ["../../tsconfig.json", "@fenge/tsconfig/web"]
 }
 ```
 

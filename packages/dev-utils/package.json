@@ -5,7 +5,7 @@
   "type": "module",
   "exports": "./dist/index.js",
   "scripts": {
-    "build": "tscx --exclude '**/*.test.ts'"
+    "build": "tscx --include src --exclude '**/*.test.ts'"
   },
   "dependencies": {
     "@typescript-eslint/parser": "8.42.0",
