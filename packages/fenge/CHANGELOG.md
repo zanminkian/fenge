@@ -1,5 +1,18 @@
 # fenge
 
+## 0.12.0
+
+### Minor Changes
+
+- db7ba4b: refactor!(tsconfig): remove `rootDir`
+
+### Patch Changes
+
+- Updated dependencies [db7ba4b]
+- Updated dependencies [e3f5738]
+  - @fenge/tsconfig@0.9.0
+  - @fenge/eslint-config@0.7.16
+
 ## 0.11.0
 
 ### Minor Changes

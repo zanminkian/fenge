@@ -1,5 +1,12 @@
 # eslint-plugin-pkg-json
 
+## 0.4.5
+
+### Patch Changes
+
+- 8585424: feat: disallow `package-up` and `read-package-up` package.json
+- e3f5738: chore: upgrade deps
+
 ## 0.4.4
 
 ### Patch Changes

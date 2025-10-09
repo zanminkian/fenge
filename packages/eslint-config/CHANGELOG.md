@@ -1,5 +1,17 @@
 # @fenge/eslint-config
 
+## 0.7.16
+
+### Patch Changes
+
+- e3f5738: chore: upgrade deps
+- Updated dependencies [3c6fc99]
+- Updated dependencies [8585424]
+- Updated dependencies [e3f5738]
+  - eslint-plugin-esm@0.9.0
+  - eslint-plugin-pkg-json@0.4.5
+  - eslint-plugin-publint@0.3.4
+
 ## 0.7.15
 
 ### Patch Changes
