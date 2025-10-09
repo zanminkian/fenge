@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "build": "tscx --include src --exclude '**/*.test.ts'",
-    "test": "node --test"
+    "test": "tsc --noEmit && node --test"
   },
   "dependencies": {
     "jsonc-eslint-parser": "2.4.1",

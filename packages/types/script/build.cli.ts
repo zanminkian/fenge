@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 import fs from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { replacements } from "./replacements.ts";
 
-const cwd = path.join(import.meta.dirname, "..");
+const cwd = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 async function copyFiles(dest = path.join(cwd, "src")) {
   await fs.rm(dest, { recursive: true, force: true });

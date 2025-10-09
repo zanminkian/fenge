@@ -7,9 +7,9 @@ const s = JSON.stringify;
 const dir = path.dirname(fileURLToPath(import.meta.url));
 
 const valid = [
-  { code: s({}), filename: undefined },
-  { code: s({ name: "foo" }), filename: undefined },
-  { code: s({ bin: {} }), filename: undefined },
+  { code: s({}) },
+  { code: s({ name: "foo" }) },
+  { code: s({ bin: {} }) },
   {
     code: s({ bin: "./good.cli.js" }),
     filename: path.join(dir, "../../test/required-hashbang/package.json"),
@@ -21,9 +21,9 @@ const valid = [
 ];
 
 const invalid = [
-  { code: s({ bin: 123 }), filename: undefined },
-  { code: s({ bin: [] }), filename: undefined },
-  { code: s({ bin: { foo: true } }), filename: undefined },
+  { code: s({ bin: 123 }) },
+  { code: s({ bin: [] }) },
+  { code: s({ bin: { foo: true } }) },
   {
     code: s({ bin: "./no-existing.js" }),
     filename: path.join(dir, "../../test/required-hashbang/package.json"),

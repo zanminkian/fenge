@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "build": "node ./script/build.cli.ts",
-    "test": "node --test"
+    "test": "tsc --noEmit && node --test"
   },
   "devDependencies": {
     "@types/node": "18.19.123",

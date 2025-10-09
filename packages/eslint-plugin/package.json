@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "build": "tscx --include src --exclude '**/*.test.ts'",
-    "test": "node --test"
+    "test": "tsc --noEmit && node --test"
   },
   "devDependencies": {
     "@fenge/dev-utils": "workspace:*",

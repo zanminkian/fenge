@@ -3,9 +3,10 @@ import childProcess from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { after, before, describe, it } from "node:test";
+import { fileURLToPath } from "node:url";
 import { isNativeError } from "node:util/types";
 
-const dirname = import.meta.dirname;
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 const cwd = path.join(dirname, "..");
 
 async function getTsConfigContent() {

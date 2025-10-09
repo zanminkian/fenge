@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "build": "tscx --include src --exclude '**/*.test.ts'",
-    "test": "node --test"
+    "test": "tsc --noEmit && node --test"
   },
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
