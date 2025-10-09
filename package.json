@@ -17,7 +17,7 @@
     "@changesets/cli": "2.29.7",
     "@rnm/tscx": "0.3.10",
     "fenge": "workspace:*",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "engines": {
     "node": ">=22.18.0"

@@ -34,7 +34,7 @@
     "@fenge/dev-utils": "workspace:*",
     "@types/node": "18.19.123",
     "eslint": "9.22.0",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "engines": {
     "node": "^18.20.0 || >=20.10.0"
