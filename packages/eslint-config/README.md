@@ -10,7 +10,7 @@ A strict eslint config preset containing a comprehensive set of rules for lintin
 
 ## Feature
 
-- Lint `js` / `mjs` / `cjs` / `jsx` / `ts` / `mts` / `cts` / `tsx` / `package.json` files only.
+- Lint `js` / `mjs` / `cjs` / `jsx` / `ts` / `mts` / `cts` / `tsx` / `package.json` / `html` files only.
 - Strict. More than 400+ rules.
 - Highly customizable by omitting unwanted.
 - Type safe. TypeScript friendly.
@@ -67,6 +67,7 @@ You can use `Builder` class to customize for selecting or omitting some rules.
 import { Builder } from "@fenge/eslint-config";
 
 export default new Builder()
+  .enableHtml()
   .enablePackageJson({
     pick: ["packagejson/top-types"], // only these rules will work for package.json files
   })
