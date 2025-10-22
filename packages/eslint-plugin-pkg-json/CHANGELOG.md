@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.4.6
+
+### Patch Changes
+
+- e200e01: feat: disallow some libs for `no-restricted-deps` rules
+
 ## 0.4.5
 
 ### Patch Changes
