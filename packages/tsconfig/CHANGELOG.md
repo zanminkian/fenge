@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.9.1
+
+### Patch Changes
+
+- e9ce904: chore: upgrade deps
+
 ## 0.9.0
 
 ### Minor Changes

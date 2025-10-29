@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.7.17
+
+### Patch Changes
+
+- 9db6f04: feat(eslint-config): disallow `namespace` in definition files
+- Updated dependencies [e9ce904]
+- Updated dependencies [e200e01]
+  - eslint-plugin-publint@0.3.5
+  - eslint-plugin-pkg-json@0.4.6
+
 ## 0.7.16
 
 ### Patch Changes

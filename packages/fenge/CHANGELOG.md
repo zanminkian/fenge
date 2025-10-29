@@ -1,5 +1,14 @@
 # fenge
 
+## 0.12.1
+
+### Patch Changes
+
+- Updated dependencies [e9ce904]
+- Updated dependencies [9db6f04]
+  - @fenge/tsconfig@0.9.1
+  - @fenge/eslint-config@0.7.17
+
 ## 0.12.0
 
 ### Minor Changes
