@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "jsonc-eslint-parser": "2.4.1",
-    "publint": "0.3.14"
+    "publint": "0.3.15"
   },
   "devDependencies": {
     "@types/node": "18.19.123",
