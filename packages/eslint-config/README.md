@@ -31,16 +31,10 @@ Install it in the root of js / ts project.
 npm i -D eslint @fenge/eslint-config
 ```
 
-Config `eslint.config.js` (for ESM).
+Config `eslint.config.js`. If you are in `CommonJS`, config `eslint.config.mjs`.
 
 ```js
 export { default } from "@fenge/eslint-config";
-```
-
-If you are in CommonJS, config `eslint.config.js` bellow:
-
-```js
-module.exports = import("@fenge/eslint-config");
 ```
 
 Config `package.json`
@@ -53,8 +47,6 @@ Config `package.json`
   }
 }
 ```
-
-> Note: For TypeScript project, adding a `tsconfig.json` file in the root is recommended.
 
 ## Advanced Usage
 
