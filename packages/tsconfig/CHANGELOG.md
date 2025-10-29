@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.10.0
+
+### Minor Changes
+
+- 64f9d75: refactor!: remove `resolveJsonModule` and require TS >= 5.9
+
 ## 0.9.1
 
 ### Patch Changes

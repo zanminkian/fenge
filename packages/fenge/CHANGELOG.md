@@ -1,5 +1,12 @@
 # fenge
 
+## 0.12.2
+
+### Patch Changes
+
+- Updated dependencies [64f9d75]
+  - @fenge/tsconfig@0.10.0
+
 ## 0.12.1
 
 ### Patch Changes
