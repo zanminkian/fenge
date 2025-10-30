@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.4.7
+
+### Patch Changes
+
+- 006063c: feat: add rule `consistent-dependency-versions`
+
 ## 0.4.6
 
 ### Patch Changes
