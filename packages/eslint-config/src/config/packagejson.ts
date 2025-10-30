@@ -19,6 +19,7 @@ export function packagejson() {
       rules: {
         "pkg-json/bottom-default": "error",
         "pkg-json/compatible-engines-node-version": "error",
+        "pkg-json/consistent-dependency-versions": "error",
         "pkg-json/exact-dependency-version": "error",
         "pkg-json/no-conflict-types": "error",
         "pkg-json/no-dependencies-in-workspace-root": "error",

@@ -1,5 +1,6 @@
 import * as bottomDefault from "./rules/bottom-default.js";
 import * as compatibleEnginesNodeVersion from "./rules/compatible-engines-node-version.js";
+import * as consistentDependencyVersions from "./rules/consistent-dependency-versions.js";
 import * as exactDependencyVersion from "./rules/exact-dependency-version.js";
 import * as noConflictTypes from "./rules/no-conflict-types.js";
 import * as noDependenciesInWorkspaceRoot from "./rules/no-dependencies-in-workspace-root.js";
@@ -21,6 +22,7 @@ export const rules = Object.fromEntries(
   [
     bottomDefault,
     compatibleEnginesNodeVersion,
+    consistentDependencyVersions,
     exactDependencyVersion,
     noConflictTypes,
     noDependenciesInWorkspaceRoot,
