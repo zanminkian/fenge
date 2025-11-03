@@ -10,6 +10,10 @@ export interface BaseOptions {
    * If the value is a `string`, files matching the key pattern are blocked, and the string indicates the preferred filename pattern.
    */
   blockedFiles?: Record<string, string | false>;
+  /**
+   * The file patterns to ignore. Files matching the pattern are not linted.
+   */
+  ignores?: string[];
 }
 
 export function base(
@@ -45,21 +49,25 @@ export function base(
       // There are 2 kinds of exception when running `git ls-files`:
       // 1. Git is not installed. The `stdout` will be null.
       // 2. The running directory is not initialized by `git init` command. The `stdout` will an empty string.
-      ignores: (
-        childProcess.spawnSync(
-          "git",
-          [
-            "ls-files",
-            "--others",
-            "--ignored",
-            "--exclude-standard",
-            "--directory",
-          ],
-          { encoding: "utf8" },
-        ).stdout || ""
-      )
-        .split("\n")
-        .filter(Boolean),
+      ignores: [
+        ...(
+          childProcess.spawnSync(
+            "git",
+            [
+              "ls-files",
+              "--others",
+              "--ignored",
+              "--exclude-standard",
+              "--directory",
+            ],
+            { encoding: "utf8" },
+          ).stdout || ""
+        )
+          .split("\n")
+          .map((line) => line.trim())
+          .filter(Boolean),
+        ...(options.ignores ?? []),
+      ],
     },
     {
       name: "fenge/common",
