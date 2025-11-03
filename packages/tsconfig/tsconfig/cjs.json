@@ -22,19 +22,17 @@
     "target": "es2022",
     "module": "nodenext",
     "moduleResolution": "nodenext",
-
     "allowJs": true,
+
     "outDir": "${configDir}/dist",
+    "jsx": "preserve",
+    "rewriteRelativeImportExtensions": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "stripInternal": true,
     "declaration": true,
     "declarationMap": true,
     "inlineSourceMap": true,
-    "inlineSources": true,
-
-    "jsx": "preserve",
-
-    "rewriteRelativeImportExtensions": true
+    "inlineSources": true
   }
 }
