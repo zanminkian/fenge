@@ -1,7 +1,8 @@
 // @ts-check
 import path from "node:path";
+import process from "node:process";
 import { dir, resolveConfig } from "../utils.js";
 
 const cliPath = path.resolve(dir(import.meta.url), "..", "bin", "fenge.cli.js");
-const defaultConfig = { "*": [`${cliPath} lint`] };
+const defaultConfig = { "*": [`${process.execPath} ${cliPath} lint`] };
 export default (await resolveConfig("lint-staged"))?.config ?? defaultConfig;
