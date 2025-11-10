@@ -10,10 +10,26 @@ const valid = [
     code: s({ engines: { node: "^24.0.0" } }),
     filename: path.join(process.cwd(), "./package.json"),
   },
+  {
+    code: s({ engines: { node: "^18.19.0" } }),
+    filename: path.join(process.cwd(), "./package.json"),
+  },
+  {
+    code: s({ engines: { node: "^18.19.999" } }),
+    filename: path.join(process.cwd(), "./package.json"),
+  },
 ];
 const invalid = [
   {
     code: s({ engines: { node: "^16.0.0" } }),
+    filename: path.join(process.cwd(), "./package.json"),
+  },
+  {
+    code: s({ engines: { node: "^18.18.0" } }),
+    filename: path.join(process.cwd(), "./package.json"),
+  },
+  {
+    code: s({ engines: { node: "^18.18.999" } }),
     filename: path.join(process.cwd(), "./package.json"),
   },
 ];
