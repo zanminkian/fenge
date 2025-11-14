@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.7.19
+
+### Patch Changes
+
+- df49a6c: feat: support `ignores` option to not lint specified files
+
 ## 0.7.18
 
 ### Patch Changes
