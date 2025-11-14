@@ -13,7 +13,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "isolatedModules": true,
-    "checkJs": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
 
@@ -23,6 +22,7 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "allowJs": true,
+    "checkJs": false,
 
     "outDir": "${configDir}/dist",
     "jsx": "preserve",
