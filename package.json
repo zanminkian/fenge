@@ -8,7 +8,7 @@
     "build": "pnpm -r build",
     "install": "pnpm build",
     "prepare": "fenge install",
-    "release": "pnpm -r publish --tag $(test -f .changeset/pre.json && jq -r '.tag' .changeset/pre.json || echo 'latest')",
+    "release": "pnpm -r publish",
     "style": "fenge",
     "style:update": "fenge -u",
     "test": "pnpm style && pnpm -r test"
