@@ -1,5 +1,11 @@
 # fenge
 
+## 0.12.5-beta.0
+
+### Patch Changes
+
+- e2bf465: feat(fenge): remove confusing error info about prettier
+
 ## 0.12.4
 
 ### Patch Changes
