@@ -18,7 +18,7 @@ export async function format(
     default: useDefaultConfig = false,
   } = {},
 ) {
-  return execAsync("💃 Checking formatting")(
+  const result = await execAsync("💃 Checking formatting")(
     [
       process.execPath,
       await getPrettierPath(useDefaultConfig),
@@ -45,6 +45,10 @@ export async function format(
       },
     },
   );
+  return {
+    ...result,
+    stderr: result.stderr.replace(/ Run Prettier with --write to fix\.$/, ""),
+  };
 }
 
 /**
