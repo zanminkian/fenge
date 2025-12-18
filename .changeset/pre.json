@@ -16,5 +16,5 @@
     "@fenge/tsconfig": "0.10.0",
     "@fenge/types": "0.5.0"
   },
-  "changesets": ["violet-pets-read"]
+  "changesets": ["silent-words-beam", "violet-pets-read"]
 }
