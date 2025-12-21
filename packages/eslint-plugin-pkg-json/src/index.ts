@@ -4,6 +4,7 @@ import * as consistentDependencyVersions from "./rules/consistent-dependency-ver
 import * as exactDependencyVersion from "./rules/exact-dependency-version.js";
 import * as noConflictTypes from "./rules/no-conflict-types.js";
 import * as noDependenciesInWorkspaceRoot from "./rules/no-dependencies-in-workspace-root.js";
+import * as noEngines from "./rules/no-engines.js";
 import * as noLifecycleScript from "./rules/no-lifecycle-script.js";
 import * as noNonstandardProperty from "./rules/no-nonstandard-property.js";
 import * as noRestrictedDeps from "./rules/no-restricted-deps.js";
@@ -26,6 +27,7 @@ export const rules = Object.fromEntries(
     exactDependencyVersion,
     noConflictTypes,
     noDependenciesInWorkspaceRoot,
+    noEngines,
     noLifecycleScript,
     noNonstandardProperty,
     noRestrictedDeps,

@@ -23,6 +23,7 @@ export function packagejson() {
         "pkg-json/exact-dependency-version": "error",
         "pkg-json/no-conflict-types": "error",
         "pkg-json/no-dependencies-in-workspace-root": "error",
+        "pkg-json/no-engines": "error",
         "pkg-json/no-lifecycle-script": "error",
         "pkg-json/no-nonstandard-property": "error",
         "pkg-json/no-restricted-deps": "error",
