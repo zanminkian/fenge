@@ -1,5 +1,16 @@
 # @fenge/eslint-config
 
+## 0.7.20
+
+### Patch Changes
+
+- 4a875ee: feat: add `no-engines` eslint rule
+- 0a87b66: feat: add rule `consistent-hashbang-and-filename`
+- Updated dependencies [4a875ee]
+- Updated dependencies [0a87b66]
+  - eslint-plugin-pkg-json@0.4.8
+  - @fenge/eslint-plugin@0.4.2
+
 ## 0.7.19
 
 ### Patch Changes

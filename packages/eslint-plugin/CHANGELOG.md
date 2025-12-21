@@ -1,5 +1,11 @@
 # @fenge/eslint-plugin
 
+## 0.4.2
+
+### Patch Changes
+
+- 0a87b66: feat: add rule `consistent-hashbang-and-filename`
+
 ## 0.4.1
 
 ### Patch Changes
