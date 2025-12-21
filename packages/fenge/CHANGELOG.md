@@ -1,5 +1,13 @@
 # fenge
 
+## 0.12.6-beta.0
+
+### Patch Changes
+
+- Updated dependencies [4a875ee]
+- Updated dependencies [0a87b66]
+  - @fenge/eslint-config@0.7.20-beta.0
+
 ## 0.12.5
 
 ### Patch Changes

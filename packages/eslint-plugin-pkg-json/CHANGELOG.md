@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.4.8-beta.0
+
+### Patch Changes
+
+- 4a875ee: feat: add `no-engines` eslint rule
+
 ## 0.4.7
 
 ### Patch Changes
