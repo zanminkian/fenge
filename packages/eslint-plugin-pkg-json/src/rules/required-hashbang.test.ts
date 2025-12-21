@@ -29,11 +29,11 @@ const invalid = [
     filename: path.join(dir, "../../test/required-hashbang/package.json"),
   },
   {
-    code: s({ bin: "./bad.cli.js" }),
+    code: s({ bin: "./file-have-no-hashbang.js" }),
     filename: path.join(dir, "../../test/required-hashbang/package.json"),
   },
   {
-    code: s({ bin: { foo: "./bad.cli.js" } }),
+    code: s({ bin: { foo: "./file-have-no-hashbang.js" } }),
     filename: path.join(dir, "../../test/required-hashbang/package.json"),
   },
 ];

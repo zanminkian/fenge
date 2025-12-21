@@ -12,8 +12,8 @@ The bin file should starts with a hashbang
 {"bin":[]}
 {"bin":{"foo":true}}
 {"bin":"./no-existing.js"} // filename: /foo/test/required-hashbang/package.json
-{"bin":"./bad.cli.js"} // filename: /foo/test/required-hashbang/package.json
-{"bin":{"foo":"./bad.cli.js"}} // filename: /foo/test/required-hashbang/package.json
+{"bin":"./file-have-no-hashbang.js"} // filename: /foo/test/required-hashbang/package.json
+{"bin":{"foo":"./file-have-no-hashbang.js"}} // filename: /foo/test/required-hashbang/package.json
 ```
 
 ### Pass
