@@ -58,7 +58,7 @@ await describe("fixtures", async () => {
   });
 
   after(async () => {
-    await fs.rmdir(fixturesDir, { recursive: true });
+    await fs.rm(fixturesDir, { recursive: true });
   });
 
   await it("should have error", () => {
