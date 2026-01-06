@@ -1,5 +1,13 @@
 # @fenge/eslint-config
 
+## 0.7.21
+
+### Patch Changes
+
+- b210217: feat(eslint-config): allow options for `enableAll` api
+- Updated dependencies [2d3ab34]
+  - eslint-plugin-pkg-json@0.4.9
+
 ## 0.7.20
 
 ### Patch Changes
