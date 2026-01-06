@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.4.9
+
+### Patch Changes
+
+- 2d3ab34: fix: support array for `devEngines.runtime` and `devEngines.packageManager` fields in `require-dev-engines` rule
+
 ## 0.4.8
 
 ### Patch Changes
