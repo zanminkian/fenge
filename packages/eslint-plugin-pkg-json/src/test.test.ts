@@ -8,7 +8,9 @@ import { RuleTester, type Rule } from "eslint";
 import parser from "jsonc-eslint-parser";
 import { outdent } from "outdent";
 
-export type TestCase = string | { code: string; filename?: string };
+export type TestCase =
+  | string
+  | { code: string; filename?: string; errors?: number };
 
 const tester = new RuleTester({
   languageOptions: {
@@ -57,14 +59,15 @@ export async function test({
             ? {
                 code: item.code,
                 ...(item.filename && { filename: item.filename }),
+                errors: item.errors ?? errors,
               }
-            : { code: item },
+            : { code: item, errors },
         )
         .map(async (item) => {
           await it(item.code, () => {
             tester.run(name, rule, {
               valid: [],
-              invalid: [{ ...item, errors }],
+              invalid: [{ ...item }],
             });
           });
         }),
