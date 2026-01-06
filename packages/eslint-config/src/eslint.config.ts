@@ -88,6 +88,8 @@ export class Builder {
     return this;
   }
 
+  // We must use generics instead of removing them and directly using `options: Options<TsRuleKey[], TsRuleKey[]>`,
+  // otherwise `NoDuplicate` will not work, allowing users to pass duplicate values, e.g.: `enableTypeScript({ pick: ['no-var', 'no-var'] })`
   enableTypeScript<P extends TsRuleKey[], O extends TsRuleKey[]>(
     options: Options<P, O> = {},
   ) {
@@ -116,11 +118,25 @@ export class Builder {
     return this.setup(html(), options);
   }
 
-  enableAll() {
-    return this.enableHtml()
-      .enablePackageJson()
-      .enableJavaScript()
-      .enableTypeScript();
+  enableAll<
+    HP extends HtmlRuleKey[],
+    HO extends HtmlRuleKey[],
+    PP extends PkgRuleKey[],
+    PO extends PkgRuleKey[],
+    JP extends JsRuleKey[],
+    JO extends JsRuleKey[],
+    TP extends TsRuleKey[],
+    TO extends TsRuleKey[],
+  >(options?: {
+    html?: Options<HP, HO>;
+    packagejson?: Options<PP, PO>;
+    javascript?: Options<JP, JO>;
+    typescript?: Options<TP, TO>;
+  }) {
+    return this.enableHtml(options?.html)
+      .enablePackageJson(options?.packagejson)
+      .enableJavaScript(options?.javascript)
+      .enableTypeScript(options?.typescript);
   }
 
   append(config: ConfigItem) {
