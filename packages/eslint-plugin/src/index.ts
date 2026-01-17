@@ -1,5 +1,6 @@
 import { callArgumentsLength } from "./rules/call-arguments-length.ts";
 import { consistentHashbangAndFilename } from "./rules/consistent-hashbang-and-filename.ts";
+import { noEmptyCondition } from "./rules/no-empty-condition.ts";
 import { noInstanceofBuiltin } from "./rules/no-instanceof-builtin.ts";
 import { noNestedClass } from "./rules/no-nested-class.ts";
 import { noNestedFunction } from "./rules/no-nested-function.ts";
@@ -11,6 +12,7 @@ import { noUnnecessaryTemplateString } from "./rules/no-unnecessary-template-str
 export const rules = {
   [callArgumentsLength.name]: callArgumentsLength.rule,
   [consistentHashbangAndFilename.name]: consistentHashbangAndFilename.rule,
+  [noEmptyCondition.name]: noEmptyCondition.rule,
   [noInstanceofBuiltin.name]: noInstanceofBuiltin.rule,
   [noNestedClass.name]: noNestedClass.rule,
   [noNestedFunction.name]: noNestedFunction.rule,

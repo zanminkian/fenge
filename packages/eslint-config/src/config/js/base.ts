@@ -538,6 +538,7 @@ export function getJsBase() {
 
       "@fenge/call-arguments-length": "error",
       "@fenge/consistent-hashbang-and-filename": "error",
+      "@fenge/no-empty-condition": "error",
       "@fenge/no-instanceof-builtin": "error",
       "@fenge/no-nested-class": "error",
       "@fenge/no-nested-function": "error",
