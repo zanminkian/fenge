@@ -297,6 +297,7 @@ export function getJsBase() {
       // esm
       "esm/existing-file-imports": "error",
       "esm/no-circular-imports": "error",
+      "esm/no-cli-imports": "error",
       "esm/no-declaration-file-imports": "error",
       "esm/no-directory-imports": "error",
       "esm/no-dynamic-imports": "error",
