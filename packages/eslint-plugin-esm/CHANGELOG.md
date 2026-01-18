@@ -1,5 +1,11 @@
 # eslint-plugin-esm
 
+## 0.9.1
+
+### Patch Changes
+
+- d4ef50e: feat: add `no-cli-imports` rule
+
 ## 0.9.0
 
 ### Minor Changes
