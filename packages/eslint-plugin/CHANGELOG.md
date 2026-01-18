@@ -1,5 +1,12 @@
 # @fenge/eslint-plugin
 
+## 0.4.3
+
+### Patch Changes
+
+- 8204a8b: feat: add rule `no-empty-condition`
+- 5e8598f: feat: allow `for` statement
+
 ## 0.4.2
 
 ### Patch Changes
