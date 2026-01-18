@@ -1,14 +1,13 @@
 <!-- prettier-ignore-start -->
 # no-restricted-loops
 
-Only allow `while` and `for-of` loops. `for`, `for-in`, `do-while` and `for-await-of` loops are disallowed.
+Only allow `while`, `for` and `for-of` loops. `for-in`, `do-while` and `for-await-of` loops are disallowed.
 
 ## Rule Details
 
 ### Fail
 
 ```ts
-for(let i = 0; i < foo.length; i++) {}
 for(const bar in foo) {}
 do{}while(condition)
 for await (const bar of foo()) {}
@@ -19,5 +18,6 @@ for await (const bar of foo()) {}
 ```ts
 for(const bar of foo) {}
 while(condition){}
+for(let i = 0; i < foo.length; i++) {}
 ```
 <!-- prettier-ignore-end -->

@@ -11,18 +11,19 @@ const rule: Rule.RuleModule = {
     docs: {
       url: getDocUrl(name),
       description:
-        "Only allow `while` and `for-of` loops. `for`, `for-in`, `do-while` and `for-await-of` loops are disallowed.",
+        "Only allow `while`, `for` and `for-of` loops. `for-in`, `do-while` and `for-await-of` loops are disallowed.",
     },
     messages: {
       [`${name}/error`]:
-        "Only allow `while` and `for-of` loops. `for`, `for-in`, `do-while` and `for-await-of` loops are disallowed.",
+        "Only allow `while`, `for` and `for-of` loops. `for-in`, `do-while` and `for-await-of` loops are disallowed.",
     },
   },
   create: (context) => ({
-    ":matches(ForStatement, ForInStatement, DoWhileStatement, ForOfStatement[await=true])":
-      (node: Rule.Node) => {
-        context.report({ node, messageId: `${name}/error` });
-      },
+    ":matches(ForInStatement, DoWhileStatement, ForOfStatement[await=true])": (
+      node: Rule.Node,
+    ) => {
+      context.report({ node, messageId: `${name}/error` });
+    },
   }),
 };
 
