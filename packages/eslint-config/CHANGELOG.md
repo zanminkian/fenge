@@ -1,5 +1,17 @@
 # @fenge/eslint-config
 
+## 0.7.22
+
+### Patch Changes
+
+- 8204a8b: feat: add rule `no-empty-condition`
+- d4ef50e: feat: add `no-cli-imports` rule
+- Updated dependencies [8204a8b]
+- Updated dependencies [d4ef50e]
+- Updated dependencies [5e8598f]
+  - @fenge/eslint-plugin@0.4.3
+  - eslint-plugin-esm@0.9.1
+
 ## 0.7.21
 
 ### Patch Changes
