@@ -193,8 +193,8 @@ export function getTsBase() {
       "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
       "@typescript-eslint/no-unnecessary-condition": [
         "error",
-        // TODO: If https://github.com/typescript-eslint/typescript-eslint/issues/11978 is fixed, upgrade typescript-eslint. If this issue won't be fixed, change to `allowConstantLoopConditions: "always"`.
-        { allowConstantLoopConditions: "only-allowed-literals" },
+        // TODO: If https://github.com/typescript-eslint/typescript-eslint/issues/11978 is fixed, change to `allowConstantLoopConditions: "only-allowed-literals"`.
+        { allowConstantLoopConditions: "always" },
       ],
       "@typescript-eslint/no-unnecessary-parameter-property-assignment":
         "error",
