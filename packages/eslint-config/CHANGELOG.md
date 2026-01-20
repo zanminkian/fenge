@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.7.24
+
+### Patch Changes
+
+- 5dc2212: fix: allow literal condition in loops
+
 ## 0.7.23
 
 ### Patch Changes
