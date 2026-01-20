@@ -15,10 +15,8 @@
 {"devEngines":{"packageManager":{"name":"npm","version":"1.0.0"}}} // filename: /foo/package.json
 {"devEngines":{"packageManager":{"name":"npm"},"runtime":{"name":"node","version":">=22"}}} // filename: /foo/package.json
 {"devEngines":{"runtime":{"name":"node","version":"1.0.0"},"packageManager":{"name":"npm","version":"8.0.0","onFail":"warn"}}} // filename: /foo/package.json
-{"devEngines":{"runtime":{"name":"node","version":"1.0.0","onFail":"warn"},"packageManager":{"name":"npm","version":"8.0.0"}}} // filename: /foo/package.json
-{"devEngines":{"runtime":{"name":"node","version":"1.0.0","onFail":"Error"},"packageManager":{"name":"npm","version":"8.0.0","onFail":"error"}}} // filename: /foo/package.json
 {"devEngines":{"runtime":[{"name":"node"}],"packageManager":[{"name":"npm","version":"8.0.0"}]}} // filename: /foo/package.json
-{"devEngines":{"runtime":[{"name":"node","version":"18.0.0","onFail":"warn"}],"packageManager":[{"name":"npm","version":"8.0.0"}]}} // filename: /foo/package.json
+{"devEngines":{"runtime":[{"name":"node","version":"18.0.0"}],"packageManager":[{"name":"npm","version":"8.0.0","onFail":"warn"}]}} // filename: /foo/package.json
 {"devEngines":{"runtime":["invalid"],"packageManager":[{"name":"npm","version":"8.0.0"}]}} // filename: /foo/package.json
 ```
 

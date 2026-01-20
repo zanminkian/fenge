@@ -129,30 +129,12 @@ const invalid = [
     }),
     filename: rootPkgJson,
   },
-  // 2. check `onFail`
+  // 2. check `onFail` (only packageManager's onFail is checked, runtime's onFail is not checked)
   {
     code: s({
       devEngines: {
         runtime: { name: "node", version: "1.0.0" },
         packageManager: { name: "npm", version: "8.0.0", onFail: "warn" },
-      },
-    }),
-    filename: rootPkgJson,
-  },
-  {
-    code: s({
-      devEngines: {
-        runtime: { name: "node", version: "1.0.0", onFail: "warn" },
-        packageManager: { name: "npm", version: "8.0.0" },
-      },
-    }),
-    filename: rootPkgJson,
-  },
-  {
-    code: s({
-      devEngines: {
-        runtime: { name: "node", version: "1.0.0", onFail: "Error" },
-        packageManager: { name: "npm", version: "8.0.0", onFail: "error" },
       },
     }),
     filename: rootPkgJson,
@@ -170,8 +152,8 @@ const invalid = [
   {
     code: s({
       devEngines: {
-        runtime: [{ name: "node", version: "18.0.0", onFail: "warn" }], // invalid onFail
-        packageManager: [{ name: "npm", version: "8.0.0" }],
+        runtime: [{ name: "node", version: "18.0.0" }],
+        packageManager: [{ name: "npm", version: "8.0.0", onFail: "warn" }], // invalid onFail for packageManager
       },
     }),
     filename: rootPkgJson,

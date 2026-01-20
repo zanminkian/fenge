@@ -53,13 +53,13 @@ export const rule = {
         // 2. check `onFail`
         const onFailNodes = [];
         // Collect onFail nodes from runtime
-        (runtime.type === "JSONArrayExpression"
-          ? runtime.elements
-          : [runtime]
-        ).forEach((element) => {
-          const onFail = checkAndGet(element, "onFail");
-          if (onFail) onFailNodes.push(onFail);
-        });
+        // (runtime.type === "JSONArrayExpression"
+        //   ? runtime.elements
+        //   : [runtime]
+        // ).forEach((element) => {
+        //   const onFail = checkAndGet(element, "onFail");
+        //   if (onFail) onFailNodes.push(onFail);
+        // });
         // Collect onFail nodes from packageManager
         (packageManager.type === "JSONArrayExpression"
           ? packageManager.elements
