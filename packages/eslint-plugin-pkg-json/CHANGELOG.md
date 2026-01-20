@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.4.10
+
+### Patch Changes
+
+- 8a7c8db: feat: dont check `devEngines.runtime.onFail` in a package.json
+
 ## 0.4.9
 
 ### Patch Changes
