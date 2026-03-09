@@ -1,3 +1,5 @@
+// Putting `types` field in exports must be on the top of an object is required by Node.js.
+// See: https://nodejs.org/api/packages.html#community-conditions-definitions
 export const name = "top-types";
 export const rule = {
   meta: {

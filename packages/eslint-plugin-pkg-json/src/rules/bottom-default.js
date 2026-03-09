@@ -1,3 +1,5 @@
+// Putting `default` field in exports must be on the bottom of an object is required by Node.js.
+// See: https://nodejs.org/api/packages.html#community-conditions-definitions
 export const name = "bottom-default";
 export const rule = {
   meta: {
