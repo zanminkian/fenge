@@ -24,11 +24,11 @@ We can remove the `tsconfig.json` in the root of monorepo project. But when open
 
 To remove the root `tsconfig.json`, we need [this issue](https://github.com/microsoft/TypeScript/issues/60748) to be accepted and implemented. After that, we can add `"include": ["${configDir}/src"]` and `"exclude": ["**/*.test.ts"]` to `cjs.json` and `esm.json`, and then remove the root `tsconfig.json`. Unfortunately, the issue is not accepted.
 
-## Why setting `lib` and `target` to `es2022`?
+## ~~Why setting `lib` and `target` to `es2022`?~~
 
-- Node 16 supports es2022
-- Node 18 supports es2022
-- [Node 18 does not support some features of es2023](https://github.com/tsconfig/bases/issues/217)
+- ~~Node 16 supports es2022~~
+- ~~Node 18 supports es2022~~
+- ~~[Node 18 does not support some features of es2023](https://github.com/tsconfig/bases/issues/217)~~
 
 ## Why don't we specify `types` field?
 
