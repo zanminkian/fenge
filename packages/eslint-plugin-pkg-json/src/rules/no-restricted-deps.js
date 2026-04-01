@@ -28,14 +28,13 @@ export const rule = {
         axios: "Use built-in `fetch` api instead.",
         got: "Use built-in `fetch` api instead.",
 
-        // TODO: Uncomment these when we drop support for Node v18.
         // util.styleText
         // Why no chalk? Because chalk has some features that built-in styleText does not support.
-        // picocolors: "Use built-in util.styleText api instead.",
-        // yoctocolors: "Use built-in util.styleText api instead.",
-        // "ansi-colors": "Use built-in util.styleText api instead.",
-        // colorette: "Use built-in util.styleText api instead.",
-        // kleur: "Use built-in util.styleText api instead.",
+        picocolors: "Use built-in util.styleText api instead.",
+        yoctocolors: "Use built-in util.styleText api instead.",
+        "ansi-colors": "Use built-in util.styleText api instead.",
+        colorette: "Use built-in util.styleText api instead.",
+        kleur: "Use built-in util.styleText api instead.",
 
         // TODO: Uncomment these when we drop support for Node v20.
         // glob
