@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "@typescript-eslint/typescript-estree": "8.42.0",
-    "commander": "13.1.0",
-    "globby": "14.1.0"
+    "commander": "14.0.3",
+    "globby": "16.2.0"
   },
   "devDependencies": {
     "@types/node": "20.19.37"
