@@ -1,5 +1,11 @@
 # eslint-plugin-esm
 
+## 0.10.0
+
+### Minor Changes
+
+- 4f1edc3: chore!: require Node >= 20.19.0
+
 ## 0.9.1
 
 ### Patch Changes

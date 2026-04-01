@@ -1,5 +1,21 @@
 # fenge
 
+## 0.13.0
+
+### Minor Changes
+
+- 4f1edc3: chore!: require Node >= 20.19.0
+- 76bf765: feat: enable `erasableSyntaxOnly` for tsconfig
+
+### Patch Changes
+
+- Updated dependencies [4f1edc3]
+- Updated dependencies [76bf765]
+  - @fenge/prettier-config@0.4.0
+  - prettier-ignore@0.5.0
+  - @fenge/eslint-config@0.8.0
+  - @fenge/tsconfig@0.11.0
+
 ## 0.12.11
 
 ### Patch Changes

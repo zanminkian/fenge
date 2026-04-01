@@ -1,5 +1,20 @@
 # @fenge/eslint-config
 
+## 0.8.0
+
+### Minor Changes
+
+- 4f1edc3: chore!: require Node >= 20.19.0
+
+### Patch Changes
+
+- Updated dependencies [4f1edc3]
+  - eslint-plugin-pkg-json@0.5.0
+  - eslint-plugin-publint@0.4.0
+  - eslint-plugin-esm@0.10.0
+  - @fenge/eslint-plugin-ts@0.5.0
+  - @fenge/eslint-plugin@0.5.0
+
 ## 0.7.25
 
 ### Patch Changes

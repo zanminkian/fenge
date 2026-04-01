@@ -1,5 +1,11 @@
 # @fenge/prettier-config
 
+## 0.4.0
+
+### Minor Changes
+
+- 4f1edc3: chore!: require Node >= 20.19.0
+
 ## 0.3.10
 
 ### Patch Changes
