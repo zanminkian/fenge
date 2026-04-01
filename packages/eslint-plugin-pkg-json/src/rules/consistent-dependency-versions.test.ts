@@ -7,14 +7,14 @@ const valid = [
   // Single package.json - no inconsistency possible
   s({ dependencies: { "jsonc-eslint-parser": "2.4.1" } }),
   s({ devDependencies: { eslint: "9.22.0" } }),
-  s({ optionalDependencies: { semver: "7.7.3" } }),
+  s({ optionalDependencies: { semver: "7.7.4" } }),
   s({
-    dependencies: { semver: "7.7.3" },
+    dependencies: { semver: "7.7.4" },
     devDependencies: { "@types/semver": "7.7.1" },
   }),
   s({
     dependencies: { "jsonc-eslint-parser": "2.4.1" },
-    optionalDependencies: { semver: "7.7.3" },
+    optionalDependencies: { semver: "7.7.4" },
   }),
   // Different dependencies - no conflict
   s({
@@ -41,7 +41,7 @@ const invalid = [
   s({ devDependencies: { "jsonc-eslint-parser": "2.3.0" } }),
   s({ optionalDependencies: { "jsonc-eslint-parser": "2.4.2" } }),
 
-  // Using different version of semver than in package.json (7.7.3)
+  // Using different version of semver than in package.json (7.7.4)
   s({ dependencies: { semver: "7.7.2" } }),
   s({ dependencies: { semver: "7.8.0" } }),
   s({ devDependencies: { semver: "7.6.0" } }),
@@ -52,10 +52,10 @@ const invalid = [
   s({ devDependencies: { eslint: "9.23.0" } }),
   s({ optionalDependencies: { eslint: "9.20.0" } }),
 
-  // Using different version of @types/node than in package.json devDependencies (18.19.123)
-  s({ dependencies: { "@types/node": "18.19.122" } }),
+  // Using different version of @types/node than in package.json devDependencies (20.19.37)
+  s({ dependencies: { "@types/node": "20.19.36" } }),
   s({ devDependencies: { "@types/node": "20.0.0" } }),
-  s({ optionalDependencies: { "@types/node": "18.19.120" } }),
+  s({ optionalDependencies: { "@types/node": "20.19.35" } }),
 
   // Using different version of outdent than in package.json devDependencies (0.8.0)
   s({ dependencies: { outdent: "0.7.0" } }),
@@ -64,7 +64,7 @@ const invalid = [
   // Mixed case - some consistent, some inconsistent
   s({
     dependencies: {
-      semver: "7.7.3", // consistent
+      semver: "7.7.4", // consistent
       "jsonc-eslint-parser": "2.4.0", // inconsistent
     },
   }),
@@ -73,7 +73,7 @@ const invalid = [
     devDependencies: { eslint: "9.21.0" }, // inconsistent
   }),
   s({
-    dependencies: { semver: "7.7.3" }, // consistent
+    dependencies: { semver: "7.7.4" }, // consistent
     optionalDependencies: { eslint: "9.21.0" }, // inconsistent
   }),
   s({
