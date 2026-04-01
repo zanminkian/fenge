@@ -37,11 +37,11 @@
     "test": "tsc --noEmit"
   },
   "dependencies": {
-    "commander": "13.1.0",
+    "commander": "14.0.3",
     "get-tsconfig": "4.13.0",
     "json5": "2.2.3",
     "print-diff": "2.0.0",
-    "sort-keys": "5.1.0"
+    "sort-keys": "6.0.0"
   },
   "devDependencies": {
     "@types/node": "20.19.37"

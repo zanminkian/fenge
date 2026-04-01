@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "jsonc-eslint-parser": "2.4.1",
-    "semver": "7.7.3"
+    "semver": "7.7.4"
   },
   "devDependencies": {
     "@types/node": "20.19.37",
