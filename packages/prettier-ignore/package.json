@@ -24,7 +24,7 @@
     "build": "tscx --include src --exclude '**/*.test.ts'"
   },
   "devDependencies": {
-    "@types/node": "18.19.123"
+    "@types/node": "20.19.37"
   },
   "engines": {
     "node": ">=20.19.0"
