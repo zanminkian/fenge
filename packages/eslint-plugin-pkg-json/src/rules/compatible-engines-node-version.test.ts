@@ -11,11 +11,11 @@ const valid = [
     filename: path.join(process.cwd(), "./package.json"),
   },
   {
-    code: s({ engines: { node: "^18.19.0" } }),
+    code: s({ engines: { node: "^20.19.0" } }),
     filename: path.join(process.cwd(), "./package.json"),
   },
   {
-    code: s({ engines: { node: "^18.19.999" } }),
+    code: s({ engines: { node: "^20.19.999" } }),
     filename: path.join(process.cwd(), "./package.json"),
   },
 ];
@@ -25,11 +25,11 @@ const invalid = [
     filename: path.join(process.cwd(), "./package.json"),
   },
   {
-    code: s({ engines: { node: "^18.18.0" } }),
+    code: s({ engines: { node: "^20.18.0" } }),
     filename: path.join(process.cwd(), "./package.json"),
   },
   {
-    code: s({ engines: { node: "^18.18.999" } }),
+    code: s({ engines: { node: "^20.18.999" } }),
     filename: path.join(process.cwd(), "./package.json"),
   },
 ];

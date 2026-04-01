@@ -19,14 +19,14 @@ Ensure consistent dependency versions across all package.json files in the proje
 {"dependencies":{"eslint":"9.21.0"}}
 {"devDependencies":{"eslint":"9.23.0"}}
 {"optionalDependencies":{"eslint":"9.20.0"}}
-{"dependencies":{"@types/node":"18.19.122"}}
+{"dependencies":{"@types/node":"20.19.36"}}
 {"devDependencies":{"@types/node":"20.0.0"}}
-{"optionalDependencies":{"@types/node":"18.19.120"}}
+{"optionalDependencies":{"@types/node":"20.19.35"}}
 {"dependencies":{"outdent":"0.7.0"}}
 {"optionalDependencies":{"outdent":"0.9.0"}}
-{"dependencies":{"semver":"7.7.3","jsonc-eslint-parser":"2.4.0"}}
+{"dependencies":{"semver":"7.7.4","jsonc-eslint-parser":"2.4.0"}}
 {"dependencies":{"jsonc-eslint-parser":"2.4.1"},"devDependencies":{"eslint":"9.21.0"}}
-{"dependencies":{"semver":"7.7.3"},"optionalDependencies":{"eslint":"9.21.0"}}
+{"dependencies":{"semver":"7.7.4"},"optionalDependencies":{"eslint":"9.21.0"}}
 {"dependencies":{"jsonc-eslint-parser":"2.4.1"},"devDependencies":{"eslint":"9.22.0"},"optionalDependencies":{"semver":"7.6.0"}}
 ```
 
@@ -35,9 +35,9 @@ Ensure consistent dependency versions across all package.json files in the proje
 ```ts
 {"dependencies":{"jsonc-eslint-parser":"2.4.1"}}
 {"devDependencies":{"eslint":"9.22.0"}}
-{"optionalDependencies":{"semver":"7.7.3"}}
-{"dependencies":{"semver":"7.7.3"},"devDependencies":{"@types/semver":"7.7.1"}}
-{"dependencies":{"jsonc-eslint-parser":"2.4.1"},"optionalDependencies":{"semver":"7.7.3"}}
+{"optionalDependencies":{"semver":"7.7.4"}}
+{"dependencies":{"semver":"7.7.4"},"devDependencies":{"@types/semver":"7.7.1"}}
+{"dependencies":{"jsonc-eslint-parser":"2.4.1"},"optionalDependencies":{"semver":"7.7.4"}}
 {"dependencies":{"jsonc-eslint-parser":"2.4.1"},"devDependencies":{"eslint":"9.22.0"}}
 {"dependencies":{"jsonc-eslint-parser":"2.4.1"},"devDependencies":{"eslint":"9.22.0"},"optionalDependencies":{"outdent":"0.8.0"}}
 {"dependencies":{}}
