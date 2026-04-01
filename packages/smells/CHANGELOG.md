@@ -1,5 +1,11 @@
 # smells
 
+## 0.2.0
+
+### Minor Changes
+
+- 4f1edc3: chore!: require Node >= 20.19.0
+
 ## 0.1.11
 
 ### Patch Changes
