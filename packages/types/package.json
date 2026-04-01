@@ -28,7 +28,7 @@
     "test": "tsc --noEmit && node --test"
   },
   "devDependencies": {
-    "@types/node": "18.19.123",
+    "@types/node": "20.19.37",
     "typescript": "5.9.3"
   },
   "peerDependencies": {
