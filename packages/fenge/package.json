@@ -56,8 +56,7 @@
     "ora": "9.3.0",
     "prettier": "3.8.1",
     "prettier-ignore": "workspace:*",
-    "pretty-ms": "9.3.0",
-    "yoctocolors": "2.1.2"
+    "pretty-ms": "9.3.0"
   },
   "devDependencies": {
     "@types/node": "20.19.37"

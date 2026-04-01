@@ -7,10 +7,10 @@ import os from "node:os";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
+import { styleText } from "node:util";
 import { lilconfig } from "lilconfig";
 import ora from "ora";
 import prettyMs from "pretty-ms";
-import colors from "yoctocolors";
 
 /**
  * @returns {Promise<{name: string, version: string}>}
@@ -73,7 +73,7 @@ export function spin(func, topic) {
       return result;
     } finally {
       spinner[succeedOrFail](
-        `${topic} ${succeedOrFail} in ${colors.yellow(prettyMs(Date.now() - startTime))}`,
+        `${topic} ${succeedOrFail} in ${styleText("yellow", prettyMs(Date.now() - startTime))}`,
       );
     }
   };
@@ -92,7 +92,7 @@ function execCmd(command, { dryRun, env }) {
   if (dryRun) {
     return Promise.resolve({
       code: 0,
-      stdout: `${colors.green(cmd)} ${args.join(" ")};\n`,
+      stdout: `${styleText("green", cmd)} ${args.join(" ")};\n`,
       stderr: "",
     });
   }
