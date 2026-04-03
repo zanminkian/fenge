@@ -1,5 +1,11 @@
 # eslint-plugin-esm
 
+## 0.10.1
+
+### Patch Changes
+
+- 8c0e38d: fix: allow `export {default as foo} from '...'` re-exports in no-rename-exports rule
+
 ## 0.10.0
 
 ### Minor Changes
