@@ -1,4 +1,5 @@
-import { test } from "../test.test.ts";
+import { test } from "@fenge/dev-utils";
+import parser from "jsonc-eslint-parser";
 import { name, rule } from "./no-nonstandard-property.js";
 
 const s = JSON.stringify;
@@ -14,4 +15,4 @@ const invalid = [
   s({ name: "foo", type: "foo", yarn: "foo", packageManager: "foo" }),
 ];
 
-await test({ name, rule, valid, invalid, errors: 2 });
+await test({ name, rule, valid, invalid, errors: 2, parser });

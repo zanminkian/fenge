@@ -1,4 +1,5 @@
-import { test } from "../test.test.ts";
+import { test } from "@fenge/dev-utils";
+import parser from "jsonc-eslint-parser";
 import { name, rule } from "./required-files.js";
 
 const s = JSON.stringify;
@@ -20,4 +21,4 @@ const invalid = [
   s({ files: {} }),
 ];
 
-await test({ name, rule, valid, invalid });
+await test({ name, rule, valid, invalid, parser });

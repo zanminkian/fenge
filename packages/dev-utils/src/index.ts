@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 import { describe, it } from "node:test";
-import parser from "@typescript-eslint/parser";
+import tsParser from "@typescript-eslint/parser";
 import { RuleTester, type Rule } from "eslint";
 import { outdent } from "outdent";
 
@@ -10,11 +10,21 @@ export interface TestCase {
   code: string;
   filename?: string;
   options?: unknown;
+  errors?: number | { messageId: string }[];
 }
 
-const tester = new RuleTester({
+export interface TestOptions {
+  name: string;
+  rule: Rule.RuleModule;
+  valid: (TestCase | string)[];
+  invalid: (TestCase | string)[];
+  errors?: number;
+  parser?: any;
+}
+
+const defaultTester = new RuleTester({
   languageOptions: {
-    parser,
+    parser: tsParser,
     parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   },
 });
@@ -25,13 +35,8 @@ export async function test({
   valid: originValid,
   invalid: originInvalid,
   errors = 1,
-}: {
-  name: string;
-  rule: Rule.RuleModule;
-  valid: (TestCase | string)[];
-  invalid: (TestCase | string)[];
-  errors?: number;
-}) {
+  parser,
+}: TestOptions) {
   const normalize = (testCases: (TestCase | string)[]): TestCase[] =>
     testCases.map((testCase) =>
       typeof testCase === "string" ? { code: testCase } : testCase,
@@ -46,11 +51,14 @@ export async function test({
     ...testCase,
     code: testCase.code,
   }));
+  const ruleTester = parser
+    ? new RuleTester({ languageOptions: { parser } })
+    : defaultTester;
   await describe(name, async () => {
     await Promise.all(
       transformedValid.map(async (testCase) => {
         await it(JSON.stringify(testCase), () => {
-          tester.run(name, rule, {
+          ruleTester.run(name, rule, {
             valid: [testCase],
             invalid: [],
             ...(testCase.options ? { options: testCase.options } : {}),
@@ -62,10 +70,16 @@ export async function test({
     await Promise.all(
       transformedInvalid.map(async (testCase) => {
         await it(JSON.stringify(testCase), () => {
-          const { code, filename, options } = testCase;
-          tester.run(name, rule, {
+          const { code, filename, options, errors: caseErrors } = testCase;
+          ruleTester.run(name, rule, {
             valid: [],
-            invalid: [{ code, errors, ...(filename && { filename }) }],
+            invalid: [
+              {
+                code,
+                errors: caseErrors ?? errors,
+                ...(filename && { filename }),
+              },
+            ],
             ...(options ? { options } : {}),
           });
         });

@@ -1,4 +1,5 @@
-import { test } from "../test.test.ts";
+import { test } from "@fenge/dev-utils";
+import parser from "jsonc-eslint-parser";
 import { name, rule } from "./consistent-dependency-versions.js";
 
 const s = JSON.stringify;
@@ -83,4 +84,4 @@ const invalid = [
   }),
 ];
 
-await test({ name, rule, valid, invalid });
+await test({ name, rule, valid, invalid, parser });

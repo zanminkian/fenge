@@ -1,6 +1,7 @@
 import path from "node:path";
 import process from "node:process";
-import { test } from "../test.test.ts";
+import { test } from "@fenge/dev-utils";
+import parser from "jsonc-eslint-parser";
 import { name, rule } from "./no-types-dependency-in-workspace-root.js";
 
 const s = JSON.stringify;
@@ -63,4 +64,4 @@ const invalid = [
   },
 ];
 
-await test({ name, rule, valid, invalid, errors: 2 });
+await test({ name, rule, valid, invalid, errors: 2, parser });

@@ -1,4 +1,5 @@
-import { test } from "../test.test.ts";
+import { test } from "@fenge/dev-utils";
+import parser from "jsonc-eslint-parser";
 import { name, rule } from "./top-types.js";
 
 const s = JSON.stringify;
@@ -19,4 +20,4 @@ const invalid = [
   s({ exports: { foo: { bar: { x: "", types: "" } } } }),
 ];
 
-await test({ name, rule, valid, invalid });
+await test({ name, rule, valid, invalid, parser });

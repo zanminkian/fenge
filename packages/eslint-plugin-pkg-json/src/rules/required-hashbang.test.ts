@@ -1,6 +1,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { test } from "../test.test.ts";
+import { test } from "@fenge/dev-utils";
+import parser from "jsonc-eslint-parser";
 import { name, rule } from "./required-hashbang.js";
 
 const s = JSON.stringify;
@@ -38,4 +39,4 @@ const invalid = [
   },
 ];
 
-await test({ name, rule, valid, invalid });
+await test({ name, rule, valid, invalid, parser });
