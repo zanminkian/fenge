@@ -20,13 +20,13 @@ pnpm release          # Publish all packages (via @changesets/cli)
 Running tests for a single package:
 
 ```sh
-cd packages/eslint-plugin-esm && pnpm test
+pnpm -F eslint-plugin-esm test
 ```
 
 Running a single test file:
 
 ```sh
-node --test packages/eslint-plugin-esm/src/rules/existing-file-imports.test.ts
+cd packages/eslint-plugin-esm && node --test src/rules/existing-file-imports.test.ts
 ```
 
 ## Monorepo Architecture
@@ -89,4 +89,4 @@ fenge diff-tsconfig    # Compare tsconfig
 
 ## Commit Workflow
 
-Before committing `fix` or `feat` type changes, create a changeset file in `.changeset` directory. The changeset file header should include edited package name(s). The changeset file content (description) should be a single sentence in English, starting with `fix:` or `feat:`. The commit message should be the **same** as the changeset file description.
+Before committing `fix` or `feat` type changes, create a changeset file in `.changeset` directory. The changeset file header should include edited package name(s). The changeset file content should be a single sentence in English, starting with `fix:` or `feat:`. The commit message should be the **same** as the changeset file content.
