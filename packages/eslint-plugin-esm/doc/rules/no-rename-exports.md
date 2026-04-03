@@ -17,6 +17,9 @@ export {foo as bar} from 'foo'
 export {default as foo};
 export {foo as default};
 export {foo as bar};
+export {default as default} from './foo';
+export {default as default} from 'foo';
+export {default as default};
 export {type Foo as Bar}
 export type {Foo as Bar}
 ```

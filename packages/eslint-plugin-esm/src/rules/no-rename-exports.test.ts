@@ -21,6 +21,9 @@ const invalid = [
   "export {default as foo};",
   "export {foo as default};",
   "export {foo as bar};",
+  "export {default as default} from './foo';",
+  "export {default as default} from 'foo';",
+  "export {default as default};",
   // ts
   "export {type Foo as Bar}",
   "export type {Foo as Bar}",

@@ -6,21 +6,25 @@ export const noRenameExports = createRule({
   create: (context) => ({
     ExportSpecifier: (node) => {
       const parent = node.parent;
-      if (
-        parent.type === "ExportNamedDeclaration" &&
+      if (parent.type !== "ExportNamedDeclaration") return;
+
+      const hasLocalAndExported =
+        node.local.type === "Identifier" && node.exported.type === "Identifier";
+      if (!hasLocalAndExported) return;
+
+      // `export { foo }` has the same source position as local and exported
+      if (node.local.range?.[0] === node.exported.range?.[0]) return;
+
+      // Exception: `export { default as X } from '...'` where X is not "default"
+      const isReexportAsNamed =
         parent.source &&
         node.local.type === "Identifier" &&
-        node.local.name === "default"
-      ) {
-        return;
-      }
-      if (
-        node.exported.type !== "Identifier" ||
-        node.local.type !== "Identifier" ||
-        node.exported.name !== node.local.name
-      ) {
-        context.report({ node, messageId: DEFAULT_MESSAGE_ID });
-      }
+        node.local.name === "default" &&
+        node.exported.type === "Identifier" &&
+        node.exported.name !== "default";
+      if (isReexportAsNamed) return;
+
+      context.report({ node, messageId: DEFAULT_MESSAGE_ID });
     },
   }),
 });
