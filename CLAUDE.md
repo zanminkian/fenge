@@ -69,8 +69,7 @@ Each rule follows a consistent structure:
 
 - Rule file: `src/rules/rule-name.ts`
 - Test file: `src/rules/rule-name.test.ts`
-- Tests use `@fenge/dev-utils` with `valid`/`invalid` fixture arrays
-- Rule meta includes `messages` for error text and `fixable: "code"` if auto-fixable
+- Before creating a new rule, read and study 1 or 2 existing rules and their test files in the same directory
 
 ## fenge CLI Subcommands
 
@@ -89,4 +88,4 @@ fenge diff-tsconfig    # Compare tsconfig
 
 ## Commit Workflow
 
-Before committing `fix` or `feat` type changes, create a changeset file in `.changeset` directory. The changeset file header should include edited package name(s). The changeset file content should be a single sentence in English, starting with `fix:` or `feat:`. The commit message should be the **same** as the changeset file content.
+Before committing `fix` or `feat` type changes, create a changeset file in the `.changeset` directory. The file header should list all the affected package name(s), and the content should be a single English sentence starting with `fix:` or `feat:`. Use the **same** sentence as the commit message.
