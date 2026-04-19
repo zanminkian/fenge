@@ -209,6 +209,7 @@ export function getTsBase() {
       "@typescript-eslint/no-unsafe-function-type": "error",
       "@typescript-eslint/no-unsafe-return": "error", // This rule is not very perfect. See https://github.com/typescript-eslint/typescript-eslint/issues/10439
       "@typescript-eslint/no-unsafe-unary-minus": "error",
+      "@typescript-eslint/no-useless-default-assignment": "error",
       "@typescript-eslint/no-wrapper-object-types": "error",
       "@typescript-eslint/non-nullable-type-assertion-style": "error",
       "@typescript-eslint/only-throw-error": [
