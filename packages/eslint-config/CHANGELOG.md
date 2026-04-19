@@ -1,5 +1,13 @@
 # @fenge/eslint-config
 
+## 0.8.2
+
+### Patch Changes
+
+- 1fb5be3: chore: upgrade deps
+- Updated dependencies [1fb5be3]
+  - @fenge/eslint-plugin-ts@0.5.1
+
 ## 0.8.1
 
 ### Patch Changes
