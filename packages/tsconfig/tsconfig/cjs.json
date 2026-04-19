@@ -25,6 +25,7 @@
     "checkJs": false,
     "erasableSyntaxOnly": true,
 
+    "rootDir": "${configDir}/src",
     "outDir": "${configDir}/dist",
     "jsx": "preserve",
     "rewriteRelativeImportExtensions": true,
