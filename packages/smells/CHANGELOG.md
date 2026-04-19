@@ -1,5 +1,11 @@
 # smells
 
+## 0.2.1
+
+### Patch Changes
+
+- 1fb5be3: chore: upgrade deps
+
 ## 0.2.0
 
 ### Minor Changes
