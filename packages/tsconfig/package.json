@@ -33,9 +33,7 @@
     "src",
     "tsconfig"
   ],
-  "scripts": {
-    "test": "tsc --noEmit"
-  },
+  "scripts": {},
   "dependencies": {
     "commander": "14.0.3",
     "get-tsconfig": "4.13.0",

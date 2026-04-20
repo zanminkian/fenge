@@ -11,7 +11,8 @@
     "release": "pnpm -r publish",
     "style": "fenge",
     "style:update": "fenge -u",
-    "test": "pnpm style && pnpm -r test"
+    "test": "pnpm style && pnpm typecheck && pnpm -r test",
+    "typecheck": "pnpm -r exec tsc --noEmit"
   },
   "devDependencies": {
     "@changesets/cli": "2.31.0",
