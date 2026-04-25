@@ -28,7 +28,7 @@ Config `eslint.config.js`
 
 ```js
 import * as publint from "eslint-plugin-publint";
-import parser from "eslint-plugin-publint/jsonc-eslint-parser";
+import * as parser from "eslint-plugin-publint/jsonc-eslint-parser";
 
 export default [
   {

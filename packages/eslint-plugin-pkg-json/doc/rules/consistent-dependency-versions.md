@@ -25,21 +25,21 @@ Ensure consistent dependency versions across all package.json files in the proje
 {"dependencies":{"outdent":"0.7.0"}}
 {"optionalDependencies":{"outdent":"0.9.0"}}
 {"dependencies":{"semver":"7.7.4","jsonc-eslint-parser":"2.4.0"}}
-{"dependencies":{"jsonc-eslint-parser":"2.4.1"},"devDependencies":{"eslint":"9.21.0"}}
+{"dependencies":{"jsonc-eslint-parser":"3.1.0"},"devDependencies":{"eslint":"9.21.0"}}
 {"dependencies":{"semver":"7.7.4"},"optionalDependencies":{"eslint":"9.21.0"}}
-{"dependencies":{"jsonc-eslint-parser":"2.4.1"},"devDependencies":{"eslint":"9.22.0"},"optionalDependencies":{"semver":"7.6.0"}}
+{"dependencies":{"jsonc-eslint-parser":"3.1.0"},"devDependencies":{"eslint":"9.22.0"},"optionalDependencies":{"semver":"7.6.0"}}
 ```
 
 ### Pass
 
 ```ts
-{"dependencies":{"jsonc-eslint-parser":"2.4.1"}}
+{"dependencies":{"jsonc-eslint-parser":"3.1.0"}}
 {"devDependencies":{"eslint":"9.22.0"}}
 {"optionalDependencies":{"semver":"7.7.4"}}
 {"dependencies":{"semver":"7.7.4"},"devDependencies":{"@types/semver":"7.7.1"}}
-{"dependencies":{"jsonc-eslint-parser":"2.4.1"},"optionalDependencies":{"semver":"7.7.4"}}
-{"dependencies":{"jsonc-eslint-parser":"2.4.1"},"devDependencies":{"eslint":"9.22.0"}}
-{"dependencies":{"jsonc-eslint-parser":"2.4.1"},"devDependencies":{"eslint":"9.22.0"},"optionalDependencies":{"outdent":"0.8.0"}}
+{"dependencies":{"jsonc-eslint-parser":"3.1.0"},"optionalDependencies":{"semver":"7.7.4"}}
+{"dependencies":{"jsonc-eslint-parser":"3.1.0"},"devDependencies":{"eslint":"9.22.0"}}
+{"dependencies":{"jsonc-eslint-parser":"3.1.0"},"devDependencies":{"eslint":"9.22.0"},"optionalDependencies":{"outdent":"0.8.0"}}
 {"dependencies":{}}
 {"devDependencies":{}}
 {"optionalDependencies":{}}

@@ -1,7 +1,7 @@
 import path from "node:path";
 import process from "node:process";
 import { test } from "@fenge/dev-utils";
-import parser from "jsonc-eslint-parser";
+import * as parser from "jsonc-eslint-parser";
 import { name, rule } from "./compatible-engines-node-version.js";
 
 const s = JSON.stringify;

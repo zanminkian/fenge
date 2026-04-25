@@ -1,5 +1,5 @@
 import { test } from "@fenge/dev-utils";
-import parser from "jsonc-eslint-parser";
+import * as parser from "jsonc-eslint-parser";
 import { name, rule } from "./required-files.js";
 
 const s = JSON.stringify;

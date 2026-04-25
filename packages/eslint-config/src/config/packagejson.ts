@@ -1,5 +1,5 @@
 import * as pkg from "eslint-plugin-pkg-json";
-import parser from "eslint-plugin-pkg-json/jsonc-eslint-parser";
+import * as parser from "eslint-plugin-pkg-json/jsonc-eslint-parser";
 import * as publint from "eslint-plugin-publint";
 
 // JSON is a subset of JavaScript, so we use `languageOptions.parser` field. Refer: https://github.com/ota-meshi/eslint-plugin-jsonc?tab=readme-ov-file#how-does-eslint-plugin-jsonc-work

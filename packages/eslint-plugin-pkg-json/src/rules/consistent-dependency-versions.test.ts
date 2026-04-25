@@ -1,12 +1,12 @@
 import { test } from "@fenge/dev-utils";
-import parser from "jsonc-eslint-parser";
+import * as parser from "jsonc-eslint-parser";
 import { name, rule } from "./consistent-dependency-versions.js";
 
 const s = JSON.stringify;
 
 const valid = [
   // Single package.json - no inconsistency possible
-  s({ dependencies: { "jsonc-eslint-parser": "2.4.1" } }),
+  s({ dependencies: { "jsonc-eslint-parser": "3.1.0" } }),
   s({ devDependencies: { eslint: "9.22.0" } }),
   s({ optionalDependencies: { semver: "7.7.4" } }),
   s({
@@ -14,16 +14,16 @@ const valid = [
     devDependencies: { "@types/semver": "7.7.1" },
   }),
   s({
-    dependencies: { "jsonc-eslint-parser": "2.4.1" },
+    dependencies: { "jsonc-eslint-parser": "3.1.0" },
     optionalDependencies: { semver: "7.7.4" },
   }),
   // Different dependencies - no conflict
   s({
-    dependencies: { "jsonc-eslint-parser": "2.4.1" },
+    dependencies: { "jsonc-eslint-parser": "3.1.0" },
     devDependencies: { eslint: "9.22.0" },
   }),
   s({
-    dependencies: { "jsonc-eslint-parser": "2.4.1" },
+    dependencies: { "jsonc-eslint-parser": "3.1.0" },
     devDependencies: { eslint: "9.22.0" },
     optionalDependencies: { outdent: "0.8.0" },
   }),
@@ -36,7 +36,7 @@ const valid = [
 ];
 
 const invalid = [
-  // Using different version of jsonc-eslint-parser than in package.json (2.4.1)
+  // Using different version of jsonc-eslint-parser than in package.json (3.1.0)
   s({ dependencies: { "jsonc-eslint-parser": "2.4.0" } }),
   s({ dependencies: { "jsonc-eslint-parser": "2.5.0" } }),
   s({ devDependencies: { "jsonc-eslint-parser": "2.3.0" } }),
@@ -70,7 +70,7 @@ const invalid = [
     },
   }),
   s({
-    dependencies: { "jsonc-eslint-parser": "2.4.1" }, // consistent
+    dependencies: { "jsonc-eslint-parser": "3.1.0" }, // consistent
     devDependencies: { eslint: "9.21.0" }, // inconsistent
   }),
   s({
@@ -78,7 +78,7 @@ const invalid = [
     optionalDependencies: { eslint: "9.21.0" }, // inconsistent
   }),
   s({
-    dependencies: { "jsonc-eslint-parser": "2.4.1" }, // consistent
+    dependencies: { "jsonc-eslint-parser": "3.1.0" }, // consistent
     devDependencies: { eslint: "9.22.0" }, // consistent
     optionalDependencies: { semver: "7.6.0" }, // inconsistent
   }),
