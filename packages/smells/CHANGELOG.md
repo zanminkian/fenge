@@ -1,5 +1,11 @@
 # smells
 
+## 0.2.2
+
+### Patch Changes
+
+- 42bac6a: fix: update peerDependencies
+
 ## 0.2.1
 
 ### Patch Changes

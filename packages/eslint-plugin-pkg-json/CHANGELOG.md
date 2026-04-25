@@ -1,5 +1,11 @@
 # eslint-plugin-pkg-json
 
+## 0.6.0
+
+### Minor Changes
+
+- a3b5153: chore: upgrade deps
+
 ## 0.5.0
 
 ### Minor Changes

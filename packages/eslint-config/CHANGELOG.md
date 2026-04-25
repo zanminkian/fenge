@@ -1,5 +1,15 @@
 # @fenge/eslint-config
 
+## 0.8.3
+
+### Patch Changes
+
+- 19150b6: chore: upgrade deps
+- 19150b6: feat: add rule `n/prefer-global/crypto` and `n/prefer-global/timers`
+- Updated dependencies [a3b5153]
+  - eslint-plugin-pkg-json@0.6.0
+  - eslint-plugin-publint@0.5.0
+
 ## 0.8.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @fenge/prettier-config
 
+## 0.4.1
+
+### Patch Changes
+
+- 19150b6: chore: upgrade deps
+
 ## 0.4.0
 
 ### Minor Changes
