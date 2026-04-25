@@ -1,5 +1,18 @@
 # fenge
 
+## 0.13.3
+
+### Patch Changes
+
+- 19150b6: chore: upgrade deps
+- 42bac6a: fix: update peerDependencies
+- Updated dependencies [19150b6]
+- Updated dependencies [42bac6a]
+- Updated dependencies [19150b6]
+  - @fenge/prettier-config@0.4.1
+  - @fenge/eslint-config@0.8.3
+  - @fenge/tsconfig@0.11.1
+
 ## 0.13.2
 
 ### Patch Changes

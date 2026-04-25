@@ -1,5 +1,11 @@
 # eslint-plugin-publint
 
+## 0.5.0
+
+### Minor Changes
+
+- a3b5153: chore: upgrade deps
+
 ## 0.4.0
 
 ### Minor Changes

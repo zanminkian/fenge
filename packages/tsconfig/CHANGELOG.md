@@ -1,5 +1,12 @@
 # @fenge/tsconfig
 
+## 0.11.1
+
+### Patch Changes
+
+- 19150b6: chore: upgrade deps
+- 42bac6a: fix: update peerDependencies
+
 ## 0.11.0
 
 ### Minor Changes
