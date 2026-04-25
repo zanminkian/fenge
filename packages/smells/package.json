@@ -39,7 +39,7 @@
     "@types/node": "20.19.37"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": ">=5.0.0"
   },
   "engines": {
     "node": ">=20.19.0"
