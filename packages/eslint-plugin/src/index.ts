@@ -8,6 +8,7 @@ import { noRestrictedLoops } from "./rules/no-restricted-loops.ts";
 import { noTopLevelArrowFunction } from "./rules/no-top-level-arrow-function.ts";
 import { noTripleSlashDirective } from "./rules/no-triple-slash-directive.ts";
 import { noUnnecessaryTemplateString } from "./rules/no-unnecessary-template-string.ts";
+import { noUsedUnderscoreParam } from "./rules/no-used-underscore-param.ts";
 
 export const rules = {
   [callArgumentsLength.name]: callArgumentsLength.rule,
@@ -20,4 +21,5 @@ export const rules = {
   [noTopLevelArrowFunction.name]: noTopLevelArrowFunction.rule,
   [noTripleSlashDirective.name]: noTripleSlashDirective.rule,
   [noUnnecessaryTemplateString.name]: noUnnecessaryTemplateString.rule,
+  [noUsedUnderscoreParam.name]: noUsedUnderscoreParam.rule,
 };

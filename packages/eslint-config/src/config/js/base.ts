@@ -549,6 +549,7 @@ export function getJsBase() {
       "@fenge/no-top-level-arrow-function": "error",
       "@fenge/no-triple-slash-directive": "error",
       "@fenge/no-unnecessary-template-string": "error",
+      "@fenge/no-used-underscore-param": "error",
 
       "@typescript-eslint/ban-ts-comment": [
         "error",
