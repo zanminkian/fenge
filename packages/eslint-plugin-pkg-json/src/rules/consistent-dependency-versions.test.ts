@@ -7,7 +7,7 @@ const s = JSON.stringify;
 const valid = [
   // Single package.json - no inconsistency possible
   s({ dependencies: { "jsonc-eslint-parser": "3.1.0" } }),
-  s({ devDependencies: { eslint: "9.25.0" } }),
+  s({ devDependencies: { eslint: "9.26.0" } }),
   s({ optionalDependencies: { semver: "7.7.4" } }),
   s({
     dependencies: { semver: "7.7.4" },
@@ -20,11 +20,11 @@ const valid = [
   // Different dependencies - no conflict
   s({
     dependencies: { "jsonc-eslint-parser": "3.1.0" },
-    devDependencies: { eslint: "9.25.0" },
+    devDependencies: { eslint: "9.26.0" },
   }),
   s({
     dependencies: { "jsonc-eslint-parser": "3.1.0" },
-    devDependencies: { eslint: "9.25.0" },
+    devDependencies: { eslint: "9.26.0" },
     optionalDependencies: { outdent: "0.8.0" },
   }),
   // Empty dependencies
@@ -79,7 +79,7 @@ const invalid = [
   }),
   s({
     dependencies: { "jsonc-eslint-parser": "3.1.0" }, // consistent
-    devDependencies: { eslint: "9.25.0" }, // consistent
+    devDependencies: { eslint: "9.26.0" }, // consistent
     optionalDependencies: { semver: "7.6.0" }, // inconsistent
   }),
 ];

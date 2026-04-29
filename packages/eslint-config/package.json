@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@types/node": "20.19.37",
-    "eslint": "9.25.0",
+    "eslint": "9.26.0",
     "eslint-config-prettier": "10.1.8"
   },
   "peerDependencies": {
