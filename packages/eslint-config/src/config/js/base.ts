@@ -250,6 +250,7 @@ export function getJsBase() {
       "no-plusplus": "error",
       "no-setter-return": "error",
       "no-shadow": ["error", { ignoreOnInitialization: true }],
+      "no-unassigned-vars": "error",
       "no-unsafe-optional-chaining": [
         "error",
         { disallowArithmeticOperators: true },

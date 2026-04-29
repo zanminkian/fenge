@@ -14,7 +14,7 @@ export function getTsBase() {
       // "default-param-last": "@typescript-eslint/default-param-last", // 9.23.0
       "dot-notation": "@typescript-eslint/dot-notation",
       // "init-declarations": "@typescript-eslint/init-declarations", // 9.24.0
-      "max-params": "@typescript-eslint/max-params",
+      // "max-params": "@typescript-eslint/max-params", // 9.27.0
       // "no-array-constructor": "@typescript-eslint/no-array-constructor", // 9.24.0
       // "no-dupe-class-members": "@typescript-eslint/no-dupe-class-members", // 9.24.0
       // "no-empty-function": "@typescript-eslint/no-empty-function", // 9.25.0

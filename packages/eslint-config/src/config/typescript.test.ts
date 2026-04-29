@@ -13,7 +13,7 @@ await describe("ts config", async () => {
         // "default-param-last": "@typescript-eslint/default-param-last",
         "dot-notation": "@typescript-eslint/dot-notation",
         // "init-declarations": "@typescript-eslint/init-declarations",
-        "max-params": "@typescript-eslint/max-params",
+        // "max-params": "@typescript-eslint/max-params",
         // "no-array-constructor": "@typescript-eslint/no-array-constructor",
         // "no-dupe-class-members": "@typescript-eslint/no-dupe-class-members",
         // "no-empty-function": "@typescript-eslint/no-empty-function",
