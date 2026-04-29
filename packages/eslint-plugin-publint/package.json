@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@types/node": "20.19.37",
-    "eslint": "9.27.0"
+    "eslint": "9.28.0"
   },
   "engines": {
     "node": ">=20.19.0"

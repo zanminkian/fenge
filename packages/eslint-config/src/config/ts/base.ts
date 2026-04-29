@@ -22,13 +22,13 @@ export function getTsBase() {
       // "no-invalid-this": "@typescript-eslint/no-invalid-this", // 9.25.0
       // "no-loop-func": "@typescript-eslint/no-loop-func", // 9.25.0
       // "no-loss-of-precision": "@typescript-eslint/no-loss-of-precision", // 9.24.0. And this rule has been deprecated
-      "no-magic-numbers": "@typescript-eslint/no-magic-numbers",
+      // "no-magic-numbers": "@typescript-eslint/no-magic-numbers", // 9.28.0
       "no-redeclare": "@typescript-eslint/no-redeclare",
       "no-restricted-imports": "@typescript-eslint/no-restricted-imports",
-      "no-shadow": "@typescript-eslint/no-shadow",
+      // "no-shadow": "@typescript-eslint/no-shadow", // 9.28.0
       // "no-unused-expressions": "@typescript-eslint/no-unused-expressions", // 9.25.0
       "no-unused-vars": "@typescript-eslint/no-unused-vars",
-      "no-use-before-define": "@typescript-eslint/no-use-before-define",
+      // "no-use-before-define": "@typescript-eslint/no-use-before-define", // 9.28.0
       // "no-useless-constructor": "@typescript-eslint/no-useless-constructor", // 9.23.0
       "no-throw-literal": "@typescript-eslint/only-throw-error",
       "prefer-destructuring": "@typescript-eslint/prefer-destructuring",
