@@ -13,15 +13,15 @@ export function getTsBase() {
       "consistent-return": "@typescript-eslint/consistent-return",
       // "default-param-last": "@typescript-eslint/default-param-last", // 9.23.0
       "dot-notation": "@typescript-eslint/dot-notation",
-      "init-declarations": "@typescript-eslint/init-declarations",
+      // "init-declarations": "@typescript-eslint/init-declarations", // 9.24.0
       "max-params": "@typescript-eslint/max-params",
-      "no-array-constructor": "@typescript-eslint/no-array-constructor",
-      "no-dupe-class-members": "@typescript-eslint/no-dupe-class-members",
+      // "no-array-constructor": "@typescript-eslint/no-array-constructor", // 9.24.0
+      // "no-dupe-class-members": "@typescript-eslint/no-dupe-class-members", // 9.24.0
       "no-empty-function": "@typescript-eslint/no-empty-function",
       "no-implied-eval": "@typescript-eslint/no-implied-eval",
       "no-invalid-this": "@typescript-eslint/no-invalid-this",
       "no-loop-func": "@typescript-eslint/no-loop-func",
-      // "no-loss-of-precision": "@typescript-eslint/no-loss-of-precision", // This rule has been deprecated
+      // "no-loss-of-precision": "@typescript-eslint/no-loss-of-precision", // 9.24.0. And this rule has been deprecated
       "no-magic-numbers": "@typescript-eslint/no-magic-numbers",
       "no-redeclare": "@typescript-eslint/no-redeclare",
       "no-restricted-imports": "@typescript-eslint/no-restricted-imports",
