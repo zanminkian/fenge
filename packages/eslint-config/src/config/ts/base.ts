@@ -7,10 +7,11 @@ export function getTsBase() {
   const getTsExtensionRules = () => {
     // Key is js rule, value is ts rule
     // https://typescript-eslint.io/rules/?=extension
+    // Some rules are implemented by eslint core, so we comment them out.
     const extensionRuleMap = {
-      "class-methods-use-this": "@typescript-eslint/class-methods-use-this",
+      // "class-methods-use-this": "@typescript-eslint/class-methods-use-this", // 9.23.0
       "consistent-return": "@typescript-eslint/consistent-return",
-      "default-param-last": "@typescript-eslint/default-param-last",
+      // "default-param-last": "@typescript-eslint/default-param-last", // 9.23.0
       "dot-notation": "@typescript-eslint/dot-notation",
       "init-declarations": "@typescript-eslint/init-declarations",
       "max-params": "@typescript-eslint/max-params",
@@ -28,7 +29,7 @@ export function getTsBase() {
       "no-unused-expressions": "@typescript-eslint/no-unused-expressions",
       "no-unused-vars": "@typescript-eslint/no-unused-vars",
       "no-use-before-define": "@typescript-eslint/no-use-before-define",
-      "no-useless-constructor": "@typescript-eslint/no-useless-constructor",
+      // "no-useless-constructor": "@typescript-eslint/no-useless-constructor", // 9.23.0
       "no-throw-literal": "@typescript-eslint/only-throw-error",
       "prefer-destructuring": "@typescript-eslint/prefer-destructuring",
       "prefer-promise-reject-errors":

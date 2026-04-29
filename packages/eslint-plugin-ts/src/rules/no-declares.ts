@@ -19,9 +19,11 @@ const rule: Rule.RuleModule = {
   },
   create: (context) => ({
     "[declare=true]": (node: Rule.Node) => {
-      const { allowClassProperty = false } = context.options[0] ?? {};
+      const option = context.options[0] ?? {};
       if (
-        allowClassProperty &&
+        typeof option === "object" &&
+        "allowClassProperty" in option &&
+        option.allowClassProperty &&
         node.type === "PropertyDefinition" &&
         node.parent.type === "ClassBody"
       ) {

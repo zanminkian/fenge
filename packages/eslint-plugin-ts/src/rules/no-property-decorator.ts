@@ -22,10 +22,13 @@ const rule: Rule.RuleModule = {
     "ClassBody > PropertyDefinition[decorators.length>0]": (
       node: Rule.Node,
     ) => {
+      const option = context.options[0] ?? {};
       if (
         "declare" in node &&
         node.declare &&
-        context.options[0]?.allowDeclaration
+        typeof option === "object" &&
+        "allowDeclaration" in option &&
+        option.allowDeclaration
       ) {
         return;
       }

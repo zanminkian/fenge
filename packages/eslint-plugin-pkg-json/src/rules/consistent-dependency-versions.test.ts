@@ -7,7 +7,7 @@ const s = JSON.stringify;
 const valid = [
   // Single package.json - no inconsistency possible
   s({ dependencies: { "jsonc-eslint-parser": "3.1.0" } }),
-  s({ devDependencies: { eslint: "9.22.0" } }),
+  s({ devDependencies: { eslint: "9.23.0" } }),
   s({ optionalDependencies: { semver: "7.7.4" } }),
   s({
     dependencies: { semver: "7.7.4" },
@@ -20,11 +20,11 @@ const valid = [
   // Different dependencies - no conflict
   s({
     dependencies: { "jsonc-eslint-parser": "3.1.0" },
-    devDependencies: { eslint: "9.22.0" },
+    devDependencies: { eslint: "9.23.0" },
   }),
   s({
     dependencies: { "jsonc-eslint-parser": "3.1.0" },
-    devDependencies: { eslint: "9.22.0" },
+    devDependencies: { eslint: "9.23.0" },
     optionalDependencies: { outdent: "0.8.0" },
   }),
   // Empty dependencies
@@ -48,9 +48,9 @@ const invalid = [
   s({ devDependencies: { semver: "7.6.0" } }),
   s({ optionalDependencies: { semver: "7.7.1" } }),
 
-  // Using different version of eslint than in package.json devDependencies (9.22.0)
+  // Using different version of eslint than in package.json devDependencies (9.23.0)
   s({ dependencies: { eslint: "9.21.0" } }),
-  s({ devDependencies: { eslint: "9.23.0" } }),
+  s({ devDependencies: { eslint: "9.22.0" } }),
   s({ optionalDependencies: { eslint: "9.20.0" } }),
 
   // Using different version of @types/node than in package.json devDependencies (20.19.37)
@@ -79,7 +79,7 @@ const invalid = [
   }),
   s({
     dependencies: { "jsonc-eslint-parser": "3.1.0" }, // consistent
-    devDependencies: { eslint: "9.22.0" }, // consistent
+    devDependencies: { eslint: "9.23.0" }, // consistent
     optionalDependencies: { semver: "7.6.0" }, // inconsistent
   }),
 ];
