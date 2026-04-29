@@ -30,7 +30,7 @@
   "devDependencies": {
     "@fenge/dev-utils": "workspace:*",
     "@types/node": "20.19.37",
-    "eslint": "9.28.0"
+    "eslint": "9.29.0"
   },
   "engines": {
     "node": ">=20.19.0"

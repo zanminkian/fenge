@@ -57,11 +57,11 @@
   },
   "devDependencies": {
     "@types/node": "20.19.37",
-    "eslint": "9.28.0",
+    "eslint": "9.29.0",
     "eslint-config-prettier": "10.1.8"
   },
   "peerDependencies": {
-    "eslint": ">=9.23.0"
+    "eslint": ">=9.29.0"
   },
   "peerDependenciesMeta": {
     "eslint": {
