@@ -2,7 +2,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
-import { fileURLToPath } from "node:url";
 import { parseTsconfig } from "get-tsconfig";
 import JSON5 from "json5";
 import { printUnifiedDiff } from "print-diff";
@@ -12,7 +11,7 @@ import sortKeys from "sort-keys";
  * @returns {Promise<{name: string, version: string}>}
  */
 async function getPkgJson() {
-  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+  const __dirname = import.meta.dirname;
   const content = await fs.readFile(
     path.join(__dirname, "..", "package.json"),
     "utf8",
@@ -63,7 +62,7 @@ export async function diffAction(options) {
   } = options;
 
   const cwd = process.cwd();
-  const dir = path.dirname(fileURLToPath(import.meta.url));
+  const dir = import.meta.dirname;
 
   const recommendedTsconfigPath = path.resolve(dir, "..", "tsconfig", to);
   const projectTsconfigPath = path.resolve(cwd, filepath, name);

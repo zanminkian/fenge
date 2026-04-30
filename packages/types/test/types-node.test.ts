@@ -2,12 +2,11 @@ import assert from "node:assert";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { describe, it } from "node:test";
-import { fileURLToPath } from "node:url";
 
 await describe("types-node", async () => {
   await it("should include es2020", async () => {
     const nodePath = path.join(
-      path.dirname(fileURLToPath(import.meta.url)),
+      import.meta.dirname,
       "..",
       "node_modules",
       "@types",

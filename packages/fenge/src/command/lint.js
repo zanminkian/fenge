@@ -2,7 +2,7 @@
 import path from "node:path";
 import process from "node:process";
 import { ESLint } from "eslint";
-import { dir, execAsync, getBinPath } from "../utils.js";
+import { execAsync, getBinPath } from "../utils.js";
 
 /**
  * @param {Array<string>} paths
@@ -25,7 +25,7 @@ export async function lint(
       await getEslintPath(useDefaultConfig),
       ...(timing ? [] : ["--format=json"]),
       "--config",
-      path.join(dir(import.meta.url), "..", "config", "eslint.config.js"),
+      path.join(import.meta.dirname, "..", "config", "eslint.config.js"),
       ...(update || fix ? ["--fix"] : []),
       ...(paths.length <= 0 ? ["."] : paths).map((p) =>
         path.resolve(process.cwd(), p),

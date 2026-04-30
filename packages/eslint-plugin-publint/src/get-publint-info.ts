@@ -2,7 +2,6 @@ import childProcess from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
-import { fileURLToPath } from "node:url";
 import type { Result } from "publint";
 
 /**
@@ -10,10 +9,7 @@ import type { Result } from "publint";
  * If publint provides sync function, this function should be deleted.
  */
 function publint(pkgDir: string) {
-  const publintPath = path.join(
-    path.dirname(fileURLToPath(import.meta.url)),
-    "publint.cli.js",
-  );
+  const publintPath = path.join(import.meta.dirname, "publint.cli.js");
   // Use spawnSync for cross-platform compatibility
   const result = childProcess.spawnSync(
     process.execPath, // Node executable

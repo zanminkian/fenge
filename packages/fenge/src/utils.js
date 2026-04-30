@@ -6,7 +6,6 @@ import { createRequire } from "node:module";
 import os from "node:os";
 import path from "node:path";
 import process from "node:process";
-import { fileURLToPath } from "node:url";
 import { styleText } from "node:util";
 import { lilconfig } from "lilconfig";
 import ora from "ora";
@@ -17,7 +16,7 @@ import prettyMs from "pretty-ms";
  */
 export async function getPkgJson() {
   const content = await fs.readFile(
-    path.join(dir(import.meta.url), "..", "package.json"),
+    path.join(import.meta.dirname, "..", "package.json"),
     "utf8",
   );
   return JSON.parse(content);
@@ -31,15 +30,6 @@ export async function exists(filepath) {
     .access(filepath)
     .then(() => true)
     .catch(() => false);
-}
-
-/**
- * Get current directory of the js file
- * Usage: `dir(import.meta.url)`
- * @param {string} importMetaUrl
- */
-export function dir(importMetaUrl) {
-  return path.dirname(fileURLToPath(importMetaUrl));
 }
 
 /**
@@ -158,7 +148,7 @@ export const execAsync = (topic) => spin(execCmd, topic);
  */
 export async function getBinPath(
   moduleName,
-  from = fileURLToPath(import.meta.url),
+  from = import.meta.filename,
   cliName = moduleName,
 ) {
   const fromPath =

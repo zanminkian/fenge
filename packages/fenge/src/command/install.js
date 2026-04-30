@@ -2,7 +2,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
-import { dir, exists, getBinPath, getPkgJson } from "../utils.js";
+import { exists, getBinPath, getPkgJson } from "../utils.js";
 
 /**
  * @param {string} file
@@ -46,7 +46,7 @@ async function writePreCommit({ noEslint, noPrettier }) {
   }
   const content = [
     "#!/bin/sh",
-    `${await getBinPath("lint-staged")} --config ${path.join(dir(import.meta.url), "..", "config", config)}`,
+    `${await getBinPath("lint-staged")} --config ${path.join(import.meta.dirname, "..", "config", config)}`,
   ].join("\n");
 
   await writeGitHook("pre-commit", content);

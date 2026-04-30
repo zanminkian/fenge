@@ -1,5 +1,4 @@
 import process from "node:process";
-import { fileURLToPath } from "node:url";
 import { test } from "@fenge/dev-utils";
 import { noDirectoryImports } from "./no-directory-imports.ts";
 
@@ -11,7 +10,7 @@ const valid = [
   `import foo from '${process.cwd()}/package.json'`,
 ].map((code) => ({
   code,
-  filename: fileURLToPath(import.meta.url),
+  filename: import.meta.filename,
 }));
 
 const invalid = [
@@ -25,7 +24,7 @@ const invalid = [
   `import foo from '${process.cwd()}'`,
 ].map((code) => ({
   code,
-  filename: fileURLToPath(import.meta.url),
+  filename: import.meta.filename,
 }));
 
 test({ valid, invalid, ...noDirectoryImports });

@@ -1,8 +1,7 @@
-import { fileURLToPath } from "node:url";
 import { test } from "@fenge/dev-utils";
 import { existingFileImports } from "./existing-file-imports.ts";
 
-const filename = fileURLToPath(import.meta.url);
+const filename = import.meta.filename;
 
 const valid = [
   "import foo from 'foo'",

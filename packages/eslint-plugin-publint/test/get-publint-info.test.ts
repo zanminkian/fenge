@@ -2,11 +2,10 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { after, before, describe, it } from "node:test";
-import { fileURLToPath } from "node:url";
 import { formatMessage } from "publint/utils";
 import { getPublintInfo } from "../src/get-publint-info.ts";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = import.meta.dirname;
 
 await describe(async () => {
   await it("should have no messages", () => {

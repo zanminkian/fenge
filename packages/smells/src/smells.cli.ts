@@ -1,18 +1,13 @@
 #!/usr/bin/env node
 import fs from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 import { Command } from "commander";
 import { analyze } from "./analyze.js";
 import { isDts, isJs, isTs } from "./utils.ts";
 
 const { name, version }: { name: string; version: string } = JSON.parse(
   await fs.readFile(
-    path.join(
-      path.dirname(fileURLToPath(import.meta.url)),
-      "..",
-      "package.json",
-    ),
+    path.join(import.meta.dirname, "..", "package.json"),
     "utf8",
   ),
 );

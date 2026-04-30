@@ -1,5 +1,4 @@
 import process from "node:process";
-import { fileURLToPath } from "node:url";
 import { test } from "@fenge/dev-utils";
 import { noGitIgnoredImports } from "./no-git-ignored-imports.ts";
 
@@ -15,7 +14,7 @@ const valid = [
   "import foo from '../../../../for-test'",
 ].map((code) => ({
   code,
-  filename: fileURLToPath(import.meta.url),
+  filename: import.meta.filename,
 }));
 
 const invalid = [
@@ -34,7 +33,7 @@ const invalid = [
   "import foo from '../../../../../for-test'",
 ].map((code) => ({
   code,
-  filename: fileURLToPath(import.meta.url),
+  filename: import.meta.filename,
 }));
 
 test({ valid, invalid, ...noGitIgnoredImports });

@@ -1,4 +1,3 @@
-import { fileURLToPath } from "node:url";
 import { test } from "@fenge/dev-utils";
 import { noExternalSrcImports } from "./no-external-src-imports.ts";
 
@@ -12,7 +11,7 @@ const valid = [
   "import foo from 'foo'",
 ].map((code) => ({
   code,
-  filename: fileURLToPath(import.meta.url),
+  filename: import.meta.filename,
 }));
 
 const invalid = [
@@ -25,7 +24,7 @@ const invalid = [
   "import qux from '/tmp/external-file'",
 ].map((code) => ({
   code,
-  filename: fileURLToPath(import.meta.url),
+  filename: import.meta.filename,
 }));
 
 test({ valid, invalid, ...noExternalSrcImports });

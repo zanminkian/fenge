@@ -2,7 +2,7 @@
 import path from "node:path";
 import process from "node:process";
 import { prettierignore } from "prettier-ignore";
-import { dir, execAsync, getBinPath } from "../utils.js";
+import { execAsync, getBinPath } from "../utils.js";
 
 /**
  * @param {Array<string>} paths
@@ -29,7 +29,7 @@ export async function format(
       "--log-level",
       "warn",
       "--config",
-      path.join(dir(import.meta.url), "..", "config", "prettier.config.js"),
+      path.join(import.meta.dirname, "..", "config", "prettier.config.js"),
       "--ignore-unknown",
       "--no-error-on-unmatched-pattern", // Not a good option name. It's for skipping formatting symlinks. https://github.com/prettier/prettier/pull/15533
       ...(update || write ? ["--write"] : ["--check"]),

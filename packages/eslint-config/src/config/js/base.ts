@@ -529,6 +529,7 @@ export function getJsBase() {
       "unicorn/prefer-date-now": "error",
       "unicorn/prefer-export-from": "error",
       "unicorn/prefer-global-this": "error",
+      "unicorn/prefer-import-meta-properties": "error",
       "unicorn/prefer-includes": "error",
       "unicorn/prefer-logical-operator-over-ternary": "error",
       "unicorn/prefer-math-min-max": "error",
