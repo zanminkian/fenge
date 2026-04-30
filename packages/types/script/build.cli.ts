@@ -2,7 +2,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { replacements } from "./replacements.ts";
+import { replacements } from "./replacements.ts"; // TODO: There is an TS error here.
 
 const cwd = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 
