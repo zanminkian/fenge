@@ -2,7 +2,7 @@ import type { Rule } from "eslint";
 import { createRule, DEFAULT_MESSAGE_ID, getRuleName } from "../common.ts";
 
 export const noEmptyExports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "Disallow `export {}`.",
   create: (context) => ({
     "ExportNamedDeclaration[specifiers.length=0][declaration=null]": (

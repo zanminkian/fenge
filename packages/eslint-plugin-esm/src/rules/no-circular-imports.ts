@@ -33,7 +33,7 @@ function isCircular(
  * Note: This rule do not support importing files without extensions and directory imports.
  */
 export const noCircularImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "Circular imports are not allowed.",
   create: (context) => {
     const filePath = context.filename;

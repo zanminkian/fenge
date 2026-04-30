@@ -4,7 +4,7 @@ import type { GetNode } from "../utils.ts";
 type ImportDeclaration = GetNode<"ImportDeclaration">;
 
 export const topSideEffectImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "Side effect imports must be placed before other import statements.",
   create: (context) => {
     let hasNonSideEffectImport = false;

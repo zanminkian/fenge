@@ -2,7 +2,7 @@ import type { Rule } from "eslint";
 import { createRule, DEFAULT_MESSAGE_ID, getRuleName } from "../common.ts";
 
 export const noDynamicImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "`import()` should be called with string literal.",
   create: (context) => ({
     "ImportExpression > :not(Literal)": (node: Rule.Node) => {

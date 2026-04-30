@@ -2,7 +2,7 @@ import type { Rule } from "eslint";
 import { getDocUrl, getRuleName } from "../utils.ts";
 
 // TODO deprecate this rule if https://github.com/sindresorhus/eslint-plugin-unicorn/issues/71 is implemented.
-const name = getRuleName(import.meta.url);
+const name = getRuleName(import.meta.filename);
 const rule: Rule.RuleModule = {
   meta: {
     docs: {

@@ -4,7 +4,7 @@ import { create, createRule, getRuleName, getSourceType } from "../common.ts";
 import { memoize } from "../utils.ts";
 
 export const existingFileImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "Only allow importing from an existing local file.",
   create: (context) => create(context, check),
 });

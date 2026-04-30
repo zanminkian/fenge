@@ -4,7 +4,7 @@ import { create, createRule, getRuleName, getSourceType } from "../common.ts";
 import { memoize } from "../utils.ts";
 
 export const noDirectoryImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "Disallow importing from a directory.",
   create: (context) => create(context, check),
 });

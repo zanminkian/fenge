@@ -2,7 +2,7 @@ import path from "node:path";
 import { create, createRule, getRuleName, getSourceType } from "../common.ts";
 
 export const noUselessPathSegments = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "The relative source path should be a nearest relative path.",
   create: (context) => create(context, check),
 });

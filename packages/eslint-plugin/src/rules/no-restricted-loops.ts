@@ -1,7 +1,7 @@
 import type { Rule } from "eslint";
 import { getDocUrl, getRuleName } from "../utils.ts";
 
-const name = getRuleName(import.meta.url);
+const name = getRuleName(import.meta.filename);
 /**
  * Only allow `while` and `for-of` loops. `for`, `for-in`, `do-while` and `for-await-of` loops are disallowed.
  * Visit https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2453 for more details.

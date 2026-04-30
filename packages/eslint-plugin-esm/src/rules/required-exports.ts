@@ -1,7 +1,7 @@
 import { createRule, DEFAULT_MESSAGE_ID, getRuleName } from "../common.ts";
 
 export const requiredExports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "It's required at least one `export` statement in a file.",
   create: (context) => {
     let existExport = false;

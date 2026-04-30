@@ -6,7 +6,7 @@ type FunctionExpression = GetNode<"FunctionExpression">;
 type ArrowFunctionExpression = GetNode<"ArrowFunctionExpression">;
 type Pattern = FunctionDeclaration["params"][number];
 
-const name = getRuleName(import.meta.url);
+const name = getRuleName(import.meta.filename);
 
 function getUnderscoreParamName(param: Pattern): string | undefined {
   switch (param.type) {

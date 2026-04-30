@@ -43,7 +43,7 @@ function getPkgJson(
 }
 
 export const noPhantomDepImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message:
     "Disallow importing from a module which the nearest `package.json` doesn't include it.",
   schema: [

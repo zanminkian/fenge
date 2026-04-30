@@ -9,7 +9,7 @@ import { getRuleName, type GetNode } from "../utils.ts";
 type CallExpression = GetNode<"CallExpression">;
 type NewExpression = GetNode<"NewExpression">;
 
-const name = getRuleName(import.meta.url);
+const name = getRuleName(import.meta.filename);
 const rule: Rule.RuleModule = {
   meta: {
     messages: {

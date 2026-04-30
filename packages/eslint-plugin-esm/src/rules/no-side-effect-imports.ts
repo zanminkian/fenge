@@ -18,7 +18,7 @@ const ignores = [
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 export const noSideEffectImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message:
     "Side effect import is often used for polyfills and css. It's unsafe to use it.",
   create: (context) => {

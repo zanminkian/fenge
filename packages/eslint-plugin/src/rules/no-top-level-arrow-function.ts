@@ -3,7 +3,7 @@ import { getDocUrl, getRuleName, type GetNode } from "../utils.ts";
 
 type ArrowFunctionExpression = GetNode<"ArrowFunctionExpression">;
 
-const name = getRuleName(import.meta.url);
+const name = getRuleName(import.meta.filename);
 const rule: Rule.RuleModule = {
   meta: {
     docs: {

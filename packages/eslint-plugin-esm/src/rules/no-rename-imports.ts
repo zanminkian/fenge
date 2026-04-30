@@ -1,7 +1,7 @@
 import { createRule, DEFAULT_MESSAGE_ID, getRuleName } from "../common.ts";
 
 export const noRenameImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "Disallow renaming the named-imports.",
   create: (context) => ({
     ImportSpecifier: (node) => {

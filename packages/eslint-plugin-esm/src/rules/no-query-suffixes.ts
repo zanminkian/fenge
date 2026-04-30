@@ -1,7 +1,7 @@
 import { create, createRule, getRuleName } from "../common.ts";
 
 export const noQuerySuffixes = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "Disallow using query suffixes in import paths.",
   create: (context) => create(context, checkQuerySuffix),
 });

@@ -1,5 +1,4 @@
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 import type { Rule } from "eslint";
 import type { GetNode } from "./utils.ts";
 
@@ -45,9 +44,9 @@ export function createRule({
   return { name, rule };
 }
 
-export function getRuleName(importMetaUrl: string) {
+export function getRuleName(importMetaFilename: string) {
   // remove '.js' extension
-  return path.parse(fileURLToPath(importMetaUrl)).name;
+  return path.parse(importMetaFilename).name;
 }
 
 export type ImportationNode =

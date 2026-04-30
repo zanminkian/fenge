@@ -3,7 +3,7 @@ import { create, createRule, getRuleName } from "../common.ts";
 const depth = 3;
 
 export const noRelativeParentImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "Disallow importing module from a relative parent path too deeply.",
   create: (context) => create(context, checkDepth),
 });

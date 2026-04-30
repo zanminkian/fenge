@@ -6,7 +6,7 @@ import { create, createRule, getRuleName, getSourceType } from "../common.ts";
 import { memoize } from "../utils.ts";
 
 export const noGitIgnoredImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "Disallow to import module from a git-ignored path.",
   create: (context) => create(context, checkIgnored),
 });

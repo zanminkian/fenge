@@ -15,7 +15,7 @@ const isCliFile = memoize((filePath: string) => {
 });
 
 export const noCliImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "Disallow importing from a CLI file.",
   create: (context) =>
     create(context, (filename, source) => {

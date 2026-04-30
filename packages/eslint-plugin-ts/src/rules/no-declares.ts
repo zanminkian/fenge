@@ -1,7 +1,7 @@
 import type { Rule } from "eslint";
 import { getRuleName } from "../utils.ts";
 
-const name = getRuleName(import.meta.url);
+const name = getRuleName(import.meta.filename);
 const rule: Rule.RuleModule = {
   meta: {
     messages: {

@@ -5,7 +5,7 @@ type CallExpression = GetNode<"CallExpression">;
 type NewExpression = GetNode<"NewExpression">;
 
 // TODO: If https://github.com/sindresorhus/eslint-plugin-unicorn/issues/1356 is implemented, migrate this rule to `eslint-plugin-unicorn`
-const name = getRuleName(import.meta.url);
+const name = getRuleName(import.meta.filename);
 const rule: Rule.RuleModule = {
   meta: {
     docs: {

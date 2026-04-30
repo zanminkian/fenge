@@ -2,7 +2,7 @@ import path from "node:path";
 import { create, createRule, getRuleName, getSourceType } from "../common.ts";
 
 export const noExternalSrcImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "Disallow importing from outside the src directory.",
   create: (context) => create(context, check),
 });

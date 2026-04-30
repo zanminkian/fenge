@@ -1,7 +1,7 @@
 import type { Rule } from "eslint";
 import { getDocUrl, getRuleName } from "../utils.ts";
 
-const name = getRuleName(import.meta.url);
+const name = getRuleName(import.meta.filename);
 
 const CLI_FILE_EXTENSIONS = /\.cli\.(ts|mts|cts|js|mjs|cjs)$/;
 

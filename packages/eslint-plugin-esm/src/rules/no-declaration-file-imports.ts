@@ -1,7 +1,7 @@
 import { create, createRule, getRuleName } from "../common.ts";
 
 export const noDeclarationFileImports = createRule({
-  name: getRuleName(import.meta.url),
+  name: getRuleName(import.meta.filename),
   message: "Disallow importing from a declaration style file.",
   create: (context) => create(context, check),
 });
