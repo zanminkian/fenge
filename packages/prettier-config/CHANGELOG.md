@@ -1,5 +1,11 @@
 # @fenge/prettier-config
 
+## 0.4.2
+
+### Patch Changes
+
+- 58ce0ca: chore: upgrade deps
+
 ## 0.4.1
 
 ### Patch Changes

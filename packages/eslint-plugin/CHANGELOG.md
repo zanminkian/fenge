@@ -1,5 +1,11 @@
 # @fenge/eslint-plugin
 
+## 0.5.1
+
+### Patch Changes
+
+- 6935658: feat: add `no-used-underscore-param` rule
+
 ## 0.5.0
 
 ### Minor Changes
