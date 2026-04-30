@@ -45,14 +45,14 @@
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-n": "17.24.0",
     "eslint-plugin-pkg-json": "workspace:*",
-    "eslint-plugin-promise": "7.2.1",
+    "eslint-plugin-promise": "7.3.0",
     "eslint-plugin-publint": "workspace:*",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-regexp": "2.10.0",
-    "eslint-plugin-simple-import-sort": "12.1.1",
+    "eslint-plugin-simple-import-sort": "13.0.0",
     "eslint-plugin-sonarjs": "3.0.5",
-    "eslint-plugin-unicorn": "61.0.0",
+    "eslint-plugin-unicorn": "61.0.2",
     "globals": "17.5.0"
   },
   "devDependencies": {
