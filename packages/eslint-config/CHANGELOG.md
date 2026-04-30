@@ -1,5 +1,19 @@
 # @fenge/eslint-config
 
+## 0.9.0
+
+### Minor Changes
+
+- cffa23f: chore!: required eslint >= 9.29.0
+
+### Patch Changes
+
+- 6935658: feat: add `no-used-underscore-param` rule
+- 58ce0ca: chore: upgrade deps
+- 6ed72f5: feat: add some rules of `eslint-plugin-unicorn`
+- Updated dependencies [6935658]
+  - @fenge/eslint-plugin@0.5.1
+
 ## 0.8.3
 
 ### Patch Changes

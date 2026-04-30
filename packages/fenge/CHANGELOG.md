@@ -1,5 +1,17 @@
 # fenge
 
+## 0.13.4
+
+### Patch Changes
+
+- cffa23f: chore: upgrade eslint to 9.29.0
+- Updated dependencies [6935658]
+- Updated dependencies [58ce0ca]
+- Updated dependencies [6ed72f5]
+- Updated dependencies [cffa23f]
+  - @fenge/eslint-config@0.9.0
+  - @fenge/prettier-config@0.4.2
+
 ## 0.13.3
 
 ### Patch Changes
