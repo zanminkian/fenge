@@ -1,5 +1,6 @@
 node_modules
 .vscode
+.claude
 pnpm-lock.yaml
 dist
 tmp
