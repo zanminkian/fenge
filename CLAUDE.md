@@ -85,7 +85,3 @@ fenge uninstall    # Remove git pre-commit hook
 fenge init-tsconfig    # Initialize tsconfig
 fenge diff-tsconfig    # Compare tsconfig
 ```
-
-## Commit Workflow
-
-Before committing `fix` or `feat` type changes, create a changeset file in the `.changeset` directory. The file header should list all the affected package name(s), and the content should be a single English sentence starting with `fix:` or `feat:`. Use the **same** sentence as the commit message.

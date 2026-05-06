@@ -30,6 +30,7 @@
   "author": "hellozmj@qq.com",
   "type": "module",
   "exports": {
+    "./package.json": "./package.json",
     "./eslint-config": "./src/re-export/eslint.config.js",
     "./prettier-config": "./src/re-export/prettier.config.js",
     "./tsconfig": "./tsconfig/esm.json",
@@ -49,6 +50,7 @@
     "@fenge/eslint-config": "workspace:*",
     "@fenge/prettier-config": "workspace:*",
     "@fenge/tsconfig": "workspace:*",
+    "@monorepo-utils/package-utils": "2.10.4",
     "commander": "14.0.3",
     "eslint": "9.29.0",
     "lilconfig": "3.1.3",

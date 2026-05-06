@@ -129,7 +129,7 @@ Based on the philosophy outlined above, this tool offers the following features:
 - 💪 **Enhanced Type Safety**: This tool provides the strictest `tsconfig` settings to bolster the type safety of TypeScript projects. It is also compatible with pure JavaScript projects.
 - 💃 **Formatting**: This tool ensures code consistency across your codebase and minimizes merge conflicts by automatically formatting code. It additionally supports the sorting of imports and `package.json` files.
 - 📏 **Linting**: This tool comes equipped with a comprehensive set of rules for static code analysis, which helps catch errors and prevent poor coding practices in JavaScript.
-- 🪝 **Git Hooks**: After installation, committing code via Git triggers automatic formatting and linting checks. No additional package installations are required.
+- 🪝 **Git Hooks**: After installation, committing code via Git triggers automatic formatting, linting checks, and changeset creation. No additional package installations are required.
 
 ## Highlights
 
@@ -304,7 +304,7 @@ export default {
 
 ### Set up Git hooks
 
-Executing `fenge install` in the project root will write a `pre-commit` file to the `${PROJECT_ROOT}/.git/hooks` folder. After editing `package.json -> scripts -> prepare` script and executing it once, each commit (via Git) will trigger a code style check for the committed files.
+Executing `fenge install` in the project root will write a `pre-commit` and `post-commit` file to the `${PROJECT_ROOT}/.git/hooks` folder. After editing `package.json -> scripts -> prepare` script and executing it once, each commit (via Git) will trigger a code style check for the committed files, and automatically create a changeset file if the `.changeset` directory exists.
 
 ```json
 {

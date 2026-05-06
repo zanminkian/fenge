@@ -52,14 +52,25 @@ async function writePreCommit({ noEslint, noPrettier }) {
   await writeGitHook("pre-commit", content);
 }
 
+async function writePostCommit() {
+  const content = [
+    "#!/bin/sh",
+    'if [ -n "$FENGE_NO_CREATING_CHANGESET_FILE" ]; then exit 0; fi', // Skip if triggered by the amend commit below (prevents infinite loop)
+    `FENGE_NO_CREATING_CHANGESET_FILE=1 ${await getBinPath("fenge")} post-commit .git/COMMIT_EDITMSG`,
+  ].join("\n");
+
+  await writeGitHook("post-commit", content);
+}
+
 /**
- * @param {{lint: boolean, format: boolean}} options
+ * @param {{lint: boolean, format: boolean, postCommit: boolean}} options
  */
-export async function install({ lint, format }) {
+export async function install({ lint, format, postCommit }) {
   if (!lint && !format) {
     throw new Error(
       "'--no-lint' and '--no-format' should not be used at the same time",
     );
   }
   await writePreCommit({ noEslint: !lint, noPrettier: !format });
+  if (postCommit) await writePostCommit();
 }

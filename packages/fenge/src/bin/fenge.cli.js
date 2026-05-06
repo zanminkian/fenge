@@ -6,6 +6,7 @@ import { Command } from "commander";
 import { format } from "../command/format.js";
 import { install } from "../command/install.js";
 import { lint } from "../command/lint.js";
+import { postCommit } from "../command/post-commit.js";
 import { uninstall } from "../command/uninstall.js";
 import { getPkgJson } from "../utils.js";
 
@@ -116,15 +117,26 @@ program
 program
   .command("install")
   .description(
-    "write `pre-commit` hook file into `.git/hooks` folder, after that, the committed code will be formatted and linted",
+    "write `pre-commit` and `post-commit` hook files into `.git/hooks` folder, after that, the committed code will be formatted and linted, and changeset files will be auto-created based on conventional commit messages",
   )
   .option("--no-format", "skip formatting code on git 'pre-commit' stage")
   .option("--no-lint", "skip linting code on git 'pre-commit' stage")
+  .option("--no-post-commit", "skip writing `post-commit` hook")
   .action(async (options) => await install(options));
 program
   .command("uninstall")
-  .description("remove `pre-commit` hook file from `.git/hooks` folder")
+  .description(
+    "remove `pre-commit` and `post-commit` hook files from `.git/hooks` folder",
+  )
   .action(async () => await uninstall());
+
+program
+  .command("post-commit")
+  .description(
+    "create a changeset file from the conventional commit message during git post-commit hook — end users should not run this directly",
+  )
+  .argument("<commit-msg-path>", "path to the commit message file")
+  .action(async (commitMsgPath) => await postCommit(commitMsgPath));
 
 setup(program, {
   initCommand: "init-tsconfig",

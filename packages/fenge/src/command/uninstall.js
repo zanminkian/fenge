@@ -20,4 +20,5 @@ async function removeGitHook(file) {
 
 export async function uninstall() {
   await removeGitHook("pre-commit");
+  await removeGitHook("post-commit");
 }
