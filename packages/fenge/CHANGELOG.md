@@ -1,5 +1,16 @@
 # fenge
 
+## 0.14.0
+
+### Minor Changes
+
+- 74d9f22: feat(fenge)!: add post-commit hook for auto changeset creation
+
+### Patch Changes
+
+- Updated dependencies [9c9acd4]
+  - @fenge/eslint-config@0.9.1
+
 ## 0.13.4
 
 ### Patch Changes
