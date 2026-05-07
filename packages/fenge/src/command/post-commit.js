@@ -26,8 +26,7 @@ async function parseCommit(msg) {
   const packages = getPackages(process.cwd());
   const { type, scopes, isBreaking, content } = match.groups;
   /** @type {{name: string, version?: string}[] | null} */
-  // eslint-disable-next-line no-useless-assignment -- TODO: Optimize the eslint config
-  let pkgJsonOfScopes = null;
+  let pkgJsonOfScopes;
   // If there are packages, current directory is a monorepo.
   if (packages.length > 0) {
     pkgJsonOfScopes = scopes
@@ -137,9 +136,8 @@ export async function postCommit(commitMsgPath) {
     .map(({ name, version }) => {
       if (!name || !version) return undefined;
       const [major = 0, minor = 0] = version.split(".").map(Number);
-      /** @type { "major" | "minor" | "patch" | undefined} */
-      // eslint-disable-next-line no-useless-assignment -- TODO: Optimize the eslint config
-      let bump = undefined;
+      /** @type { "major" | "minor" | "patch"} */
+      let bump;
       if (major > 0) {
         // 1.x.x
         bump = commit.isBreaking

@@ -216,7 +216,7 @@ export function getJsBase() {
       "func-names": "error", // always require a name for function declaration
       "func-style": ["error", "declaration", { allowArrowFunctions: true }],
       "getter-return": "error",
-      "init-declarations": "error",
+      // "init-declarations": "error",
       "logical-assignment-operators": [
         "error",
         "always",
