@@ -19,7 +19,8 @@ export async function lint(
     timing = false,
   } = {},
 ) {
-  const result = await execAsync("📏 Checking linting")(
+  const topic = `📏 Checking linting ${update || fix ? "with" : "without"} auto-fix`;
+  const result = await execAsync(topic)(
     [
       process.execPath,
       await getEslintPath(useDefaultConfig),

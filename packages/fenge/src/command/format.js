@@ -18,7 +18,8 @@ export async function format(
     default: useDefaultConfig = false,
   } = {},
 ) {
-  const result = await execAsync("💃 Checking formatting")(
+  const topic = `💃 Checking formatting ${update || write ? "with" : "without"} auto-fix`;
+  const result = await execAsync(topic)(
     [
       process.execPath,
       await getPrettierPath(useDefaultConfig),
