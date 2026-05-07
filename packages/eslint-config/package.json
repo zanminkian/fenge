@@ -39,7 +39,7 @@
     "@typescript-eslint/parser": "8.58.2",
     "confusing-browser-globals": "1.0.11",
     "eslint-plugin-check-file": "3.3.1",
-    "eslint-plugin-es-x": "8.7.0",
+    "eslint-plugin-es-x": "9.6.0",
     "eslint-plugin-esm": "workspace:*",
     "eslint-plugin-fp": "2.3.0",
     "eslint-plugin-import": "2.32.0",
@@ -53,7 +53,7 @@
     "eslint-plugin-simple-import-sort": "13.0.0",
     "eslint-plugin-sonarjs": "3.0.5",
     "eslint-plugin-unicorn": "61.0.2",
-    "globals": "17.5.0"
+    "globals": "17.6.0"
   },
   "devDependencies": {
     "@types/node": "20.19.37",
