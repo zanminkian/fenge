@@ -168,7 +168,13 @@ export async function postCommit(commitMsgPath) {
 ${frontmatter.join("\n")}
 ---
 
-${commitMsg}
+${
+  // remove common git trailer lines
+  commitMsg.replaceAll(
+    /\n(?:Signed-off-by|Co-?authored-by|Reviewed-by|Tested-by|Reported-by|Acked-by): .*/gi,
+    "",
+  )
+}
 `,
   );
   childProcess.execSync(
