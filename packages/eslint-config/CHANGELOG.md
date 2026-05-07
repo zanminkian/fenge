@@ -1,5 +1,13 @@
 # @fenge/eslint-config
 
+## 0.9.1
+
+### Patch Changes
+
+- 9c9acd4: chore: upgrade deps
+- Updated dependencies [9c9acd4]
+  - eslint-plugin-publint@0.5.1
+
 ## 0.9.0
 
 ### Minor Changes
