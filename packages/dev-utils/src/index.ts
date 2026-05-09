@@ -3,7 +3,7 @@ import path from "node:path";
 import process from "node:process";
 import { describe, it } from "node:test";
 import tsParser from "@typescript-eslint/parser";
-import { RuleTester, type Rule } from "eslint";
+import { RuleTester, type Linter, type Rule } from "eslint";
 import { outdent } from "outdent";
 
 export interface TestCase {
@@ -20,13 +20,19 @@ export interface TestOptions {
   invalid: (TestCase | string)[];
   errors?: number;
   parser?: any;
+  languageOptions?: Linter.LanguageOptions;
 }
 
-const defaultTester = new RuleTester({
-  languageOptions: {
-    parser: tsParser,
-    parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+const defaultLanguageOptions = {
+  parser: tsParser,
+  parserOptions: {
+    ecmaVersion: "latest" as const,
+    sourceType: "module" as const,
   },
+};
+
+const defaultTester = new RuleTester({
+  languageOptions: defaultLanguageOptions,
 });
 
 export async function test({
@@ -36,6 +42,7 @@ export async function test({
   invalid: originInvalid,
   errors = 1,
   parser,
+  languageOptions,
 }: TestOptions) {
   const normalize = (testCases: (TestCase | string)[]): TestCase[] =>
     testCases.map((testCase) =>
@@ -51,9 +58,20 @@ export async function test({
     ...testCase,
     code: testCase.code,
   }));
-  const ruleTester = parser
-    ? new RuleTester({ languageOptions: { parser } })
-    : defaultTester;
+  const ruleTester = languageOptions
+    ? new RuleTester({
+        languageOptions: {
+          ...defaultLanguageOptions,
+          ...languageOptions,
+          parserOptions: {
+            ...defaultLanguageOptions.parserOptions,
+            ...languageOptions.parserOptions,
+          },
+        },
+      })
+    : parser
+      ? new RuleTester({ languageOptions: { parser } })
+      : defaultTester;
   await describe(name, async () => {
     await Promise.all(
       transformedValid.map(async (testCase) => {
