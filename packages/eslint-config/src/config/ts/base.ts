@@ -26,6 +26,8 @@ export function getTsBase() {
       "no-redeclare": "@typescript-eslint/no-redeclare",
       "no-restricted-imports": "@typescript-eslint/no-restricted-imports",
       // "no-shadow": "@typescript-eslint/no-shadow", // 9.28.0
+      "no-unused-private-class-members":
+        "@typescript-eslint/no-unused-private-class-members",
       // "no-unused-expressions": "@typescript-eslint/no-unused-expressions", // 9.25.0
       "no-unused-vars": "@typescript-eslint/no-unused-vars",
       // "no-use-before-define": "@typescript-eslint/no-use-before-define", // 9.28.0

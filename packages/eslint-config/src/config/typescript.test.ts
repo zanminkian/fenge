@@ -25,6 +25,8 @@ await describe("ts config", async () => {
         "no-redeclare": "@typescript-eslint/no-redeclare",
         "no-restricted-imports": "@typescript-eslint/no-restricted-imports",
         // "no-shadow": "@typescript-eslint/no-shadow",
+        "no-unused-private-class-members":
+          "@typescript-eslint/no-unused-private-class-members",
         // "no-unused-expressions": "@typescript-eslint/no-unused-expressions",
         "no-unused-vars": "@typescript-eslint/no-unused-vars",
         // "no-use-before-define": "@typescript-eslint/no-use-before-define",
