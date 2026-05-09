@@ -5,6 +5,10 @@ import { after, before, describe, it } from "node:test";
 import { runLint } from "./run-lint.ts";
 
 const __dirname = import.meta.dirname;
+
+function escapeRegex(s: string) {
+  return s.replaceAll(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
 const fixturesDir = path.join(
   __dirname,
   "..",
@@ -21,7 +25,7 @@ describe("disallow-file-patterns", () => {
   });
 
   it("disallow files", async () => {
-    const promises = Object.entries({
+    const entries = Object.entries({
       // 1.
       "foo.mjs": "",
       "foo.cjs": "",
@@ -73,22 +77,33 @@ describe("disallow-file-patterns", () => {
 
       // 4.
       "foo.d.bar.ts": "",
-    })
-      .map(
-        ([file, content]) => [path.join(fixturesDir, file), content] as const,
-      )
-      .map(async ([file, content]) => {
-        await fs.writeFile(file, content);
-        const res = runLint([file]);
-        await fs.rm(file);
+    }).map(
+      ([file, content]) => [path.join(fixturesDir, file), content] as const,
+    );
 
-        assert.strictEqual(res.status, 1);
-        assert.strictEqual(
-          res.stdout.includes("check-file/filename-blocklist"),
-          true,
-          res.stdout,
-        );
-      });
-    await Promise.all(promises);
+    await Promise.all(
+      entries.map(async ([file, content]) => await fs.writeFile(file, content)),
+    );
+    const res = runLint(entries.map(([file]) => file));
+    await Promise.all(entries.map(async ([file]) => await fs.rm(file)));
+
+    assert.strictEqual(res.status, 1);
+    assert.strictEqual(
+      res.stdout.includes("check-file/filename-blocklist"),
+      true,
+      res.stdout,
+    );
+    for (const [filePath] of entries) {
+      const regex = new RegExp(
+        `${escapeRegex(filePath)}[\\s\\S]*?` +
+          "1:1[\\s\\S]*?error[\\s\\S]*?" +
+          `The filename "${escapeRegex(path.basename(filePath))}" matches the blocklisted` +
+          "[\\s\\S]*?check-file/filename-blocklist",
+      );
+      assert.ok(
+        regex.test(res.stdout),
+        `Expected ${filePath} to be flagged by filename-blocklist`,
+      );
+    }
   });
 });
