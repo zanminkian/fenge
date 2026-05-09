@@ -30,7 +30,7 @@ Config `eslint.config.js`
 
 ```js
 import * as pkg from "eslint-plugin-pkg-json";
-import parser from 'eslint-plugin-pkg-json/jsonc-eslint-parser';
+import * as parser from 'eslint-plugin-pkg-json/jsonc-eslint-parser';
 
 export default [
   ...
