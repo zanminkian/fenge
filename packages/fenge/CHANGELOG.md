@@ -1,5 +1,15 @@
 # fenge
 
+## 0.14.1
+
+### Patch Changes
+
+- 865a266: feat(fenge): strip Co-Authored-By trailer from changeset body
+- Updated dependencies [6e3cc8c]
+- Updated dependencies [10b1c05]
+- Updated dependencies [a2d2ecf]
+  - @fenge/eslint-config@0.9.2
+
 ## 0.14.0
 
 ### Minor Changes
