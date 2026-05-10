@@ -1,5 +1,20 @@
 # @fenge/eslint-config
 
+## 0.9.2
+
+### Patch Changes
+
+- 6e3cc8c: feat(eslint-config): remove `init-declarations` rule
+- 10b1c05: feat(eslint-config): add rule `@typescript-eslint/no-unused-private-class-members`
+- a2d2ecf: feat(eslint-config): enable stricter constant loop condition checking
+
+  The upstream typescript-eslint bug (#11978) has been fixed, so
+  `allowConstantLoopConditions` can now use `"only-allowed-literals"`.
+
+- Updated dependencies [027abc5]
+  - eslint-plugin-pkg-json@0.6.1
+  - eslint-plugin-publint@0.5.2
+
 ## 0.9.1
 
 ### Patch Changes

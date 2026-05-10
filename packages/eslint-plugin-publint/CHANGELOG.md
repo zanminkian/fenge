@@ -1,5 +1,11 @@
 # eslint-plugin-publint
 
+## 0.5.2
+
+### Patch Changes
+
+- 027abc5: chore: upgrade deps
+
 ## 0.5.1
 
 ### Patch Changes
