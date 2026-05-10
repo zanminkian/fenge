@@ -13,7 +13,7 @@ Ensure consistent dependency versions across all package.json files in the proje
 {"devDependencies":{"jsonc-eslint-parser":"2.3.0"}}
 {"optionalDependencies":{"jsonc-eslint-parser":"2.4.2"}}
 {"dependencies":{"semver":"7.7.2"}}
-{"dependencies":{"semver":"7.8.0"}}
+{"dependencies":{"semver":"7.7.0"}}
 {"devDependencies":{"semver":"7.6.0"}}
 {"optionalDependencies":{"semver":"7.7.1"}}
 {"dependencies":{"eslint":"9.21.0"}}
@@ -24,9 +24,9 @@ Ensure consistent dependency versions across all package.json files in the proje
 {"optionalDependencies":{"@types/node":"20.19.35"}}
 {"dependencies":{"outdent":"0.7.0"}}
 {"optionalDependencies":{"outdent":"0.9.0"}}
-{"dependencies":{"semver":"7.7.4","jsonc-eslint-parser":"2.4.0"}}
+{"dependencies":{"semver":"7.8.0","jsonc-eslint-parser":"2.4.0"}}
 {"dependencies":{"jsonc-eslint-parser":"3.1.0"},"devDependencies":{"eslint":"9.21.0"}}
-{"dependencies":{"semver":"7.7.4"},"optionalDependencies":{"eslint":"9.21.0"}}
+{"dependencies":{"semver":"7.8.0"},"optionalDependencies":{"eslint":"9.21.0"}}
 {"dependencies":{"jsonc-eslint-parser":"3.1.0"},"devDependencies":{"eslint":"9.29.0"},"optionalDependencies":{"semver":"7.6.0"}}
 ```
 
@@ -35,9 +35,9 @@ Ensure consistent dependency versions across all package.json files in the proje
 ```ts
 {"dependencies":{"jsonc-eslint-parser":"3.1.0"}}
 {"devDependencies":{"eslint":"9.29.0"}}
-{"optionalDependencies":{"semver":"7.7.4"}}
-{"dependencies":{"semver":"7.7.4"},"devDependencies":{"@types/semver":"7.7.1"}}
-{"dependencies":{"jsonc-eslint-parser":"3.1.0"},"optionalDependencies":{"semver":"7.7.4"}}
+{"optionalDependencies":{"semver":"7.8.0"}}
+{"dependencies":{"semver":"7.8.0"},"devDependencies":{"@types/semver":"7.7.1"}}
+{"dependencies":{"jsonc-eslint-parser":"3.1.0"},"optionalDependencies":{"semver":"7.8.0"}}
 {"dependencies":{"jsonc-eslint-parser":"3.1.0"},"devDependencies":{"eslint":"9.29.0"}}
 {"dependencies":{"jsonc-eslint-parser":"3.1.0"},"devDependencies":{"eslint":"9.29.0"},"optionalDependencies":{"outdent":"0.8.0"}}
 {"dependencies":{}}
