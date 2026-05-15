@@ -1,5 +1,13 @@
 # fenge
 
+## 0.14.2
+
+### Patch Changes
+
+- 453ca9f: foo bar
+- Updated dependencies [453ca9f]
+  - @fenge/eslint-config@0.9.3
+
 ## 0.14.1
 
 ### Patch Changes

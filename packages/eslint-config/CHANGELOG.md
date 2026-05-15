@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.9.3
+
+### Patch Changes
+
+- 453ca9f: foo bar
+
 ## 0.9.2
 
 ### Patch Changes
