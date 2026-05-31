@@ -304,7 +304,7 @@ export default {
 
 ### Set up Git hooks
 
-Executing `fenge install` in the project root will write a `pre-commit` and `post-commit` file to the `${PROJECT_ROOT}/.git/hooks` folder. After editing `package.json -> scripts -> prepare` script and executing it once, each commit (via Git) will trigger a code style check for the committed files, and automatically create a changeset file if the `.changeset` directory exists.
+Executing `fenge install` writes a `pre-commit` and `post-commit` file to the `.git/hooks` folder of the current working directory (it is skipped when there is no `.git` directory). After editing `package.json -> scripts -> prepare` script and executing it once, each commit (via Git) will trigger a code style check for the committed files, and automatically create a changeset file if the `.changeset` directory exists.
 
 ```json
 {

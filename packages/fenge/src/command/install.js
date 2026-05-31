@@ -11,9 +11,8 @@ import { exists, getBinPath, getPkgJson } from "../utils.js";
 async function writeGitHook(file, content) {
   const gitPath = path.resolve(process.cwd(), ".git");
   if (!(await exists(gitPath))) {
-    throw new Error(
-      "Directory `.git` is not existing. Please run `git init` first.",
-    );
+    // Skip writing when there is no `.git` directory in the current working directory.
+    return;
   }
 
   const hooksPath = path.resolve(gitPath, "hooks");
