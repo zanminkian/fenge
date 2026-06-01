@@ -1,8 +1,8 @@
 node_modules
 .vscode
-.claude
 pnpm-lock.yaml
 dist
 tmp
 v8-compile-cache-*
 node-compile-cache
+*.local.*
