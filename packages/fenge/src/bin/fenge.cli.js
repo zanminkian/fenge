@@ -8,7 +8,7 @@ import { install } from "../command/install.js";
 import { lint } from "../command/lint.js";
 import { postCommit } from "../command/post-commit.js";
 import { uninstall } from "../command/uninstall.js";
-import { getPkgJson } from "../utils.js";
+import { aiHint, getPkgJson } from "../utils.js";
 
 const program = new Command().enablePositionalOptions();
 
@@ -50,6 +50,7 @@ program
       result = await lint(paths, options);
       result.stdout && console.log(result.stdout);
       result.stderr && console.error(result.stderr);
+      if (result.code !== 0) console.log(aiHint);
       if (
         result.code === 0 &&
         (options.fix || options.update) &&
@@ -89,6 +90,7 @@ program
     const { code, stdout, stderr } = await lint(paths, options);
     stdout && console.log(stdout);
     stderr && console.error(stderr);
+    if (code !== 0) console.log(aiHint);
     process.exit(code);
   });
 
