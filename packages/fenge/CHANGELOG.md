@@ -1,5 +1,11 @@
 # fenge
 
+## 0.14.4
+
+### Patch Changes
+
+- 1bcd4f1: feat: optimize AI agent hint
+
 ## 0.14.3
 
 ### Patch Changes
