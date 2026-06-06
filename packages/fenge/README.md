@@ -168,27 +168,16 @@ Config `tsconfig.json` file in your project root.
 
 ```json
 {
-  "extends": "fenge/tsconfig"
+  // If the project is for web, you may need to change `fenge/tsconfig/node` to `fenge/tsconfig/web`.
+  "extends": ["fenge/tsconfig", "fenge/tsconfig/node"]
 }
 ```
 
 Config `tsconfig.build.json` file in your project root.
 
-For Node.js app:
-
 ```json
 {
-  "extends": ["./tsconfig.json", "fenge/tsconfig/node"],
-  "include": ["src"],
-  "exclude": ["**/*.test.ts"]
-}
-```
-
-For Web app:
-
-```json
-{
-  "extends": ["./tsconfig.json", "fenge/tsconfig/web"],
+  "extends": ["./tsconfig.json"],
   "include": ["src"],
   "exclude": ["**/*.test.ts"]
 }

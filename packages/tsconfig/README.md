@@ -64,27 +64,16 @@ Here are the best practices if you are using this package.
 
 ```json
 {
-  "extends": "@fenge/tsconfig"
+  // If the project is for web, you may need to change `@fenge/tsconfig/node` to `@fenge/tsconfig/web`.
+  "extends": ["@fenge/tsconfig", "@fenge/tsconfig/node"]
 }
 ```
 
 #### tsconfig.build.json
 
-For Node.js app:
-
 ```json
 {
-  "extends": ["./tsconfig.json", "@fenge/tsconfig/node"],
-  "include": ["src"],
-  "exclude": ["**/*.test.ts"]
-}
-```
-
-For Web app:
-
-```json
-{
-  "extends": ["./tsconfig.json", "@fenge/tsconfig/web"],
+  "extends": ["./tsconfig.json"],
   "include": ["src"],
   "exclude": ["**/*.test.ts"]
 }
@@ -92,51 +81,43 @@ For Web app:
 
 ### For monorepo
 
-You don't need `tsconfig.build.json`.
-
 ```
-├── apps
-│   ├── app1
+├── packages
+│   ├── pkg1
 │   │   ├── src
-│   │   │   └── main.ts
+│   │   │   └── index.ts
 │   │   ├── test
-│   │   │   └── main.test.ts
+│   │   │   └── index.test.ts
 │   │   ├── package.json
+│   │   ├── tsconfig.build.json
 │   │   └── tsconfig.json
-│   └── app2
+│   └── pkg2
 │       ├── src
-│       │   └── main.ts
+│       │   └── index.ts
 │       ├── test
-│       │   └── main.test.ts
+│       │   └── index.test.ts
 │       ├── package.json
+│       ├── tsconfig.build.json
 │       └── tsconfig.json
-├── package.json
-└── tsconfig.json
+└── package.json
 ```
 
-#### tsconfig.json in the root of project
+#### tsconfig.json in each package
 
 ```json
 {
-  "extends": "@fenge/tsconfig"
+  // If the package is for web, you may need to change `@fenge/tsconfig/node` to `@fenge/tsconfig/web`.
+  "extends": ["@fenge/tsconfig", "@fenge/tsconfig/node"]
 }
 ```
 
-#### tsconfig.json in each app
-
-For Node.js app:
+#### tsconfig.build.json in each package
 
 ```json
 {
-  "extends": ["../../tsconfig.json", "@fenge/tsconfig/node"]
-}
-```
-
-For Web app:
-
-```json
-{
-  "extends": ["../../tsconfig.json", "@fenge/tsconfig/web"]
+  "extends": ["./tsconfig.json"],
+  "include": ["src"],
+  "exclude": ["**/*.test.ts"]
 }
 ```
 
