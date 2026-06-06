@@ -1,5 +1,11 @@
 # @fenge/tsconfig
 
+## 0.11.2
+
+### Patch Changes
+
+- 631c2b5: docs: update best practice
+
 ## 0.11.1
 
 ### Patch Changes

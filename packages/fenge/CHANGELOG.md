@@ -1,5 +1,22 @@
 # fenge
 
+## 0.14.3
+
+### Patch Changes
+
+- 3852c1d: fix(fenge): skip git hook install when no `.git` directory
+
+  Instead of throwing when `.git` is absent, `writeGitHook` now returns
+  early, making `fenge install` a no-op in projects without a git repo.
+
+- 34e55ea: feat(fenge): print AI agent hint on lint failure
+
+  Help AI coding agents avoid repeated fix loops by printing guidance
+  to use eslint-disable-next-line instead of retrying when lint fails.
+
+- Updated dependencies [631c2b5]
+  - @fenge/tsconfig@0.11.2
+
 ## 0.14.2
 
 ### Patch Changes
