@@ -138,6 +138,7 @@ We place a high value on `Development Experience` (DX).
 - 📦 **All-In-One**: You don't need to install `prettier`, `eslint`, `lint-staged` or `husky`.
 - ⚙️ **Zero Configs**: Comes with sensible default configurations for type safety, formatting, and linting, so you don't need to set up any configurations.
 - 😉 **Highly Customizable**: Every thing is optional. Every thing can be customized.
+- 🤖 **AI Agent Friendly**: Optimized for AI coding agents like Cursor, Claude Code, and Codex, ensuring smooth integration in AI-assisted development workflows.
 
 ## Quick Start
 
