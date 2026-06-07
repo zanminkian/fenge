@@ -27,8 +27,10 @@ export function base(
     html: "**/*.html",
   } as const;
   const blockedFilesMap = {
-    "**/.env.*": ".*.env",
-    "**/.*rc": "*.config.js",
+    // Comment out "**/.env.*" and "**/.*rc" because of parsing error.
+    // TODO: We should disable "**/.env.*" and "**/.*rc" patterns later in another way.
+    // "**/.env.*": ".*.env",
+    // "**/.*rc": "*.config.js",
     "**/.*rc.*": "*.config.*",
 
     "**/*.{cjs,mjs,cts,mts}": "*.{js,ts}",
