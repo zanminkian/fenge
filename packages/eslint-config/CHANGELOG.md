@@ -1,5 +1,11 @@
 # @fenge/eslint-config
 
+## 0.9.4
+
+### Patch Changes
+
+- 6512d28: fix(eslint-config): comment out "**/.env.\*" and "**/.\*rc" to allow them
+
 ## 0.9.3
 
 ### Patch Changes
