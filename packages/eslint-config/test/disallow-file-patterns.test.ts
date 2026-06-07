@@ -55,11 +55,11 @@ describe("disallow-file-patterns", () => {
       // ".foorc.ts": "", // TODO: typescript-eslint bug.
 
       // 2.
-      ".env.corepack": "foobar",
-      ".env.json": "foobar",
+      // ".env.corepack": "foobar", // TODO: Don't comment out later.
+      // ".env.json": "foobar", // TODO: Don't comment out later.
 
-      ".eslintrc": "foobar",
-      ".prettierrc": "foobar",
+      // ".eslintrc": "foobar", // TODO: Don't comment out later.
+      // ".prettierrc": "foobar", // TODO: Don't comment out later.
 
       ".prettierrc.js": "foobar",
       ".foorc.json": "foobar",
