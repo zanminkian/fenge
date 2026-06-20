@@ -50,7 +50,7 @@ program
       result = await lint(paths, options);
       result.stdout && console.log(result.stdout);
       result.stderr && console.error(result.stderr);
-      if (result.code !== 0) console.log(aiHint);
+      if (result.code !== 0 && result.stdout) console.log(aiHint);
       if (
         result.code === 0 &&
         (options.fix || options.update) &&
@@ -90,7 +90,7 @@ program
     const { code, stdout, stderr } = await lint(paths, options);
     stdout && console.log(stdout);
     stderr && console.error(stderr);
-    if (code !== 0) console.log(aiHint);
+    if (code !== 0 && stdout) console.log(aiHint);
     process.exit(code);
   });
 
