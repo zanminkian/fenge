@@ -1,5 +1,11 @@
 # @fenge/types
 
+## 0.6.1
+
+### Patch Changes
+
+- ef36c17: fix(types): restrict typescript peer dependency to `~5.9.3`
+
 ## 0.6.0
 
 ### Minor Changes

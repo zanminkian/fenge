@@ -1,5 +1,14 @@
 # fenge
 
+## 0.14.6
+
+### Patch Changes
+
+- ef36c17: fix(fenge,tsconfig,smells): restrict typescript peer dependency to `^5.9.3 || ^6.0.0`
+- 4125c93: fix(fenge): only print ai hint when eslint prints linting results
+- Updated dependencies [ef36c17]
+  - @fenge/tsconfig@0.11.3
+
 ## 0.14.5
 
 ### Patch Changes

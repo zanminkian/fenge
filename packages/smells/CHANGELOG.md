@@ -1,5 +1,11 @@
 # smells
 
+## 0.2.3
+
+### Patch Changes
+
+- ef36c17: fix(fenge,tsconfig,smells): restrict typescript peer dependency to `^5.9.3 || ^6.0.0`
+
 ## 0.2.2
 
 ### Patch Changes
