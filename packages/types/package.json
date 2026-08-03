@@ -33,7 +33,7 @@
   },
   "peerDependencies": {
     "@types/node": ">=16.18.126",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.3"
   },
   "peerDependenciesMeta": {
     "@types/node": {
